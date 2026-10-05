@@ -1,0 +1,79 @@
+<section class="sheet" id="avatar-content-rules">
+  <div class="sheet-top"><span>OPENX / IDENTITY &amp; CONTENT</span><span>头像、文字与文案</span></div>
+  <div class="section-heading"><h2>头像与文字共享一套基线</h2><p>身份先被识别，内容随后被读懂，操作始终可找到。尺寸、长内容和缺图状态采用同一套结构，不靠逐张卡片调整位置。</p></div>
+
+  <div class="ac-heading"><h3>头像尺寸与使用位置</h3><span>尺寸是显示尺寸，上传原图另行校验</span></div>
+  <div class="ac-size-rack" data-theme="light" aria-label="五档头像显示尺寸">
+    <div><span class="ac-avatar ac-avatar-24" aria-hidden="true">6</span><strong>24 px</strong><p>文字旁的只读身份</p></div>
+    <div><span class="ac-avatar ac-avatar-32" aria-hidden="true">6</span><strong>32 px</strong><p>紧凑名单与头像组</p></div>
+    <div><span class="ac-avatar" aria-hidden="true">6</span><strong>40 px</strong><p>列表与内容卡默认</p></div>
+    <div><span class="ac-avatar ac-avatar-48" aria-hidden="true">6</span><strong>48 px</strong><p>导航账户与资料摘要</p></div>
+    <div><span class="ac-avatar ac-avatar-64" aria-hidden="true">6</span><strong>64 px</strong><p>个人资料编辑页</p></div>
+  </div>
+  <div class="ac-table-scroll"><table class="rules-table ac-rules"><caption class="ac-sr">头像的形状、图片和辅助阅读规则</caption><thead><tr><th scope="col">对象</th><th scope="col">统一规则</th><th scope="col">实现边界</th></tr></thead><tbody>
+    <tr><th scope="row">真实用户</th><td>圆形；固定宽高、1:1；照片居中等比裁切</td><td><code>object-fit: cover</code>；尊重用户选定的裁切位置，不拉伸人物</td></tr>
+    <tr><th scope="row">机构与品牌</th><td>完整原标志，放入 40 × 40px 身份框，内留 8px</td><td>圆角 8px；<code>object-fit: contain</code>；沿用对应背景资产，不将标志裁成圆形</td></tr>
+    <tr><th scope="row">回退与加载</th><td>真实昵称首个可显示字符；中性底与正文色；未知名称用中性人形图标</td><td>图片、占位与回退共用固定框；仅解码成功才显示图片；失败后保留昵称，不露破图图标</td></tr>
+    <tr><th scope="row">点击与朗读</th><td>可点击头像至少 44 × 44px；只读头像无需扩大视觉尺寸</td><td>紧邻相同昵称时图片 <code>alt=""</code>；独立入口使用动作标签，如「编辑个人资料」，避免重复朗读</td></tr>
+    <tr><th scope="row">状态点</th><td>直径 8px，2px 背景色隔离，右下角固定；状态不闪动</td><td>只在确有在线状态数据时显示；文字同步说明。无状态数据时不画点，也不把会员等级当在线状态</td></tr>
+    <tr><th scope="row">头像组</th><td>32px 头像，重叠 8px，最多展示 3 人，后接 +N</td><td>2px 背景隔离；整组为一个 44px 高入口。标签说清对象与总数，点击可查看完整名单</td></tr>
+    <tr><th scope="row">头像上传</th><td>沿用现有规则：JPG / PNG / WebP，最大 5 MiB，至少 128 × 128px</td><td>取消选择或文件不合规时保留原图；只约束个人头像，不扩展到证件或内容封面</td></tr>
+  </tbody></table></div>
+
+  <div class="ac-heading"><h3>带头像的列表与内容卡</h3><span>示例采用繁体界面文案</span></div>
+  <div class="ac-workbench" id="ac-workbench" data-theme="light" data-density="comfortable" data-avatar-state="fallback">
+    <div class="ac-toolbar"><div class="ac-options"><label><input type="checkbox" id="ac-long-name">长昵称</label><label><input type="checkbox" id="ac-compact">紧凑名单</label></div><div class="ac-options"><button class="ui-btn" type="button" id="ac-avatar-state">查看载入状态</button><button class="ui-btn" type="button" id="ac-theme" aria-pressed="false">切换为深色</button></div></div>
+    <div class="ac-examples">
+      <div class="ac-example"><div class="ac-example-label"><span>01</span><h4>名单行</h4><span>40 / 12 / 自适应</span></div>
+        <div class="ac-member-list" lang="zh-Hant">
+          <div class="ac-member-row"><span class="ac-avatar ac-demo-avatar" aria-hidden="true"><span>6</span></span><div class="ac-identity"><strong class="ac-demo-name">66666.char</strong><span>OpenX ID · 10008246</span></div><a class="ac-text-action" href="templates.html?view=settings&amp;theme=light" data-ac-template="settings">編輯資料 <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true"><path d="M4 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+          <div class="ac-member-row"><span class="ac-avatar ac-brand" aria-hidden="true"><img src="assets/logo/OpenX-Mark-Black.svg" data-ac-brand alt="" width="24" height="24"></span><div class="ac-identity"><strong>OpenX 官方</strong><span>帳戶與平台資訊</span></div><span class="ac-readonly">官方帳戶</span></div>
+        </div>
+        <p class="ac-note">头像垂直居中，姓名与元信息左对齐。操作列靠右；窄屏移到文字列下一行，保留 44px 点击区。</p>
+      </div>
+      <div class="ac-example"><div class="ac-example-label"><span>02</span><h4>用户内容卡</h4><span>固定身份区 / 自然内容高</span></div>
+        <article class="ac-content-card" lang="zh-Hant"><div class="ac-author"><span class="ac-avatar ac-demo-avatar" aria-hidden="true"><span>6</span></span><div class="ac-identity"><strong class="ac-demo-name">66666.char</strong><span>2026.06.01 加入 OpenX</span></div></div><div class="ac-content-copy"><h4>帳戶資料</h4><p>公開暱稱會顯示於會員資料。登入信箱與身份資料可前往各自的設定頁面管理。</p></div><div class="ac-content-footer"><span>會員資料</span><a class="ac-text-action" href="templates.html?view=settings&amp;theme=light" data-ac-template="settings">管理個人資料 <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true"><path d="M4 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></article>
+        <p class="ac-note">身份区、正文、底部操作以同一内容起点对齐。头像只占身份区；正文不因头像变大而向右多缩进。</p>
+      </div>
+    </div>
+    <p class="ac-live-note" id="ac-state-note" role="status" aria-live="polite">当前未设置头像，使用昵称首字符回退</p>
+  </div>
+  <div class="ac-table-scroll"><table class="rules-table ac-rules"><caption class="ac-sr">带头像文字区域的几何规则</caption><thead><tr><th scope="col">部分</th><th scope="col">桌面</th><th scope="col">窄屏与异常内容</th></tr></thead><tbody>
+    <tr><th scope="row">名单网格</th><td><code>40px minmax(0, 1fr) auto</code>；列间距 12px；行内上下 16px</td><td>内容宽度不足 360px 时操作移至第二列下一行；不得把姓名压成逐字竖排</td></tr>
+    <tr><th scope="row">姓名与元信息</th><td>姓名 14 / 22、600；元信息 12 / 18、400；上下间距 2px</td><td>名单姓名一行省略，原值保留在可聚焦的「查看完整昵称」入口；ID 不截断，必要时折行</td></tr>
+    <tr><th scope="row">内容卡</th><td>内边距 24px；身份区后 24px；标题后 8px；底部操作前 24px</td><td>手机内边距 16px；姓名可换两行；正文与标题不通过压缩字号迁就卡片宽度</td></tr>
+    <tr><th scope="row">紧凑名单</th><td>头像改为 32px；上下间距 12px；文字字号保持；整行至少 68px</td><td>触屏操作仍至少 44px；紧凑模式只用于高密度名单，不让内容卡缩成小字</td></tr>
+    <tr><th scope="row">正文与底部</th><td>正文 14 / 22；文字自然增高；有同组等高需求时底部用 <code>margin-top: auto</code></td><td>多个操作允许换行，顺序不变；单主操作不拆成两端悬空的按钮</td></tr>
+  </tbody></table></div>
+  <details class="ac-full-name" id="ac-full-name"><summary>查看完整昵称</summary><p id="ac-full-name-value">66666.char</p></details>
+
+  <div class="ac-heading"><h3>文字层级与阅读宽度</h3><span>字号 / 行高 / 字重，对应现有 tokens</span></div>
+  <div class="ac-type-sample" data-theme="light"><div><span class="ac-type-eyebrow">會員專區 / 個人資料</span><h4>個人資料</h4><p>管理公開暱稱與帳戶基本資訊</p></div><div class="ac-type-annotation"><strong>28 / 36 / 600</strong><span>页面标题</span><p>短标题不占满横向空间；正文用自然句子说明当前任务。</p></div></div>
+  <div class="ac-table-scroll"><table class="rules-table ac-rules ac-type-table"><caption class="ac-sr">全站文字层级对应规格</caption><thead><tr><th scope="col">层级</th><th scope="col">字号 / 行高 / 字重</th><th scope="col">使用与长度</th></tr></thead><tbody>
+    <tr><th scope="row">工作台页面标题</th><td>28 / 36 / 600；手机 24 / 32 / 600</td><td>一个页面一个 h1；短语约 4–12 个汉字，自然换行，不以标点结尾</td></tr>
+    <tr><th scope="row">区块与卡片标题</th><td>区块 18 / 28 / 600；标准卡片 16 / 24 / 600；紧凑卡片 14 / 22 / 600</td><td>按 h2 / h3 / h4 真实层级排布；区块标题 6–14 个汉字、最多两行，卡片标题 4–12 个汉字；同组用同一档，信息完整为必要例外</td></tr>
+    <tr><th scope="row">正文与说明</th><td>14 / 22 / 400；长篇内容可用 16 / 24 / 400</td><td>桌面操作说明约 24–40 个汉字一行；阅读正文约 32–45 个汉字或 55–75 个拉丁字符。手机随容器换行，不强设字符数</td></tr>
+    <tr><th scope="row">输入与字段标签</th><td>输入 16 / 24 / 400；标签 13 / 20 / 600</td><td>标签固定显示；占位符只提供格式示例。输入不因桌面密度切换缩小至手机难读</td></tr>
+    <tr><th scope="row">元信息与辅助说明</th><td>12 / 18 / 400</td><td>用于时间、单位、次要说明；用中性辅助文字色，金额、资格条件和关键错误不降为弱化元信息</td></tr>
+    <tr><th scope="row">主要金额</th><td>40 / 48 / 600；手机 32 / 40 / 600</td><td>数字使用 <code>tabular-nums</code>；单位相邻显示。详情与确认中的金额完整，不省略、不滚动计数</td></tr>
+    <tr><th scope="row">按钮与链接</th><td>工作台 14 / 20 / 600；官网 15 / 22 / 600，手机 16 / 22 / 600</td><td>用动词加对象；同组不混字重。工作台最小 44px 点击高；继承官网现有胶囊按钮与箭头动效</td></tr>
+    <tr><th scope="row">官网标题</th><td>首屏 56 / 64 / 600，手机 36 / 44 / 600；区块 40 / 52 / 600，手机 28 / 36 / 600</td><td>用于营销页面，不引入个人中心。中文不手动逐字加空格，不使用描边字或装饰性渐变字</td></tr>
+  </tbody></table></div>
+  <div class="ac-editorial-rules"><div><h4>换行与截断</h4><p>正文保留自然标点换行，长 URL、编号用 <code>overflow-wrap: anywhere</code>。只有通往完整内容的列表摘要可以限两行；关键错误、资格条件、费用、金额、确认说明完整显示。不可用固定高度隐藏尾行。</p></div><div><h4>字体与语言</h4><p>统一使用现有自托管字体链，不让中文回退到宋体。同一产品页面保持繁体；规范说明可用简体，但示例区域标记 <code>lang="zh-Hant"</code>。数字与单位之间保留一个空格，同列小数位保持一致。</p></div></div>
+
+  <div class="ac-heading"><h3>文案先说明对象，再给出行动</h3><span>短、具体、可执行，不加入技术交接语</span></div>
+  <p class="ac-copy-intro">下表为界面文案写法。涉及删除、解除绑定、费用和到账时效的后果，必须使用已确认的业务规则；文案设计不增加权限、承诺或新的功能逻辑。</p>
+  <p class="ac-copy-intro" data-copy-length-rule>营销区块标题使用 6–14 个汉字，最多两行；卡片标题使用 4–12 个汉字。说明写 1–2 句，按钮使用 2–6 个字，先写动作再写对象。标题及每行结尾不加标点。金额、地址、课程名称、资格条件、风险和最终确认信息以完整准确为先，不为了缩短文案删减必要信息；学员原话不改写。</p>
+  <div class="ac-table-scroll"><table class="rules-table ac-rules ac-copy-table"><caption class="ac-sr">界面文案修改对照</caption><thead><tr><th scope="col">场景</th><th scope="col">避免</th><th scope="col">采用</th><th scope="col">写法</th></tr></thead><tbody>
+    <tr><th scope="row">标题</th><td>個人資料。</td><td>個人資料</td><td>标题和每行标题结尾均不加标点；正文照常使用标点</td></tr>
+    <tr><th scope="row">主要操作</th><td>確認 / 點擊這裡</td><td>儲存變更 / 查看交易詳情</td><td>按钮使用 2–6 个字，写清动作与对象，避免一个页面所有按钮都叫确认</td></tr>
+    <tr><th scope="row">成功</th><td>操作成功！</td><td>個人資料已儲存</td><td>说清已完成的结果，不重复已发生的操作过程</td></tr>
+    <tr><th scope="row">输入错误</th><td>輸入錯誤</td><td>暱稱需為 2 至 16 個字</td><td>靠近对应字段，说明如何修正，不清空已输入内容</td></tr>
+    <tr><th scope="row">空结果</th><td>暫無數據</td><td>沒有符合條件的記錄<br><span>試試較寬的日期範圍，或清除篩選</span></td><td>区分首次为空与筛选无结果；只提供当前可用的下一步</td></tr>
+    <tr><th scope="row">加载与失败</th><td>請稍候… / 出錯了</td><td>正在載入交易記錄<br><span>未能載入記錄，請重試</span></td><td>不虚构百分比与完成时间；失败保留条件并提供重试</td></tr>
+    <tr><th scope="row">危险确认</th><td>你確定嗎？<br><span>確認 / 取消</span></td><td>捨棄未儲存的變更<br><span>離開後，本次修改不會保留</span><br><span>繼續編輯 / 捨棄變更</span></td><td>标题、后果与按钮使用同一对象。真正不可恢复的操作须明确写出不可恢复的后果</td></tr>
+    <tr><th scope="row">禁用与格式</th><td>不可用 / 在這裡輸入</td><td>請先完成身份驗證<br><span>欄位標籤：登入信箱<br>佔位示例：name@example.com</span></td><td>不可用时说明条件；标签不会因输入消失，占位符不用来承载必要规则</td></tr>
+  </tbody></table></div>
+  <div class="ac-editorial-rules"><div><h4>术语一词一义</h4><p>会员等级、成长值、可用权益、可用资产与冻结资产分别保留已有定义。正文不把成长值写成余额，也不把未完成写成失败。沿用导航中的「个人资料」「安全设置」「身份验证」名称，入口与目标页面一致。</p></div><div><h4>核对而不猜测</h4><p>缺少值显示「—」；已知为零才显示 0。链接、按钮与状态文字只描述当前真实可完成的结果。不给用户编写收益、系统保证或未经确认的处理时效。</p></div></div>
+  <div class="sheet-foot"><span>固定身份框 · 同一文字起点 · 长内容可达 · 标题无结尾标点</span><span>头像与内容规范</span></div>
+</section>

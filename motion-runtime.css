@@ -1,0 +1,98 @@
+/* OpenX motion runtime. Opt-in is added by motion-runtime.js.
+   Native controls and business state are not delayed. Original CTA buttons remain untouched. */
+html.motion-runtime{--motion-enter-distance:4px;--motion-drawer-distance:24px}
+
+/* Native top-layer transitions retain the browser's focus and close semantics. */
+html.motion-runtime dialog:not([class*="ox-select"]){opacity:0;translate:0 var(--ox-motion-overlay-travel,8px);scale:.99;transition:opacity var(--ox-motion-overlay,220ms) var(--ox-motion-ease,ease),translate var(--ox-motion-overlay,220ms) var(--ox-motion-ease,ease),scale var(--ox-motion-overlay,220ms) var(--ox-motion-ease,ease),display var(--ox-motion-overlay,220ms) allow-discrete,overlay var(--ox-motion-overlay,220ms) allow-discrete}
+html.motion-runtime dialog:not([class*="ox-select"])[open]{opacity:1;translate:0 0;scale:1}
+html.motion-runtime dialog:not([class*="ox-select"])::backdrop{opacity:0;transition:opacity var(--ox-motion-overlay,220ms) ease,display var(--ox-motion-overlay,220ms) allow-discrete,overlay var(--ox-motion-overlay,220ms) allow-discrete}
+html.motion-runtime dialog:not([class*="ox-select"])[open]::backdrop{opacity:1}
+html.motion-runtime #mf-drawer{translate:var(--motion-drawer-distance) 0;scale:1}
+html.motion-runtime #mf-drawer[open]{translate:0 0}
+@starting-style{
+  html.motion-runtime dialog:not([class*="ox-select"])[open]{opacity:0;translate:0 var(--ox-motion-overlay-travel,8px);scale:.99}
+  html.motion-runtime dialog:not([class*="ox-select"])[open]::backdrop{opacity:0}
+  html.motion-runtime #mf-drawer[open]{translate:var(--motion-drawer-distance) 0;scale:1}
+}
+
+/* Hidden feedback can finish its visual exit in browsers supporting discrete transitions. */
+html.motion-runtime :is(#toast,#copy-toast,#mf-toast){opacity:1;translate:0 0;transition:opacity var(--ox-motion-feedback,160ms) ease,translate var(--ox-motion-feedback,160ms) var(--ox-motion-ease,ease),display var(--ox-motion-feedback,160ms) allow-discrete}
+html.motion-runtime #copy-toast{transform:translate(-50%,0)}
+html.motion-runtime :is(#toast,#copy-toast,#mf-toast)[hidden],html.motion-runtime #copy-toast:not(.visible){opacity:0;translate:0 8px;pointer-events:none}
+html.motion-runtime .drawer-backdrop{opacity:1;transition:opacity var(--ox-motion-overlay,220ms) ease,display var(--ox-motion-overlay,220ms) allow-discrete}
+html.motion-runtime .drawer-backdrop[hidden]{opacity:0;pointer-events:none}
+@starting-style{
+  html.motion-runtime :is(#toast,#copy-toast,#mf-toast):not([hidden]){opacity:0;translate:0 8px}
+  html.motion-runtime .drawer-backdrop:not([hidden]){opacity:0}
+}
+@media(max-width:767px){html.motion-runtime .sidebar{transition:transform var(--ox-motion-overlay,220ms) var(--ox-motion-ease,ease)}}
+
+/* Details stay native: layout follows open immediately, while its content settles in place. */
+@supports selector(details::details-content){
+  html.motion-runtime details:not([class*="ox-select"])::details-content{opacity:0;translate:0 -3px;transition:opacity var(--ox-motion-feedback,160ms) ease,translate var(--ox-motion-feedback,160ms) var(--ox-motion-ease,ease),content-visibility var(--ox-motion-overlay,220ms) allow-discrete}
+  html.motion-runtime details:not([class*="ox-select"])[open]::details-content{opacity:1;translate:0 0}
+  @starting-style{html.motion-runtime details:not([class*="ox-select"])[open]::details-content{opacity:0;translate:0 -3px}}
+}
+html.motion-runtime :is(.fr-chevron,.ir-chevron){transition:transform var(--ox-motion-feedback,160ms) var(--ox-motion-ease,ease)}
+
+/* State colors and the switch thumb communicate the new state without moving the layout. */
+html.motion-runtime :where(.toggle,[role="switch"],.segmented button,[data-dp-range],[data-tab],.template-views button,[data-template]){transition:background-color var(--ox-motion-feedback,160ms) ease,border-color var(--ox-motion-feedback,160ms) ease,color var(--ox-motion-feedback,160ms) ease,transform 180ms ease}
+html.motion-runtime .toggle::after{transition:transform var(--ox-motion-feedback,160ms) var(--ox-motion-ease,ease)}
+html.motion-runtime :where(input[type="checkbox"],input[type="radio"]):not([class*="ox-select"]){transition:accent-color var(--ox-motion-feedback,160ms) ease}
+
+/* Loading motion exists only during an explicit loading state. Skeletons are otherwise still. */
+html.motion-runtime :is(.skeleton,.motion-skeleton){position:relative;overflow:hidden;background:var(--ox-border,#E4E4E9);border-radius:4px}
+html.motion-runtime :is(.skeleton,.motion-skeleton)::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,transparent 10%,var(--ox-surface,#FFFFFF) 50%,transparent 90%);opacity:.42;translate:-100% 0;pointer-events:none}
+html.motion-runtime :is([aria-busy="true"],[data-loading="true"]) :is(.skeleton,.motion-skeleton)::after,
+html.motion-runtime :is(.skeleton,.motion-skeleton):is([aria-busy="true"],[data-loading="true"])::after{animation:ox-motion-shimmer 1400ms linear infinite}
+html.motion-runtime .motion-spinner{display:inline-block;width:16px;height:16px;flex:none;border:2px solid currentColor;border-right-color:transparent;border-radius:50%}
+html.motion-runtime :is(.spinner,.motion-spinner){animation:none}
+html.motion-runtime :is([aria-busy="true"],[data-loading="true"]) :is(.spinner,.motion-spinner),
+html.motion-runtime :is(.spinner,.motion-spinner):is([aria-busy="true"],[data-loading="true"]){animation:ox-motion-spin 800ms linear infinite}
+html.motion-runtime .motion-progress{position:relative;min-height:4px;overflow:hidden;border-radius:4px;background:var(--ox-border,#E4E4E9)}
+html.motion-runtime .motion-progress::before{content:"";display:block;position:absolute;inset:0;background:var(--ox-brand-primary,#FF8200);transform:scaleX(var(--motion-progress,0));transform-origin:left center;transition:transform var(--ox-motion-overlay,220ms) var(--ox-motion-ease,ease)}
+html.motion-runtime .motion-progress[data-indeterminate="true"][data-loading="true"]::before{transform:scaleX(.35);transform-origin:left center;animation:ox-motion-progress 1200ms ease-in-out infinite}
+html.motion-runtime[data-motion-paused="true"] :is(.spinner,.motion-spinner),
+html.motion-runtime[data-motion-paused="true"] :is(.skeleton,.motion-skeleton)::after,
+html.motion-runtime[data-motion-paused="true"] .motion-progress::before{animation-play-state:paused!important}
+@keyframes ox-motion-shimmer{from{translate:-100% 0}to{translate:100% 0}}
+@keyframes ox-motion-spin{to{rotate:360deg}}
+@keyframes ox-motion-progress{from{translate:-35% 0}to{translate:100% 0}}
+
+/* Older engines enter smoothly but close immediately; no JS interception is used. */
+@supports not (transition-behavior:allow-discrete){
+  html.motion-runtime dialog:not([class*="ox-select"])[open]{animation:ox-motion-dialog-in var(--ox-motion-overlay,220ms) var(--ox-motion-ease,ease)}
+  html.motion-runtime #mf-drawer[open]{animation:ox-motion-drawer-in var(--ox-motion-overlay,220ms) var(--ox-motion-ease,ease)}
+  html.motion-runtime :is(#toast,#copy-toast,#mf-toast):not([hidden]){animation:ox-motion-toast-in var(--ox-motion-feedback,160ms) var(--ox-motion-ease,ease)}
+}
+@keyframes ox-motion-dialog-in{from{opacity:0;translate:0 8px;scale:.99}to{opacity:1;translate:0 0;scale:1}}
+@keyframes ox-motion-drawer-in{from{opacity:0;translate:24px 0}to{opacity:1;translate:0 0}}
+@keyframes ox-motion-toast-in{from{opacity:0;translate:0 8px}to{opacity:1;translate:0 0}}
+
+/* OS preference always wins over the preview switch. No drawing or displacement is retained. */
+html.motion-runtime:is([data-motion="reduce"],[data-motion-effective="reduce"]){--ox-motion-feedback:0ms;--ox-motion-overlay:0ms}
+html.motion-runtime:is([data-motion="reduce"],[data-motion-effective="reduce"]) :is(dialog,.sidebar,.drawer-backdrop,#toast,#copy-toast,#mf-toast,.toggle,.fr-chevron,.ir-chevron,.motion-enter,[data-motion-enter],.motion-progress,.skeleton,.motion-skeleton,.spinner,.motion-spinner){transition-duration:0ms!important;animation:none!important}
+html.motion-runtime:is([data-motion="reduce"],[data-motion-effective="reduce"]) :is(dialog,.skeleton,.motion-skeleton,.motion-progress,.toggle)::before,
+html.motion-runtime:is([data-motion="reduce"],[data-motion-effective="reduce"]) :is(dialog,.skeleton,.motion-skeleton,.motion-progress,.toggle)::after{transition-duration:0ms!important;animation:none!important}
+html.motion-runtime:is([data-motion="reduce"],[data-motion-effective="reduce"]) dialog::backdrop{transition-duration:0ms!important;animation:none!important}
+html.motion-runtime:is([data-motion="reduce"],[data-motion-effective="reduce"]) details::details-content{transition-duration:0ms!important;animation:none!important}
+html.motion-runtime:is([data-motion="reduce"],[data-motion-effective="reduce"]) :is(dialog,#toast,#copy-toast,#mf-toast){translate:0 0!important;scale:1!important}
+html.motion-runtime:is([data-motion="reduce"],[data-motion-effective="reduce"]) .motion-progress::before{transition:none!important;animation:none!important;translate:0 0!important}
+html.motion-runtime:is([data-motion="reduce"],[data-motion-effective="reduce"]) :is(.skeleton,.motion-skeleton)::after{display:none}
+html.motion-runtime:is([data-motion="reduce"],[data-motion-effective="reduce"]) :where([role="switch"],.segmented button,[data-dp-range],[data-tab],.template-views button,[data-template],input[type="checkbox"],input[type="radio"]):not([class*="ox-select"]){transition-duration:0ms!important;animation:none!important}
+/* Reduced preview applies to the complete specification, including original CTA and select effects. */
+html.motion-runtime:is([data-motion="reduce"],[data-motion-effective="reduce"]) *,
+html.motion-runtime:is([data-motion="reduce"],[data-motion-effective="reduce"]) *::before,
+html.motion-runtime:is([data-motion="reduce"],[data-motion-effective="reduce"]) *::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+@media(prefers-reduced-motion:reduce){
+  html.motion-runtime{--ox-motion-feedback:0ms;--ox-motion-overlay:0ms}
+  html.motion-runtime :is(dialog,.sidebar,.drawer-backdrop,#toast,#copy-toast,#mf-toast,.toggle,.fr-chevron,.ir-chevron,.motion-enter,[data-motion-enter],.motion-progress,.skeleton,.motion-skeleton,.spinner,.motion-spinner){transition-duration:0ms!important;animation:none!important}
+  html.motion-runtime :is(dialog,.skeleton,.motion-skeleton,.motion-progress,.toggle)::before,
+  html.motion-runtime :is(dialog,.skeleton,.motion-skeleton,.motion-progress,.toggle)::after{transition-duration:0ms!important;animation:none!important}
+  html.motion-runtime dialog::backdrop,html.motion-runtime details::details-content{transition-duration:0ms!important;animation:none!important}
+  html.motion-runtime :is(dialog,#toast,#copy-toast,#mf-toast){translate:0 0!important;scale:1!important}
+  html.motion-runtime .motion-progress::before{transition:none!important;animation:none!important;translate:0 0!important}
+  html.motion-runtime :is(.skeleton,.motion-skeleton)::after{display:none}
+  html.motion-runtime :where([role="switch"],.segmented button,[data-dp-range],[data-tab],.template-views button,[data-template],input[type="checkbox"],input[type="radio"]):not([class*="ox-select"]){transition-duration:0ms!important;animation:none!important}
+  html.motion-runtime *,html.motion-runtime *::before,html.motion-runtime *::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+}

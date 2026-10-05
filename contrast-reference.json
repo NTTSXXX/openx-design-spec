@@ -1,0 +1,443 @@
+[
+  {
+    "mode": "light",
+    "bg": "canvas",
+    "fg": "text",
+    "ratio": 17.31,
+    "minimum": 4.5
+  },
+  {
+    "mode": "light",
+    "bg": "canvas",
+    "fg": "body",
+    "ratio": 11.53,
+    "minimum": 4.5
+  },
+  {
+    "mode": "light",
+    "bg": "canvas",
+    "fg": "muted",
+    "ratio": 6.17,
+    "minimum": 4.5
+  },
+  {
+    "mode": "light",
+    "bg": "canvas",
+    "fg": "success",
+    "ratio": 11.5,
+    "minimum": 4.5
+  },
+  {
+    "mode": "light",
+    "bg": "canvas",
+    "fg": "danger",
+    "ratio": 11.61,
+    "minimum": 4.5
+  },
+  {
+    "mode": "light",
+    "bg": "canvas",
+    "fg": "warning",
+    "ratio": 10.61,
+    "minimum": 4.5
+  },
+  {
+    "mode": "light",
+    "bg": "canvas",
+    "fg": "info",
+    "ratio": 11.78,
+    "minimum": 4.5
+  },
+  {
+    "mode": "light",
+    "bg": "surface",
+    "fg": "text",
+    "ratio": 18.54,
+    "minimum": 4.5
+  },
+  {
+    "mode": "light",
+    "bg": "surface",
+    "fg": "body",
+    "ratio": 12.35,
+    "minimum": 4.5
+  },
+  {
+    "mode": "light",
+    "bg": "surface",
+    "fg": "muted",
+    "ratio": 6.61,
+    "minimum": 4.5
+  },
+  {
+    "mode": "light",
+    "bg": "surface",
+    "fg": "success",
+    "ratio": 12.32,
+    "minimum": 4.5
+  },
+  {
+    "mode": "light",
+    "bg": "surface",
+    "fg": "danger",
+    "ratio": 12.44,
+    "minimum": 4.5
+  },
+  {
+    "mode": "light",
+    "bg": "surface",
+    "fg": "warning",
+    "ratio": 11.37,
+    "minimum": 4.5
+  },
+  {
+    "mode": "light",
+    "bg": "surface",
+    "fg": "info",
+    "ratio": 12.62,
+    "minimum": 4.5
+  },
+  {
+    "mode": "light",
+    "bg": "raised",
+    "fg": "text",
+    "ratio": 18.54,
+    "minimum": 4.5
+  },
+  {
+    "mode": "light",
+    "bg": "raised",
+    "fg": "body",
+    "ratio": 12.35,
+    "minimum": 4.5
+  },
+  {
+    "mode": "light",
+    "bg": "raised",
+    "fg": "muted",
+    "ratio": 6.61,
+    "minimum": 4.5
+  },
+  {
+    "mode": "light",
+    "bg": "raised",
+    "fg": "success",
+    "ratio": 12.32,
+    "minimum": 4.5
+  },
+  {
+    "mode": "light",
+    "bg": "raised",
+    "fg": "danger",
+    "ratio": 12.44,
+    "minimum": 4.5
+  },
+  {
+    "mode": "light",
+    "bg": "raised",
+    "fg": "warning",
+    "ratio": 11.37,
+    "minimum": 4.5
+  },
+  {
+    "mode": "light",
+    "bg": "raised",
+    "fg": "info",
+    "ratio": 12.62,
+    "minimum": 4.5
+  },
+  {
+    "mode": "dark",
+    "bg": "canvas",
+    "fg": "text",
+    "ratio": 19.68,
+    "minimum": 4.5
+  },
+  {
+    "mode": "dark",
+    "bg": "canvas",
+    "fg": "body",
+    "ratio": 12.7,
+    "minimum": 4.5
+  },
+  {
+    "mode": "dark",
+    "bg": "canvas",
+    "fg": "muted",
+    "ratio": 7.15,
+    "minimum": 4.5
+  },
+  {
+    "mode": "dark",
+    "bg": "canvas",
+    "fg": "success",
+    "ratio": 10.49,
+    "minimum": 4.5
+  },
+  {
+    "mode": "dark",
+    "bg": "canvas",
+    "fg": "danger",
+    "ratio": 9.34,
+    "minimum": 4.5
+  },
+  {
+    "mode": "dark",
+    "bg": "canvas",
+    "fg": "warning",
+    "ratio": 12.85,
+    "minimum": 4.5
+  },
+  {
+    "mode": "dark",
+    "bg": "canvas",
+    "fg": "info",
+    "ratio": 9.36,
+    "minimum": 4.5
+  },
+  {
+    "mode": "dark",
+    "bg": "surface",
+    "fg": "text",
+    "ratio": 16.8,
+    "minimum": 4.5
+  },
+  {
+    "mode": "dark",
+    "bg": "surface",
+    "fg": "body",
+    "ratio": 10.84,
+    "minimum": 4.5
+  },
+  {
+    "mode": "dark",
+    "bg": "surface",
+    "fg": "muted",
+    "ratio": 6.11,
+    "minimum": 4.5
+  },
+  {
+    "mode": "dark",
+    "bg": "surface",
+    "fg": "success",
+    "ratio": 8.96,
+    "minimum": 4.5
+  },
+  {
+    "mode": "dark",
+    "bg": "surface",
+    "fg": "danger",
+    "ratio": 7.97,
+    "minimum": 4.5
+  },
+  {
+    "mode": "dark",
+    "bg": "surface",
+    "fg": "warning",
+    "ratio": 10.97,
+    "minimum": 4.5
+  },
+  {
+    "mode": "dark",
+    "bg": "surface",
+    "fg": "info",
+    "ratio": 7.99,
+    "minimum": 4.5
+  },
+  {
+    "mode": "dark",
+    "bg": "raised",
+    "fg": "text",
+    "ratio": 15.25,
+    "minimum": 4.5
+  },
+  {
+    "mode": "dark",
+    "bg": "raised",
+    "fg": "body",
+    "ratio": 9.84,
+    "minimum": 4.5
+  },
+  {
+    "mode": "dark",
+    "bg": "raised",
+    "fg": "muted",
+    "ratio": 5.54,
+    "minimum": 4.5
+  },
+  {
+    "mode": "dark",
+    "bg": "raised",
+    "fg": "success",
+    "ratio": 8.13,
+    "minimum": 4.5
+  },
+  {
+    "mode": "dark",
+    "bg": "raised",
+    "fg": "danger",
+    "ratio": 7.24,
+    "minimum": 4.5
+  },
+  {
+    "mode": "dark",
+    "bg": "raised",
+    "fg": "warning",
+    "ratio": 9.96,
+    "minimum": 4.5
+  },
+  {
+    "mode": "dark",
+    "bg": "raised",
+    "fg": "info",
+    "ratio": 7.26,
+    "minimum": 4.5
+  },
+  {
+    "mode": "light",
+    "bg": "surface",
+    "fg": "focus",
+    "ratio": 18.54,
+    "minimum": 3
+  },
+  {
+    "mode": "light",
+    "bg": "surface",
+    "fg": "borderStrong",
+    "ratio": 5.04,
+    "minimum": 3
+  },
+  {
+    "mode": "dark",
+    "bg": "surface",
+    "fg": "focus",
+    "ratio": 6.76,
+    "minimum": 3
+  },
+  {
+    "mode": "dark",
+    "bg": "surface",
+    "fg": "borderStrong",
+    "ratio": 3.34,
+    "minimum": 3
+  },
+  {
+    "mode": "brand",
+    "bg": "primary",
+    "fg": "ink",
+    "ratio": 7.92,
+    "minimum": 4.5
+  },
+  {
+    "mode": "brand",
+    "bg": "hover",
+    "fg": "ink",
+    "ratio": 8.78,
+    "minimum": 4.5
+  },
+  {
+    "mode": "brand",
+    "bg": "pressed",
+    "fg": "ink",
+    "ratio": 7.92,
+    "minimum": 4.5
+  },
+  {
+    "mode": "light",
+    "bg": "dangerAction",
+    "fg": "dangerInk",
+    "ratio": 5.21,
+    "minimum": 4.5
+  },
+  {
+    "mode": "light",
+    "bg": "dangerHover",
+    "fg": "dangerInk",
+    "ratio": 5.8,
+    "minimum": 4.5
+  },
+  {
+    "mode": "light",
+    "bg": "dangerPressed",
+    "fg": "dangerInk",
+    "ratio": 6.47,
+    "minimum": 4.5
+  },
+  {
+    "mode": "dark",
+    "bg": "dangerAction",
+    "fg": "dangerInk",
+    "ratio": 5.21,
+    "minimum": 4.5
+  },
+  {
+    "mode": "dark",
+    "bg": "dangerHover",
+    "fg": "dangerInk",
+    "ratio": 5.8,
+    "minimum": 4.5
+  },
+  {
+    "mode": "dark",
+    "bg": "dangerPressed",
+    "fg": "dangerInk",
+    "ratio": 6.47,
+    "minimum": 4.5
+  },
+  {
+    "mode": "light",
+    "bg": "successSoft",
+    "fg": "success",
+    "ratio": 11,
+    "minimum": 4.5
+  },
+  {
+    "mode": "light",
+    "bg": "dangerSoft",
+    "fg": "danger",
+    "ratio": 10.84,
+    "minimum": 4.5
+  },
+  {
+    "mode": "light",
+    "bg": "warningSoft",
+    "fg": "warning",
+    "ratio": 10.47,
+    "minimum": 4.5
+  },
+  {
+    "mode": "light",
+    "bg": "infoSoft",
+    "fg": "info",
+    "ratio": 11.26,
+    "minimum": 4.5
+  },
+  {
+    "mode": "dark",
+    "bg": "successSoft",
+    "fg": "success",
+    "ratio": 7.86,
+    "minimum": 4.5
+  },
+  {
+    "mode": "dark",
+    "bg": "dangerSoft",
+    "fg": "danger",
+    "ratio": 7.75,
+    "minimum": 4.5
+  },
+  {
+    "mode": "dark",
+    "bg": "warningSoft",
+    "fg": "warning",
+    "ratio": 10.26,
+    "minimum": 4.5
+  },
+  {
+    "mode": "dark",
+    "bg": "infoSoft",
+    "fg": "info",
+    "ratio": 7.08,
+    "minimum": 4.5
+  }
+]

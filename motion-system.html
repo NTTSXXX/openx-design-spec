@@ -1,0 +1,64 @@
+<section class="sheet" id="motion-system" data-motion-scope>
+  <div class="sheet-top"><span>OPENX / MOTION</span><span>交互节奏与状态变化</span></div>
+  <div class="section-heading"><h2>每次操作都有清楚的回应</h2><p>沿用官网按钮的按压与箭头动效，为导航、下拉、浮层、表单和内容更新补齐同一套节奏。金融数字直接显示真实结果，动画不延迟操作。</p></div>
+  <div class="mf-toolbar"><span>可操作的组件演练</span><div><label class="mf-reduce"><input id="mf-reduce" type="checkbox">减少动态效果</label><button class="theme-toggle" id="mf-theme" type="button">切换浅色</button></div></div>
+  <div class="mf-workbench" id="mf-workbench" data-theme="dark">
+    <div class="mf-tabs" role="tablist" aria-label="动效分类">
+      <button id="mf-tab-controls" role="tab" aria-selected="true" aria-controls="mf-controls" tabindex="0">控件反馈</button><button id="mf-tab-overlays" role="tab" aria-selected="false" aria-controls="mf-overlays" tabindex="-1">浮层与展开</button><button id="mf-tab-content" role="tab" aria-selected="false" aria-controls="mf-content" tabindex="-1">内容切换</button><button id="mf-tab-loading" role="tab" aria-selected="false" aria-controls="mf-loading" tabindex="-1">加载与结果</button><button id="mf-tab-media" role="tab" aria-selected="false" aria-controls="mf-media" tabindex="-1">图片与进入</button>
+    </div>
+    <div class="mf-panel" id="mf-controls" role="tabpanel" aria-labelledby="mf-tab-controls">
+      <div class="mf-context"><div><h3>通知偏好</h3><p>下拉、开关、字段反馈与保存操作</p></div><span class="mf-timing">120–180 ms</span></div>
+      <form id="mf-preferences" novalidate>
+        <div class="mf-field-grid"><label class="mf-field">汇总频率<select id="mf-frequency"><option value="daily">每日汇总</option><option value="weekly">每周汇总</option><option value="important">仅重要通知</option><option value="off">关闭汇总</option></select></label><label class="mf-field">公开昵称<input id="mf-name" value="66666.char" maxlength="16" aria-describedby="mf-name-help"><small id="mf-name-help">2 至 16 个字符</small></label></div>
+        <label class="switch-line mf-switch"><input type="checkbox" id="mf-alerts" checked><span>接收账户安全提醒</span></label>
+        <div class="mf-form-foot"><span id="mf-save-state" role="status">设置已同步</span><button class="ui-btn primary" type="submit">保存设置 <span aria-hidden="true">→</span></button></div>
+      </form>
+    </div>
+    <div class="mf-panel" id="mf-overlays" role="tabpanel" aria-labelledby="mf-tab-overlays" hidden>
+      <div class="mf-context"><div><h3>当前操作的补充信息</h3><p>浮层打开后可按 Esc 关闭，焦点返回原入口</p></div><span class="mf-timing">160 / 220 ms</span></div>
+      <div class="mf-actions"><button class="ui-btn" data-mf-open="mf-dialog">更新通知偏好</button><button class="ui-btn" data-mf-open="mf-drawer">查看操作记录 <span aria-hidden="true">→</span></button><button class="ui-btn" id="mf-more" aria-haspopup="menu" aria-expanded="false" aria-controls="mf-popover">更多操作 <svg class="mf-menu-chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4"/></svg></button><span class="mf-tip-wrap"><button class="icon-btn" id="mf-tip-trigger" aria-label="关于账户通知" aria-describedby="mf-tip"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7v1"/></svg></button><span class="mf-tip" id="mf-tip" role="tooltip">通知偏好不会影响必要的安全通知</span></span></div>
+      <details class="mf-details"><summary>哪些通知会发送给我 <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 8 5 5 5-5"/></svg></summary><div>资产变动、账户安全与服务更新会分别归类。你可以调整服务更新的汇总频率，必要的安全通知会继续送达。</div></details>
+      <details class="mf-details"><summary>如何查看历史记录 <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 8 5 5 5-5"/></svg></summary><div>在操作记录中查看变更时间与项目。记录按时间倒序排列，当前页面不会因为浮层展开而移动。</div></details>
+    </div>
+    <div class="mf-panel" id="mf-content" role="tabpanel" aria-labelledby="mf-tab-content" hidden>
+      <div class="mf-context"><div><h3>账户操作记录</h3><p>列表只更新内容区，表头、筛选与翻页位置保持稳定</p></div><span class="mf-timing">180 ms</span></div>
+      <div class="mf-segments" role="group" aria-label="筛选记录"><button type="button" aria-pressed="true" data-mf-filter="all">全部</button><button type="button" aria-pressed="false" data-mf-filter="settings">偏好设置</button><button type="button" aria-pressed="false" data-mf-filter="security">账户安全</button></div>
+      <div id="mf-records" class="mf-records" data-motion-list aria-live="polite"></div><div class="mf-pagination"><span id="mf-page-count"></span><div><button class="icon-btn" id="mf-prev" aria-label="上一页">←</button><button class="icon-btn" id="mf-next" aria-label="下一页">→</button></div></div>
+      <a class="mf-link" href="templates.html?view=verification&amp;theme=dark" target="_blank" rel="noopener">打开完整的七步身分验证流程 <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="mf-panel" id="mf-loading" role="tabpanel" aria-labelledby="mf-tab-loading" hidden>
+      <div class="mf-context"><div><h3>读取、完成与重试</h3><p>骨架保留结果尺寸；长任务允许取消，失败后提供重试入口</p></div><span class="mf-timing">160 ms / 持续状态</span></div>
+      <div class="mf-actions"><button class="ui-btn primary" id="mf-load">刷新记录</button><button class="ui-btn" id="mf-load-error">查看失败状态</button><button class="ui-btn" id="mf-cancel-load" hidden>取消读取</button></div><div id="mf-load-region" class="mf-load-region" aria-busy="false" data-motion-list><div class="mf-load-result"><b>记录已更新</b><span>最近同步 · 2026.10.01 14:30</span></div></div><p class="mf-announcement" id="mf-load-status" role="status">已读取 3 条记录</p>
+      <div class="mf-inline-rule"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m7 12 3 3 7-7"/></svg><span>已知进度按真实数值推进；未知进度只显示“处理中”，不自动跑到 99%</span></div>
+    </div>
+    <div class="mf-panel" id="mf-media" role="tabpanel" aria-labelledby="mf-tab-media" hidden>
+      <div class="mf-context"><div><h3>有节制的内容进入</h3><p>图片在自己的裁切框内变化，卡片外框与文字基线保持不动</p></div><button class="ui-btn" id="mf-replay">重播进入效果</button></div>
+      <div class="mf-media-layout" id="mf-reveal-region"><a class="mf-media-card" href="#layout" id="mf-media-link" data-motion-reveal><div class="mf-image"><img src="assets/motion/ill-vid-tradingview.webp" width="960" height="540" alt="交易图表与分析工具" loading="lazy"></div><div><h4>图表与交易工具</h4><p>16:9 图卡 · 悬停时轻微放大图片</p><span>查看图卡规范 <span aria-hidden="true">→</span></span></div></a><div class="mf-media-rules" data-motion-reveal><h4>内容先可见，再增强</h4><ul><li>仅在首次进入视野时淡入，上移 12px</li><li>同组最多 4 项，间隔 40ms，完整序列不超过 440ms</li><li>首页首屏主标题、价格及表单不等待滚动动画</li><li>触屏不模拟悬停，减少动态时立即显示</li></ul><a class="mf-link" href="#data-patterns">查看资产图表与周期切换 <span aria-hidden="true">→</span></a></div></div>
+    </div>
+    <div class="mf-note" id="mf-mode-note" role="status">标准动效 · 同一套规则适用于浅色与深色界面</div>
+  </div>
+  <div class="mf-scale"><div><b>120<span>ms</span></b><p>收起、局部提示</p></div><div><b>160–180<span>ms</span></b><p>控件、标签、列表更新</p></div><div><b>220<span>ms</span></b><p>弹窗、抽屉、折叠内容</p></div><div><b>320<span>ms</span></b><p>首次进入视野</p></div></div>
+  <details class="mf-coverage" open><summary>网站动效覆盖与使用规则</summary><div class="table-wrap"><table class="rules-table"><thead><tr><th>组件 / 场景</th><th>变化与反馈</th><th>完成与边界</th></tr></thead><tbody>
+    <tr><td>官网 CTA / 黑白按钮</td><td>沿用原站按压 .97、45° 双箭头滑动 400ms</td><td>只在悬停触发，键盘有独立焦点环，禁用时静止</td></tr>
+    <tr><td>工作面板按钮 / 图标</td><td>180ms 边框反馈，按压 .98；图标按钮改变底色</td><td>点击即时执行，不等待动画结束</td></tr>
+    <tr><td>导航 / 标签 / 分页 / 筛选</td><td>选中态 160ms；更新内容淡入 180ms / 4px</td><td>只更新相关区域；快速切换取消上一段，不累积播放</td></tr>
+    <tr><td>下拉列表</td><td>展开 160ms / 4px，收起 120ms，箭头转 180°</td><td>方向键、首尾、文字查找、Enter / Esc / Tab；超出空间向上展开</td></tr>
+    <tr><td>提示 / 操作菜单</td><td>120–160ms 淡入与 4px 位移</td><td>不挤占布局；Esc、点击外部关闭，重要内容不能只藏在悬停里</td></tr>
+    <tr><td>弹窗 / 侧抽屉</td><td>弹窗 220ms / 8px，抽屉 220ms / 24px，背景同步变暗</td><td>×、Esc、焦点约束与返回；不支持离场过渡时直接关闭</td></tr>
+    <tr><td>手风琴 / 折叠详情</td><td>内容淡入并轻移 3px，箭头旋转 220ms</td><td>内容按自身高度展开；长文可自然增长，快速操作不丢失最终状态</td></tr>
+    <tr><td>输入 / 复选 / 单选 / 开关</td><td>边框 160ms，开关圆点 160ms；错误说明在字段下展开</td><td>不摇晃整张表单；错误同时有文字，聚焦第一个错误字段</td></tr>
+    <tr><td>通知 / Toast</td><td>180ms 淡入 / 8px，成功图标一次绘制</td><td>可手动关闭；自动通知 5 秒，悬停或聚焦暂停计时；错误保留重试</td></tr>
+    <tr><td>加载 / 骨架 / 上传</td><td>骨架轻微明暗变化，忙碌图标 800ms 转一圈</td><td>只在等待时循环，隐藏时暂停；保留最终尺寸，避免闪屏</td></tr>
+    <tr><td>资产图表 / 数字</td><td>范围更新短淡入，数值直接更新；曲线不从零描画</td><td>缺口、无交易或无操作区间延续上一值的水平线；下一值出现时更新</td></tr>
+    <tr><td>多步验证 / 页面切换</td><td>任务内容 180ms / 4px，侧栏与页面标题稳定</td><td>保留已填内容，跳转有焦点定位，上一页不会丢失数据</td></tr>
+    <tr><td>可点击图卡 / 滚动进入</td><td>图片悬停放大 1.025 / 320ms；首次进入 12px / 320ms</td><td>不提升整列卡片，不循环上下漂浮；无 JS 时内容仍可见</td></tr>
+    <tr><td>主题 / 减少动态效果</td><td>主题立即换色；减少动态时取消过渡与循环，状态立即呈现</td><td>系统设置优先，状态文字、焦点与完整操作保留</td></tr>
+  </tbody></table></div></details>
+  <div class="two-notes"><div><h3>执行规则</h3><p>常规过渡使用 cubic-bezier(.2,.8,.2,1)，优先改变透明度和 transform。只对用户触发或正在进入的区域执行；不全页监听滚动反复改样式。业务状态立即变更，动画仅表达结果。</p></div><div><h3>渐进增强</h3><p>原生 select 保留名称、值、校验和事件；菜单只是交互增强。弹窗使用原生 dialog，进出场能力不足时正常显示和关闭。系统减少动态设置优先于演练开关。</p></div></div>
+  <div class="reference-row"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog" target="_blank" rel="noopener">原生 dialog 与焦点管理 ↗</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@starting-style" target="_blank" rel="noopener">显示与隐藏的过渡方式 ↗</a><a href="motion-runtime.js" download>共享动效脚本 ↓</a><a href="select-menu.js" download>下拉交互脚本 ↓</a></div>
+  <div class="sheet-foot"><span>相同动作使用相同节奏，状态变化清晰可见，所有功能可在减少动态模式下完成</span><span>00 / 15</span></div>
+  <dialog class="mf-dialog" id="mf-dialog" data-theme="dark" aria-labelledby="mf-dialog-title"><div class="mf-dialog-head"><h2 id="mf-dialog-title">更新通知偏好</h2><button class="icon-btn" data-mf-close aria-label="关闭通知偏好弹窗"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><p>保存后，服务通知将按你选择的频率汇总。必要的账户安全通知会继续送达。</p><div class="mf-dialog-actions"><button class="ui-btn" data-mf-close>取消</button><button class="ui-btn primary" id="mf-confirm">保存设置</button></div></dialog>
+  <dialog class="mf-dialog" id="mf-drawer" data-theme="dark" aria-labelledby="mf-drawer-title"><div class="mf-dialog-head"><h2 id="mf-drawer-title">操作记录</h2><button class="icon-btn" data-mf-close aria-label="关闭操作记录抽屉"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><p>最近的账户设置变更</p><ol class="mf-history"><li><b>更新通知频率</b><span>2026.10.01 · 每日汇总</span></li><li><b>更新公开昵称</b><span>2026.09.28 · 66666.char</span></li><li><b>开启账户安全提醒</b><span>2026.09.26</span></li></ol><div class="mf-drawer-end"><button class="ui-btn" data-mf-close>返回当前页面</button></div></dialog>
+  <div id="mf-popover" class="mf-popover" role="menu" aria-label="更多操作" popover="auto" data-theme="dark"><button type="button" role="menuitem" data-mf-action="reset">恢复默认偏好</button><button type="button" role="menuitem" data-mf-action="records">查看操作记录</button></div>
+  <div id="mf-toast" class="mf-toast" data-theme="dark" role="status" hidden><svg class="mf-check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>通知偏好已保存</span><button class="icon-btn" id="mf-toast-close" aria-label="关闭通知"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+</section>

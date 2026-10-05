@@ -1,0 +1,43 @@
+<section class="ir-module" aria-labelledby="ir-title">
+  <div class="ir-heading">
+    <h3 id="ir-title">同组图片使用同一比例</h3>
+    <p>一组卡片同时切换图片比例，外框、标题区域与底部操作保持对齐</p>
+  </div>
+  <div class="ir-controls" role="group" aria-label="选择示例图片比例">
+    <button class="ir-ratio" type="button" data-ir-ratio="16 / 9" aria-pressed="true">16:9</button>
+    <button class="ir-ratio" type="button" data-ir-ratio="4 / 3" aria-pressed="false">4:3</button>
+    <button class="ir-ratio" type="button" data-ir-ratio="2 / 1" aria-pressed="false">2:1</button>
+    <span class="ir-current" aria-live="polite">当前同组比例 16:9</span>
+  </div>
+  <div class="ir-grid" style="--ir-ratio:16 / 9">
+    <article class="ir-card">
+      <img class="ir-image" width="960" height="720" alt="深灰背景中的橙色圆形与山形构图，用于展示中心裁切" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 720'%3E%3Cpath fill='%231D1D21' d='M0 0h960v720H0z'/%3E%3Ccircle fill='%23FF8200' cx='600' cy='260' r='116'/%3E%3Cpath fill='%2334343B' d='M0 680 275 300l325 380z'/%3E%3Cpath fill='%235C5C66' d='m315 720 350-315 295 315z'/%3E%3Cpath fill='%239B9BA6' d='m730 720 230-198v198z'/%3E%3C/svg%3E">
+      <h4 class="ir-card-title">清楚呈现账户信息</h4>
+      <p class="ir-card-summary">图片比例固定，内容区域按同一行最长文本伸展</p>
+      <a class="ir-card-action" href="#ir-source-table"><span>查看尺寸建议</span><span aria-hidden="true">→</span></a>
+    </article>
+    <article class="ir-card">
+      <img class="ir-image" width="960" height="720" alt="浅灰背景中的深灰圆形与几何构图，用于展示中心裁切" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 720'%3E%3Cpath fill='%23E4E4E9' d='M0 0h960v720H0z'/%3E%3Ccircle fill='%231D1D21' cx='355' cy='300' r='152'/%3E%3Cpath fill='%239B9BA6' d='m0 720 305-200 285 200z'/%3E%3Cpath fill='%235C5C66' d='m380 720 300-380 280 380z'/%3E%3Cpath fill='%23FF8200' d='M695 160h88v88h-88z'/%3E%3C/svg%3E">
+      <h4 class="ir-card-title">较长的图文标题也能保持统一的内容起点</h4>
+      <p class="ir-card-summary">标题完整换行，同组标题区共享高度。摘要长短不同，操作仍落在同一底部基线</p>
+      <a class="ir-card-action" href="#ir-source-table"><span>查看尺寸建议</span><span aria-hidden="true">→</span></a>
+    </article>
+  </div>
+  <div class="ir-table-wrap" id="ir-source-table">
+    <table class="ir-table">
+      <caption>常用比例与源图尺寸</caption>
+      <thead><tr><th scope="col">比例</th><th scope="col">适用内容</th><th scope="col">常用源图 / 导出尺寸</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">16:9</th><td>视频封面、课程与文章列表</td><td><span>640 × 360</span><span>960 × 540</span><span>1280 × 720</span></td></tr>
+        <tr><th scope="row">4:3</th><td>人物、场景、需要较多垂直空间的图文</td><td><span>640 × 480</span><span>960 × 720</span><span>1200 × 900</span></td></tr>
+        <tr><th scope="row">2:1</th><td>横幅、专题与横向品牌构图</td><td><span>800 × 400</span><span>1200 × 600</span><span>1600 × 800</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="ir-rules">
+    <p><strong>尺寸与清晰度</strong> 上表是源图与导出文件尺寸，不是固定 CSS 宽度。图片显示宽度随容器变化，源图优先提供实际显示宽度的 2 倍，并保持所选比例</p>
+    <p><strong>裁切与重排</strong> 同组卡片使用同一比例，桌面与手机保持比例不变。图片宽度 100%、高度 auto，以 aspect-ratio 定义显示区域；object-fit: cover 裁切，object-position 对准主体。禁止拉伸图片，手机通过卡片重排适配</p>
+    <p><strong>Logo 与含字物料</strong> 使用 object-fit: contain，保留完整内容与安全留白，采用独立展示容器。同组封面不混入需要完整保留的 Logo、海报或截图</p>
+    <p><strong>长短文本对齐</strong> 同一行共享图片、标题、摘要与操作的行高。标题预留两行并完整换行，内容增长时整行一起伸展，操作贴底。详情、金额与错误信息完整显示；可进入详情的列表摘要才允许限行</p>
+  </div>
+</section>

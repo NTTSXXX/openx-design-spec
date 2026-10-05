@@ -1,0 +1,807 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>OpenX · 色彩与界面规范 v1.3</title><link rel="stylesheet" href="tokens.css?v=1.2"><link rel="stylesheet" href="styles.css?v=1.2"><link rel="stylesheet" href="assets/fonts/spec-fonts.css"><link rel="stylesheet" href="image-ratios.css"><script src="tokens.js?v=1.2" defer></script><script src="app.js?v=1.2" defer></script><script src="image-ratios.js" defer></script><link rel="stylesheet" href="color-roles.css?v=1.2"><link rel="stylesheet" href="completion.css?v=1.2"><link rel="stylesheet" href="flow-rules.css?v=1.2"><link rel="stylesheet" href="responsive.css?v=1.2"><link rel="stylesheet" href="business-components.css?v=1.2"><script src="color-roles.js?v=1.2" defer></script><script src="business-components.js?v=1.2" defer></script><script src="completion.js?v=1.2" defer></script><link rel="stylesheet" href="controls.css?v=1.2-layout-2"><link rel="stylesheet" href="logo-rules.css?v=1.2"><link rel="stylesheet" href="motion-system.css?v=1.2"><link rel="stylesheet" href="select-menu.css?v=1.2"><link rel="stylesheet" href="motion-runtime.css?v=1.2"><script src="select-menu.js?v=1.2" defer></script><script src="motion-runtime.js?v=1.2" defer></script><script src="motion-system.js?v=1.2" defer></script><link rel="stylesheet" href="calendar-patterns.css?v=1.2"><script src="calendar-picker.js?v=1.2" defer></script><script src="calendar-patterns.js?v=1.2" defer></script><link rel="stylesheet" href="calendar-picker.css?v=1.2"><link rel="stylesheet" href="card-layout-rules.css?v=1.2"><link rel="stylesheet" href="avatar-content-rules.css?v=1.2"><script src="card-layout-rules.js?v=1.2" defer></script><script src="avatar-content-rules.js?v=1.2" defer></script><link rel="stylesheet" href="typography-usage.css"><link rel="stylesheet" href="refined-patterns.css"><script src="refined-patterns.js" defer></script></head>
+<body>
+<header class="doc-nav"><a href="#palette" class="wordmark"><img src="assets/logo/OpenX-ONE-Horizontal-OnLight.svg" alt="OpenX ONE"><span>Design system</span></a><nav aria-label="规范章节"><a href="#palette">色彩</a><a href="#themes">配色</a><a href="#logo-rules">Logo</a><a href="#layout">布局</a><a href="#page-templates">样板</a><a href="#type">排版</a><a href="#card-layout-rules">卡片</a><a href="#avatar-content-rules">内容</a><a href="#components">组件</a><a href="#business-components">业务</a><a href="#data-patterns">数据</a><a href="#motion-system">动效</a><a href="#calendar-patterns">日期</a><a href="#flows">流程</a><a href="#responsive-patterns">交互</a><a href="#refined-patterns">本轮沉淀</a><a href="#implementation">交接</a></nav><span class="version">V1.3 · 2026.10.02</span></header>
+<main>
+<section class="sheet palette-sheet" id="palette">
+  <div class="sheet-top"><span>OPENX / FOUNDATIONS</span><span>01 — COLOR PALETTE</span></div>
+  <div class="title-row"><div><h1>OpenX<br>色彩与界面规范</h1><p>沿用 OpenX 品牌橙与 12 级品牌灰阶，建立统一、克制、清楚的工作面板语言。</p></div><span class="edition">色彩与界面规范<br>色彩修订版</span></div>
+  <div class="palette-hero">
+    <button class="swatch brand-tile" data-copy="#FF8200" style="--swatch:#FF8200;--ink:#0B0B0B"><span class="swatch-title">OpenX Orange<small>品牌识别 · 核心操作</small></span><span class="swatch-value"><b>#FF8200</b><span>RGB<br>255, 130, 0</span></span></button>
+    <button class="swatch ink-tile" data-copy="#0B0B0B" style="--swatch:#0B0B0B;--ink:#FFFFFF"><span class="swatch-title">Ink<small>深色画布 · 橙底文字</small></span><span class="swatch-value"><b>#0B0B0B</b><span>RGB<br>11, 11, 11</span></span></button>
+    <button class="swatch white-tile" data-copy="#FFFFFF" style="--swatch:#FFFFFF;--ink:#131316"><span class="swatch-title">White<small>浅色卡片 · 深色主文字</small></span><span class="swatch-value"><b>#FFFFFF</b><span>255, 255, 255</span></span></button>
+    <button class="swatch surface-tile" data-copy="#1D1D21" style="--swatch:#1D1D21;--ink:#FFFFFF"><span class="swatch-title">Surface<small>深色内容卡片</small></span><span class="swatch-value"><b>#1D1D21</b><span>29, 29, 33</span></span></button>
+  </div>
+  <div class="subheading"><h2>一套灰阶，统一全站</h2><span>点击色块复制 HEX · 品牌中心原有 12 级灰阶</span></div>
+  <div class="neutral-scale" id="neutral-scale"></div>
+  <div class="palette-rules"><div><b>01 / 颜色承担职责</b><p>橙色用于品牌和主要操作；大面积界面使用灰阶。状态色仅表达业务状态。</p></div><div><b>02 / 材质保持一致</b><p>内容卡使用实色、细边框；会员 App 卡和品牌插画沿用自己的原始素材。</p></div><div><b>03 / 按角色复用</b><p>页面共用背景、卡面、正文、辅助文字等角色，同一角色始终使用同一色值。</p></div></div>
+  <div class="sheet-foot"><span>来源：OpenX 现有品牌中心 / 标准 Logo / 既有字库</span><span>01 / 18</span></div>
+</section>
+
+<section class="sheet" id="themes">
+  <div class="sheet-top"><span>OPENX / SEMANTIC COLORS</span><span>02 — LIGHT & DARK</span></div>
+  <div class="section-heading"><h2>明暗主题与用色</h2><p>同一套组件切换主题时，结构、间距与信息层级保持一致。</p></div>
+  <!-- BEGIN COLOR_ROLES -->
+<div class="cr-system" id="color-roles">
+  <div class="subheading"><h3>强调色与辅助色</h3><span>品牌识别、信息层级、状态反馈分别定义</span></div>
+  <div class="cr-role"><div class="cr-role-name"><i style="--cr-color:var(--ox-brand-primary)"></i><div><h4>强调色</h4><span>Accent / OpenX Orange</span></div></div><div><strong>#FF8200</strong><p>用于品牌识别、关键操作、当前步骤指示和图表的主要系列。按钮使用深色文字；浅色页面上的小字链接使用深色字与下划线，保持可读性。</p><p class="cr-use">同一操作组只强调一个主要动作。橙色、黑色和白色主按钮按背景及任务选择，避免同时竞争。</p></div></div>
+  <div class="cr-role"><div class="cr-role-name"><i class="cr-neutral-mark"></i><div><h4>辅助色</h4><span>Supporting / Brand Neutrals</span></div></div><div><strong>原有品牌灰阶</strong><p>为背景、分隔、次级文字、未选中项目和对比数据建立层次。辅助色按用途命名，通过明暗主题映射到对应灰阶。</p><div class="cr-neutral-strip"><span><i style="--cr-color:#5C5C66"></i>次级文字</span><span><i style="--cr-color:#E4E4E9"></i>分隔与选中底色</span><span><i style="--cr-color:#F7F7F7"></i>页面与中性悬停</span><span><i style="--cr-color:#6E6E79"></i>对比数据</span></div></div></div>
+  <div class="table-wrap"><table class="rules-table"><thead><tr><th>颜色角色</th><th>浅色界面</th><th>深色界面</th><th>具体用途</th></tr></thead><tbody id="cr-roles-table"></tbody></table></div>
+  <div class="cr-notes"><div><h4>状态色</h4><p>绿色表示成功，红色表示错误，琥珀色表示需要注意，蓝色表示说明。正常列表状态优先使用中性图标与文字；异常或反馈需要被注意时再使用相应颜色，并始终写明状态。</p></div><div><h4>品牌素材中的颜色</h4><p>会员卡中的金色、银色和特定材质属于已有等级资产，仅用于对应卡面。它们不扩散为普通按钮、表单或内容卡的辅助配色。</p></div></div>
+  <p class="rule-note">界面以黑白灰承载阅读。选择颜色的顺序是内容角色 → 明暗主题 → 交互状态；页面不单独增设装饰色。</p>
+</div>
+
+<!-- END COLOR_ROLES -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="theme-comparison"><div class="product-preview" data-theme="light"><div class="preview-head"><span>浅色模式</span><span class="status success">已连接</span></div><div class="preview-card"><span class="label">预估总资产 · USDT</span><strong class="metric">54,275.29</strong><p>资产、状态与下一步操作分层呈现</p><div class="preview-actions"><button class="ui-btn primary">查看钱包</button><button class="ui-btn">资产明细</button></div></div><div class="preview-footer"><span>辅助文字</span><span>实色卡面 · 12px 圆角</span></div></div><div class="product-preview" data-theme="dark"><div class="preview-head"><span>深色模式</span><span class="status success">已连接</span></div><div class="preview-card"><span class="label">预估总资产 · USDT</span><strong class="metric">54,275.29</strong><p>资产、状态与下一步操作分层呈现</p><div class="preview-actions"><button class="ui-btn primary">查看钱包</button><button class="ui-btn">资产明细</button></div></div><div class="preview-footer"><span>辅助文字</span><span>实色卡面 · 12px 圆角</span></div></div></div>
+  <div class="table-wrap"><table class="rules-table"><thead><tr><th>语义角色</th><th>浅色模式</th><th>深色模式</th><th>固定用途</th></tr></thead><tbody id="theme-rows"></tbody></table></div>
+  <div class="subheading"><h3>官网按钮的原有交互</h3><span>沿用 .pill 与 PillArrow</span></div><div class="brand-states" id="brand-states"></div>
+  <p class="rule-note">沿用官网现有橙色按钮：默认 #FF8200，悬停 brightness(1.12)，按下 scale(0.97)。45° 箭头用原站双 SVG 滑动方式；悬停不加阴影、不抬升。普通链接使用中性文字与下划线。</p>
+  <div class="subheading"><h3>状态在列表中的应用</h3><span>常态中性 · 处理状态按需强调</span></div><div id="semantic-grid"></div>
+  <p class="rule-note">列表中的账户名称和操作保持主层级。正常、等待状态使用中性文字与图标；处理中使用品牌橙图标，异常使用红色图标。结果通知需要强调时，再调用完整的状态色。</p><div class="status-reference"><a href="https://vercel.com/geist/entity" target="_blank" rel="noreferrer">Vercel Entity · 信息与操作同排 ↗</a><a href="https://linear.app/docs/configuring-workflows" target="_blank" rel="noreferrer">Linear · 工作流中的状态 ↗</a></div><details class="color-method"><summary>色彩角色与技术依据</summary><span>Carbon：中性色建立界面层级，额外颜色按需少量使用。</span><span>Radix：背景、交互填充、边框和文字按用途分档；状态色共用同一套色阶体系。</span><a href="https://www.radix-ui.com/colors/docs/palette-composition/understanding-the-scale" target="_blank" rel="noreferrer">查看色阶用途 ↗</a><a href="https://carbondesignsystem.com/elements/color/overview/" target="_blank" rel="noreferrer">查看界面用色逻辑 ↗</a></details><div class="contrast-strip" id="contrast-strip"></div>
+  <div class="sheet-foot"><span>正文与辅助文字 ≥ 4.5:1；识别必需的控件轮廓与焦点 ≥ 3:1。橙色按钮以达标深色文字识别动作。</span><span>02 / 18</span></div>
+</section>
+
+<!-- BEGIN LOGO_RULES -->
+<section class="sheet" id="logo-rules">
+  <div class="sheet-top"><span>OPENX / BRAND APPLICATION</span><span>Logo 与背景</span></div>
+  <div class="section-heading"><h2>Logo 与背景适配</h2><p>主 Logo 为 OpenX ONE 完整横式组合：品牌符号、OpenX 字标、下方细线与 ONE 一起使用。按背景切换浅底和深底原档，保留原稿比例与间距。</p></div>
+  <div class="lg-background-grid">
+    <figure class="lg-example"><div class="lg-stage lg-stage-light"><img class="lg-lockup" src="assets/logo/OpenX-ONE-Horizontal-OnLight.svg" alt="浅底使用橙色符号与黑色字标的完整 OpenX ONE 主 Logo"><div class="lg-symbol-row"><img src="assets/logo/OpenX-Mark-Black.svg" alt="黑色独立品牌符号"><span>独立符号使用黑色版</span></div></div><figcaption><h3>浅色背景</h3><p>橙色符号配黑色字标与深色圆点；完整保留细线和 ONE。</p><code>OpenX-ONE-Horizontal-OnLight.svg</code></figcaption></figure>
+    <figure class="lg-example"><div class="lg-stage lg-stage-dark"><img class="lg-lockup" src="assets/logo/OpenX-ONE-Horizontal-OnDark.svg" alt="深底使用橙色符号与白色字标的完整 OpenX ONE 主 Logo"><div class="lg-symbol-row"><img src="assets/logo/OpenX-Mark-White.svg" alt="白色独立品牌符号"><span>独立符号使用白色版</span></div></div><figcaption><h3>深色背景</h3><p>橙色符号配白色字标与浅色圆点；细线和 ONE 沿用原稿灰度。</p><code>OpenX-ONE-Horizontal-OnDark.svg</code></figcaption></figure>
+    <figure class="lg-example"><div class="lg-stage lg-stage-orange"><div class="lg-solid-plate"><img class="lg-lockup" src="assets/logo/OpenX-ONE-Horizontal-OnDark.svg" alt="品牌橙背景上的完整 Logo 使用深色实底板"></div><div class="lg-symbol-row"><img src="assets/logo/OpenX-Mark-Black.svg" alt="品牌橙背景上的黑色独立品牌符号"><span>黑色符号可直接使用</span></div></div><figcaption><h3>品牌橙背景</h3><p>完整字标放深色实底板；独立符号使用黑色原档。</p><code>OnDark.svg + 中性实底板</code></figcaption></figure>
+    <figure class="lg-example"><div class="lg-stage lg-stage-busy"><div class="lg-solid-plate"><img class="lg-lockup" src="assets/logo/OpenX-ONE-Horizontal-OnDark.svg" alt="复杂背景上的完整 Logo 使用深色实底板"></div><span class="lg-background-caption">复杂背景承载示意</span></div><figcaption><h3>图片与复杂背景</h3><p>使用不透明的中性底板，让背景细节停留在净空之外。</p><code>OnDark.svg + 中性实底板</code></figcaption></figure>
+  </div>
+  <p class="lg-asset-note">名为 Black / White 的完整横式文件仍保留 X 字标中的橙色细节，因此不直接放在品牌橙底上。完整横式版本与独立符号分别选用原档，不用滤镜临时生成版本。</p>
+  <div class="lg-rules-layout">
+    <div class="lg-clearance-module"><h3>保持四周净空</h3><div class="lg-clearance-sample"><div class="lg-clearance"><img src="assets/logo/OpenX-ONE-Horizontal-OnLight.svg" alt="完整 OpenX ONE 主 Logo 四周保留半个 Logo 高度的净空"></div><p>Logo 高度 = X<br>四周净空至少 0.5X</p></div><p class="lg-note">常规品牌版位以完整 Logo 外框高度 X 为单位，四周净空至少 0.5X。导航采用紧凑版位：保持现有 64 / 56px 页头，Logo 上下各留 12px；不可裁去 ONE 换取空间。</p></div>
+    <div class="lg-size-module"><h3>尺寸与使用场景</h3><div class="lg-size-table-wrap"><table class="lg-size-table"><thead><tr><th scope="col">版本</th><th scope="col">现网页下限</th><th scope="col">本次界面使用</th></tr></thead><tbody><tr><th scope="row">主 Logo · OpenX ONE</th><td>高度 32px</td><td>导航桌面 40px<br>手机 32px<br>官网与会员区默认使用</td></tr><tr><th scope="row">历史短版 · OpenX</th><td>高度 24px</td><td>保留在资产库<br>不自动替代主 Logo</td></tr><tr><th scope="row">独立品牌符号</th><td>高度 16px</td><td>紧凑导航或已有品牌上下文的独立图标</td></tr></tbody></table></div><p class="lg-note">高度固定，宽度自动等比计算。空间不足时先移除“会员专区”等界面副标题，保留主 Logo 中的细线与 ONE；链接点击区域至少 44 × 44px。</p></div>
+  </div>
+  <div class="lg-principles"><div><h3>使用完整字标</h3><p>不以普通字体拼接 OpenX，不重排符号与文字，不移除、移动或单独放大细线与 ONE 标识。</p></div><div><h3>保持原始视觉</h3><p>不拉伸、裁边、描边或添加阴影；不通过 CSS 滤镜反色，不重新配色。</p></div><div><h3>随背景切换资产</h3><p>主题切换时同步更换 Logo 文件。先保证完整图形清晰可见，再调整版位尺寸。</p></div></div>
+  <details class="lg-source"><summary>原档与规则来源</summary><p>主 Logo 依据：<a href="https://www.figma.com/design/xK6JL3kt5MvcyVF0Mf3bqk/Graphic-Design?node-id=2604-250" target="_blank" rel="noreferrer">Owner 指定 Figma · OpenX ONE 横式主标识</a>。已核对符号、字标、细线及 ONE 的完整组合。</p><p>本节 SVG 均复制自官网 <code>public/assets/brand/canonical/</code>，存放于本规范 <code>assets/logo/</code>。Logo 与独立符号未改绘。</p><p>0.5X 净空及 24 / 32 / 16px 下限沿用现有 <code>src/BrandAssetsPage.tsx</code>。交接文档注明这些尺寸规则尚无品牌负责人新增批准记录，应视为现网页执行基线，而非已批准的品牌手册。</p><p>主 Logo 由 Owner 指定为包含 ONE 的完整横式组合。导航 40 / 32px 和紧凑版位上下 12px 留白为本次适配规则；其余品牌版位遵守 0.5X 净空。原官网导航为 38 / 30px。</p><div class="lg-downloads"><a href="assets/logo/OpenX-ONE-Horizontal-OnLight.svg" download>浅底完整 Logo</a><a href="assets/logo/OpenX-ONE-Horizontal-OnDark.svg" download>深底完整 Logo</a><a href="assets/logo/OpenX-Mark-Black.svg" download>黑色符号</a><a href="assets/logo/OpenX-Mark-White.svg" download>白色符号</a></div></details>
+  <div class="table-wrap"><table class="rules-table"><caption>币种与交易所图标形状</caption><thead><tr><th scope="col">对象</th><th scope="col">形状</th><th scope="col">素材与尺寸</th></tr></thead><tbody><tr><th scope="row">BTC / ETH / USDT / X COIN 等币种</th><td>正方形画布裁为圆形，半径 50%</td><td>使用原始图标，等比完整显示；同组尺寸一致</td></tr><tr><th scope="row">Binance / OKX 等交易所</th><td>圆角矩形，半径为边长 20%</td><td>40px 图标对应 8px 圆角；保留完整原商标，不加额外白框</td></tr></tbody></table></div>
+  <p class="lg-note">此规则用于钱包、付款方式、行情、策略与交易所列表的小图标。钱包品牌、头像、完整品牌字标和宣传图片沿用各自形状。</p>
+  <div class="sheet-foot"><span>按背景使用官方原档 · 保持比例与净空 · 不拼接字体</span><span>03 / 18</span></div>
+</section>
+
+<!-- END LOGO_RULES -->
+
+
+
+
+
+
+
+
+
+
+
+<section class="sheet" id="layout">
+  <div class="sheet-top"><span>OPENX / LAYOUT</span><span>03 — A SHARED GRID</span></div>
+  <div class="section-heading"><h2>页面布局</h2><p>面包屑、标题、工具栏、内容与页尾共用内容边界；内容在侧栏后的可用区域内居中。</p></div>
+  <div class="layout-controls" aria-label="查看不同视口的布局规则"><span>视口宽度</span><div role="group" aria-label="视口宽度" id="viewport-options"><button class="is-active" data-width="1440" aria-pressed="true">1440</button><button data-width="1920" aria-pressed="false">1920</button><button data-width="2560" aria-pressed="false">2560</button><button data-width="768" aria-pressed="false">768</button><button data-width="390" aria-pressed="false">390</button></div><span>px</span></div>
+  <div class="layout-diagram" id="layout-diagram" role="img" aria-label="工作面板宽度与对齐示意"></div>
+  <div class="layout-facts" id="layout-facts"></div>
+  <div class="table-wrap"><table class="rules-table"><thead><tr><th>场景</th><th>页面边距 / 内容宽度</th><th>栅格</th><th>导航</th></tr></thead><tbody><tr><td>手机 · ≤ 767px</td><td>左右 16px，内容占满可用宽度</td><td>4 栏 / 栏距 16px；任务卡单列</td><td>56px 页头；抽屉导航</td></tr><tr><td>平板 · 768–1199px</td><td>左右 24px，内容占满可用宽度</td><td>8 栏 / 栏距 24px</td><td>64px 页头；72px 图标侧栏</td></tr><tr><td>桌面 · ≥ 1200px</td><td>最小左右 32px，总览与列表内容最大 1280px</td><td>12 栏 / 栏距 24px</td><td>64px 页头；240px 固定侧栏</td></tr><tr><td>资料 / 设置表单</td><td>内容最大 840px；面包屑、标题、表单与页脚共用边界</td><td>单列优先；短字段可成对</td><td>沿用对应设备的应用导航</td></tr><tr><td>品牌 / 学习页面</td><td>内容最大 1280px；背景可全宽延展</td><td>12 / 8 / 4 栏；共同的内容边界</td><td>使用网站导航，不继承账户侧栏</td></tr></tbody></table></div>
+  <div class="two-notes"><div><h3>宽度增长有上限</h3><p>总览与列表在 1440px 视口显示 1136px 内容，1920px 与 2560px 均封顶 1280px。设置页 840px；详情与验证页 1040px。边距计算一次，内层卡片不再单独居中。</p></div><div><h3>主次区块有完整行列</h3><p>概览内容 ≥860px 时为资产工作区 + 336px 会员栏。总额、分项与趋势合为一个连续区块；右栏呈现会员卡与关联入口。详情内容低于 824px 时转单列；进度卡按内容自然增高。</p></div></div>
+<section class="ir-module" aria-labelledby="ir-title">
+  <div class="ir-heading">
+    <h3 id="ir-title">同组图片使用同一比例</h3>
+    <p>一组卡片同时切换图片比例，外框、标题区域与底部操作保持对齐</p>
+  </div>
+  <div class="ir-controls" role="group" aria-label="选择示例图片比例">
+    <button class="ir-ratio" type="button" data-ir-ratio="16 / 9" aria-pressed="true">16:9</button>
+    <button class="ir-ratio" type="button" data-ir-ratio="4 / 3" aria-pressed="false">4:3</button>
+    <button class="ir-ratio" type="button" data-ir-ratio="2 / 1" aria-pressed="false">2:1</button>
+    <span class="ir-current" aria-live="polite">当前同组比例 16:9</span>
+  </div>
+  <div class="ir-grid" style="--ir-ratio:16 / 9">
+    <article class="ir-card">
+      <img class="ir-image" width="960" height="720" alt="深灰背景中的橙色圆形与山形构图，用于展示中心裁切" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 720'%3E%3Cpath fill='%231D1D21' d='M0 0h960v720H0z'/%3E%3Ccircle fill='%23FF8200' cx='600' cy='260' r='116'/%3E%3Cpath fill='%2334343B' d='M0 680 275 300l325 380z'/%3E%3Cpath fill='%235C5C66' d='m315 720 350-315 295 315z'/%3E%3Cpath fill='%239B9BA6' d='m730 720 230-198v198z'/%3E%3C/svg%3E">
+      <h4 class="ir-card-title">清楚呈现账户信息</h4>
+      <p class="ir-card-summary">图片比例固定，内容区域按同一行最长文本伸展</p>
+      <a class="ir-card-action" href="#ir-source-table"><span>查看尺寸建议</span><span aria-hidden="true">→</span></a>
+    </article>
+    <article class="ir-card">
+      <img class="ir-image" width="960" height="720" alt="浅灰背景中的深灰圆形与几何构图，用于展示中心裁切" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 960 720'%3E%3Cpath fill='%23E4E4E9' d='M0 0h960v720H0z'/%3E%3Ccircle fill='%231D1D21' cx='355' cy='300' r='152'/%3E%3Cpath fill='%239B9BA6' d='m0 720 305-200 285 200z'/%3E%3Cpath fill='%235C5C66' d='m380 720 300-380 280 380z'/%3E%3Cpath fill='%23FF8200' d='M695 160h88v88h-88z'/%3E%3C/svg%3E">
+      <h4 class="ir-card-title">较长的图文标题也能保持统一的内容起点</h4>
+      <p class="ir-card-summary">标题完整换行，同组标题区共享高度。摘要长短不同，操作仍落在同一底部基线</p>
+      <a class="ir-card-action" href="#ir-source-table"><span>查看尺寸建议</span><span aria-hidden="true">→</span></a>
+    </article>
+  </div>
+  <div class="ir-table-wrap" id="ir-source-table">
+    <table class="ir-table">
+      <caption>常用比例与源图尺寸</caption>
+      <thead><tr><th scope="col">比例</th><th scope="col">适用内容</th><th scope="col">常用源图 / 导出尺寸</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">16:9</th><td>视频封面、课程与文章列表</td><td><span>640 × 360</span><span>960 × 540</span><span>1280 × 720</span></td></tr>
+        <tr><th scope="row">4:3</th><td>人物、场景、需要较多垂直空间的图文</td><td><span>640 × 480</span><span>960 × 720</span><span>1200 × 900</span></td></tr>
+        <tr><th scope="row">2:1</th><td>横幅、专题与横向品牌构图</td><td><span>800 × 400</span><span>1200 × 600</span><span>1600 × 800</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="ir-rules">
+    <p><strong>尺寸与清晰度</strong> 上表是源图与导出文件尺寸，不是固定 CSS 宽度。图片显示宽度随容器变化，源图优先提供实际显示宽度的 2 倍，并保持所选比例</p>
+    <p><strong>裁切与重排</strong> 同组卡片使用同一比例，桌面与手机保持比例不变。图片宽度 100%、高度 auto，以 aspect-ratio 定义显示区域；object-fit: cover 裁切，object-position 对准主体。禁止拉伸图片，手机通过卡片重排适配</p>
+    <p><strong>Logo 与含字物料</strong> 使用 object-fit: contain，保留完整内容与安全留白，采用独立展示容器。同组封面不混入需要完整保留的 Logo、海报或截图</p>
+    <p><strong>长短文本对齐</strong> 同一行共享图片、标题、摘要与操作的行高。标题预留两行并完整换行，内容增长时整行一起伸展，操作贴底。详情、金额与错误信息完整显示；可进入详情的列表摘要才允许限行</p>
+  </div>
+</section>
+
+  <div class="sheet-foot"><span>同类内容复用同一模板；通过栅格分配空间，避免逐页写固定偏移。</span><span>04 / 18</span></div>
+</section>
+
+<!-- BEGIN PAGE_TEMPLATES -->
+<section class="sheet" id="page-templates">
+  <div class="sheet-top"><span>OPENX / PAGE TEMPLATES</span><span>组合与实际页面</span></div>
+  <div class="section-heading"><h2>完整页面样板</h2><p>用实际账户内容检查信息密度、卡片关系和操作顺序。五类页面共用导航、标题边界与尺寸规则，可切换主题和真实视口宽度。</p></div>
+  <div class="template-controls" aria-label="样板选择">
+    <div class="template-views" role="group" aria-label="页面类型"><button data-template="overview" aria-pressed="true">数据总览</button><button data-template="list" aria-pressed="false">记录列表</button><button data-template="detail" aria-pressed="false">记录详情</button><button data-template="settings" aria-pressed="false">账户设置</button><button data-template="verification" aria-pressed="false">身份验证</button></div>
+    <div class="template-options"><label>视口<select id="template-width"><option value="full">适应容器</option><option value="768">768 px</option><option value="390">390 px</option></select></label><label>主题<select id="template-theme"><option value="light">浅色</option><option value="dark">深色</option></select></label><a class="ui-btn" id="template-open" href="templates.html?view=overview&amp;theme=light" target="_blank" rel="noopener">打开完整页面 ↗</a></div>
+  </div>
+  <div class="template-stage"><iframe id="template-frame" title="数据总览页面样板" loading="lazy" src="templates.html?view=overview&amp;theme=light"></iframe></div>
+  <p class="rule-note template-caption">视口切换通过改变页面实际可用宽度完成；文字保持原尺寸。手机上使用「打开完整页面」查看当前样板。</p>
+  <div class="template-map">
+    <article><span>01 / OVERVIEW</span><h3>概览模板</h3><p>用于数据总览、节点摘要。标题与内容同边界；总额、资产分项与趋势组合为主区，会员卡与关联入口放次栏；不足 860px 时按资产、会员、关联入口顺序转单列。</p></article>
+    <article><span>02 / COLLECTION</span><h3>列表模板</h3><p>用于钱包记录、节点客户、设备管理。整页上限 1280px，搜索最长 360px；金额、时间、状态与操作使用稳定列宽。手机保留时间，将完整编号放入详情。返回保留筛选与位置。</p></article>
+    <article><span>03 / DETAIL</span><h3>详情模板</h3><p>用于流水明细、连接详情、权益说明。整页上限 1040px，标题与详情共用边界。结果和对象优先；进度侧栏不跟主卡强行等高，完整字段可换行。</p></article>
+    <article><span>04 / SETTINGS</span><h3>设置模板</h3><p>用于资料、安全与通知偏好。面包屑、标题、表单和页脚共同限制在 840px；内部不再居中收窄。字段分组有说明，必填标记明确，保存结果在操作附近出现。</p></article>
+    <article><span>05 / TASK FLOW</span><h3>多步任务模板</h3><p>用于身份验证、连接交易所、充值与提现。整页上限 1040px，步骤栏 192px、栏距 24px；任务卡按内容自然增高。相关短字段成对，手机转单列。前一步保留输入，提交前核对。</p></article>
+  </div>
+  <p class="rule-note">统一对齐基线：页面容器 → 标题 / 卡片外框 / 页脚；卡片内边距 24px，手机 16px；字段间距 24px，标签与控件 8px。下拉箭头为 20px 图标，右侧留 12px，文字右侧预留 44px。留白由内容关系决定，禁止通过空卡或固定最小高度填满页面。</p>
+  <div class="template-notes"><div><h3>模块组合边界</h3><p>卡片承载一个独立对象或任务；同一对象的连续字段使用分组与分隔线。卡片内不反复嵌套卡片。单个操作组只保留一个主要动作，其他动作使用次按钮或文字入口。</p></div><div><h3>品牌资产例外</h3><p>会员卡沿用指定 App 原稿，保留其材质与等级识别；Logo 完整收在卡面内，不覆盖文字或进度。例外仅作用于会员卡本身，外侧容器遵守统一间距与尺寸。</p></div></div>
+  <div class="reference-row"><a href="https://linear.app/now/how-we-redesigned-the-linear-ui" target="_blank" rel="noreferrer">Linear · 导航与内容边界对齐 ↗</a><a href="https://vercel.com/geist/table" target="_blank" rel="noreferrer">Vercel · 表格、对象列表与详情的分工 ↗</a></div>
+  <div class="sheet-foot"><span>参考用于具体结构和行为；品牌资产、颜色和按钮延续 OpenX。</span><span>05 / 18</span></div>
+</section>
+
+<!-- END PAGE_TEMPLATES -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="sheet" id="type">
+  <div class="sheet-top"><span>OPENX / TYPE & SPACE</span><span>04 — RHYTHM</span></div>
+  <div class="section-heading"><h2>字体与间距</h2><p>Open Sans 搭配 Noto Sans SC / TC，按简繁语言匹配字形。中文依靠字号、字重与留白建立层级；金额统一启用等宽数字。</p></div>
+  <div class="type-specimens"><div><span class="spec-label">页面标题 / 28 · 36 · 600</span><div class="type-title">掌握每一笔资产</div></div><div><span class="spec-label">核心数值 / 40 · 48 · 600</span><div class="type-metric">54,275.29 <small>USDT</small></div></div><div><span class="spec-label">区块标题 / 18 · 28 · 600</span><div class="type-section">会员等级与权益</div></div><div><span class="spec-label">正文 / 14 · 22 · 400</span><div class="type-body">查看资产变化、连接状态与会员成长，清楚找到下一步操作。</div></div></div>
+  <div class="table-wrap"><table class="rules-table"><thead><tr><th>用途</th><th>桌面 字号 / 行高</th><th>手机 字号 / 行高</th><th>字重</th></tr></thead><tbody><tr><td>工作面板页面标题</td><td>28 / 36</td><td>24 / 32</td><td>600</td></tr><tr><td>区块标题</td><td>18 / 28</td><td>18 / 28</td><td>600</td></tr><tr><td>核心金额</td><td>40 / 48</td><td>32 / 40</td><td>600 · 等宽数字</td></tr><tr><td>正文 / 表格内容</td><td>14 / 22</td><td>14 / 22</td><td>400</td></tr><tr><td>输入内容</td><td>16 / 24</td><td>16 / 24</td><td>400</td></tr><tr><td>字段标签 / 按钮</td><td>13 / 20 · 14 / 20</td><td>13 / 20 · 14 / 20</td><td>600</td></tr><tr><td>官网 CTA 按钮</td><td>15 / 22</td><td>16 / 22</td><td>600</td></tr><tr><td>辅助文字 / 时间</td><td>12 / 18</td><td>12 / 18</td><td>400</td></tr><tr><td>品牌页主标题</td><td>56 / 64</td><td>36 / 44</td><td>600</td></tr><tr><td>品牌页区块标题</td><td>40 / 52</td><td>28 / 36</td><td>600</td></tr></tbody></table></div>
+<!-- BEGIN TYPOGRAPHY_USAGE -->
+<div class="tu-rules" id="typography-usage">
+<div class="subheading"><h3>文字层级与使用位置</h3><span>按内容角色选字号 · CSS px / 行高 / 字重</span></div>
+<p class="rule-note">先区分品牌页面、工作面板和浮层，再选择文字角色。同一场景使用同一档字号；不要按卡片剩余空间或个人偏好临时缩字。</p>
+<p class="rule-note">品牌全称 <strong>OpenX ONE</strong>，简称 <strong>OpenX</strong>，正文保持该大小写。品牌名不拆开；首页介绍标题分为「我們是」与「OpenX ONE」两行，每行内部不再断行。宽度不足先调整列宽和间距，保留标题字阶与正式 Logo 原档。</p>
+<div class="table-wrap" tabindex="0" role="region" aria-label="字号使用表，可横向滚动"><table class="rules-table"><thead><tr><th scope="col">层级与 token</th><th scope="col">桌面 / 平板</th><th scope="col">手机</th><th scope="col">字重</th><th scope="col">什么地方使用 / 不适用位置</th></tr></thead><tbody><tr><th scope="row">品牌主标题 / marketingHero</th><td>56 / 64</td><td>36 / 44</td><td>600</td><td>官网首屏唯一主标题；不用于个人中心、弹窗或普通卡片</td></tr>
+<tr><th scope="row">品牌区块标题 / marketingSection</th><td>40 / 52</td><td>28 / 36</td><td>600</td><td>官网 FAQ、课程、权益等大区块；不把卡片标题升到此档</td></tr>
+<tr><th scope="row">工作面板标题 / dashboardTitle</th><td>28 / 36</td><td>24 / 32</td><td>600</td><td>钱包、设置、策略工作室等页面主标题；每个页面一个 h1</td></tr>
+<tr><th scope="row">弹窗与侧栏标题 / dialog</th><td>20 / 28</td><td>20 / 28</td><td>600</td><td>授权、购买、OI 详情等浮层顶部标题；不沿用品牌首屏尺寸</td></tr>
+<tr><th scope="row">区块标题 / section</th><td>18 / 28</td><td>18 / 28</td><td>600</td><td>资产趋势、资金费率、表单分组、列表章节；层级低于页面标题</td></tr>
+<tr><th scope="row">标准卡片标题 / card</th><td>16 / 24</td><td>16 / 24</td><td>600</td><td>策略、课程、账户对象、会话名称；同组卡片统一</td></tr>
+<tr><th scope="row">紧凑行标题 / compactCard</th><td>14 / 22</td><td>14 / 22</td><td>600</td><td>高密度名单与记录行中的对象名称；不得用于页面或弹窗标题</td></tr>
+<tr><th scope="row">核心金额 / metric</th><td>40 / 48</td><td>32 / 40</td><td>600</td><td>单个主要余额、价格、总资产；同屏少量使用，启用等宽数字</td></tr>
+<tr><th scope="row">次要指标 / compactMetric</th><td>24 / 32</td><td>24 / 32</td><td>600</td><td>同组 KPI 的百分比、数量与次要金额；不能用放大数字冒充标题</td></tr>
+<tr><th scope="row">主导航 / navigation</th><td>16 / 24</td><td>16 / 24</td><td>500；当前项 600</td><td>工作区/广场侧边栏、主标签页；广场展开与收起使用同一 22px 图标、44px 点击区域</td></tr>
+<tr><th scope="row">常规正文 / body</th><td>14 / 22</td><td>14 / 22</td><td>400</td><td>设置说明、表格内容、卡片描述；关键错误和费用至少用本档</td></tr>
+<tr><th scope="row">连续阅读 / reading</th><td>16 / 28</td><td>16 / 28</td><td>400</td><td>文章、课程说明、长消息正文；适合长段内容，不扩大表格元信息</td></tr>
+<tr><th scope="row">输入值 / input</th><td>16 / 24</td><td>16 / 24</td><td>400</td><td>输入框、下拉值、搜索与聊天输入；placeholder 同档，手机不缩小</td></tr>
+<tr><th scope="row">字段标签 / label</th><td>13 / 20</td><td>13 / 20</td><td>600</td><td>表单标签、短栏目名；不同于正文、按钮和主导航</td></tr>
+<tr><th scope="row">账户按钮 / button</th><td>14 / 20</td><td>14 / 20</td><td>600</td><td>保存、取消、复制、应用筛选等操作；点击区域至少 44px</td></tr>
+<tr><th scope="row">官网 CTA / marketingButton</th><td>15 / 22</td><td>16 / 22</td><td>600</td><td>胶囊 CTA，使用原官网规范；不扩散到表单字段</td></tr>
+<tr><th scope="row">辅助文字 / caption</th><td>12 / 18</td><td>12 / 18</td><td>400</td><td>时间、图表刻度、辅助单位、页脚元信息；金额、错误原因、费用和资格条件不得降到本档</td></tr></tbody></table></div>
+<div class="tu-note-grid"><article><h4>标题表达层级</h4><p>每页一个 h1；弹窗或侧栏使用 20px 标题，区块 18px，标准卡片 16px，紧凑行标题 14px。HTML 标题级别表达结构，不靠标签自动套字号。标题结尾无标点，正文正常标点。</p></article><article><h4>阅读与任务分开</h4><p>设置、表格和卡片正文用 14/22；文章与长消息用 16/28。输入值用 16/24；时间、图表刻度等辅助信息用 12/18。错误原因、费用、资格和确认信息至少 14px。</p></article><article><h4>图标与文字成组</h4><p>广场主导航：22px 图标配 16/24 文字，12px 间距，44px 点击区域。展开与收起图标相同；图标按钮保留同一尺寸。普通正文内图标按现有 0.95em 规则，不与导航图标混用。</p></article><article><h4>宽度不足先重排</h4><p>桌面和平板共用字号；只有表内明确列出的标题和核心金额在手机降档。同组卡片不各自缩字。文字换行、列数与内距先响应，不用全页 zoom 或固定高度隐藏内容。</p></article></div>
+<div class="tu-example" lang="zh-Hant"><h3>資產總覽</h3><p>頁面標題 28/36 · 描述 14/22 · 手機標題 24/32</p><div class="tu-example-grid"><nav aria-label="文字层级导航示例"><span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m3 11 9-8 9 8M5 10v11h14V10M9 21v-7h6v7" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>資產總覽</span><span><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="15" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M3 9h18m-5 5h2" stroke="currentColor" stroke-width="1.6"/></svg>資金帳戶</span></nav><div><h4>可用資產</h4><label>預估總資產</label><strong>54,275.29 <small>USDT</small></strong><p class="tu-example-detail">區塊 18/28 · 標籤 13/20 · 核心金額 40/48 · 正文 14/22</p><p class="tu-example-meta">更新時間 10:30 · 輔助文字 12/18</p></div></div></div>
+<ol class="tu-steps"><li>确定内容角色，查上表的字号、行高、字重三项；同组对象使用同一套。</li><li>引用 <code>--ox-type-{role}-size / line-height / weight</code>，不要写一次性任意字号。</li><li>保留实际阅读尺寸；关键数字完整显示，金额启用等宽数字，单位降为 14px。</li><li>核对明暗主题、窄屏与长内容；主题切换不改变字阶。其他页面按规则迁移，不把规范补充当成全站已迁移。</li></ol>
+<p class="rule-note">机器可读源：tokens.json；完整接手表：TYPOGRAPHY-USAGE-20261002.md。新增 dialog、navigation、reading、compactMetric，保留原有字阶。</p>
+</div>
+<!-- END TYPOGRAPHY_USAGE -->
+
+  <div class="subheading"><h3>以 4px 为最小单位，以 8px 为主要节奏</h3></div><div class="space-scale" id="space-scale"></div>
+  <div class="table-wrap"><table class="rules-table compact"><tbody><tr><th>4 / 8px</th><td>图标与短文字、标签与字段、紧密关联信息</td><th>12 / 16px</th><td>控件之间、手机卡片内距与卡片间距</td></tr><tr><th>24 / 32px</th><td>桌面卡内距 / 栏距、工作面板区块间距</td><th>48 / 64 / 96px</th><td>品牌页模块、小节、主要内容章节间距</td></tr></tbody></table></div>
+  <div class="two-notes"><div><h3>数字、长文各有规则</h3><p>数字按小数点或右边界对齐；单位降一级。说明文字宽度不超过 65ch。地址可换行，并保留完整复制入口。</p></div><div><h3>层级有明确上限</h3><p>同屏以页面、区块、正文三级为主。辅助字不小于 12px；中文正文不加字距，避免全页加粗和全部大写。页面、区块、卡片和弹窗标题的末尾不加标点。</p></div></div>
+  <div class="sheet-foot"><span>规范中的尺寸为 CSS px；响应式依靠重排，保持文字的实际阅读尺寸。</span><span>06 / 18</span></div>
+</section>
+
+<!-- BEGIN CARD_LAYOUT_RULES -->
+<section class="sheet" id="card-layout-rules">
+  <div class="sheet-top"><span>OPENX / CARD COMPOSITION</span><span>卡片排版</span></div>
+  <div class="section-heading"><h2>按内容决定卡片怎么排</h2><p>先明确用户要完成的任务，再决定卡片数量与占宽。相同对象方便比较，不同任务体现主次；标题、卡框与操作遵循可追踪的对齐线。</p></div>
+  <div class="cl-mode-tabs" role="tablist" aria-label="卡片布局类型">
+    <button type="button" id="cl-tab-single" role="tab" aria-selected="true" aria-controls="cl-panel-single" data-cl-mode="single">单卡</button>
+    <button type="button" id="cl-tab-equal" role="tab" aria-selected="false" aria-controls="cl-panel-equal" data-cl-mode="equal" tabindex="-1">同类多卡</button>
+    <button type="button" id="cl-tab-priority" role="tab" aria-selected="false" aria-controls="cl-panel-priority" data-cl-mode="priority" tabindex="-1">不同尺寸</button>
+    <button type="button" id="cl-tab-media" role="tab" aria-selected="false" aria-controls="cl-panel-media" data-cl-mode="media" tabindex="-1">图文混排</button>
+  </div>
+  <div class="cl-workbench" id="cl-workbench" data-theme="light">
+    <div class="cl-toolbar">
+      <p id="cl-layout-caption" aria-live="polite">单个任务 · 标题与卡片共用一个容器</p>
+      <div class="cl-toolbar-actions"><button class="ui-btn" id="cl-width" type="button" aria-pressed="false">查看窄屏</button><button class="ui-btn" id="cl-theme" type="button" aria-pressed="false">切换为深色</button></div>
+    </div>
+    <div class="cl-viewport" id="cl-viewport">
+      <div id="cl-panel-single" class="cl-panel" role="tabpanel" aria-labelledby="cl-tab-single">
+        <div class="cl-example-page cl-single-page" id="cl-single-page">
+          <header class="cl-page-heading"><span>会员专区 / 会员资料</span><h3>会员资料</h3><p>账户信息保持紧凑，内容增加时再扩大容器</p></header>
+          <article class="cl-card cl-member-summary">
+            <div class="cl-card-heading"><h4>66666.char</h4><span>OpenX 会员</span></div>
+            <dl class="cl-key-values"><div><dt>OpenX ID</dt><dd>10008246</dd></div><div><dt>加入日期</dt><dd>2026.06.01</dd></div><div><dt>登录邮箱</dt><dd>66666.char@gmail.com</dd></div></dl>
+            <div class="cl-expanded-fields" hidden><p>公开资料与登录信息分组呈现，说明紧邻对应字段</p><div class="cl-two-fields"><label><span>公开昵称</span><input value="66666.char" autocomplete="off" maxlength="16"></label><label><span>加入日期</span><input value="2026.06.01" readonly></label></div></div>
+            <footer class="cl-card-footer"><span>账户资料</span><a class="ui-btn" href="templates.html?view=settings&amp;theme=light" data-cl-template="settings" target="_blank" rel="noopener">管理资料 <span aria-hidden="true">→</span></a></footer>
+          </article>
+          <div class="cl-example-footer"><span>标题、卡片、页脚共享边界</span><span id="cl-single-limit">上限 520px</span></div>
+        </div>
+        <div class="cl-example-control"><div class="cl-segment" role="group" aria-label="单卡内容量"><button type="button" data-cl-single="summary" aria-pressed="true">少量信息 · 520</button><button type="button" data-cl-single="settings" aria-pressed="false">设置表单 · 840</button></div></div>
+      </div>
+      <div id="cl-panel-equal" class="cl-panel" role="tabpanel" aria-labelledby="cl-tab-equal" hidden>
+        <div class="cl-example-page"><header class="cl-page-heading"><span>学习交易 / 课程目录</span><h3>交易学习路径</h3><p>相似内容共用结构，同一行的标题和操作自动对齐</p></header>
+          <div class="cl-equal-grid">
+            <article class="cl-card cl-course-card"><span class="cl-card-kicker">建立规则</span><h4>制定交易计划</h4><p>记录入场条件与退出规则，在执行前明确判断依据。</p><a class="cl-card-link" href="#page-templates">查看课程布局 <span aria-hidden="true">→</span></a></article>
+            <article class="cl-card cl-course-card"><span class="cl-card-kicker">管理风险</span><h4>从仓位到止损的风险控制</h4><p>学习如何根据计划管理仓位、止损和单次交易风险。</p><a class="cl-card-link" href="#page-templates">查看课程布局 <span aria-hidden="true">→</span></a></article>
+            <article class="cl-card cl-course-card"><span class="cl-card-kicker">持续复盘</span><h4>整理交易记录</h4><p>围绕计划与执行的差异复盘，保留判断过程和调整原因，便于后续回看。</p><a class="cl-card-link" href="#page-templates">查看课程布局 <span aria-hidden="true">→</span></a></article>
+          </div>
+          <div class="cl-example-footer"><span>同类对象共用列宽与内容槽位</span><span>3 → 2 → 1 列</span></div>
+        </div>
+      </div>
+      <div id="cl-panel-priority" class="cl-panel" role="tabpanel" aria-labelledby="cl-tab-priority" hidden>
+        <div class="cl-example-page cl-priority-page"><header class="cl-page-heading"><span>会员专区 / 账户资料</span><h3>完善账户资料</h3><p>主要任务占据主栏，关联信息保留自然高度</p></header>
+          <div class="cl-priority-grid">
+            <article class="cl-card cl-primary-card"><div class="cl-card-heading"><h4>公开资料</h4><span>主要任务</span></div><p class="cl-card-copy">昵称显示在你的会员资料中。登录邮箱的变更需要完成安全验证。</p><label class="cl-field"><span>昵称</span><input value="66666.char" autocomplete="off" maxlength="16"><small>2 至 16 个字符</small></label><dl class="cl-key-values"><div><dt>登录邮箱</dt><dd>66666.char@gmail.com</dd></div><div><dt>加入日期</dt><dd>2026.06.01</dd></div></dl><footer class="cl-card-footer"><span>先处理当前任务</span><a class="ui-btn primary" href="templates.html?view=settings&amp;theme=light" data-cl-template="settings" target="_blank" rel="noopener">管理资料 <span aria-hidden="true">→</span></a></footer></article>
+            <aside class="cl-card cl-secondary-card"><div class="cl-card-heading"><h4>身份信息</h4><span>关联信息</span></div><p class="cl-card-copy">证件姓名及身份资料在身份验证中查看和管理。</p><a class="cl-card-link" href="templates.html?view=verification&amp;theme=light" data-cl-template="verification" target="_blank" rel="noopener">前往身份验证 <span aria-hidden="true">→</span></a></aside>
+          </div><div class="cl-example-footer"><span>先主任务，再关联信息</span><span>主栏 2fr / 侧栏 1fr</span></div>
+        </div>
+      </div>
+      <div id="cl-panel-media" class="cl-panel" role="tabpanel" aria-labelledby="cl-tab-media" hidden>
+        <div class="cl-example-page"><header class="cl-page-heading"><span>学习交易 / 学习资源</span><h3>理解工具，再用于复盘</h3><p>图片卡与纯文字卡同排时，先对齐外框与动作</p></header>
+          <div class="cl-media-grid" id="cl-media-grid" style="--cl-image-ratio:16 / 9">
+            <article class="cl-card cl-media-card"><div class="cl-media-cover"><img src="assets/motion/ill-vid-tradingview.webp" alt="用于交易复盘的图表界面" width="960" height="540" loading="lazy"></div><div class="cl-media-body"><span class="cl-card-kicker">工具课程</span><h4>TradingView 图表入门</h4><p>认识图表、指标与绘图工具，让分析过程可以回看。</p><a class="cl-card-link" href="#ir-source-table">查看图片尺寸 <span aria-hidden="true">→</span></a></div></article>
+            <article class="cl-card cl-text-card"><span class="cl-card-kicker">阅读指南</span><h4>交易复盘应保留哪些信息</h4><p>把计划、执行与结果放在同一份记录中，先找到差异，再确定需要调整的环节。</p><ol class="cl-reading-list"><li><span>01</span><div><strong>交易前的判断</strong><p>记录入场条件、风险与退出规则</p></div></li><li><span>02</span><div><strong>实际执行过程</strong><p>保留操作时间、价格与调整原因</p></div></li><li><span>03</span><div><strong>复盘结论</strong><p>说明是否按计划执行及后续改进</p></div></li></ol><a class="cl-card-link" href="#data-patterns">查看记录规范 <span aria-hidden="true">→</span></a></article>
+          </div>
+          <div class="cl-example-footer"><span>外框同高 · 操作同基线 · 正文完整阅读</span><span id="cl-ratio-label">图片 16:9</span></div>
+        </div>
+        <div class="cl-example-control"><div class="cl-segment" role="group" aria-label="本组图片比例"><button type="button" data-cl-ratio="16 / 9" aria-pressed="true">16:9</button><button type="button" data-cl-ratio="4 / 3" aria-pressed="false">4:3</button><button type="button" data-cl-ratio="2 / 1" aria-pressed="false">2:1</button></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="cl-mode-notes" aria-live="polite"><h3 id="cl-rule-title">单卡的宽度跟随任务</h3><p id="cl-rule-copy">少量会员信息上限 520px；账户设置使用 840px 页面容器。卡片填满选定容器，标题和页脚随它一起收窄，内部不再次居中。高度由内容决定。</p></div>
+  <div class="cl-selection-table"><table class="rules-table"><caption>按内容选择布局</caption><thead><tr><th scope="col">内容与目标</th><th scope="col">卡片与容器宽度</th><th scope="col">列数与顺序</th><th scope="col">对齐方式</th></tr></thead><tbody>
+    <tr><th scope="row">少量信息 / 一个动作</th><td>整页上限 520px，卡片宽 100%</td><td>单列，内容自然增高</td><td>标题、卡框、页脚共用容器</td></tr>
+    <tr><th scope="row">单个设置任务</th><td>整页上限 840px；相关短字段可成对</td><td>桌面双字段，手机单字段</td><td>标签、输入、说明、操作沿同一内边距</td></tr>
+    <tr><th scope="row">同类课程 / 工具目录</th><td>集合页上限 1280px，卡片建议至少 280px</td><td>足够宽 3 列；中等宽 2 列；窄屏 1 列</td><td>同排共用标题行、正文行与底部动作；跨行不强求同高</td></tr>
+    <tr><th scope="row">主任务 + 关联信息</th><td>整页上限 1040px；主区 2fr，辅助区 1fr</td><td>侧栏不足 280px 时叠放；手机主任务在前</td><td>卡顶对齐，侧栏自然高度；不拉长短卡填空</td></tr>
+    <tr><th scope="row">图片与文字混排</th><td>容器上限 1280px；示例 2 列，每卡建议至少 320px</td><td>不足 2 列最小宽度时转 1 列</td><td>同排外框和操作对齐；同组图片只用一种比例</td></tr>
+  </tbody></table></div>
+  <div class="cl-rule-grid">
+    <article><h3>间距按层级使用</h3><p>桌面卡间距与内边距均为 24px，手机均为 16px。标题与说明 8px，相关信息 12px，分组之间 24px。操作区距正文至少 24px，需要划分职责时再增加分隔线。</p></article>
+    <article><h3>同高只服务比较</h3><p>同一行、同一种对象使用共享内容行；标题完整换行，较长内容决定本行高度。单列恢复自然高度。不同任务只对齐顶部，不给全站卡片设置统一固定高度或大段空白。</p></article>
+    <article><h3>尺寸不同仍有秩序</h3><p>用同一网格的整数列跨度表达主次，按真实内容安排 2:1 或等宽组合。避免随机瀑布流、错位边距和挤压重要内容。独立图文比例分组，不在同一列里随意改变卡宽。</p></article>
+    <article><h3>截断边界要明确</h3><p>只有可进入详情的目录摘要可以限行，并保留完整标题与详情入口。金额、单位、错误原因、资格条件及确认内容不得截断。信息过长先换行或调整列数，不缩小到难以阅读。</p></article>
+  </div>
+  <div class="cl-layout-formula"><h3>一组卡片的宽度怎么算</h3><p><code>卡宽 = (容器内宽 − 总列间距) ÷ 列数</code><span>1280px 内容区、24px 间距、3 列时，每卡约 410.7px。容器已扣除页面边距，卡片内边距再从卡宽内扣除。</span></p><p>禁止单张短内容卡无理由占满宽屏；禁止给所有卡片统一固定高度；禁止用空卡填补视觉空缺；禁止只移动内部卡片而让页面标题与页脚失去对齐。</p></div>
+  <div class="sheet-foot"><span>布局以容器实际宽度响应；同类可比较，不同任务有主次</span><span>07 / 18</span></div>
+</section>
+
+<!-- END CARD_LAYOUT_RULES -->
+
+
+<!-- BEGIN AVATAR_CONTENT_RULES -->
+<section class="sheet" id="avatar-content-rules">
+  <div class="sheet-top"><span>OPENX / IDENTITY &amp; CONTENT</span><span>头像、文字与文案</span></div>
+  <div class="section-heading"><h2>头像与文字共享一套基线</h2><p>身份先被识别，内容随后被读懂，操作始终可找到。尺寸、长内容和缺图状态采用同一套结构，不靠逐张卡片调整位置。</p></div>
+
+  <div class="ac-heading"><h3>头像尺寸与使用位置</h3><span>尺寸是显示尺寸，上传原图另行校验</span></div>
+  <div class="ac-size-rack" data-theme="light" aria-label="五档头像显示尺寸">
+    <div><span class="ac-avatar ac-avatar-24" aria-hidden="true">6</span><strong>24 px</strong><p>文字旁的只读身份</p></div>
+    <div><span class="ac-avatar ac-avatar-32" aria-hidden="true">6</span><strong>32 px</strong><p>紧凑名单与头像组</p></div>
+    <div><span class="ac-avatar" aria-hidden="true">6</span><strong>40 px</strong><p>列表与内容卡默认</p></div>
+    <div><span class="ac-avatar ac-avatar-48" aria-hidden="true">6</span><strong>48 px</strong><p>导航账户与资料摘要</p></div>
+    <div><span class="ac-avatar ac-avatar-64" aria-hidden="true">6</span><strong>64 px</strong><p>个人资料编辑页</p></div>
+  </div>
+  <div class="ac-table-scroll"><table class="rules-table ac-rules"><caption class="ac-sr">头像的形状、图片和辅助阅读规则</caption><thead><tr><th scope="col">对象</th><th scope="col">统一规则</th><th scope="col">实现边界</th></tr></thead><tbody>
+    <tr><th scope="row">真实用户</th><td>圆形；固定宽高、1:1；照片居中等比裁切</td><td><code>object-fit: cover</code>；尊重用户选定的裁切位置，不拉伸人物</td></tr>
+    <tr><th scope="row">机构与品牌</th><td>完整原标志，放入 40 × 40px 身份框，内留 8px</td><td>圆角 8px；<code>object-fit: contain</code>；沿用对应背景资产，不将标志裁成圆形</td></tr>
+    <tr><th scope="row">回退与加载</th><td>真实昵称首个可显示字符；中性底与正文色；未知名称用中性人形图标</td><td>图片、占位与回退共用固定框；仅解码成功才显示图片；失败后保留昵称，不露破图图标</td></tr>
+    <tr><th scope="row">点击与朗读</th><td>可点击头像至少 44 × 44px；只读头像无需扩大视觉尺寸</td><td>紧邻相同昵称时图片 <code>alt=""</code>；独立入口使用动作标签，如「编辑个人资料」，避免重复朗读</td></tr>
+    <tr><th scope="row">状态点</th><td>直径 8px，2px 背景色隔离，右下角固定；状态不闪动</td><td>只在确有在线状态数据时显示；文字同步说明。无状态数据时不画点，也不把会员等级当在线状态</td></tr>
+    <tr><th scope="row">头像组</th><td>32px 头像，重叠 8px，最多展示 3 人，后接 +N</td><td>2px 背景隔离；整组为一个 44px 高入口。标签说清对象与总数，点击可查看完整名单</td></tr>
+    <tr><th scope="row">头像上传</th><td>沿用现有规则：JPG / PNG / WebP，最大 5 MiB，至少 128 × 128px</td><td>取消选择或文件不合规时保留原图；只约束个人头像，不扩展到证件或内容封面</td></tr>
+  </tbody></table></div>
+
+  <div class="ac-heading"><h3>带头像的列表与内容卡</h3><span>示例采用繁体界面文案</span></div>
+  <div class="ac-workbench" id="ac-workbench" data-theme="light" data-density="comfortable" data-avatar-state="fallback">
+    <div class="ac-toolbar"><div class="ac-options"><label><input type="checkbox" id="ac-long-name">长昵称</label><label><input type="checkbox" id="ac-compact">紧凑名单</label></div><div class="ac-options"><button class="ui-btn" type="button" id="ac-avatar-state">查看载入状态</button><button class="ui-btn" type="button" id="ac-theme" aria-pressed="false">切换为深色</button></div></div>
+    <div class="ac-examples">
+      <div class="ac-example"><div class="ac-example-label"><span>01</span><h4>名单行</h4><span>40 / 12 / 自适应</span></div>
+        <div class="ac-member-list" lang="zh-Hant">
+          <div class="ac-member-row"><span class="ac-avatar ac-demo-avatar" aria-hidden="true"><span>6</span></span><div class="ac-identity"><strong class="ac-demo-name">66666.char</strong><span>OpenX ID · 10008246</span></div><a class="ac-text-action" href="templates.html?view=settings&amp;theme=light" data-ac-template="settings">編輯資料 <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true"><path d="M4 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+          <div class="ac-member-row"><span class="ac-avatar ac-brand" aria-hidden="true"><img src="assets/logo/OpenX-Mark-Black.svg" data-ac-brand alt="" width="24" height="24"></span><div class="ac-identity"><strong>OpenX 官方</strong><span>帳戶與平台資訊</span></div><span class="ac-readonly">官方帳戶</span></div>
+        </div>
+        <p class="ac-note">头像垂直居中，姓名与元信息左对齐。操作列靠右；窄屏移到文字列下一行，保留 44px 点击区。</p>
+      </div>
+      <div class="ac-example"><div class="ac-example-label"><span>02</span><h4>用户内容卡</h4><span>固定身份区 / 自然内容高</span></div>
+        <article class="ac-content-card" lang="zh-Hant"><div class="ac-author"><span class="ac-avatar ac-demo-avatar" aria-hidden="true"><span>6</span></span><div class="ac-identity"><strong class="ac-demo-name">66666.char</strong><span>2026.06.01 加入 OpenX</span></div></div><div class="ac-content-copy"><h4>帳戶資料</h4><p>公開暱稱會顯示於會員資料。登入信箱與身份資料可前往各自的設定頁面管理。</p></div><div class="ac-content-footer"><span>會員資料</span><a class="ac-text-action" href="templates.html?view=settings&amp;theme=light" data-ac-template="settings">管理個人資料 <svg viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true"><path d="M4 10h12m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div></article>
+        <p class="ac-note">身份区、正文、底部操作以同一内容起点对齐。头像只占身份区；正文不因头像变大而向右多缩进。</p>
+      </div>
+    </div>
+    <p class="ac-live-note" id="ac-state-note" role="status" aria-live="polite">当前未设置头像，使用昵称首字符回退</p>
+  </div>
+  <div class="ac-table-scroll"><table class="rules-table ac-rules"><caption class="ac-sr">带头像文字区域的几何规则</caption><thead><tr><th scope="col">部分</th><th scope="col">桌面</th><th scope="col">窄屏与异常内容</th></tr></thead><tbody>
+    <tr><th scope="row">名单网格</th><td><code>40px minmax(0, 1fr) auto</code>；列间距 12px；行内上下 16px</td><td>内容宽度不足 360px 时操作移至第二列下一行；不得把姓名压成逐字竖排</td></tr>
+    <tr><th scope="row">姓名与元信息</th><td>姓名 14 / 22、600；元信息 12 / 18、400；上下间距 2px</td><td>名单姓名一行省略，原值保留在可聚焦的「查看完整昵称」入口；ID 不截断，必要时折行</td></tr>
+    <tr><th scope="row">内容卡</th><td>内边距 24px；身份区后 24px；标题后 8px；底部操作前 24px</td><td>手机内边距 16px；姓名可换两行；正文与标题不通过压缩字号迁就卡片宽度</td></tr>
+    <tr><th scope="row">紧凑名单</th><td>头像改为 32px；上下间距 12px；文字字号保持；整行至少 68px</td><td>触屏操作仍至少 44px；紧凑模式只用于高密度名单，不让内容卡缩成小字</td></tr>
+    <tr><th scope="row">正文与底部</th><td>正文 14 / 22；文字自然增高；有同组等高需求时底部用 <code>margin-top: auto</code></td><td>多个操作允许换行，顺序不变；单主操作不拆成两端悬空的按钮</td></tr>
+  </tbody></table></div>
+  <details class="ac-full-name" id="ac-full-name"><summary>查看完整昵称</summary><p id="ac-full-name-value">66666.char</p></details>
+
+  <div class="ac-heading"><h3>文字层级与阅读宽度</h3><span>字号 / 行高 / 字重，对应现有 tokens</span></div>
+  <div class="ac-type-sample" data-theme="light"><div><span class="ac-type-eyebrow">會員專區 / 個人資料</span><h4>個人資料</h4><p>管理公開暱稱與帳戶基本資訊</p></div><div class="ac-type-annotation"><strong>28 / 36 / 600</strong><span>页面标题</span><p>短标题不占满横向空间；正文用自然句子说明当前任务。</p></div></div>
+  <div class="ac-table-scroll"><table class="rules-table ac-rules ac-type-table"><caption class="ac-sr">全站文字层级对应规格</caption><thead><tr><th scope="col">层级</th><th scope="col">字号 / 行高 / 字重</th><th scope="col">使用与长度</th></tr></thead><tbody>
+    <tr><th scope="row">工作台页面标题</th><td>28 / 36 / 600；手机 24 / 32 / 600</td><td>一个页面一个 h1；短语约 4–12 个汉字，自然换行，不以标点结尾</td></tr>
+    <tr><th scope="row">区块与卡片标题</th><td>区块 18 / 28 / 600；标准卡片 16 / 24 / 600；紧凑卡片 14 / 22 / 600</td><td>按 h2 / h3 / h4 真实层级排布；区块标题 6–14 个汉字、最多两行，卡片标题 4–12 个汉字；同组用同一档，信息完整为必要例外</td></tr>
+    <tr><th scope="row">正文与说明</th><td>14 / 22 / 400；长篇内容可用 16 / 24 / 400</td><td>桌面操作说明约 24–40 个汉字一行；阅读正文约 32–45 个汉字或 55–75 个拉丁字符。手机随容器换行，不强设字符数</td></tr>
+    <tr><th scope="row">输入与字段标签</th><td>输入 16 / 24 / 400；标签 13 / 20 / 600</td><td>标签固定显示；占位符只提供格式示例。输入不因桌面密度切换缩小至手机难读</td></tr>
+    <tr><th scope="row">元信息与辅助说明</th><td>12 / 18 / 400</td><td>用于时间、单位、次要说明；用中性辅助文字色，金额、资格条件和关键错误不降为弱化元信息</td></tr>
+    <tr><th scope="row">主要金额</th><td>40 / 48 / 600；手机 32 / 40 / 600</td><td>数字使用 <code>tabular-nums</code>；单位相邻显示。详情与确认中的金额完整，不省略、不滚动计数</td></tr>
+    <tr><th scope="row">按钮与链接</th><td>工作台 14 / 20 / 600；官网 15 / 22 / 600，手机 16 / 22 / 600</td><td>用动词加对象；同组不混字重。工作台最小 44px 点击高；继承官网现有胶囊按钮与箭头动效</td></tr>
+    <tr><th scope="row">官网标题</th><td>首屏 56 / 64 / 600，手机 36 / 44 / 600；区块 40 / 52 / 600，手机 28 / 36 / 600</td><td>用于营销页面，不引入个人中心。中文不手动逐字加空格，不使用描边字或装饰性渐变字</td></tr>
+  </tbody></table></div>
+  <div class="ac-editorial-rules"><div><h4>换行与截断</h4><p>正文保留自然标点换行，长 URL、编号用 <code>overflow-wrap: anywhere</code>。只有通往完整内容的列表摘要可以限两行；关键错误、资格条件、费用、金额、确认说明完整显示。不可用固定高度隐藏尾行。</p></div><div><h4>字体与语言</h4><p>统一使用现有自托管字体链，不让中文回退到宋体。同一产品页面保持繁体；规范说明可用简体，但示例区域标记 <code>lang="zh-Hant"</code>。数字与单位之间保留一个空格，同列小数位保持一致。</p></div></div>
+
+  <div class="ac-heading"><h3>文案先说明对象，再给出行动</h3><span>短、具体、可执行，不加入技术交接语</span></div>
+  <p class="ac-copy-intro">下表为界面文案写法。涉及删除、解除绑定、费用和到账时效的后果，必须使用已确认的业务规则；文案设计不增加权限、承诺或新的功能逻辑。</p>
+  <p class="ac-copy-intro" data-copy-length-rule>营销区块标题使用 6–14 个汉字，最多两行；卡片标题使用 4–12 个汉字。说明写 1–2 句，按钮使用 2–6 个字，先写动作再写对象。标题及每行结尾不加标点。金额、地址、课程名称、资格条件、风险和最终确认信息以完整准确为先，不为了缩短文案删减必要信息；学员原话不改写。</p>
+  <div class="ac-table-scroll"><table class="rules-table ac-rules ac-copy-table"><caption class="ac-sr">界面文案修改对照</caption><thead><tr><th scope="col">场景</th><th scope="col">避免</th><th scope="col">采用</th><th scope="col">写法</th></tr></thead><tbody>
+    <tr><th scope="row">标题</th><td>個人資料。</td><td>個人資料</td><td>标题和每行标题结尾均不加标点；正文照常使用标点</td></tr>
+    <tr><th scope="row">主要操作</th><td>確認 / 點擊這裡</td><td>儲存變更 / 查看交易詳情</td><td>按钮使用 2–6 个字，写清动作与对象，避免一个页面所有按钮都叫确认</td></tr>
+    <tr><th scope="row">成功</th><td>操作成功！</td><td>個人資料已儲存</td><td>说清已完成的结果，不重复已发生的操作过程</td></tr>
+    <tr><th scope="row">输入错误</th><td>輸入錯誤</td><td>暱稱需為 2 至 16 個字</td><td>靠近对应字段，说明如何修正，不清空已输入内容</td></tr>
+    <tr><th scope="row">空结果</th><td>暫無數據</td><td>沒有符合條件的記錄<br><span>試試較寬的日期範圍，或清除篩選</span></td><td>区分首次为空与筛选无结果；只提供当前可用的下一步</td></tr>
+    <tr><th scope="row">加载与失败</th><td>請稍候… / 出錯了</td><td>正在載入交易記錄<br><span>未能載入記錄，請重試</span></td><td>不虚构百分比与完成时间；失败保留条件并提供重试</td></tr>
+    <tr><th scope="row">危险确认</th><td>你確定嗎？<br><span>確認 / 取消</span></td><td>捨棄未儲存的變更<br><span>離開後，本次修改不會保留</span><br><span>繼續編輯 / 捨棄變更</span></td><td>标题、后果与按钮使用同一对象。真正不可恢复的操作须明确写出不可恢复的后果</td></tr>
+    <tr><th scope="row">禁用与格式</th><td>不可用 / 在這裡輸入</td><td>請先完成身份驗證<br><span>欄位標籤：登入信箱<br>佔位示例：name@example.com</span></td><td>不可用时说明条件；标签不会因输入消失，占位符不用来承载必要规则</td></tr>
+  </tbody></table></div>
+  <div class="ac-editorial-rules"><div><h4>术语一词一义</h4><p>会员等级、成长值、可用权益、可用资产与冻结资产分别保留已有定义。正文不把成长值写成余额，也不把未完成写成失败。沿用导航中的「个人资料」「安全设置」「身份验证」名称，入口与目标页面一致。</p></div><div><h4>核对而不猜测</h4><p>缺少值显示「—」；已知为零才显示 0。链接、按钮与状态文字只描述当前真实可完成的结果。不给用户编写收益、系统保证或未经确认的处理时效。</p></div></div>
+  <div class="sheet-foot"><span>固定身份框 · 同一文字起点 · 长内容可达 · 标题无结尾标点</span><span>08 / 18</span></div>
+</section>
+
+<!-- END AVATAR_CONTENT_RULES -->
+
+
+<section class="sheet" id="components">
+  <div class="sheet-top"><span>OPENX / COMPONENTS</span><span>05 — ONE FAMILY</span></div>
+  <div class="section-heading"><h2>组件与尺寸</h2><p>以规则限定外观和行为。组件示例可切换明暗主题。</p></div>
+  <div class="component-toolbar"><span>组件主题</span><button class="theme-toggle" id="component-theme" aria-pressed="false">切换为深色</button></div>
+  <div class="component-board" id="component-board" data-theme="light">
+    <div class="component-unit"><div class="unit-heading"><h3>官网 CTA 按钮</h3><span>沿用官网 .pill / 高 48px / 胶囊圆角 / 横向内距 26px</span></div><div class="button-line"><button class="site-btn site-orange">开始使用<span class="site-arrow" aria-hidden="true"><svg class="arrow-a" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><svg class="arrow-b" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button><button class="site-btn site-white">查看课程<span class="site-arrow" aria-hidden="true"><svg class="arrow-a" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><svg class="arrow-b" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button><button class="site-btn site-outline">了解权益<span class="site-arrow" aria-hidden="true"><svg class="arrow-a" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><svg class="arrow-b" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button><button class="site-btn site-orange" disabled>暂不可用<span class="site-arrow" aria-hidden="true"><svg class="arrow-a" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><svg class="arrow-b" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></div><p class="component-feedback">保留原站白底、橙底、描边三种样式，以及一次性的 45° 箭头滑动。浅色描边按钮悬停保留深色文字，以橙色边框和箭头强调。</p></div><div class="component-unit" id="monochrome-buttons"><div class="unit-heading"><h3>黑白配色按钮</h3><span>沿用官网胶囊 / 高 48px / 横向内距 26px</span></div><div class="button-line"><button class="site-btn site-black">黑底白字<span class="site-arrow" aria-hidden="true"><svg class="arrow-a" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><svg class="arrow-b" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button><button class="site-btn site-monochrome-white">白底黑字<span class="site-arrow" aria-hidden="true"><svg class="arrow-a" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg><svg class="arrow-b" viewBox="0 0 16 16" fill="none"><path d="M4 12L12 4M12 4H6M12 4V10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button></div><p>黑底 #0B0B0B 搭配白字，悬停变为 #1D1D21；白底 #FFFFFF 搭配深色字，悬停变为 #F7F7F7。两款保持灰阶配色，按下缩放至 97%，箭头沿用官网的 45° 滑动。深色背景中的黑按钮增加可辨识边框。</p><p>用于中性强调的操作，与橙色按钮共用尺寸、焦点和禁用规则。同一操作组选择一种主按钮配色，避免黑色与橙色同时争夺主层级。</p></div>
+    <div class="component-unit"><div class="unit-heading"><h3>账户操作按钮</h3><span>沿用 .ac-button / 标准 44px / 原圆角 10px / 横向内距 16px</span></div><div class="button-line"><button class="ui-btn primary" id="save-demo">保存设置</button><button class="ui-btn">次要操作</button><button class="ui-btn ghost">文字操作</button><button class="ui-btn destructive">删除连接</button><button class="ui-btn" disabled>暂不可用</button></div><div class="button-line state-samples"><div><span>Hover</span><button class="ui-btn primary force-hover">保存设置</button></div><div><span>Pressed</span><button class="ui-btn primary force-pressed">保存设置</button></div><div><span>Focus</span><button class="ui-btn primary force-focus">保存设置</button></div><div><span>Loading</span><button class="ui-btn primary" aria-disabled="true" aria-busy="true"><i class="spinner" aria-hidden="true"></i>保存中</button></div></div><p class="component-feedback" id="save-feedback" aria-live="polite">沿用原账户按钮：实色表面、细边框，悬停上移 1px；主按钮随主题提亮，次按钮边框变橙。常规操作高度从原 40px 延伸为 44px。</p><p class="component-feedback">危险确认使用 Red 11（#CE2C31）和白字。Hover #C52129，Pressed #BC1221；通过小幅明度变化保持红色身份，焦点沿用主题焦点环。</p></div>
+    <div class="component-unit"><div class="unit-heading"><h3>输入框</h3><span>44px 高 / 8px 圆角 / 16px 输入文字</span></div><div class="field-grid"><label class="field"><span>账户名称</span><input value="OpenX 交易账户"><small>标签始终显示，提示文字放在下方。</small></label><label class="field"><span>联系邮箱</span><input class="field-error" aria-invalid="true" aria-describedby="email-error" value="openx@"><small id="email-error" class="danger">请输入完整的邮箱地址</small></label><label class="field"><span>已锁定的字段</span><input value="账户识别码" disabled><small>禁用原因应在附近说明。</small></label><label class="field"><span>通知偏好</span><span class="switch-line"><input type="checkbox" role="switch" checked><span>接收账户通知</span></span><small>整个标签区域支持点击。</small></label></div></div>
+    <div class="component-unit"><div class="unit-heading"><h3>卡片与数据行</h3><span>卡片 12px / 内距 24px / 边框 1px</span></div><div class="sample-data-card"><div class="sample-data-head"><strong>交易所连接</strong><span class="status success">状态正常</span></div><div class="sample-data-row"><span>连接方式</span><b>API 授权</b><button class="ui-btn ghost">管理</button></div><div class="sample-data-row"><span>权限范围</span><b>读取与交易</b><button class="ui-btn ghost">查看</button></div></div><p>表格头 44px；普通数据行最小 56px；带按钮的行最小 64px。数字列右对齐，状态列固定宽度，操作列保持同一右边界。</p><p>手机优先将记录转为摘要列表：金额、状态和操作完整保留，次要字段进入明细。必须跨列比较时，表格在独立容器内横向滚动并保留行标识，显示滚动提示；页面本身不横向溢出。</p></div>
+    <div class="component-unit"><div class="unit-heading"><h3>标签页与浮层</h3><span>当前项 / 焦点 / 关闭路径清晰</span></div><div class="sample-tabs" role="tablist" aria-label="组件示例标签"><button id="sample-tab-overview" role="tab" aria-selected="true" aria-controls="sample-tab-panel" data-tab="overview">概览</button><button id="sample-tab-history" role="tab" aria-selected="false" aria-controls="sample-tab-panel" tabindex="-1" data-tab="history">记录</button></div><div id="sample-tab-panel" role="tabpanel" aria-labelledby="sample-tab-overview">当前项使用清晰的文字与底线，切换不改变容器宽度。</div><button class="ui-btn" id="open-dialog">查看弹窗样式</button></div>
+  </div>
+  <div class="table-wrap"><table class="rules-table compact"><tbody><tr><th>材质</th><td>内容卡为实色；阴影只用于浮层，内容区不使用背景模糊。</td><th>圆角</th><td>官网按钮胶囊；账户按钮 10；字段 8；卡片 / 下拉 12；弹窗 16；分类标签 4px。</td></tr><tr><th>图标</th><td>沿用 Ant Design 线性图标；常规 20px，辅助 16px；独立图标操作区域至少 44×44px。</td><th>浮层</th><td>弹窗 / 抽屉最大宽 480px，手机左右留 16px；遮罩为黑色 48%。</td></tr><tr><th>表单</th><td>可编辑字段标签置顶；桌面只读字段采用 140px 标签列。</td><th>图片</th><td>同组比例固定；主体保持比例；说明有独立的可读背景。</td></tr></tbody></table></div>
+  <div class="sheet-foot"><span>品牌会员卡属于既有视觉资产，外部布局、边距与交互仍遵守同一规范。</span><span>09 / 18</span></div>
+</section>
+
+<!-- BEGIN BUSINESS_COMPONENTS -->
+<section class="sheet" id="business-components">
+  <div class="sheet-top"><span>OPENX / WORKFLOW COMPONENTS</span><span>业务组件</span></div>
+  <div class="section-heading"><h2>业务组件与列表操作</h2><p>以充提记录、文件选择和显示偏好为例，把输入、筛选、排序、选择与反馈放在同一条操作路径上。</p></div>
+  <div class="bc-stage" data-theme="light" id="bc-stage">
+    <div class="bc-stage-head"><div><h3>充提记录</h3><p>时间统一显示为 UTC+8 · 金额单位 USDT</p></div><button class="ui-btn" type="button" id="bc-theme" aria-pressed="false">切换为深色</button></div>
+    <form class="bc-filters" id="bc-filters">
+      <label class="bc-field bc-search"><span>搜索记录</span><input id="bc-query" type="search" placeholder="输入交易编号或类型" autocomplete="off"></label>
+      <label class="bc-field"><span>交易类型</span><select id="bc-type"><option value="all">全部类型</option><option value="deposit">充值</option><option value="withdraw">提现</option></select></label>
+      <label class="bc-field"><span>处理状态</span><select id="bc-status"><option value="all">全部状态</option><option value="done">已完成</option><option value="processing">处理中</option><option value="pending">待处理</option><option value="failed">未完成</option></select></label>
+      <fieldset class="bc-date-range"><legend>日期范围</legend><label><span class="bc-sr">开始日期</span><input id="bc-from" type="date" aria-describedby="bc-filter-error"></label><span aria-hidden="true">—</span><label><span class="bc-sr">结束日期</span><input id="bc-to" type="date" aria-describedby="bc-filter-error"></label></fieldset>
+      <div class="bc-filter-actions"><button class="ui-btn primary" type="submit">应用筛选</button><button class="ui-btn" type="button" id="bc-clear">清除</button></div>
+      <p class="bc-error" id="bc-filter-error" role="alert"></p>
+    </form>
+    <div class="bc-results-head"><p id="bc-count" role="status" aria-live="polite"></p><div class="bc-selection"><span id="bc-selected">未选择记录</span><button class="bc-text-btn" type="button" id="bc-clear-selection" hidden>取消选择</button></div></div>
+    <div class="bc-table-wrap"><table class="bc-table" id="bc-table"><caption class="bc-sr">充值与提现记录，可按金额或时间排序</caption><colgroup><col class="bc-col-check"><col class="bc-col-record"><col class="bc-col-amount"><col class="bc-col-state"><col class="bc-col-date"><col class="bc-col-action"></colgroup><thead><tr><th scope="col"><label class="bc-select-hit"><input type="checkbox" id="bc-select-all" aria-label="选择当前页全部记录"></label></th><th scope="col">交易记录</th><th scope="col" aria-sort="none"><button type="button" class="bc-sort" data-bc-sort="amount">金额 <span aria-hidden="true">↕</span></button></th><th scope="col">状态</th><th scope="col" aria-sort="descending"><button type="button" class="bc-sort" data-bc-sort="date">时间 <span aria-hidden="true">↓</span></button></th><th scope="col"><span class="bc-sr">操作</span></th></tr></thead><tbody id="bc-records"></tbody></table><div class="bc-empty" id="bc-empty" hidden><h4>没有符合条件的记录</h4><p>试试更宽的日期范围，或清除筛选条件。</p><button class="ui-btn" type="button" id="bc-empty-clear">清除筛选</button></div></div>
+    <nav class="bc-pagination" aria-label="记录分页"><span id="bc-page-label"></span><div><button type="button" class="ui-btn" id="bc-prev">上一页</button><button type="button" class="ui-btn" id="bc-next">下一页</button></div></nav>
+  </div>
+  <div class="bc-under-grid">
+    <div class="bc-form-panel" id="bc-upload-panel" data-theme="light"><div class="bc-form-title"><h3>图片文件选择</h3><span>沿用个人资料头像规则</span></div><div class="bc-upload-zone" id="bc-drop-zone"><div class="bc-upload-preview" id="bc-upload-preview" hidden><img id="bc-file-image" alt="已选择的图片"></div><div class="bc-upload-copy"><strong id="bc-upload-label">选择或拖入图片</strong><p>JPG、PNG、WebP · 最大 5 MiB<br>图片至少为 128 × 128px</p><input class="bc-sr" id="bc-file" type="file" accept="image/jpeg,image/png,image/webp" tabindex="-1" aria-label="选择图片" aria-describedby="bc-file-feedback"><div class="bc-upload-actions"><button class="ui-btn" id="bc-pick-file" type="button">选择图片</button><button class="bc-text-btn" id="bc-remove-file" type="button" hidden>移除</button></div></div></div><p class="bc-feedback" id="bc-file-feedback" role="status" aria-live="polite">所选图片的信息会显示在这里。</p><p class="bc-note">先验证类型、大小与图像可读性，再替换已选文件。选择取消或新文件不合规时，保留原文件。</p></div>
+    <form class="bc-form-panel" id="bc-preferences" data-theme="light"><div class="bc-form-title"><h3>列表显示偏好</h3><span>单选与多选保持原生操作</span></div><fieldset class="bc-options"><legend>行间距</legend><label><input type="radio" name="bc-density" value="comfortable" checked><span>标准<small>桌面行高至少 72px，适合常规阅读</small></span></label><label><input type="radio" name="bc-density" value="compact"><span>紧凑<small>桌面行高至少 64px，手机保持触控间距</small></span></label></fieldset><label class="bc-check-option"><input type="checkbox" id="bc-show-id" checked><span>在列表中显示交易编号</span></label><div class="bc-pref-footer"><button class="ui-btn primary" type="submit">保存显示偏好</button><p class="bc-feedback" id="bc-pref-feedback" role="status" aria-live="polite"></p></div></form>
+  </div>
+  <div class="bc-rule-grid"><div><h3>筛选和分页</h3><p>应用筛选后回到第 1 页；更改排序也回到第 1 页。清除恢复全部记录。日期允许只填一端；结束日包含当天全部记录，开始日不能晚于结束日。无结果保留条件与清除入口。</p></div><div><h3>选择和输入</h3><p>全选只作用于当前页，并显示半选状态。换页保留选择，应用新条件时清空选择，避免对不可见记录操作。下拉使用原生键盘行为；标签始终可见，错误紧邻对应字段。</p></div></div>
+  <p class="bc-source-note">上传限制来源：<code>src/AccountProfilePage.tsx</code>。不同业务的上传格式与上限由其既有规则决定；本组件不把头像限制扩展为全站限制。</p>
+  <dialog class="bc-dialog" id="bc-record-dialog" aria-labelledby="bc-dialog-title" data-theme="light"><div class="bc-dialog-head"><h3 id="bc-dialog-title">交易详情</h3><button class="bc-close-icon" id="bc-close-dialog" type="button" aria-label="关闭交易详情"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button></div><dl class="bc-detail-list" id="bc-detail-list"></dl><div class="bc-dialog-footer"><button class="ui-btn" id="bc-copy-record" type="button">复制交易编号</button><p class="bc-feedback" id="bc-copy-feedback" role="status" aria-live="polite"></p></div></dialog>
+  <div class="sheet-foot"><span>控件高度 44px · 筛选与内容共享边界 · 错误靠近发生位置</span><span>10 / 18</span></div>
+</section>
+
+<section class="sheet" id="data-patterns">
+  <div class="sheet-top"><span>OPENX / DATA &amp; CONTENT</span><span>数据展示</span></div>
+  <div class="section-heading"><h2>数据展示与信息精度</h2><p>列表用于比较，详情用于核对。图表、金额、日期和长字段遵循同一套格式规则，界面格式不改变数据含义。</p></div>
+  <div class="dp-chart-panel" data-theme="light" id="dp-chart-panel"><div class="dp-chart-heading"><div><h3>资产趋势</h3><p>资产估值 · USDT · UTC+8</p></div><div class="dp-chart-tools"><button class="ui-btn" id="dp-visibility" type="button" aria-pressed="false">隐藏金额</button><button class="ui-btn" id="dp-theme" type="button" aria-pressed="false">切换为深色</button></div></div><div class="dp-chart-summary"><div><span>期末估值</span><strong id="dp-total">54,275.29 <small>USDT</small></strong></div><div class="dp-range" role="group" aria-label="资产趋势时间范围"><button class="ui-btn" type="button" data-dp-range="day" aria-pressed="true">今日</button><button class="ui-btn" type="button" data-dp-range="week" aria-pressed="false">7 天</button><button class="ui-btn" type="button" data-dp-range="month" aria-pressed="false">30 天</button></div></div><div class="dp-chart-visual"><svg class="dp-chart-svg" id="dp-chart-svg" viewBox="0 0 920 260" role="img" aria-labelledby="dp-chart-title dp-chart-desc"><title id="dp-chart-title">今日资产估值趋势</title><desc id="dp-chart-desc">使用下方查看数据展开完整的日期与金额表。</desc></svg><p class="dp-hidden-note" id="dp-hidden-note" hidden>金额已隐藏</p></div><div class="dp-chart-caption"><p id="dp-chart-insight" role="status"></p><span class="dp-tooltip-wrap"><button class="bc-text-btn" id="dp-gap-help" type="button" aria-describedby="dp-gap-tip" aria-expanded="false">缺失数据规则 <span aria-hidden="true">ⓘ</span></button><span class="dp-tooltip" id="dp-gap-tip" role="tooltip" hidden>估值不变时保持水平。缺失区间沿用上一有效值画水平线，在下一有效时刻垂直更新；明细仍为 —，不补填金额。</span></span></div><details class="dp-chart-data"><summary>查看数据</summary><table class="dp-values-table"><caption class="bc-sr">资产估值明细</caption><thead><tr><th scope="col">时间 UTC+8</th><th scope="col">估值 USDT</th></tr></thead><tbody id="dp-chart-values"></tbody></table></details></div>
+  <div class="dp-guidelines"><div><h3>表格与字段优先级</h3><p>同类记录需要排序、比较时用表格；对象说明加一项操作时用列表；详情用键值对。桌面列宽由内容职责决定，不把所有列等分。</p><dl><div><dt>选择列</dt><dd>44px，原生复选框；全选说明作用范围</dd></div><div><dt>记录与编号</dt><dd>约 26%，左对齐；编号可换行，完整值保留在详情</dd></div><div><dt>金额</dt><dd>约 21%，右对齐；使用等宽数字，同列同单位</dd></div><div><dt>状态与时间</dt><dd>状态约 15%，时间约 23%；状态由文字表达，异常才加强调</dd></div><div><dt>行操作</dt><dd>64px，位置固定；主要操作用文字标签，辅助操作才用图标</dd></div><div><dt>手机摘要</dt><dd>768px 以下每条记录重排为两列摘要：类型和金额首行，状态和时间次行，详情入口保留；完整字段从详情可达</dd></div></dl></div><div><h3>金额与数值</h3><p>估值与原币数量分开处理。显示层的千分位、补零和省略规则，不回写输入，不用于计算，也不替换接口原始精度。</p><dl><div><dt>资产估值</dt><dd><span class="dp-number">54,275.29 USDT</span>，固定 2 位小数</dd></div><div><dt>原币数量</dt><dd>保留有效小数；例如 <span class="dp-number">0.123456789012345678 ETH</span>，确认与详情完整显示，不经浮点数转换截断</dd></div><div><dt>比例与变化</dt><dd>百分比与金额分列；正负使用 + / −，不能只凭红绿区分。同组固定精度，口径沿用业务定义</dd></div><div><dt>真实零值</dt><dd><span class="dp-number">0.00</span> 表示已知为零；小于显示精度的正数用阈值提示或展开原值，不能误写为零</dd></div><div><dt>未知与隐藏</dt><dd><span class="dp-number">—</span> 表示未提供或尚未取得；<span class="dp-number">••••••</span> 表示主动隐藏。隐藏同时覆盖图表、详情摘要和辅助阅读文字</dd></div></dl></div></div>
+  <div class="dp-guidelines"><div><h3>图表与交互</h3><p>主资产曲线使用品牌橙；增加对比系列时使用品牌灰阶与虚实线共同区分，不另配装饰色。网格线使用中性分隔色；纵轴给出明确数值，缩小范围时不能暗示从零起算。日期与单位持续可见。</p><p>有效数据点之间使用不超调的保形曲线，保留原始点位与金额。范围切换保留图表尺寸。无交易或无操作且估值不变时，曲线保持水平。数据缺失时，水平延续上一有效值至下一有效数据的时刻，再垂直更新；连续缺失和尾部缺失同样水平延长。开头没有有效前值时不绘图，不按 0 补画。缺失日期在明细中仍为 —，不生成虚构点位或修改真实数据。点位可聚焦读取数值，完整数据表为触屏与键盘提供等价入口。</p></div><div><h3>日期与长内容</h3><p>日期使用 <span class="dp-number">2026.10.01</span>，时间使用 24 小时制 <span class="dp-number">14:32</span>。当前示例明确采用 UTC+8；产品采用账户时区时，范围、图表与记录同步换算并标注。</p><p>记录详情使用绝对时间，附完整时区。编号、地址与错误信息不靠悬停才能看全；详情换行展示并提供复制。排序依据原始数值和时间，不排序格式化后的字符串。</p></div></div>
+  <p class="bc-source-note">结构参考 <a href="https://vercel.com/geist/table" target="_blank" rel="noreferrer">Vercel Geist Table</a> 与 <a href="https://vercel.com/geist/entity" target="_blank" rel="noreferrer">Entity</a>：表格用于比较与排序，列表用于描述对象与操作。金额精度沿用 <code>src/AccountWalletPage.tsx</code>，不改变现有计算规则。</p>
+  <div class="sheet-foot"><span>数字使用 tabular-nums · 标明单位与时区 · 保留完整原值</span><span>11 / 18</span></div>
+</section>
+
+<!-- END BUSINESS_COMPONENTS -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- BEGIN MOTION_SYSTEM -->
+<section class="sheet" id="motion-system" data-motion-scope>
+  <div class="sheet-top"><span>OPENX / MOTION</span><span>交互节奏与状态变化</span></div>
+  <div class="section-heading"><h2>每次操作都有清楚的回应</h2><p>沿用官网按钮的按压与箭头动效，为导航、下拉、浮层、表单和内容更新补齐同一套节奏。金融数字直接显示真实结果，动画不延迟操作。</p></div>
+  <div class="mf-toolbar"><span>可操作的组件演练</span><div><label class="mf-reduce"><input id="mf-reduce" type="checkbox">减少动态效果</label><button class="theme-toggle" id="mf-theme" type="button">切换浅色</button></div></div>
+  <div class="mf-workbench" id="mf-workbench" data-theme="dark">
+    <div class="mf-tabs" role="tablist" aria-label="动效分类">
+      <button id="mf-tab-controls" role="tab" aria-selected="true" aria-controls="mf-controls" tabindex="0">控件反馈</button><button id="mf-tab-overlays" role="tab" aria-selected="false" aria-controls="mf-overlays" tabindex="-1">浮层与展开</button><button id="mf-tab-content" role="tab" aria-selected="false" aria-controls="mf-content" tabindex="-1">内容切换</button><button id="mf-tab-loading" role="tab" aria-selected="false" aria-controls="mf-loading" tabindex="-1">加载与结果</button><button id="mf-tab-media" role="tab" aria-selected="false" aria-controls="mf-media" tabindex="-1">图片与进入</button>
+    </div>
+    <div class="mf-panel" id="mf-controls" role="tabpanel" aria-labelledby="mf-tab-controls">
+      <div class="mf-context"><div><h3>通知偏好</h3><p>下拉、开关、字段反馈与保存操作</p></div><span class="mf-timing">120–180 ms</span></div>
+      <form id="mf-preferences" novalidate>
+        <div class="mf-field-grid"><label class="mf-field">汇总频率<select id="mf-frequency"><option value="daily">每日汇总</option><option value="weekly">每周汇总</option><option value="important">仅重要通知</option><option value="off">关闭汇总</option></select></label><label class="mf-field">公开昵称<input id="mf-name" value="66666.char" maxlength="16" aria-describedby="mf-name-help"><small id="mf-name-help">2 至 16 个字符</small></label></div>
+        <label class="switch-line mf-switch"><input type="checkbox" id="mf-alerts" checked><span>接收账户安全提醒</span></label>
+        <div class="mf-form-foot"><span id="mf-save-state" role="status">设置已同步</span><button class="ui-btn primary" type="submit">保存设置 <span aria-hidden="true">→</span></button></div>
+      </form>
+    </div>
+    <div class="mf-panel" id="mf-overlays" role="tabpanel" aria-labelledby="mf-tab-overlays" hidden>
+      <div class="mf-context"><div><h3>当前操作的补充信息</h3><p>浮层打开后可按 Esc 关闭，焦点返回原入口</p></div><span class="mf-timing">160 / 220 ms</span></div>
+      <div class="mf-actions"><button class="ui-btn" data-mf-open="mf-dialog">更新通知偏好</button><button class="ui-btn" data-mf-open="mf-drawer">查看操作记录 <span aria-hidden="true">→</span></button><button class="ui-btn" id="mf-more" aria-haspopup="menu" aria-expanded="false" aria-controls="mf-popover">更多操作 <svg class="mf-menu-chevron" viewBox="0 0 20 20" aria-hidden="true"><path d="m6 8 4 4 4-4"/></svg></button><span class="mf-tip-wrap"><button class="icon-btn" id="mf-tip-trigger" aria-label="关于账户通知" aria-describedby="mf-tip"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7v1"/></svg></button><span class="mf-tip" id="mf-tip" role="tooltip">通知偏好不会影响必要的安全通知</span></span></div>
+      <details class="mf-details"><summary>哪些通知会发送给我 <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 8 5 5 5-5"/></svg></summary><div>资产变动、账户安全与服务更新会分别归类。你可以调整服务更新的汇总频率，必要的安全通知会继续送达。</div></details>
+      <details class="mf-details"><summary>如何查看历史记录 <svg viewBox="0 0 20 20" aria-hidden="true"><path d="m5 8 5 5 5-5"/></svg></summary><div>在操作记录中查看变更时间与项目。记录按时间倒序排列，当前页面不会因为浮层展开而移动。</div></details>
+    </div>
+    <div class="mf-panel" id="mf-content" role="tabpanel" aria-labelledby="mf-tab-content" hidden>
+      <div class="mf-context"><div><h3>账户操作记录</h3><p>列表只更新内容区，表头、筛选与翻页位置保持稳定</p></div><span class="mf-timing">180 ms</span></div>
+      <div class="mf-segments" role="group" aria-label="筛选记录"><button type="button" aria-pressed="true" data-mf-filter="all">全部</button><button type="button" aria-pressed="false" data-mf-filter="settings">偏好设置</button><button type="button" aria-pressed="false" data-mf-filter="security">账户安全</button></div>
+      <div id="mf-records" class="mf-records" data-motion-list aria-live="polite"></div><div class="mf-pagination"><span id="mf-page-count"></span><div><button class="icon-btn" id="mf-prev" aria-label="上一页">←</button><button class="icon-btn" id="mf-next" aria-label="下一页">→</button></div></div>
+      <a class="mf-link" href="templates.html?view=verification&amp;theme=dark" target="_blank" rel="noopener">打开完整的七步身分验证流程 <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="mf-panel" id="mf-loading" role="tabpanel" aria-labelledby="mf-tab-loading" hidden>
+      <div class="mf-context"><div><h3>读取、完成与重试</h3><p>骨架保留结果尺寸；长任务允许取消，失败后提供重试入口</p></div><span class="mf-timing">160 ms / 持续状态</span></div>
+      <div class="mf-actions"><button class="ui-btn primary" id="mf-load">刷新记录</button><button class="ui-btn" id="mf-load-error">查看失败状态</button><button class="ui-btn" id="mf-cancel-load" hidden>取消读取</button></div><div id="mf-load-region" class="mf-load-region" aria-busy="false" data-motion-list><div class="mf-load-result"><b>记录已更新</b><span>最近同步 · 2026.10.01 14:30</span></div></div><p class="mf-announcement" id="mf-load-status" role="status">已读取 3 条记录</p>
+      <div class="mf-inline-rule"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="m7 12 3 3 7-7"/></svg><span>已知进度按真实数值推进；未知进度只显示“处理中”，不自动跑到 99%</span></div>
+    </div>
+    <div class="mf-panel" id="mf-media" role="tabpanel" aria-labelledby="mf-tab-media" hidden>
+      <div class="mf-context"><div><h3>有节制的内容进入</h3><p>图片在自己的裁切框内变化，卡片外框与文字基线保持不动</p></div><button class="ui-btn" id="mf-replay">重播进入效果</button></div>
+      <div class="mf-media-layout" id="mf-reveal-region"><a class="mf-media-card" href="#layout" id="mf-media-link" data-motion-reveal><div class="mf-image"><img src="assets/motion/ill-vid-tradingview.webp" width="960" height="540" alt="交易图表与分析工具" loading="lazy"></div><div><h4>图表与交易工具</h4><p>16:9 图卡 · 悬停时轻微放大图片</p><span>查看图卡规范 <span aria-hidden="true">→</span></span></div></a><div class="mf-media-rules" data-motion-reveal><h4>内容先可见，再增强</h4><ul><li>仅在首次进入视野时淡入，上移 12px</li><li>同组最多 4 项，间隔 40ms，完整序列不超过 440ms</li><li>首页首屏主标题、价格及表单不等待滚动动画</li><li>触屏不模拟悬停，减少动态时立即显示</li></ul><a class="mf-link" href="#data-patterns">查看资产图表与周期切换 <span aria-hidden="true">→</span></a></div></div>
+    </div>
+    <div class="mf-note" id="mf-mode-note" role="status">标准动效 · 同一套规则适用于浅色与深色界面</div>
+  </div>
+  <div class="mf-scale"><div><b>120<span>ms</span></b><p>收起、局部提示</p></div><div><b>160–180<span>ms</span></b><p>控件、标签、列表更新</p></div><div><b>220<span>ms</span></b><p>弹窗、抽屉、折叠内容</p></div><div><b>320<span>ms</span></b><p>首次进入视野</p></div></div>
+  <details class="mf-coverage" open><summary>网站动效覆盖与使用规则</summary><div class="table-wrap"><table class="rules-table"><thead><tr><th>组件 / 场景</th><th>变化与反馈</th><th>完成与边界</th></tr></thead><tbody>
+    <tr><td>官网 CTA / 黑白按钮</td><td>沿用原站按压 .97、45° 双箭头滑动 400ms</td><td>只在悬停触发，键盘有独立焦点环，禁用时静止</td></tr>
+    <tr><td>工作面板按钮 / 图标</td><td>180ms 边框反馈，按压 .98；图标按钮改变底色</td><td>点击即时执行，不等待动画结束</td></tr>
+    <tr><td>导航 / 标签 / 分页 / 筛选</td><td>选中态 160ms；更新内容淡入 180ms / 4px</td><td>只更新相关区域；快速切换取消上一段，不累积播放</td></tr>
+    <tr><td>下拉列表</td><td>展开 160ms / 4px，收起 120ms，箭头转 180°</td><td>方向键、首尾、文字查找、Enter / Esc / Tab；超出空间向上展开</td></tr>
+    <tr><td>提示 / 操作菜单</td><td>120–160ms 淡入与 4px 位移</td><td>不挤占布局；Esc、点击外部关闭，重要内容不能只藏在悬停里</td></tr>
+    <tr><td>弹窗 / 侧抽屉</td><td>弹窗 220ms / 8px，抽屉 220ms / 24px，背景同步变暗</td><td>×、Esc、焦点约束与返回；不支持离场过渡时直接关闭</td></tr>
+    <tr><td>手风琴 / 折叠详情</td><td>内容淡入并轻移 3px，箭头旋转 220ms</td><td>内容按自身高度展开；长文可自然增长，快速操作不丢失最终状态</td></tr>
+    <tr><td>输入 / 复选 / 单选 / 开关</td><td>边框 160ms，开关圆点 160ms；错误说明在字段下展开</td><td>不摇晃整张表单；错误同时有文字，聚焦第一个错误字段</td></tr>
+    <tr><td>通知 / Toast</td><td>180ms 淡入 / 8px，成功图标一次绘制</td><td>可手动关闭；自动通知 5 秒，悬停或聚焦暂停计时；错误保留重试</td></tr>
+    <tr><td>加载 / 骨架 / 上传</td><td>骨架轻微明暗变化，忙碌图标 800ms 转一圈</td><td>只在等待时循环，隐藏时暂停；保留最终尺寸，避免闪屏</td></tr>
+    <tr><td>资产图表 / 数字</td><td>范围更新短淡入，数值直接更新；曲线不从零描画</td><td>缺口、无交易或无操作区间延续上一值的水平线；下一值出现时更新</td></tr>
+    <tr><td>多步验证 / 页面切换</td><td>任务内容 180ms / 4px，侧栏与页面标题稳定</td><td>保留已填内容，跳转有焦点定位，上一页不会丢失数据</td></tr>
+    <tr><td>可点击图卡 / 滚动进入</td><td>图片悬停放大 1.025 / 320ms；首次进入 12px / 320ms</td><td>不提升整列卡片，不循环上下漂浮；无 JS 时内容仍可见</td></tr>
+    <tr><td>主题 / 减少动态效果</td><td>主题立即换色；减少动态时取消过渡与循环，状态立即呈现</td><td>系统设置优先，状态文字、焦点与完整操作保留</td></tr>
+  </tbody></table></div></details>
+  <div class="two-notes"><div><h3>执行规则</h3><p>常规过渡使用 cubic-bezier(.2,.8,.2,1)，优先改变透明度和 transform。只对用户触发或正在进入的区域执行；不全页监听滚动反复改样式。业务状态立即变更，动画仅表达结果。</p></div><div><h3>渐进增强</h3><p>原生 select 保留名称、值、校验和事件；菜单只是交互增强。弹窗使用原生 dialog，进出场能力不足时正常显示和关闭。系统减少动态设置优先于演练开关。</p></div></div>
+  <div class="reference-row"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog" target="_blank" rel="noopener">原生 dialog 与焦点管理 ↗</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/At-rules/@starting-style" target="_blank" rel="noopener">显示与隐藏的过渡方式 ↗</a><a href="motion-runtime.js" download>共享动效脚本 ↓</a><a href="select-menu.js" download>下拉交互脚本 ↓</a></div>
+  <div class="sheet-foot"><span>相同动作使用相同节奏，状态变化清晰可见，所有功能可在减少动态模式下完成</span><span>12 / 18</span></div>
+  <dialog class="mf-dialog" id="mf-dialog" data-theme="dark" aria-labelledby="mf-dialog-title"><div class="mf-dialog-head"><h2 id="mf-dialog-title">更新通知偏好</h2><button class="icon-btn" data-mf-close aria-label="关闭通知偏好弹窗"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><p>保存后，服务通知将按你选择的频率汇总。必要的账户安全通知会继续送达。</p><div class="mf-dialog-actions"><button class="ui-btn" data-mf-close>取消</button><button class="ui-btn primary" id="mf-confirm">保存设置</button></div></dialog>
+  <dialog class="mf-dialog" id="mf-drawer" data-theme="dark" aria-labelledby="mf-drawer-title"><div class="mf-dialog-head"><h2 id="mf-drawer-title">操作记录</h2><button class="icon-btn" data-mf-close aria-label="关闭操作记录抽屉"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div><p>最近的账户设置变更</p><ol class="mf-history"><li><b>更新通知频率</b><span>2026.10.01 · 每日汇总</span></li><li><b>更新公开昵称</b><span>2026.09.28 · 66666.char</span></li><li><b>开启账户安全提醒</b><span>2026.09.26</span></li></ol><div class="mf-drawer-end"><button class="ui-btn" data-mf-close>返回当前页面</button></div></dialog>
+  <div id="mf-popover" class="mf-popover" role="menu" aria-label="更多操作" popover="auto" data-theme="dark"><button type="button" role="menuitem" data-mf-action="reset">恢复默认偏好</button><button type="button" role="menuitem" data-mf-action="records">查看操作记录</button></div>
+  <div id="mf-toast" class="mf-toast" data-theme="dark" role="status" hidden><svg class="mf-check" viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg><span>通知偏好已保存</span><button class="icon-btn" id="mf-toast-close" aria-label="关闭通知"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+</section>
+
+<!-- END MOTION_SYSTEM -->
+
+
+
+
+
+
+
+
+
+<!-- BEGIN CALENDAR_PATTERNS -->
+<section class="sheet" id="calendar-patterns">
+  <div class="sheet-top"><span>OPENX / DATE SELECTION</span><span>日期与区间</span></div>
+  <div class="section-heading"><h2>按任务选择日历</h2><p>交易记录用日期区间，表单用单日选择，按月查看时直接选年月。统一柔和边框与中性底色，品牌橙只标记选中的日期。</p></div>
+  <div class="cp-toolbar"><span>三种组件，同一套视觉规则</span><button id="cp-theme" class="theme-toggle" type="button">切换深色</button></div>
+  <div class="cp-workbench" id="cp-workbench" data-theme="light">
+    <div class="cp-variants" role="tablist" aria-label="日历样式" aria-orientation="vertical">
+      <button id="cp-tab-range" role="tab" aria-selected="true" aria-controls="cp-range" tabindex="0"><b>日期区间</b><span>交易记录与报表</span></button>
+      <button id="cp-tab-single" role="tab" aria-selected="false" aria-controls="cp-single" tabindex="-1"><b>单日选择</b><span>表单与指定日期</span></button>
+      <button id="cp-tab-month" role="tab" aria-selected="false" aria-controls="cp-month" tabindex="-1"><b>年月快选</b><span>月度记录与汇总</span></button>
+    </div>
+    <div class="cp-pattern" id="cp-range" role="tabpanel" aria-labelledby="cp-tab-range">
+      <div class="cp-heading"><h3>记录日期范围</h3><p>快捷选择最近 7 天、最近 30 天或本月，也可只设置起始或截止日期</p></div>
+      <div class="cp-group" data-calendar-range data-calendar-inline>
+        <div class="cp-fields"><label>开始日期<input id="cp-from" type="date" value="2026-09-24"></label><label>结束日期<input id="cp-to" type="date" value="2026-10-01"></label></div>
+      </div><p class="cp-result" id="cp-range-result" role="status">已选范围 · 2026.09.24 — 2026.10.01</p>
+    </div>
+    <div class="cp-pattern" id="cp-single" role="tabpanel" aria-labelledby="cp-tab-single" hidden>
+      <div class="cp-heading"><h3>选择指定日期</h3><p>一张月历完成选择，点击标题可快速跳转年份和月份</p></div>
+      <div class="cp-group cp-compact" data-calendar-inline><div class="cp-fields"><label>日期<input id="cp-date" type="date" value="2026-10-01" min="1900-01-01" max="2099-12-31"></label></div></div><p class="cp-result" id="cp-single-result" role="status">已选日期 · 2026.10.01</p>
+    </div>
+    <div class="cp-pattern" id="cp-month" role="tabpanel" aria-labelledby="cp-tab-month" hidden>
+      <div class="cp-heading"><h3>按月查看</h3><p>直接选择年份与月份，避免连续翻阅多张月历</p></div>
+      <div class="cp-group cp-compact" data-calendar-inline><div class="cp-fields"><label>统计月份<input id="cp-month-value" type="date" data-calendar="month" value="2026-10-01"></label></div></div><p class="cp-result" id="cp-month-result" role="status">已选月份 · 2026.10</p>
+    </div>
+  </div>
+  <div class="cp-rules"><div><h3>让选中范围容易读取</h3><p>起止日期使用品牌橙，中间区间使用浅灰或深灰连带。今天用小标记提示，不能与选中态混淆；非当前月与禁用日期降低层级。</p></div><div><h3>弹层跟随字段</h3><p>表单中贴近触发字段展开，接近屏幕边缘自动调整。桌面区间使用双月，手机收为单月；关闭后回到原入口，取消保留原值。</p></div></div>
+  <div class="table-wrap"><table class="rules-table"><thead><tr><th>状态 / 规则</th><th>统一处理</th></tr></thead><tbody>
+    <tr><td>默认与悬停</td><td>柔和的 1px 中性边框，悬停略微加强；不用系统蓝色选中块和黑色外框</td></tr>
+    <tr><td>日期显示</td><td>单日 YYYY.MM.DD，月份 YYYY.MM；内部保留原 ISO 值，显示格式不改变筛选条件</td></tr>
+    <tr><td>选择与提交</td><td>日期范围保留草稿，应用后才同步字段；只填一端合法，开始晚于结束时提示修正</td></tr>
+    <tr><td>年月与边界</td><td>月份或年份标题进入快速选择；沿用字段的 min、max 与 disabled，不另设业务年龄或期限限制</td></tr>
+    <tr><td>键盘与触摸</td><td>方向键移动日期，Home / End 跳周首尾，PageUp / PageDown 翻月；Enter 选择，Esc 取消并返回焦点</td></tr>
+    <tr><td>动效与主题</td><td>展开 160ms / 4px、收起 120ms，月历切换保持尺寸；深浅主题与减少动态偏好同步</td></tr>
+  </tbody></table></div>
+  <div class="reference-row"><a href="https://react-aria.adobe.com/DatePicker" target="_blank" rel="noopener">参考 · Adobe 日期选择 ↗</a><a href="https://react-aria.adobe.com/RangeCalendar" target="_blank" rel="noopener">参考 · Adobe 区间日历 ↗</a><a href="#business-components">查看交易记录中的日期筛选 →</a></div>
+  <div class="sheet-foot"><span>组件演练与业务表单使用同一日历，显示更新保留原字段与事件</span><span>13 / 18</span></div>
+</section>
+
+<!-- END CALENDAR_PATTERNS -->
+
+
+
+
+
+<section class="sheet" id="states">
+  <div class="sheet-top"><span>OPENX / INTERACTION</span><span>06 — EVERY STATE MATTERS</span></div>
+  <div class="section-heading"><h2>交互与反馈</h2><p>反馈出现在操作附近；状态变化不制造跳位、遮挡或不可恢复的空白。</p></div>
+  <div class="state-grid"><article class="state-card"><span class="spec-label">LOADING / 加载</span><div class="skeleton short"></div><div class="skeleton"></div><div class="skeleton"></div><p>骨架占据原内容尺寸。按钮加载保留宽度与标签，并阻止重复提交。</p></article><article class="state-card"><span class="spec-label">EMPTY / 空状态</span><h3>暂无连接的交易所</h3><p>连接交易所后，即可在这里管理授权。</p><button class="ui-btn">连接交易所</button></article><article class="state-card"><span class="spec-label">ERROR / 错误</span><h3 class="danger">连接暂未完成</h3><p>保留已填写的内容，在出错位置说明原因和下一步。</p><button class="ui-btn">重新连接</button></article><article class="state-card"><span class="spec-label">SUCCESS / 成功</span><h3 class="success">设置已保存</h3><p>明确说明结果。消息保留到用户看清，不自动改变所在页面。</p><span class="status success">已完成</span></article></div>
+  <div class="table-wrap"><table class="rules-table"><thead><tr><th>状态</th><th>视觉与行为规则</th><th>边界</th></tr></thead><tbody><tr><td>Default / Hover / Pressed</td><td>官网 CTA 沿用提亮与箭头滑动，按下缩放 0.97；账户按钮悬停上移 1px，按下回到原位并缩放 0.98。</td><td>文字与图标的相对位置保持稳定</td></tr><tr><td>Focus / Selected</td><td>键盘焦点 2px 外环；按钮间隔 3px，字段间隔 2px；选中使用底色或底线，并配合文字或图标共同表达。</td><td>所有操作可以通过键盘触达</td></tr><tr><td>Disabled / Read-only</td><td>禁用不响应操作并说明原因；只读内容保持可选择与复制。</td><td>不只依赖降低透明度说明状态</td></tr><tr><td>Validation / Failure</td><td>字段附近显示原因；提交时定位首个错误；输入保留。</td><td>错误文字完整换行，不遮挡按钮</td></tr><tr><td>Dialog / Drawer</td><td>焦点进入浮层；Tab 留在浮层；Esc 关闭后回到触发按钮。</td><td>有未保存内容时明确提示处理方式</td></tr><tr><td>Destructive action</td><td>说明对象及后果，默认焦点放在取消；确认使用危险色。</td><td>不使用含糊的“确定”按钮文案</td></tr></tbody></table></div>
+  <div class="motion-spec"><div><b>160<span>ms</span></b><p>常规颜色与状态反馈</p></div><div><b>220<span>ms</span></b><p>弹窗、抽屉过渡</p></div><div><b>0<span>ms</span></b><p>用户启用减少动态效果</p></div></div>
+  <p class="rule-note">统一缓动 cubic-bezier(0.2, 0.8, 0.2, 1)。浮层位移 4–8px；官网按钮沿用 120ms 按下反馈、200ms 变色与 400ms 箭头滑动，账户按钮沿用 180ms 反馈。以透明度与 transform 为主；工作面板无持续漂浮、自动改序和循环滚动。营销动效结束后落在稳定网格，阅读区支持暂停。</p>
+  <div class="sheet-foot"><span>行情涨跌色继承用户配色偏好；系统成功 / 失败独立命名，始终有文字含义。</span><span>14 / 18</span></div>
+</section>
+
+<!-- BEGIN FLOW_RULES -->
+<section class="sheet fr-sheet" id="flows">
+  <div class="sheet-top"><span>OPENX / WORKFLOWS</span><span>FLOW COVERAGE</span></div>
+  <div class="section-heading"><h2>个人中心流程与状态</h2><p>从入口到完成，每个流程都定义下一步、异常原因和返回位置。下方按现有页面与业务规则整理。</p></div>
+  <div class="fr-key"><div><b>既有业务边界</b><p>资格、金额、期限、权限与计算方式继续读取原业务来源。设计规则不新增门槛，不代替业务判断。</p></div><div><b>界面交付规则</b><p>下面的加载、报错、重试、焦点和草稿处理是后续页面必须呈现的交互标准，不表示现有网站已经全部实现。</p></div></div>
+  <div class="fr-state-strip" aria-label="通用流程状态"><span>进入</span><i aria-hidden="true">→</i><span>填写与核对</span><i aria-hidden="true">→</i><span>处理中</span><i aria-hidden="true">→</i><span>结果与下一步</span></div>
+  <p class="fr-intro">展开任一领域查看完整清单。只读页面不强行添加提交步骤；空数据、没有筛选结果、读取失败必须分开。</p>
+  <div class="fr-flows">
+    <details class="fr-flow" open><summary><span class="fr-number">01</span><span><b>数据总览</b><small>资产概览、趋势、会员身份与业务入口</small></span><span class="fr-chevron" aria-hidden="true">+</span></summary><div class="fr-content"><dl class="fr-matrix">
+      <div><dt>入口与步骤</dt><dd>个人中心首页 → 查看资产与会员状态 → 切换趋势区间或隐藏金额 → 前往对应业务页面。</dd></div>
+      <div><dt>进行中与完成</dt><dd>首次读取使用原尺寸骨架；区间切换保留图表外框。完成后显示时间区间、金额单位与同步结果，不弹成功 Toast。</dd></div>
+      <div><dt>空与失败</dt><dd>零资产仍显示 0；未知金额显示“—”。没有趋势数据给出原因；局部读取失败仅替换该区域并提供重新读取。</dd></div>
+      <div><dt>返回与禁用</dt><dd>从子页面返回保留原区间和金额可见性。尚未取得数据时不能显示虚构数值；业务入口是否可用服从原资格规则。</dd></div>
+      <div><dt>权限与未保存</dt><dd>未登录显示登录入口并保留返回地址。只读页面无未保存确认；金额可见性是显示偏好。概览不放常用管理、账户活动与分段权益色条。</dd></div>
+    </dl><p class="fr-source">业务来源 <code>AccountPage.tsx</code>、<code>accountIA.ts</code></p></div></details>
+    <details class="fr-flow"><summary><span class="fr-number">02</span><span><b>等级与权益</b><small>当前等级、成长进度、权益与升级路径</small></span><span class="fr-chevron" aria-hidden="true">+</span></summary><div class="fr-content"><dl class="fr-matrix">
+      <div><dt>入口与步骤</dt><dd>等级与权益 → 当前等级 → 查看下一等级条件或展开完整权益 → 进入对应权益。旧权益入口继续跳转到合并页面。</dd></div>
+      <div><dt>进行中与完成</dt><dd>会员身份与权益共同读取；加载时保留卡片占位。最高等级明确显示已达最高等级，不留下“继续升级”无效按钮。</dd></div>
+      <div><dt>空与失败</dt><dd>尚未解锁仍显示权益名称、条件和下一步。读取失败不回退为最低等级，也不把已解锁权益显示为锁定。</dd></div>
+      <div><dt>返回与禁用</dt><dd>条件未满足时提供“查看条件”。返回保留比较位置；失败就地重新读取，不跳到首页。</dd></div>
+      <div><dt>权限与未保存</dt><dd>等级、成长值与权益数量共用同一业务来源；会员卡沿用 App 资产并保持 Logo 收在卡内。本页无编辑草稿。</dd></div>
+    </dl><p class="fr-source">业务来源 <code>AccountAreaPage.tsx</code>、<code>AccountMobileTier.tsx</code>、<code>tierData.ts</code></p></div></details>
+    <details class="fr-flow"><summary><span class="fr-number">03</span><span><b>交易指标</b><small>筛选、详情、领取、发放、使用与续期</small></span><span class="fr-chevron" aria-hidden="true">+</span></summary><div class="fr-content"><dl class="fr-matrix">
+      <div><dt>入口与步骤</dt><dd>指标库 → 查看指标详情与资格 → 核对 TradingView 账户 → 确认领取 → 发放结果 → 使用说明；过期指标按既有规则进入续期。</dd></div>
+      <div><dt>进行中与完成</dt><dd>领取中保留指标名与目标账户，避免重复提交；用户可以返回指标库查看结果。成功显示授权状态、期限及 TradingView 使用入口。</dd></div>
+      <div><dt>空与失败</dt><dd>筛选为空提供“查看全部指标”。领取失败保留资格与目标指标，并显示可重试原因；不能标记为已领取。</dd></div>
+      <div><dt>返回与禁用</dt><dd>未达等级显示所需资格和查看条件入口；已使用中进入管理授权。返回详情保留来源筛选；提交中禁止相同申请重复触发。</dd></div>
+      <div><dt>权限与未保存</dt><dd>领取范围、发放时间、授权期限继续由原规则决定。未提交的账户名称可在当前流程内保留；离开时如有修改需确认放弃。</dd></div>
+    </dl><p class="fr-source">业务来源 <code>AccountIndicatorFlow.tsx</code>、<code>TierIndicatorCards.tsx</code></p></div></details>
+    <details class="fr-flow"><summary><span class="fr-number">04</span><span><b>钱包与充提记录</b><small>资产、充值、提现核对、安全验证与交易追踪</small></span><span class="fr-chevron" aria-hidden="true">+</span></summary><div class="fr-content"><dl class="fr-matrix">
+      <div><dt>入口与步骤</dt><dd>钱包 → 选币种。充值：选网络 → 取得地址与 Memo / Tag。提现：填写网络、地址、数量 → 核对费用与到账数量 → 安全验证 → 提交 → 进度与详情。记录支持筛选和返回。</dd></div>
+      <div><dt>进行中与完成</dt><dd>获取地址、获取报价、发送验证码与提交分别显示忙碌态。提交完成只表示申请建立；待处理、处理中、已完成、未完成按交易状态分别显示。</dd></div>
+      <div><dt>空与失败</dt><dd>零余额、无筛选结果、交易不存在与读取失败分开呈现。地址不完整不得显示可用二维码；未完成交易保留原因、编号与详情。</dd></div>
+      <div><dt>返回与禁用</dt><dd>验证码冷却显示剩余时间；处理中阻止重复操作。余额不足、网络或地址不匹配、缺少 Memo、未勾核对、报价过期按原校验阻止提交。报价缺失返回填写；失败提现重新填写，不复用失效报价。</dd></div>
+      <div><dt>权限与未保存</dt><dd>报价、费用、到账数、余额和验证码条件沿用原规则。修改币种、网络、地址或数量使旧报价失效。返回记录保留筛选与滚动位置；验证码不跨会话保存。</dd></div>
+    </dl><p class="fr-source">业务来源 <code>AccountWalletPage.tsx</code>、现有钱包校验与报价模块</p></div></details>
+    <details class="fr-flow"><summary><span class="fr-number">05</span><span><b>交易所 UID 授权</b><small>选择交易所、验证归属、失效重连与解除授权</small></span><span class="fr-chevron" aria-hidden="true">+</span></summary><div class="fr-content"><dl class="fr-matrix">
+      <div><dt>入口与步骤</dt><dd>交易所设置 → UID 页签 → 选择交易所 → 输入 UID 与可选推荐链接 → 验证并授权 → 连接详情。</dd></div>
+      <div><dt>进行中与完成</dt><dd>验证中保留交易所和输入；成功显示归属信息、最近验证与管理入口。状态属于具体账户，不只显示一颗绿色标签。</dd></div>
+      <div><dt>空与失败</dt><dd>未连接显示选择交易所入口；验证失败和授权失效保留账户记录。账户不支持节点授权时说明资格原因并提供客服入口。</dd></div>
+      <div><dt>返回与禁用</dt><dd>失败可重新验证；失效可修改 UID 后重连。解除前说明影响，并提供保留授权。返回清单保留所选交易所。</dd></div>
+      <div><dt>权限与未保存</dt><dd>UID 仅确认节点归属，不赋予交易或提现权限。解除 UID 不解除 API；失败重试不创建第二份连接。UID 草稿可在当前流程内保留。</dd></div>
+    </dl><p class="fr-source">业务来源 <code>AccountConnectionFlows.tsx</code> / <code>ExchangeAuthorizationFlow</code></p></div></details>
+    <details class="fr-flow"><summary><span class="fr-number">06</span><span><b>交易所 API 连接</b><small>用途、教程、金钥、权限校验与暂停管理</small></span><span class="fr-chevron" aria-hidden="true">+</span></summary><div class="fr-content"><dl class="fr-matrix">
+      <div><dt>入口与步骤</dt><dd>交易所设置 → API 页签 → 选择交易所与连接方式 → 按需查看教程 → 选择读取或合约交易用途 → 输入 Key / Secret → 校验 → 权限管理。</dd></div>
+      <div><dt>进行中与完成</dt><dd>分别说明金钥有效性、读取与合约权限校验进度；完成后列出每项权限。已暂停保留设置，并区分连接状态与执行开关。</dd></div>
+      <div><dt>空与失败</dt><dd>未连接显示添加入口；失效显示更新 Key；权限失败显示具体缺项与重新校验。保留交易所、用途与原连接记录。</dd></div>
+      <div><dt>返回与禁用</dt><dd>只读用途不能声称拥有交易权限；失效金钥不继续执行。解除前说明停止读取或执行，返回后继续原列表上下文。</dd></div>
+      <div><dt>权限与未保存</dt><dd>提现权限始终关闭；解除 API 不解除 UID。管理页 Key 遮罩、Secret 不回显。敏感输入仅当前流程暂存，离开或完成即清除，不写入 URL、日志或浏览器持久存储。</dd></div>
+    </dl><p class="fr-source">业务来源 <code>AccountConnectionFlows.tsx</code> / <code>ApiConnectionFlow</code></p></div></details>
+    <details class="fr-flow"><summary><span class="fr-number">07</span><span><b>身份验证</b><small>证件、上传、人脸、个人与工作资料、审核结果</small></span><span class="fr-chevron" aria-hidden="true">+</span></summary><div class="fr-content"><dl class="fr-matrix">
+      <div><dt>入口与步骤</dt><dd>证件地区 → 验证方式 → 上传证件 → 人脸验证 → 确认个人信息 → 工作与行业资料 → 提交审核 → 结果与身份详情。</dd></div>
+      <div><dt>进行中与完成</dt><dd>上传逐项显示进度；审核中显示已提交项目，并允许离开后返回。只有通过结果显示已认证；详情中的身份信息遮罩。持久已认证状态使用标题旁16px勾号与短状态文字，避免独立大绿色圆和重复英文眉题；页面标题、资料卡和页脚同轴。</dd></div>
+      <div><dt>空与失败</dt><dd>未开始给出所需资料与开始入口；补件定位到具体项目，保留已完成资料。提交失败不进入审核中；拒绝与技术错误分别说明下一步。</dd></div>
+      <div><dt>返回与禁用</dt><dd>返回上一步保留仍有效的选择；格式或必填校验在对应字段显示。补件回到上传，技术失败从失败环节重试，不强制重做已完成项目。</dd></div>
+      <div><dt>权限与未保存</dt><dd>可接受证件、地区、校验条件与审核结果沿用业务来源。离开未提交流程提醒未提交内容；敏感文件不持久缓存，不声称已永久保存。</dd></div>
+    </dl><p class="fr-source">业务来源 <code>AccountKycFlow.tsx</code>、<code>AccountAreaPage.tsx</code></p></div></details>
+    <details class="fr-flow"><summary><span class="fr-number">08</span><span><b>节点中心</b><small>奖励、邀请、用户筛选、用户详情与备注</small></span><span class="fr-chevron" aria-hidden="true">+</span></summary><div class="fr-content"><dl class="fr-matrix">
+      <div><dt>入口与步骤</dt><dd>节点总览 → 奖励记录或用户管理 → 按考试状态、用户、UID、备注筛选 → 用户详情 → 编辑联系资料与备注。邀请支持复制及二维码；提取进入钱包提现流程。</dd></div>
+      <div><dt>进行中与完成</dt><dd>奖励与用户数使用同一记录来源；复制成功在原操作处反馈。备注保存完成后更新详情与列表；奖励状态区分待入账、已入账、已提取。</dd></div>
+      <div><dt>空与失败</dt><dd>尚无邀请用户时显示邀请入口；筛选无结果提供清除筛选。未取得邀请链接不显示通用链接为本人链接；复制失败允许手动选择文字。</dd></div>
+      <div><dt>返回与禁用</dt><dd>关闭详情返回原用户行并保留筛选；备注保存失败保留草稿。没有可用链接时解释不能分享的原因，奖励提取条件由钱包和既有资格决定。</dd></div>
+      <div><dt>权限与未保存</dt><dd>以当前 NodeCenterPage 的考试激活记录计算奖励，不重新使用旧交易量佣金模型。账户间资料隔离；未保存备注关闭时确认放弃，已保存内容不重复确认。</dd></div>
+    </dl><p class="fr-source">业务来源 <code>NodeCenterPage.tsx</code>、<code>nodeRewards.ts</code>、<code>rewardRates.ts</code></p></div></details>
+    <details class="fr-flow"><summary><span class="fr-number">09</span><span><b>个人资料</b><small>昵称、UID、头像上传、裁切与保存</small></span><span class="fr-chevron" aria-hidden="true">+</span></summary><div class="fr-content"><dl class="fr-matrix">
+      <div><dt>入口与步骤</dt><dd>资料页 → 编辑昵称并保存；或更换头像 → 选择图片 → 调整裁切与缩放 → 保存。UID 可复制，身份与入会信息只读。</dd></div>
+      <div><dt>进行中与完成</dt><dd>读取图片与生成裁切分别显示忙碌反馈；保存完成同步侧栏与资料页。保留原头像直到新头像确认成功。</dd></div>
+      <div><dt>空与失败</dt><dd>无头像使用既有默认头像。格式、文件大小、最小尺寸、读取与裁切失败分别解释；昵称不合法在字段下提示，存储失败保留编辑状态。</dd></div>
+      <div><dt>返回与禁用</dt><dd>取消昵称恢复原值；裁切面板可更换图片或恢复默认。保存中禁止重复提交；文件条件沿用已有校验，不自行修改限制。</dd></div>
+      <div><dt>权限与未保存</dt><dd>仅编辑当前账户。昵称或头像有改动才出现放弃确认；裁切源图、缩放或位置变化均计为未保存。关闭后返回触发按钮。</dd></div>
+    </dl><p class="fr-source">业务来源 <code>AccountProfilePage.tsx</code>、<code>auth/authMock.ts</code> 的资料校验</p></div></details>
+    <details class="fr-flow"><summary><span class="fr-number">10</span><span><b>账户安全</b><small>信箱、密码、双重验证、装置与安全活动</small></span><span class="fr-chevron" aria-hidden="true">+</span></summary><div class="fr-content"><dl class="fr-matrix">
+      <div><dt>入口与步骤</dt><dd>信箱：验证旧信箱 → 新信箱与验证码 → 完成。密码：当前密码、新密码、确认 → 验证 → 完成。2FA：说明 → 扫码 → 验证 → 保存恢复码 → 完成；停用另行验证。装置：选择其他装置 → 确认登出。</dd></div>
+      <div><dt>进行中与完成</dt><dd>发送、校验与保存都有具体动作名。成功更新安全方法和装置列表；2FA 只有完成恢复码确认后才显示已启用。</dd></div>
+      <div><dt>空与失败</dt><dd>没有其他装置明确说明；没有安全活动显示空记录。验证码格式、密码条件、两次密码不一致、同一新旧信箱分别定位到相关字段。</dd></div>
+      <div><dt>返回与禁用</dt><dd>验证码重发沿用既有冷却状态；密码规则按原清单逐项展示。批量登出只作用于其他装置；停用双重验证说明影响并保持取消可达。</dd></div>
+      <div><dt>权限与未保存</dt><dd>密码和验证码退出流程即清空；不显示在 URL 或记录中。未保存的普通输入可确认放弃；恢复码确认不得跳过。重新进入敏感流程按现有规则重新验证。</dd></div>
+    </dl><p class="fr-source">业务来源 <code>AccountSecurityPage.tsx</code></p></div></details>
+    <details class="fr-flow"><summary><span class="fr-number">11</span><span><b>通知与偏好</b><small>语言、全站主题与通知开关</small></span><span class="fr-chevron" aria-hidden="true">+</span></summary><div class="fr-content"><dl class="fr-matrix">
+      <div><dt>入口与步骤</dt><dd>通知与偏好 → 选择语言、浅色或深色主题、调整通知开关。选项在原行完成，不要求跳转新页面。</dd></div>
+      <div><dt>进行中与完成</dt><dd>主题立即同步全站；开关明确显示开或关。仅取得保存成功结果时反馈已保存，不能把按钮变色等同于账户保存成功。</dd></div>
+      <div><dt>空与失败</dt><dd>偏好尚未取得时保留标签与占位；没有选项时说明原因。写入失败恢复原状态，并在该行提供重试。</dd></div>
+      <div><dt>返回与禁用</dt><dd>语言列表 Esc 收起并回到按钮，选择后保持当前位置。某开关暂不可改时解释原因；保存期间只锁定受影响的项。</dd></div>
+      <div><dt>权限与未保存</dt><dd>即时生效项无需额外保存或放弃确认。主题沿用全站来源；语言及通知的已选、处理中、已保存分别建模，不自行新增语言或通知类别。</dd></div>
+    </dl><p class="fr-source">业务来源 <code>AccountPrefsPage.tsx</code>、<code>siteTheme.ts</code></p></div></details>
+    <details class="fr-flow"><summary><span class="fr-number">12</span><span><b>点数中心</b><small>购买、核对、付款、入账与策略扣点记录</small></span><span class="fr-chevron" aria-hidden="true">+</span></summary><div class="fr-content"><dl class="fr-matrix">
+      <div><dt>入口与步骤</dt><dd>点数余额 → 输入购买数量 → 核对数量与付款币别 → 付款 → 结果 → 点数记录；记录按购买或策略扣点筛选。</dd></div>
+      <div><dt>进行中与完成</dt><dd>付款中保留订单和数量；成功同时更新余额与该笔入账记录。结果提供查看记录与再次购买，不能刷新后重复入账。</dd></div>
+      <div><dt>空与失败</dt><dd>无交易记录与无筛选结果分开。取消或失败不增加余额；结果不确定时显示待确认并允许查订单，不能自动声称没有扣款。</dd></div>
+      <div><dt>返回与禁用</dt><dd>数量沿用大于零的整数校验；资料不完整返回选择。失败回核对保留数量与原订单关联，重试避免重复创建；提交时阻止重复点击。</dd></div>
+      <div><dt>权限与未保存</dt><dd>点数与加密钱包分开显示，购买需具备原有账户资格。补点后完成待扣，再手动恢复策略，不改为自动恢复。未付款数量可返回修改，付款结果以订单状态为准。</dd></div>
+    </dl><p class="fr-source">业务来源 <code>PointsCenterPage.tsx</code>、<code>pointsPreviewStore.ts</code></p></div></details>
+  </div>
+  <div class="fr-contract"><h3>所有流程共享的交付条件</h3><ul><li>返回保留有效筛选、上下文与滚动位置；失效的报价、验证码和授权不复用。</li><li>重试只处理失败环节；已提交项目通过原记录查询，不靠再次点击确认制造成功。</li><li>会改变结果的按钮使用具体动作名称；不可操作时提供可读原因与可行的下一步。</li><li>权限不足、登录过期与资料读取失败使用不同反馈；登录回来恢复目标页面。</li></ul></div>
+  <div class="sheet-foot"><span>状态清单作为页面设计与前端交付依据，业务条件继续复用现有逻辑</span><span>15 / 18</span></div>
+</section>
+
+<section class="sheet rp-sheet" id="responsive-patterns">
+  <div class="sheet-top"><span>OPENX / BEHAVIOR</span><span>RESPONSIVE & OVERLAYS</span></div>
+  <div class="section-heading"><h2>复杂布局与交互规则</h2><p>统一浮层、长内容、键盘与触摸行为，让同一任务在桌面和手机上都能完整完成。</p></div>
+  <div class="rp-section"><div class="rp-label"><span>01</span><h3>选择合适的承载方式</h3></div><div class="rp-rules">
+    <div><b>页面</b><p>完整多步流程、身份验证、提现和 API 连接使用独立页面。URL 可以回到步骤或记录；每次切换把焦点放到步骤标题。</p></div>
+    <div><b>弹窗</b><p>单一决策或短任务，例如解除授权、修改昵称、确认登出。最大宽度 480px；说明、内容与操作一眼可辨，不在确认弹窗里塞完整长流程。</p></div>
+    <div><b>抽屉</b><p>需要保留列表上下文的用户详情、记录详情与筛选。桌面最大宽度 480px；多字段长期编辑或需要深链接的完整详情转页面。</p></div>
+    <div><b>轻量浮层</b><p>下拉选项和补充说明贴近触发对象；靠近视口边缘自动翻转。内容太长时内部滚动，不让整页横向滚动。</p></div>
+  </div></div>
+  <div class="rp-section"><div class="rp-label"><span>02</span><h3>遮罩、层级与焦点</h3></div><ol class="rp-layer-list"><li><b>0</b><span>页面内容</span><small>常规布局与卡片</small></li><li><b>10</b><span>固定导航</span><small>页头、侧栏与局部吸顶</small></li><li><b>20</b><span>下拉与弹出内容</span><small>相对所属页面的选择器</small></li><li><b>30 / 40</b><span>遮罩 / 对话框</span><small>底层不可操作，锁定页面滚动</small></li><li><b>50 / 60</b><span>Toast / Tooltip</span><small>只属于当前活动层，不跨层显示</small></li></ol><div class="rp-rules">
+    <div><b>一次只进行一个模态任务</b><p>弹窗内的选单和提示属于该弹窗；关闭最上层只影响最上层。放弃编辑确认替换当前内容，不叠加第三层对话框。</p></div>
+    <div><b>右上角统一使用 × 关闭</b><p>弹窗与抽屉右上角使用 20px × 图标，不放“关闭”文字；点击区 44 × 44px，aria-label 说明对象，例如“关闭用户详情”。悬停仅使用中性灰阶，键盘焦点为 2px 清晰描边；底部仍可保留取消。</p></div>
+    <div><b>关闭路径保持一致</b><p>只读浮层可点遮罩关闭；有未保存内容时走放弃确认。Esc 与右上角 × 规则相同，不能绕过草稿确认；完成关闭后返回原触发按钮。</p></div>
+    <div><b>焦点留在活动对话框</b><p>打开时聚焦标题或首个字段，Tab 在其中循环；风险确认优先聚焦取消。关闭回到触发按钮；该按钮已移除时回到相邻列表行。</p></div>
+    <div><b>遮罩负责隔离</b><p>以品牌 Ink 的 48% 透明度覆盖页面，不额外增加玻璃模糊。底层设为 inert；对话框具备标题关联和 modal 语义。</p></div>
+  </div><p class="rp-reference">键盘与焦点依据 <a href="https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/" target="_blank" rel="noreferrer">WAI-ARIA Dialog 模式</a>；层级数值与图标尺寸是 OpenX 的统一约定。</p></div>
+  <div class="rp-section"><div class="rp-label"><span>03</span><h3>长内容与手机键盘</h3></div><div class="rp-scroll-spec"><div class="rp-scroll-visual" aria-label="长弹窗结构示意"><div>固定标题 <span aria-hidden="true">×</span></div><div><span>内容区域独立滚动</span><i></i><i></i><i></i><i></i><i></i></div><div>取消 <b>主要操作</b></div></div><dl class="rp-definition"><div><dt>桌面</dt><dd>浮层距上下边缘至少 24px；最大高度为可视区减 48px。容器分 header / body / footer 三行，只有 body 滚动。</dd></div><div><dt>手机</dt><dd>≤767px 时抽屉成为全宽任务面板，完整表单使用可视区高度；短确认保留两侧 16px。顶部和底部加入 safe-area。</dd></div><div><dt>键盘弹起</dt><dd>表单随可视区域收缩；无法可靠吸底时让操作回到表单文流。字段与错误提示滚动到键盘上方，不能用固定 100vh 把按钮压到键盘下。</dd></div><div><dt>滚动边界</dt><dd>不让 header / footer 遮住首末字段；内层滚动结束不滚动背景。避免同一屏出现两个相邻的长列表滚动区。</dd></div></dl></div><p class="rp-reference">键盘视口处理参考 <a href="https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport" target="_blank" rel="noreferrer">MDN VisualViewport</a>，窄屏不通过缩小整页字号适配。</p></div>
+  <div class="rp-section"><div class="rp-label"><span>04</span><h3>响应式内容优先级</h3></div><div class="rp-breakpoints"><div><b>≤767px</b><span>手机 / 4 栏</span><p>单列内容、16px 页边距。表单字段一列；主要操作保持 44px 触摸高度。详情与列表切换后保留返回上下文。</p></div><div><b>768–1199px</b><span>平板 / 8 栏</span><p>24px 页边距、收窄导航。筛选栏可以换行；文字与控件不压缩。次栏低于约定最小宽度时提前换行。</p></div><div><b>≥1200px</b><span>桌面 / 12 栏</span><p>32px 页边距。内容在剩余工作区居中，最大宽度使用页面类型 token；大屏不整体放大字体与图标。</p></div></div><div class="rp-rules">
+    <div><b>列表与表格</b><p>手机优先显示对象、金额、状态和主要操作；时间、编号、详情进入可展开行。需要横向比较的完整表格放在局部可滚动容器，并有可见滚动提示。</p></div>
+    <div><b>筛选与批量动作</b><p>搜索保留在列表上方；复杂筛选收进抽屉，入口显示已选数量。批量操作只在选中后出现，提供取消选择，不能遮挡记录末行。</p></div>
+    <div><b>文字与数字</b><p>标题自然换行且无末尾标点；金额与单位保持关联，极长数值降低一个字号级别后允许合理换行。地址、UID 可断行与复制，完整详情不省略。</p></div>
+    <div><b>触摸与放大</b><p>触摸设备不依赖 hover 显示按钮或关键提示；使用点击展开。200% 文本放大时控件自适应增高，不裁掉文字。布局最窄覆盖 320px。</p></div>
+  </div></div>
+  <div class="rp-section"><div class="rp-label"><span>05</span><h3>校验、反馈与未保存内容</h3></div><div class="rp-rules">
+    <div><b>校验时机</b><p>初始不显示错误；首次离开已填写字段时校验，提交时检查全部。错误出现后随有效修改更新；提交失败将焦点移到首个错误，关联错误说明。</p></div>
+    <div><b>普通 Toast</b><p>复制、保存等非关键反馈显示 5 秒，可手动关闭；悬停或键盘焦点停留时暂停计时，最多同时 3 条。同一事件合并，不重复刷屏。</p></div>
+    <div><b>错误持续可见</b><p>字段错误留在字段下，直到修正。页面错误提供重试；重要交易结果保留在页面或记录里。Toast 不作为失败、付款结果和权限原因的唯一入口。</p></div>
+    <div><b>可中断的修改</b><p>只有值发生变化才标记未保存。放弃确认提供继续编辑与放弃修改；保存失败保留草稿。即时生效的主题、筛选不再叠加保存确认。</p></div>
+    <div><b>动效与等待</b><p>加载保留原空间，操作按钮保持宽度。常规反馈沿用现有按钮时长，浮层 220ms / 8px；减少动态偏好下取消位移动画。结果改变用文字和图标同步表达。</p></div>
+    <div><b>禁止假成功</b><p>提交、处理中与成功是三个独立状态。只有得到对应结果才更新完成态；超时或断线保留对象标识供重试或查询，不自动清空内容。</p></div>
+  </div><p class="rp-reference">持续错误与非打断式通知参考 <a href="https://www.w3.org/WAI/ARIA/apg/patterns/alert/" target="_blank" rel="noreferrer">WAI-ARIA Alert 模式</a>；5 秒仅用于可在页面再次确认的普通反馈。</p></div>
+  <div class="sheet-foot"><span>使用共同断点、浮层层级和反馈 token，避免页面各自定义一套行为</span><span>16 / 18</span></div>
+</section>
+
+<!-- END FLOW_RULES -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- BEGIN IMPLEMENTATION -->
+<section class="sheet" id="implementation">
+  <div class="sheet-top"><span>OPENX / IMPLEMENTATION</span><span>单一规则来源</span></div>
+  <div class="section-heading"><h2>规范与代码保持一致</h2><p>所有基础值保存在 tokens.json。字体、间距、尺寸、色彩、图层和组件时长由同一文件导出；页面引用语义角色，组件引用尺寸变量。</p></div>
+  <div class="implementation-facts" id="implementation-facts"></div>
+  <div class="implementation-chain"><code>tokens.json</code><span aria-hidden="true">→</span><code>build-tokens.mjs</code><span aria-hidden="true">→</span><code>CSS / JS / 断点</code></div>
+  <div class="table-wrap"><table class="rules-table"><thead><tr><th>文件</th><th>责任</th><th>使用规则</th></tr></thead><tbody>
+  <tr><td><a href="tokens.json" download>tokens.json</a></td><td>唯一基础数值来源</td><td>颜色、字阶、布局、组件、动效、图层；修改先发生在此文件</td></tr>
+  <tr><td><a href="tokens.css" download>tokens.css</a></td><td>完整 CSS 变量</td><td>布局、字号、行高、字重、按钮尺寸、状态时长等均可直接引用</td></tr>
+  <tr><td><a href="tokens.js" download>tokens.js</a></td><td>页面运行时数据</td><td>规范表格、宽度示意和交互规则读取 OPENX_TOKENS</td></tr>
+  <tr><td><a href="responsive.css" download>responsive.css</a></td><td>由断点生成的布局辅助类</td><td>媒体查询边界在生成时写入；不在媒体查询中使用无效的 CSS var()</td></tr>
+  <tr><td><a href="breakpoints.json" download>breakpoints.json</a></td><td>其他构建环境的断点输入</td><td>手机 ≤ 767、平板 768–1199、桌面 ≥ 1200；项目中不得再维护第二套边界</td></tr>
+  <tr><td><a href="build-tokens.mjs" download>build-tokens.mjs</a></td><td>可重复执行的导出脚本</td><td>在规范目录运行 node build-tokens.mjs，更新所有生成文件</td></tr>
+  <tr><td><a href="motion-runtime.js" download>motion-runtime.js</a> / <a href="motion-runtime.css" download>CSS</a></td><td>共享动效与减少动态适配</td><td>在页面业务脚本之后加载；弹窗、抽屉、局部内容更新、首次进入与忙碌状态渐进增强，不延迟业务操作</td></tr>
+  <tr><td><a href="select-menu.js" download>select-menu.js</a> / <a href="select-menu.css" download>CSS</a></td><td>下拉列表与键盘交互</td><td>保留原 select 表单值与 input/change 事件；动态字段自动接入，主题与减少动态模式同步</td></tr>
+  <tr><td><a href="calendar-picker.js" download>calendar-picker.js</a> / <a href="calendar-picker.css" download>CSS</a></td><td>日期与区间选择</td><td>单日、双月区间、年月快选共用视觉；保留原 date 字段值、事件和边界校验，日期演练与业务筛选使用同一组件</td></tr>
+  </tbody></table></div>
+  <div class="template-notes"><div><h3>继承关系</h3><p>颜色先按品牌与灰阶定义，再映射明暗主题中的 canvas、surface、text、border、action；组件通过这些角色取值。官网按钮和账户按钮保持各自原有形态，状态时长分别定义。</p></div><div><h3>内容与文案</h3><p>标题末尾无标点；操作文案写明对象和动作。简繁语言对应 SC / TC 字库。长标题自然换行；金额、错误原因、资格条件与最终确认信息完整呈现。</p></div></div>
+  <details class="implementation-details"><summary>应用到产品页面的顺序</summary><ol><li>按已有功能选择模板，保留入口、字段、资格条件和计算逻辑</li><li>接入统一字体与 Tokens，再组合真实需要的组件</li><li>把该流程的加载、空、错误、成功和返回路径接入同一布局</li><li>用长内容、宽屏与手机核对实际排版，最后统一进行完整审核</li></ol></details>
+  <p class="rule-note">Footer 的反馈邮箱与商务合作入口分开；收件地址使用正式配置。实际地址尚未提供，交接时列为待配置项。</p>
+  <div class="sheet-foot"><span>规范使用独立目录；产品页面套用后仍需按最终页面审核。</span><span>17 / 18</span></div>
+</section>
+
+<!-- END IMPLEMENTATION -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="sheet principles-sheet" id="principles">
+  <div class="sheet-top"><span>OPENX / DESIGN CONTRACT</span><span>07 — APPLY CONSISTENTLY</span></div>
+  <div class="section-heading"><h2>设计规则与参考</h2><p>保留品牌识别，以整齐、可读、稳定的产品结构承载内容。</p></div>
+  <ol class="principle-list"><li><b>先选页面模板</b><span>工作面板、设置表单、品牌页面分别使用已定义容器；标题与内容使用同一模板。</span></li><li><b>再确定内容关系</b><span>先安排主信息、状态、操作，再确定卡片数量；图表、列表、图片各有合适的位置。</span></li><li><b>颜色只引用角色</b><span>组件调用 canvas / surface / text / muted / border / action / status，页面不另配色值。</span></li><li><b>同组内容共用基线</b><span>卡片外框、标题起点、图片边界、数据与操作行逐层对齐；内容增长时整体伸展。</span></li><li><b>每个断点独立成立</b><span>手机按信息优先级重排；桌面使用可用区域；大屏内容居中并受最大宽度约束。</span></li><li><b>状态覆盖完整</b><span>初始、加载、空、成功、失败、禁用、焦点和选中均采用已定义的样式与行为。</span></li></ol>
+  <div class="source-grid"><div><h3>已有资产</h3><p>品牌橙、12 级灰阶：项目品牌中心。Logo：canonical 品牌资产。字体：自托管 Open Sans / Noto Sans SC / Noto Sans TC，统一使用真实 400–600 变量字重。状态色统一引用 Radix Colors，角色映射见主题章节。</p></div><div><h3>本次拟定</h3><p>主题语义映射、容器宽度、间距字阶、组件尺寸与状态契约。按钮以原站 index.css / account-hub.css / PillArrow.tsx 为基线延伸。本文件为 v1.2 设计提案，供整套风格确认。</p></div></div>
+  <div class="reference-row"><a href="https://www.radix-ui.com/colors/docs/palette-composition/composing-a-palette" target="_blank" rel="noreferrer">Radix · 配色组合与状态色 ↗</a><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/color_value/oklch" target="_blank" rel="noreferrer">MDN · 感知明度与色相 ↗</a><a href="https://linear.app/now/how-we-redesigned-the-linear-ui" target="_blank" rel="noreferrer">Linear · 导航、层级与细节 ↗</a><a href="https://docs.stripe.com/dashboard/basics" target="_blank" rel="noreferrer">Stripe · 账户任务组织 ↗</a><a href="https://www.awwwards.com/sites/self-aware" target="_blank" rel="noreferrer">Awwwards · Self Aware / 排版与品牌一致性 ↗</a><a href="https://thefwa.com/cases/heronai" target="_blank" rel="noreferrer">FWA · HeronAI / 动效节奏与细节 ↗</a><a href="https://www.webbyawards.com/judging-criteria/" target="_blank" rel="noreferrer">Webby · 整体体验标准 ↗</a></div>
+  <div class="downloads"><a class="download-primary" href="tokens.json" download>下载颜色与尺寸 Tokens</a><a href="tokens.css" download>下载 CSS 变量</a><button id="print-spec">打印 / 保存 PDF</button></div>
+  <div class="sheet-foot"><span>OpenX Interface System · v1.3 · 2026.10.02</span><span>18 / 18</span></div>
+</section>
+<section class="sheet refined-patterns" id="refined-patterns">
+  <div class="sheet-top"><span>OPENX / REUSABLE PATTERNS</span><span>2026.10.02 — 本轮沉淀</span></div>
+  <div class="section-title"><div><h2>把已确认的改进变成规则</h2><p>按适用场景复用组件，不把单页插图位置、示例金额和业务条件当成通用设计规范。</p></div></div>
+  <div class="rp-grid">
+    <article><h3>01 单层柔和高亮</h3><p>已有边框的输入、下拉、整张选择卡：悬停、选中、聚焦只加强原边框。深色默认 #34343B，浅色默认 #CFCFD6；使用 border-hover 略微提亮。无边框的链接和图标按钮保留可识别的灰色焦点轮廓。</p><div class="rp-focus-demo"><label>收款地址<input placeholder="请输入收款地址"></label><button class="rp-exchange" type="button" aria-pressed="false"><img src="assets/ex-icon-bitunix.svg" alt="Bitunix"><span>Bitunix</span><small>选择交易所</small></button></div><p class="rp-reject">不采用：橙色双圈、额外 inset 阴影、Logo 区内部再画框。错误仍需文字原因和柔和错误边框，不能只换颜色。</p></article>
+    <article><h3>02 图表骨架与颜色角色</h3><p>趋势图共用保形曲线、柔和虚线网格、低透明面积、细竖纹和末点圆点。资产与奖励使用品牌橙；策略收益绿涨红跌，以累计收益相对 0 判断，亏损期间的短暂回升仍为红色。不同策略使用各自历史，不能复制同一条示例曲线。</p><div class="rp-chart" aria-label="策略正收益曲线示例"><svg viewBox="0 0 420 138" role="img"><defs><linearGradient id="rp-chart-fill" x2="0" y2="1"><stop stop-color="#0ECB81" stop-opacity=".22"/><stop offset="1" stop-color="#0ECB81" stop-opacity="0"/></linearGradient></defs><path class="rp-gridline" d="M12 28H408M12 72H408M12 116H408"/><path d="M12 112C48 110 58 89 88 89H136V71C170 71 188 47 219 50S264 39 285 33S332 28 356 20S388 21 408 14V126H12Z" fill="url(#rp-chart-fill)"/><path d="M12 112C48 110 58 89 88 89H136V71C170 71 188 47 219 50S264 39 285 33S332 28 356 20S388 21 408 14" stroke="#0ECB81" stroke-width="2" fill="none"/><circle cx="408" cy="14" r="3" fill="var(--ox-surface)" stroke="#0ECB81" stroke-width="2"/></svg></div><p>缺口、无交易、无操作：水平延续上一有效值，下次有效时刻垂直更新；没有前值则不画零线。明细缺失显示“—”。图表不得改变点值或编造收益。</p></article>
+    <article><h3>03 双线对照</h3><p>OI 价格为橙线，持有量为中性灰线；两线分别以首个有效点为 100 归一化，标明“起点 = 100”和指标名称。价格可保留轻面积，第二条线不铺重叠面积。悬停与键盘查看同时返回两项值及时间；Tooltip 只在图表内定位。</p><div class="rp-legend"><span><i></i>价格指数</span><span><i></i>OI 指数</span><small>起点 = 100</small></div><p class="rp-reject">不把价格和持有量的原始单位硬放在同一个无说明纵轴；无真实时间戳时不能编造日期。</p></article>
+    <article><h3>04 详情侧栏</h3><p>需要保留榜单上下文时，详情从右侧展开：桌面、平板最大 600px，手机全宽。顶部标题 20/28，× 图标 20px，点击区域 44×44px；正文独立滚动。Esc、遮罩和 × 关闭，焦点返回原入口；图表提示先消失，再关闭侧栏。</p><div class="rp-drawer-demo"><span>榜单工作区</span><aside><header><b>BLUR <small>详情</small></b><button aria-label="关闭详情示例" type="button"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.5"/></svg></button></header><p>固定标题 · 正文滚动</p><div>关键指标</div></aside></div><p>进入 300ms cubic-bezier(.22,1,.36,1)，退出 240ms cubic-bezier(.4,0,1,1)。退出完成后解除背景滚动锁和焦点陷阱；减少动态时立即完成。</p></article>
+    <article><h3>05 响应式权益与会员卡</h3><p>会员权益：桌面 4 列，平板 3 列，手机 2 列；平板 768–1199px，手机小于 768px。单项以图标、名称和说明排成一行，文字区域 min-width:0，允许换行，不缩小正文塞入。</p><div class="rp-benefits"><span>课程</span><span>练习</span><span>文章</span><span>指標</span><span>AI 助手</span><span>行情</span></div><p>会员卡保留原等级素材与金银色；轮播单卡宽度从可见轨道计算，禁止卡内最小内容宽度把轨道撑开。切换尺寸后仍将已选卡居中，等级名称、进度和插图完整可见。</p></article>
+    <article><h3>06 图标、文字和反馈入口</h3><p>广场主导航展开和收起均使用 22px 线性图标；主导航文字 16/24，常态 500、当前项 600，点击区域至少 44px。币种为圆形、交易所 Logo 为 20% 圆角矩形；组织字标完整等比展示。X COIN 使用圆形原档作为币种标识；环绕金币、单币和币堆只用于余额或套餐插图，完整等比展示，不裁为头像。</p><div class="rp-feedback"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M3 5h18v14H3zM3 5l9 8 9-8" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg><div><b>意见回馈</b><p>分享建议，告诉我们遇到的问题。</p></div><span>↗</span></div><p>反馈卡只保留最外层边框，放大信封至 28px，不再给图标包框；图标和两行文字整体垂直居中。页脚顺序：Logo → 简介 → 反馈卡 → 社群图标，底部字标与容器边距一致。</p></article>
+    <article><h3>07 背景效果与 FAQ</h3><p>模糊、渐隐只作用于背景或未开放的媒体预览层；文字、CTA 和可操作影片保持清晰。模糊层适度放大并由父层裁切，避免四边出现模糊漏光；不改变品牌图片本身。</p><div class="rp-cta"><div><h4>分享出去，奖励进来</h4><p>CTA 保持现有胶囊与箭头规范</p></div><button type="button">立即邀请 ↗</button></div><p>FAQ 沿用左标题、右问题列表，手机顺序堆叠；问题、展开答案与页底背景透明，以分隔线建立层级，不增加另一块深色底。问句保留正文语义，区块标题无结尾标点。</p></article>
+    <article><h3>08 展开与多步流程</h3><p>展开卡片使用约 380ms 的高度与内容透明度曲线缓动；从当前高度继续，快速重复点击不跳变，动态内容改变后重新测量。减少动态时立即切换，按钮状态和业务结果立即更新，不等待动画。</p><details class="rp-expand"><summary>查看功能</summary><div><p>同组内容逐项展开，布局自然增高</p><p>保留键盘操作和 aria-expanded</p></div></details><p>购买和授权复用步骤、摘要、确认、处理中、结果和重试布局。订单金额、网络、地址、有效期和到账状态由接口返回；设计规范只规定呈现方式，不规定费率、资格或结算规则。</p></article>
+  </div>
+  <div class="rp-boundary"><h3>未收录为通用规则</h3><p>单页插图的具体坐标、样例金额、会员资格阈值、策略保证金、API 权限和收款地址属于资产或业务契约。尚未读取的 Figma 手机布局不标记为已确认，也不以自绘方案替代原稿。</p></div>
+</section>
+
+
+
+<section id="post-deploy-rules"><h2>部署后的统一细则</h2><p class="rule-note">2026.10.02 · 这些规则承接当前字阶和组件角色，不改变业务资格或计算。</p><h3>英文眉题</h3><p style="font-size:12px;line-height:18px;letter-spacing:1.4px;color:var(--text-muted,#767680);font-weight:400">WHY OPENX</p><p>章节英文小字统一12px/18px、400字重、1.4px字距、中性次级色、大写；不添加橙色点线、第二个框或伪元素装饰。中文资格、金额、错误及业务状态继续使用自己的文字角色。</p><h3>交易所卡片与品牌</h3><p>同组卡片共享主题surface，Logo区域与信息区域同底色；只保留柔和外框。Bitunix绿、Bybit黄、Binance黄、Gate蓝绿保持品牌素材颜色；OKX按黑白原标识。完整横标按主题使用静态字标明暗版本，紧凑图标保持官方原色，不用灰阶滤镜。</p><h3>紧凑申请任务</h3><p>单项授权任务使用600px最大容器，标题、返回入口、卡片、页脚同宽同左边界；窄屏依内容自然增高。提交申请与实际授权必须区分，等待/失败/过期显示明确原因及下一步。</p></section>
+</main>
+<div class="toast" id="copy-toast" hidden><span id="copy-toast-message" role="status" aria-live="polite"></span><button class="icon-btn" type="button" aria-label="关闭提示"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button></div>
+<dialog id="connection-dialog" data-theme="light" aria-labelledby="connection-title"><form method="dialog"><div class="dialog-head"><h2 id="connection-title">连接状态</h2><button class="icon-btn dialog-close" type="submit" value="cancel" aria-label="关闭状态说明" title="关闭"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button></div><p id="connection-description"></p><div class="dialog-actions"><button class="ui-btn" autofocus>返回列表</button></div></form></dialog><dialog id="sample-dialog" data-theme="light" aria-labelledby="sample-dialog-title"><form method="dialog"><div class="dialog-head"><h2 id="sample-dialog-title">更新通知偏好</h2><button class="icon-btn dialog-close" type="submit" value="cancel" aria-label="关闭通知偏好弹窗" title="关闭"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></button></div><p>确认后保存本次设置。弹窗内容与按钮使用相同的内边距和对齐边界。</p><div class="dialog-actions"><button class="ui-btn" autofocus>取消</button><button class="ui-btn primary">保存设置</button></div></form></dialog>
+</body></html>

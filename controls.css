@@ -1,0 +1,8 @@
+:root,[data-theme=light]{--ox-select-chevron:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='m6 8 4 4 4-4' stroke='%235C5C66' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+[data-theme=dark]{--ox-select-chevron:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='m6 8 4 4 4-4' stroke='%239B9BA6' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")}
+select:not([multiple]),.field select,select.filter-control,html[data-theme=dark] .field select,html[data-theme=dark] select.filter-control{appearance:none;background-image:var(--ox-select-chevron);background-size:20px 20px;background-repeat:no-repeat;background-position:right 12px center;padding-right:44px}
+
+/* Soft resting boundaries; stronger feedback appears only during interaction. */
+:where(.field,.mf-field,.bc-field) :is(input:not([type=checkbox]):not([type=radio]),textarea,select):not(:disabled):not([readonly]):not([aria-invalid=true]):not(.field-error):hover,select.filter-control:not(:disabled):hover,.template-options select:not(:disabled):hover,.search:hover{border-color:var(--ox-border-hover)}
+.ox-select-trigger:not(:disabled):not([aria-invalid=true]):hover{border-color:var(--ox-border-hover)!important}
+.ox-select-trigger[aria-invalid=true]{border-color:var(--ox-danger-border)!important}

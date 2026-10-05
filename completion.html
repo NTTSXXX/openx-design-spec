@@ -1,0 +1,42 @@
+<section class="sheet" id="page-templates">
+  <div class="sheet-top"><span>OPENX / PAGE TEMPLATES</span><span>组合与实际页面</span></div>
+  <div class="section-heading"><h2>完整页面样板</h2><p>用实际账户内容检查信息密度、卡片关系和操作顺序。五类页面共用导航、标题边界与尺寸规则，可切换主题和真实视口宽度。</p></div>
+  <div class="template-controls" aria-label="样板选择">
+    <div class="template-views" role="group" aria-label="页面类型"><button data-template="overview" aria-pressed="true">数据总览</button><button data-template="list" aria-pressed="false">记录列表</button><button data-template="detail" aria-pressed="false">记录详情</button><button data-template="settings" aria-pressed="false">账户设置</button><button data-template="verification" aria-pressed="false">身份验证</button></div>
+    <div class="template-options"><label>视口<select id="template-width"><option value="full">适应容器</option><option value="768">768 px</option><option value="390">390 px</option></select></label><label>主题<select id="template-theme"><option value="light">浅色</option><option value="dark">深色</option></select></label><a class="ui-btn" id="template-open" href="templates.html?view=overview&amp;theme=light" target="_blank" rel="noopener">打开完整页面 ↗</a></div>
+  </div>
+  <div class="template-stage"><iframe id="template-frame" title="数据总览页面样板" loading="lazy" src="templates.html?view=overview&amp;theme=light"></iframe></div>
+  <p class="rule-note template-caption">视口切换通过改变页面实际可用宽度完成；文字保持原尺寸。手机上使用「打开完整页面」查看当前样板。</p>
+  <div class="template-map">
+    <article><span>01 / OVERVIEW</span><h3>概览模板</h3><p>用于数据总览、节点摘要。标题与内容同边界；总额、资产分项与趋势组合为主区，会员卡与关联入口放次栏；不足 860px 时按资产、会员、关联入口顺序转单列。</p></article>
+    <article><span>02 / COLLECTION</span><h3>列表模板</h3><p>用于钱包记录、节点客户、设备管理。整页上限 1280px，搜索最长 360px；金额、时间、状态与操作使用稳定列宽。手机保留时间，将完整编号放入详情。返回保留筛选与位置。</p></article>
+    <article><span>03 / DETAIL</span><h3>详情模板</h3><p>用于流水明细、连接详情、权益说明。整页上限 1040px，标题与详情共用边界。结果和对象优先；进度侧栏不跟主卡强行等高，完整字段可换行。</p></article>
+    <article><span>04 / SETTINGS</span><h3>设置模板</h3><p>用于资料、安全与通知偏好。面包屑、标题、表单和页脚共同限制在 840px；内部不再居中收窄。字段分组有说明，必填标记明确，保存结果在操作附近出现。</p></article>
+    <article><span>05 / TASK FLOW</span><h3>多步任务模板</h3><p>用于身份验证、连接交易所、充值与提现。整页上限 1040px，步骤栏 192px、栏距 24px；任务卡按内容自然增高。相关短字段成对，手机转单列。前一步保留输入，提交前核对。</p></article>
+  </div>
+  <p class="rule-note">统一对齐基线：页面容器 → 标题 / 卡片外框 / 页脚；卡片内边距 24px，手机 16px；字段间距 24px，标签与控件 8px。下拉箭头为 20px 图标，右侧留 12px，文字右侧预留 44px。留白由内容关系决定，禁止通过空卡或固定最小高度填满页面。</p>
+  <div class="template-notes"><div><h3>模块组合边界</h3><p>卡片承载一个独立对象或任务；同一对象的连续字段使用分组与分隔线。卡片内不反复嵌套卡片。单个操作组只保留一个主要动作，其他动作使用次按钮或文字入口。</p></div><div><h3>品牌资产例外</h3><p>会员卡沿用指定 App 原稿，保留其材质与等级识别；Logo 完整收在卡面内，不覆盖文字或进度。例外仅作用于会员卡本身，外侧容器遵守统一间距与尺寸。</p></div></div>
+  <div class="reference-row"><a href="https://linear.app/now/how-we-redesigned-the-linear-ui" target="_blank" rel="noreferrer">Linear · 导航与内容边界对齐 ↗</a><a href="https://vercel.com/geist/table" target="_blank" rel="noreferrer">Vercel · 表格、对象列表与详情的分工 ↗</a></div>
+  <div class="sheet-foot"><span>参考用于具体结构和行为；品牌资产、颜色和按钮延续 OpenX。</span><span>页面样板</span></div>
+</section>
+<section class="sheet" id="implementation">
+  <div class="sheet-top"><span>OPENX / IMPLEMENTATION</span><span>单一规则来源</span></div>
+  <div class="section-heading"><h2>规范与代码保持一致</h2><p>所有基础值保存在 tokens.json。字体、间距、尺寸、色彩、图层和组件时长由同一文件导出；页面引用语义角色，组件引用尺寸变量。</p></div>
+  <div class="implementation-facts" id="implementation-facts"></div>
+  <div class="implementation-chain"><code>tokens.json</code><span aria-hidden="true">→</span><code>build-tokens.mjs</code><span aria-hidden="true">→</span><code>CSS / JS / 断点</code></div>
+  <div class="table-wrap"><table class="rules-table"><thead><tr><th>文件</th><th>责任</th><th>使用规则</th></tr></thead><tbody>
+  <tr><td><a href="tokens.json" download>tokens.json</a></td><td>唯一基础数值来源</td><td>颜色、字阶、布局、组件、动效、图层；修改先发生在此文件</td></tr>
+  <tr><td><a href="tokens.css" download>tokens.css</a></td><td>完整 CSS 变量</td><td>布局、字号、行高、字重、按钮尺寸、状态时长等均可直接引用</td></tr>
+  <tr><td><a href="tokens.js" download>tokens.js</a></td><td>页面运行时数据</td><td>规范表格、宽度示意和交互规则读取 OPENX_TOKENS</td></tr>
+  <tr><td><a href="responsive.css" download>responsive.css</a></td><td>由断点生成的布局辅助类</td><td>媒体查询边界在生成时写入；不在媒体查询中使用无效的 CSS var()</td></tr>
+  <tr><td><a href="breakpoints.json" download>breakpoints.json</a></td><td>其他构建环境的断点输入</td><td>手机 ≤ 767、平板 768–1199、桌面 ≥ 1200；项目中不得再维护第二套边界</td></tr>
+  <tr><td><a href="build-tokens.mjs" download>build-tokens.mjs</a></td><td>可重复执行的导出脚本</td><td>在规范目录运行 node build-tokens.mjs，更新所有生成文件</td></tr>
+  <tr><td><a href="motion-runtime.js" download>motion-runtime.js</a> / <a href="motion-runtime.css" download>CSS</a></td><td>共享动效与减少动态适配</td><td>在页面业务脚本之后加载；弹窗、抽屉、局部内容更新、首次进入与忙碌状态渐进增强，不延迟业务操作</td></tr>
+  <tr><td><a href="select-menu.js" download>select-menu.js</a> / <a href="select-menu.css" download>CSS</a></td><td>下拉列表与键盘交互</td><td>保留原 select 表单值与 input/change 事件；动态字段自动接入，主题与减少动态模式同步</td></tr>
+  <tr><td><a href="calendar-picker.js" download>calendar-picker.js</a> / <a href="calendar-picker.css" download>CSS</a></td><td>日期与区间选择</td><td>单日、双月区间、年月快选共用视觉；保留原 date 字段值、事件和边界校验，日期演练与业务筛选使用同一组件</td></tr>
+  </tbody></table></div>
+  <div class="template-notes"><div><h3>继承关系</h3><p>颜色先按品牌与灰阶定义，再映射明暗主题中的 canvas、surface、text、border、action；组件通过这些角色取值。官网按钮和账户按钮保持各自原有形态，状态时长分别定义。</p></div><div><h3>内容与文案</h3><p>标题末尾无标点；操作文案写明对象和动作。简繁语言对应 SC / TC 字库。长标题自然换行；金额、错误原因、资格条件与最终确认信息完整呈现。</p></div></div>
+  <details class="implementation-details"><summary>应用到产品页面的顺序</summary><ol><li>按已有功能选择模板，保留入口、字段、资格条件和计算逻辑</li><li>接入统一字体与 Tokens，再组合真实需要的组件</li><li>把该流程的加载、空、错误、成功和返回路径接入同一布局</li><li>用长内容、宽屏与手机核对实际排版，最后统一进行完整审核</li></ol></details>
+  <p class="rule-note">Footer 的反馈邮箱与商务合作入口分开；收件地址使用正式配置。实际地址尚未提供，交接时列为待配置项。</p>
+  <div class="sheet-foot"><span>规范使用独立目录；产品页面套用后仍需按最终页面审核。</span><span>代码交接</span></div>
+</section>

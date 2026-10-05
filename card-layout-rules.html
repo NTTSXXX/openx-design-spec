@@ -1,0 +1,75 @@
+<section class="sheet" id="card-layout-rules">
+  <div class="sheet-top"><span>OPENX / CARD COMPOSITION</span><span>卡片排版</span></div>
+  <div class="section-heading"><h2>按内容决定卡片怎么排</h2><p>先明确用户要完成的任务，再决定卡片数量与占宽。相同对象方便比较，不同任务体现主次；标题、卡框与操作遵循可追踪的对齐线。</p></div>
+  <div class="cl-mode-tabs" role="tablist" aria-label="卡片布局类型">
+    <button type="button" id="cl-tab-single" role="tab" aria-selected="true" aria-controls="cl-panel-single" data-cl-mode="single">单卡</button>
+    <button type="button" id="cl-tab-equal" role="tab" aria-selected="false" aria-controls="cl-panel-equal" data-cl-mode="equal" tabindex="-1">同类多卡</button>
+    <button type="button" id="cl-tab-priority" role="tab" aria-selected="false" aria-controls="cl-panel-priority" data-cl-mode="priority" tabindex="-1">不同尺寸</button>
+    <button type="button" id="cl-tab-media" role="tab" aria-selected="false" aria-controls="cl-panel-media" data-cl-mode="media" tabindex="-1">图文混排</button>
+  </div>
+  <div class="cl-workbench" id="cl-workbench" data-theme="light">
+    <div class="cl-toolbar">
+      <p id="cl-layout-caption" aria-live="polite">单个任务 · 标题与卡片共用一个容器</p>
+      <div class="cl-toolbar-actions"><button class="ui-btn" id="cl-width" type="button" aria-pressed="false">查看窄屏</button><button class="ui-btn" id="cl-theme" type="button" aria-pressed="false">切换为深色</button></div>
+    </div>
+    <div class="cl-viewport" id="cl-viewport">
+      <div id="cl-panel-single" class="cl-panel" role="tabpanel" aria-labelledby="cl-tab-single">
+        <div class="cl-example-page cl-single-page" id="cl-single-page">
+          <header class="cl-page-heading"><span>会员专区 / 会员资料</span><h3>会员资料</h3><p>账户信息保持紧凑，内容增加时再扩大容器</p></header>
+          <article class="cl-card cl-member-summary">
+            <div class="cl-card-heading"><h4>66666.char</h4><span>OpenX 会员</span></div>
+            <dl class="cl-key-values"><div><dt>OpenX ID</dt><dd>10008246</dd></div><div><dt>加入日期</dt><dd>2026.06.01</dd></div><div><dt>登录邮箱</dt><dd>66666.char@gmail.com</dd></div></dl>
+            <div class="cl-expanded-fields" hidden><p>公开资料与登录信息分组呈现，说明紧邻对应字段</p><div class="cl-two-fields"><label><span>公开昵称</span><input value="66666.char" autocomplete="off" maxlength="16"></label><label><span>加入日期</span><input value="2026.06.01" readonly></label></div></div>
+            <footer class="cl-card-footer"><span>账户资料</span><a class="ui-btn" href="templates.html?view=settings&amp;theme=light" data-cl-template="settings" target="_blank" rel="noopener">管理资料 <span aria-hidden="true">→</span></a></footer>
+          </article>
+          <div class="cl-example-footer"><span>标题、卡片、页脚共享边界</span><span id="cl-single-limit">上限 520px</span></div>
+        </div>
+        <div class="cl-example-control"><div class="cl-segment" role="group" aria-label="单卡内容量"><button type="button" data-cl-single="summary" aria-pressed="true">少量信息 · 520</button><button type="button" data-cl-single="settings" aria-pressed="false">设置表单 · 840</button></div></div>
+      </div>
+      <div id="cl-panel-equal" class="cl-panel" role="tabpanel" aria-labelledby="cl-tab-equal" hidden>
+        <div class="cl-example-page"><header class="cl-page-heading"><span>学习交易 / 课程目录</span><h3>交易学习路径</h3><p>相似内容共用结构，同一行的标题和操作自动对齐</p></header>
+          <div class="cl-equal-grid">
+            <article class="cl-card cl-course-card"><span class="cl-card-kicker">建立规则</span><h4>制定交易计划</h4><p>记录入场条件与退出规则，在执行前明确判断依据。</p><a class="cl-card-link" href="#page-templates">查看课程布局 <span aria-hidden="true">→</span></a></article>
+            <article class="cl-card cl-course-card"><span class="cl-card-kicker">管理风险</span><h4>从仓位到止损的风险控制</h4><p>学习如何根据计划管理仓位、止损和单次交易风险。</p><a class="cl-card-link" href="#page-templates">查看课程布局 <span aria-hidden="true">→</span></a></article>
+            <article class="cl-card cl-course-card"><span class="cl-card-kicker">持续复盘</span><h4>整理交易记录</h4><p>围绕计划与执行的差异复盘，保留判断过程和调整原因，便于后续回看。</p><a class="cl-card-link" href="#page-templates">查看课程布局 <span aria-hidden="true">→</span></a></article>
+          </div>
+          <div class="cl-example-footer"><span>同类对象共用列宽与内容槽位</span><span>3 → 2 → 1 列</span></div>
+        </div>
+      </div>
+      <div id="cl-panel-priority" class="cl-panel" role="tabpanel" aria-labelledby="cl-tab-priority" hidden>
+        <div class="cl-example-page cl-priority-page"><header class="cl-page-heading"><span>会员专区 / 账户资料</span><h3>完善账户资料</h3><p>主要任务占据主栏，关联信息保留自然高度</p></header>
+          <div class="cl-priority-grid">
+            <article class="cl-card cl-primary-card"><div class="cl-card-heading"><h4>公开资料</h4><span>主要任务</span></div><p class="cl-card-copy">昵称显示在你的会员资料中。登录邮箱的变更需要完成安全验证。</p><label class="cl-field"><span>昵称</span><input value="66666.char" autocomplete="off" maxlength="16"><small>2 至 16 个字符</small></label><dl class="cl-key-values"><div><dt>登录邮箱</dt><dd>66666.char@gmail.com</dd></div><div><dt>加入日期</dt><dd>2026.06.01</dd></div></dl><footer class="cl-card-footer"><span>先处理当前任务</span><a class="ui-btn primary" href="templates.html?view=settings&amp;theme=light" data-cl-template="settings" target="_blank" rel="noopener">管理资料 <span aria-hidden="true">→</span></a></footer></article>
+            <aside class="cl-card cl-secondary-card"><div class="cl-card-heading"><h4>身份信息</h4><span>关联信息</span></div><p class="cl-card-copy">证件姓名及身份资料在身份验证中查看和管理。</p><a class="cl-card-link" href="templates.html?view=verification&amp;theme=light" data-cl-template="verification" target="_blank" rel="noopener">前往身份验证 <span aria-hidden="true">→</span></a></aside>
+          </div><div class="cl-example-footer"><span>先主任务，再关联信息</span><span>主栏 2fr / 侧栏 1fr</span></div>
+        </div>
+      </div>
+      <div id="cl-panel-media" class="cl-panel" role="tabpanel" aria-labelledby="cl-tab-media" hidden>
+        <div class="cl-example-page"><header class="cl-page-heading"><span>学习交易 / 学习资源</span><h3>理解工具，再用于复盘</h3><p>图片卡与纯文字卡同排时，先对齐外框与动作</p></header>
+          <div class="cl-media-grid" id="cl-media-grid" style="--cl-image-ratio:16 / 9">
+            <article class="cl-card cl-media-card"><div class="cl-media-cover"><img src="assets/motion/ill-vid-tradingview.webp" alt="用于交易复盘的图表界面" width="960" height="540" loading="lazy"></div><div class="cl-media-body"><span class="cl-card-kicker">工具课程</span><h4>TradingView 图表入门</h4><p>认识图表、指标与绘图工具，让分析过程可以回看。</p><a class="cl-card-link" href="#ir-source-table">查看图片尺寸 <span aria-hidden="true">→</span></a></div></article>
+            <article class="cl-card cl-text-card"><span class="cl-card-kicker">阅读指南</span><h4>交易复盘应保留哪些信息</h4><p>把计划、执行与结果放在同一份记录中，先找到差异，再确定需要调整的环节。</p><ol class="cl-reading-list"><li><span>01</span><div><strong>交易前的判断</strong><p>记录入场条件、风险与退出规则</p></div></li><li><span>02</span><div><strong>实际执行过程</strong><p>保留操作时间、价格与调整原因</p></div></li><li><span>03</span><div><strong>复盘结论</strong><p>说明是否按计划执行及后续改进</p></div></li></ol><a class="cl-card-link" href="#data-patterns">查看记录规范 <span aria-hidden="true">→</span></a></article>
+          </div>
+          <div class="cl-example-footer"><span>外框同高 · 操作同基线 · 正文完整阅读</span><span id="cl-ratio-label">图片 16:9</span></div>
+        </div>
+        <div class="cl-example-control"><div class="cl-segment" role="group" aria-label="本组图片比例"><button type="button" data-cl-ratio="16 / 9" aria-pressed="true">16:9</button><button type="button" data-cl-ratio="4 / 3" aria-pressed="false">4:3</button><button type="button" data-cl-ratio="2 / 1" aria-pressed="false">2:1</button></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="cl-mode-notes" aria-live="polite"><h3 id="cl-rule-title">单卡的宽度跟随任务</h3><p id="cl-rule-copy">少量会员信息上限 520px；账户设置使用 840px 页面容器。卡片填满选定容器，标题和页脚随它一起收窄，内部不再次居中。高度由内容决定。</p></div>
+  <div class="cl-selection-table"><table class="rules-table"><caption>按内容选择布局</caption><thead><tr><th scope="col">内容与目标</th><th scope="col">卡片与容器宽度</th><th scope="col">列数与顺序</th><th scope="col">对齐方式</th></tr></thead><tbody>
+    <tr><th scope="row">少量信息 / 一个动作</th><td>整页上限 520px，卡片宽 100%</td><td>单列，内容自然增高</td><td>标题、卡框、页脚共用容器</td></tr>
+    <tr><th scope="row">单个设置任务</th><td>整页上限 840px；相关短字段可成对</td><td>桌面双字段，手机单字段</td><td>标签、输入、说明、操作沿同一内边距</td></tr>
+    <tr><th scope="row">同类课程 / 工具目录</th><td>集合页上限 1280px，卡片建议至少 280px</td><td>足够宽 3 列；中等宽 2 列；窄屏 1 列</td><td>同排共用标题行、正文行与底部动作；跨行不强求同高</td></tr>
+    <tr><th scope="row">主任务 + 关联信息</th><td>整页上限 1040px；主区 2fr，辅助区 1fr</td><td>侧栏不足 280px 时叠放；手机主任务在前</td><td>卡顶对齐，侧栏自然高度；不拉长短卡填空</td></tr>
+    <tr><th scope="row">图片与文字混排</th><td>容器上限 1280px；示例 2 列，每卡建议至少 320px</td><td>不足 2 列最小宽度时转 1 列</td><td>同排外框和操作对齐；同组图片只用一种比例</td></tr>
+  </tbody></table></div>
+  <div class="cl-rule-grid">
+    <article><h3>间距按层级使用</h3><p>桌面卡间距与内边距均为 24px，手机均为 16px。标题与说明 8px，相关信息 12px，分组之间 24px。操作区距正文至少 24px，需要划分职责时再增加分隔线。</p></article>
+    <article><h3>同高只服务比较</h3><p>同一行、同一种对象使用共享内容行；标题完整换行，较长内容决定本行高度。单列恢复自然高度。不同任务只对齐顶部，不给全站卡片设置统一固定高度或大段空白。</p></article>
+    <article><h3>尺寸不同仍有秩序</h3><p>用同一网格的整数列跨度表达主次，按真实内容安排 2:1 或等宽组合。避免随机瀑布流、错位边距和挤压重要内容。独立图文比例分组，不在同一列里随意改变卡宽。</p></article>
+    <article><h3>截断边界要明确</h3><p>只有可进入详情的目录摘要可以限行，并保留完整标题与详情入口。金额、单位、错误原因、资格条件及确认内容不得截断。信息过长先换行或调整列数，不缩小到难以阅读。</p></article>
+  </div>
+  <div class="cl-layout-formula"><h3>一组卡片的宽度怎么算</h3><p><code>卡宽 = (容器内宽 − 总列间距) ÷ 列数</code><span>1280px 内容区、24px 间距、3 列时，每卡约 410.7px。容器已扣除页面边距，卡片内边距再从卡宽内扣除。</span></p><p>禁止单张短内容卡无理由占满宽屏；禁止给所有卡片统一固定高度；禁止用空卡填补视觉空缺；禁止只移动内部卡片而让页面标题与页脚失去对齐。</p></div>
+  <div class="sheet-foot"><span>布局以容器实际宽度响应；同类可比较，不同任务有主次</span><span>卡片排版</span></div>
+</section>

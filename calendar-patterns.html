@@ -1,0 +1,37 @@
+<section class="sheet" id="calendar-patterns">
+  <div class="sheet-top"><span>OPENX / DATE SELECTION</span><span>日期与区间</span></div>
+  <div class="section-heading"><h2>按任务选择日历</h2><p>交易记录用日期区间，表单用单日选择，按月查看时直接选年月。统一柔和边框与中性底色，品牌橙只标记选中的日期。</p></div>
+  <div class="cp-toolbar"><span>三种组件，同一套视觉规则</span><button id="cp-theme" class="theme-toggle" type="button">切换深色</button></div>
+  <div class="cp-workbench" id="cp-workbench" data-theme="light">
+    <div class="cp-variants" role="tablist" aria-label="日历样式" aria-orientation="vertical">
+      <button id="cp-tab-range" role="tab" aria-selected="true" aria-controls="cp-range" tabindex="0"><b>日期区间</b><span>交易记录与报表</span></button>
+      <button id="cp-tab-single" role="tab" aria-selected="false" aria-controls="cp-single" tabindex="-1"><b>单日选择</b><span>表单与指定日期</span></button>
+      <button id="cp-tab-month" role="tab" aria-selected="false" aria-controls="cp-month" tabindex="-1"><b>年月快选</b><span>月度记录与汇总</span></button>
+    </div>
+    <div class="cp-pattern" id="cp-range" role="tabpanel" aria-labelledby="cp-tab-range">
+      <div class="cp-heading"><h3>记录日期范围</h3><p>快捷选择最近 7 天、最近 30 天或本月，也可只设置起始或截止日期</p></div>
+      <div class="cp-group" data-calendar-range data-calendar-inline>
+        <div class="cp-fields"><label>开始日期<input id="cp-from" type="date" value="2026-09-24"></label><label>结束日期<input id="cp-to" type="date" value="2026-10-01"></label></div>
+      </div><p class="cp-result" id="cp-range-result" role="status">已选范围 · 2026.09.24 — 2026.10.01</p>
+    </div>
+    <div class="cp-pattern" id="cp-single" role="tabpanel" aria-labelledby="cp-tab-single" hidden>
+      <div class="cp-heading"><h3>选择指定日期</h3><p>一张月历完成选择，点击标题可快速跳转年份和月份</p></div>
+      <div class="cp-group cp-compact" data-calendar-inline><div class="cp-fields"><label>日期<input id="cp-date" type="date" value="2026-10-01" min="1900-01-01" max="2099-12-31"></label></div></div><p class="cp-result" id="cp-single-result" role="status">已选日期 · 2026.10.01</p>
+    </div>
+    <div class="cp-pattern" id="cp-month" role="tabpanel" aria-labelledby="cp-tab-month" hidden>
+      <div class="cp-heading"><h3>按月查看</h3><p>直接选择年份与月份，避免连续翻阅多张月历</p></div>
+      <div class="cp-group cp-compact" data-calendar-inline><div class="cp-fields"><label>统计月份<input id="cp-month-value" type="date" data-calendar="month" value="2026-10-01"></label></div></div><p class="cp-result" id="cp-month-result" role="status">已选月份 · 2026.10</p>
+    </div>
+  </div>
+  <div class="cp-rules"><div><h3>让选中范围容易读取</h3><p>起止日期使用品牌橙，中间区间使用浅灰或深灰连带。今天用小标记提示，不能与选中态混淆；非当前月与禁用日期降低层级。</p></div><div><h3>弹层跟随字段</h3><p>表单中贴近触发字段展开，接近屏幕边缘自动调整。桌面区间使用双月，手机收为单月；关闭后回到原入口，取消保留原值。</p></div></div>
+  <div class="table-wrap"><table class="rules-table"><thead><tr><th>状态 / 规则</th><th>统一处理</th></tr></thead><tbody>
+    <tr><td>默认与悬停</td><td>柔和的 1px 中性边框，悬停略微加强；不用系统蓝色选中块和黑色外框</td></tr>
+    <tr><td>日期显示</td><td>单日 YYYY.MM.DD，月份 YYYY.MM；内部保留原 ISO 值，显示格式不改变筛选条件</td></tr>
+    <tr><td>选择与提交</td><td>日期范围保留草稿，应用后才同步字段；只填一端合法，开始晚于结束时提示修正</td></tr>
+    <tr><td>年月与边界</td><td>月份或年份标题进入快速选择；沿用字段的 min、max 与 disabled，不另设业务年龄或期限限制</td></tr>
+    <tr><td>键盘与触摸</td><td>方向键移动日期，Home / End 跳周首尾，PageUp / PageDown 翻月；Enter 选择，Esc 取消并返回焦点</td></tr>
+    <tr><td>动效与主题</td><td>展开 160ms / 4px、收起 120ms，月历切换保持尺寸；深浅主题与减少动态偏好同步</td></tr>
+  </tbody></table></div>
+  <div class="reference-row"><a href="https://react-aria.adobe.com/DatePicker" target="_blank" rel="noopener">参考 · Adobe 日期选择 ↗</a><a href="https://react-aria.adobe.com/RangeCalendar" target="_blank" rel="noopener">参考 · Adobe 区间日历 ↗</a><a href="#business-components">查看交易记录中的日期筛选 →</a></div>
+  <div class="sheet-foot"><span>组件演练与业务表单使用同一日历，显示更新保留原字段与事件</span><span>00 / 16</span></div>
+</section>

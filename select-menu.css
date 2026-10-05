@@ -1,0 +1,30 @@
+/* Native select keeps intrinsic layout; the trigger follows its relative wrapper. */
+.ox-select-wrap{position:relative;display:inline-grid;grid-template-columns:minmax(0,1fr);min-width:0;max-width:100%;padding:0;border:0;vertical-align:middle}
+.ox-select-wrap>select{display:block!important;grid-area:1/1;margin:0!important}
+select.ox-select-native{opacity:0!important;pointer-events:none!important}
+.ox-select-trigger{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;display:flex!important;align-items:center!important;box-sizing:border-box!important;margin:0!important;min-height:44px!important;max-width:none!important;padding-right:44px!important;background-image:none!important;text-align:left!important;cursor:pointer!important;z-index:1;overflow:hidden;isolation:isolate;transform:none!important;transition:border-color 160ms ease,background-color 160ms ease!important}
+.ox-select-trigger[hidden]{display:none!important}
+.ox-select-trigger:focus-visible{outline:2px solid var(--ox-focus,#131316)!important;outline-offset:3px!important}
+.ox-select-trigger:disabled{cursor:not-allowed!important;opacity:.5!important}
+.ox-select-trigger__value{font:inherit!important;line-height:inherit!important;color:inherit!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;min-width:0!important;display:block!important;padding:0!important;margin:0!important;font-weight:inherit!important}
+.ox-select-trigger__arrow{position:absolute!important;right:12px!important;top:50%!important;width:20px!important;height:20px!important;fill:none!important;stroke:var(--ox-muted,#5C5C66)!important;stroke-width:1.6!important;stroke-linecap:round;stroke-linejoin:round;transform:translateY(-50%) rotate(0deg);transition:transform 160ms cubic-bezier(.2,.8,.2,1);pointer-events:none}
+.ox-select-trigger[aria-expanded=true] .ox-select-trigger__arrow{transform:translateY(-50%) rotate(180deg)}
+.ox-select-menu{position:fixed;box-sizing:border-box;z-index:var(--ox-layer-popover,60);padding:4px;margin:0;border:1px solid var(--ox-border,#E4E4E9);border-radius:8px;background:var(--ox-raised,var(--ox-surface,#fff));color:var(--ox-text,#131316);box-shadow:0 8px 24px rgb(11 11 11 / .12);overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;font-family:var(--ox-font,sans-serif);font-size:14px;line-height:22px;opacity:0;transform:translateY(-4px);transform-origin:top;transition:opacity 160ms cubic-bezier(.2,.8,.2,1),transform 160ms cubic-bezier(.2,.8,.2,1);pointer-events:none}
+.ox-select-menu[data-side=above]{transform:translateY(4px);transform-origin:bottom}
+.ox-select-menu[data-state=open]{opacity:1;transform:translateY(0);pointer-events:auto}
+.ox-select-menu[data-state=closing]{opacity:0;transition-duration:120ms;pointer-events:none}
+.ox-select-menu[hidden]{display:none!important}
+.ox-select-option{display:flex;align-items:center;gap:12px;box-sizing:border-box;min-height:44px;padding:10px 12px;border:0;border-radius:4px;cursor:pointer;color:var(--ox-text,#131316);background:transparent;font:inherit;line-height:22px;overflow-wrap:anywhere;transition:background-color 100ms ease}
+.ox-select-option__label{flex:1;min-width:0}
+.ox-select-option__check{width:16px;height:16px;flex:0 0 16px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;opacity:0}
+.ox-select-option[aria-selected=true] .ox-select-option__check{opacity:1}
+.ox-select-option[aria-selected=true]{font-weight:600}
+.ox-select-option.is-active,.ox-select-option:not([aria-disabled=true]):hover{background:var(--ox-hover,#F7F7F7)}
+.ox-select-option[aria-disabled=true]{color:var(--ox-disabled,#9B9BA6);cursor:not-allowed}
+.ox-select-group{padding:8px 12px 4px;font-size:12px;line-height:18px;color:var(--ox-muted,#5C5C66)}
+@media(prefers-reduced-motion:reduce){.ox-select-trigger,.ox-select-trigger__arrow,.ox-select-menu,.ox-select-option{transition-duration:0ms!important}}
+html[data-motion=reduce] .ox-select-trigger,html[data-motion=reduce] .ox-select-trigger__arrow,html[data-motion=reduce] .ox-select-menu,html[data-motion=reduce] .ox-select-option{transition-duration:0ms!important}
+html[data-motion=reduce] .ox-select-menu{transform:none!important}
+.ox-select-trigger[data-reduced=true],.ox-select-trigger[data-reduced=true] .ox-select-trigger__arrow,.ox-select-menu[data-reduced=true],.ox-select-menu[data-reduced=true] .ox-select-option{transition-duration:0ms!important}
+.ox-select-menu[data-reduced=true]{transform:none!important}
+@media(prefers-reduced-motion:reduce){.ox-select-menu{transform:none!important}}

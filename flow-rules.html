@@ -1,0 +1,129 @@
+<section class="sheet fr-sheet" id="flows">
+  <div class="sheet-top"><span>OPENX / WORKFLOWS</span><span>FLOW COVERAGE</span></div>
+  <div class="section-heading"><h2>个人中心流程与状态</h2><p>从入口到完成，每个流程都定义下一步、异常原因和返回位置。下方按现有页面与业务规则整理。</p></div>
+  <div class="fr-key"><div><b>既有业务边界</b><p>资格、金额、期限、权限与计算方式继续读取原业务来源。设计规则不新增门槛，不代替业务判断。</p></div><div><b>界面交付规则</b><p>下面的加载、报错、重试、焦点和草稿处理是后续页面必须呈现的交互标准，不表示现有网站已经全部实现。</p></div></div>
+  <div class="fr-state-strip" aria-label="通用流程状态"><span>进入</span><i aria-hidden="true">→</i><span>填写与核对</span><i aria-hidden="true">→</i><span>处理中</span><i aria-hidden="true">→</i><span>结果与下一步</span></div>
+  <p class="fr-intro">展开任一领域查看完整清单。只读页面不强行添加提交步骤；空数据、没有筛选结果、读取失败必须分开。</p>
+  <div class="fr-flows">
+    <details class="fr-flow" open><summary><span class="fr-number">01</span><span><b>数据总览</b><small>资产概览、趋势、会员身份与业务入口</small></span><span class="fr-chevron" aria-hidden="true">+</span></summary><div class="fr-content"><dl class="fr-matrix">
+      <div><dt>入口与步骤</dt><dd>个人中心首页 → 查看资产与会员状态 → 切换趋势区间或隐藏金额 → 前往对应业务页面。</dd></div>
+      <div><dt>进行中与完成</dt><dd>首次读取使用原尺寸骨架；区间切换保留图表外框。完成后显示时间区间、金额单位与同步结果，不弹成功 Toast。</dd></div>
+      <div><dt>空与失败</dt><dd>零资产仍显示 0；未知金额显示“—”。没有趋势数据给出原因；局部读取失败仅替换该区域并提供重新读取。</dd></div>
+      <div><dt>返回与禁用</dt><dd>从子页面返回保留原区间和金额可见性。尚未取得数据时不能显示虚构数值；业务入口是否可用服从原资格规则。</dd></div>
+      <div><dt>权限与未保存</dt><dd>未登录显示登录入口并保留返回地址。只读页面无未保存确认；金额可见性是显示偏好。概览不放常用管理、账户活动与分段权益色条。</dd></div>
+    </dl><p class="fr-source">业务来源 <code>AccountPage.tsx</code>、<code>accountIA.ts</code></p></div></details>
+    <details class="fr-flow"><summary><span class="fr-number">02</span><span><b>等级与权益</b><small>当前等级、成长进度、权益与升级路径</small></span><span class="fr-chevron" aria-hidden="true">+</span></summary><div class="fr-content"><dl class="fr-matrix">
+      <div><dt>入口与步骤</dt><dd>等级与权益 → 当前等级 → 查看下一等级条件或展开完整权益 → 进入对应权益。旧权益入口继续跳转到合并页面。</dd></div>
+      <div><dt>进行中与完成</dt><dd>会员身份与权益共同读取；加载时保留卡片占位。最高等级明确显示已达最高等级，不留下“继续升级”无效按钮。</dd></div>
+      <div><dt>空与失败</dt><dd>尚未解锁仍显示权益名称、条件和下一步。读取失败不回退为最低等级，也不把已解锁权益显示为锁定。</dd></div>
+      <div><dt>返回与禁用</dt><dd>条件未满足时提供“查看条件”。返回保留比较位置；失败就地重新读取，不跳到首页。</dd></div>
+      <div><dt>权限与未保存</dt><dd>等级、成长值与权益数量共用同一业务来源；会员卡沿用 App 资产并保持 Logo 收在卡内。本页无编辑草稿。</dd></div>
+    </dl><p class="fr-source">业务来源 <code>AccountAreaPage.tsx</code>、<code>AccountMobileTier.tsx</code>、<code>tierData.ts</code></p></div></details>
+    <details class="fr-flow"><summary><span class="fr-number">03</span><span><b>交易指标</b><small>筛选、详情、领取、发放、使用与续期</small></span><span class="fr-chevron" aria-hidden="true">+</span></summary><div class="fr-content"><dl class="fr-matrix">
+      <div><dt>入口与步骤</dt><dd>指标库 → 查看指标详情与资格 → 核对 TradingView 账户 → 确认领取 → 发放结果 → 使用说明；过期指标按既有规则进入续期。</dd></div>
+      <div><dt>进行中与完成</dt><dd>领取中保留指标名与目标账户，避免重复提交；用户可以返回指标库查看结果。成功显示授权状态、期限及 TradingView 使用入口。</dd></div>
+      <div><dt>空与失败</dt><dd>筛选为空提供“查看全部指标”。领取失败保留资格与目标指标，并显示可重试原因；不能标记为已领取。</dd></div>
+      <div><dt>返回与禁用</dt><dd>未达等级显示所需资格和查看条件入口；已使用中进入管理授权。返回详情保留来源筛选；提交中禁止相同申请重复触发。</dd></div>
+      <div><dt>权限与未保存</dt><dd>领取范围、发放时间、授权期限继续由原规则决定。未提交的账户名称可在当前流程内保留；离开时如有修改需确认放弃。</dd></div>
+    </dl><p class="fr-source">业务来源 <code>AccountIndicatorFlow.tsx</code>、<code>TierIndicatorCards.tsx</code></p></div></details>
+    <details class="fr-flow"><summary><span class="fr-number">04</span><span><b>钱包与充提记录</b><small>资产、充值、提现核对、安全验证与交易追踪</small></span><span class="fr-chevron" aria-hidden="true">+</span></summary><div class="fr-content"><dl class="fr-matrix">
+      <div><dt>入口与步骤</dt><dd>钱包 → 选币种。充值：选网络 → 取得地址与 Memo / Tag。提现：填写网络、地址、数量 → 核对费用与到账数量 → 安全验证 → 提交 → 进度与详情。记录支持筛选和返回。</dd></div>
+      <div><dt>进行中与完成</dt><dd>获取地址、获取报价、发送验证码与提交分别显示忙碌态。提交完成只表示申请建立；待处理、处理中、已完成、未完成按交易状态分别显示。</dd></div>
+      <div><dt>空与失败</dt><dd>零余额、无筛选结果、交易不存在与读取失败分开呈现。地址不完整不得显示可用二维码；未完成交易保留原因、编号与详情。</dd></div>
+      <div><dt>返回与禁用</dt><dd>验证码冷却显示剩余时间；处理中阻止重复操作。余额不足、网络或地址不匹配、缺少 Memo、未勾核对、报价过期按原校验阻止提交。报价缺失返回填写；失败提现重新填写，不复用失效报价。</dd></div>
+      <div><dt>权限与未保存</dt><dd>报价、费用、到账数、余额和验证码条件沿用原规则。修改币种、网络、地址或数量使旧报价失效。返回记录保留筛选与滚动位置；验证码不跨会话保存。</dd></div>
+    </dl><p class="fr-source">业务来源 <code>AccountWalletPage.tsx</code>、现有钱包校验与报价模块</p></div></details>
+    <details class="fr-flow"><summary><span class="fr-number">05</span><span><b>交易所 UID 授权</b><small>选择交易所、验证归属、失效重连与解除授权</small></span><span class="fr-chevron" aria-hidden="true">+</span></summary><div class="fr-content"><dl class="fr-matrix">
+      <div><dt>入口与步骤</dt><dd>交易所设置 → UID 页签 → 选择交易所 → 输入 UID 与可选推荐链接 → 验证并授权 → 连接详情。</dd></div>
+      <div><dt>进行中与完成</dt><dd>验证中保留交易所和输入；成功显示归属信息、最近验证与管理入口。状态属于具体账户，不只显示一颗绿色标签。</dd></div>
+      <div><dt>空与失败</dt><dd>未连接显示选择交易所入口；验证失败和授权失效保留账户记录。账户不支持节点授权时说明资格原因并提供客服入口。</dd></div>
+      <div><dt>返回与禁用</dt><dd>失败可重新验证；失效可修改 UID 后重连。解除前说明影响，并提供保留授权。返回清单保留所选交易所。</dd></div>
+      <div><dt>权限与未保存</dt><dd>UID 仅确认节点归属，不赋予交易或提现权限。解除 UID 不解除 API；失败重试不创建第二份连接。UID 草稿可在当前流程内保留。</dd></div>
+    </dl><p class="fr-source">业务来源 <code>AccountConnectionFlows.tsx</code> / <code>ExchangeAuthorizationFlow</code></p></div></details>
+    <details class="fr-flow"><summary><span class="fr-number">06</span><span><b>交易所 API 连接</b><small>用途、教程、金钥、权限校验与暂停管理</small></span><span class="fr-chevron" aria-hidden="true">+</span></summary><div class="fr-content"><dl class="fr-matrix">
+      <div><dt>入口与步骤</dt><dd>交易所设置 → API 页签 → 选择交易所与连接方式 → 按需查看教程 → 选择读取或合约交易用途 → 输入 Key / Secret → 校验 → 权限管理。</dd></div>
+      <div><dt>进行中与完成</dt><dd>分别说明金钥有效性、读取与合约权限校验进度；完成后列出每项权限。已暂停保留设置，并区分连接状态与执行开关。</dd></div>
+      <div><dt>空与失败</dt><dd>未连接显示添加入口；失效显示更新 Key；权限失败显示具体缺项与重新校验。保留交易所、用途与原连接记录。</dd></div>
+      <div><dt>返回与禁用</dt><dd>只读用途不能声称拥有交易权限；失效金钥不继续执行。解除前说明停止读取或执行，返回后继续原列表上下文。</dd></div>
+      <div><dt>权限与未保存</dt><dd>提现权限始终关闭；解除 API 不解除 UID。管理页 Key 遮罩、Secret 不回显。敏感输入仅当前流程暂存，离开或完成即清除，不写入 URL、日志或浏览器持久存储。</dd></div>
+    </dl><p class="fr-source">业务来源 <code>AccountConnectionFlows.tsx</code> / <code>ApiConnectionFlow</code></p></div></details>
+    <details class="fr-flow"><summary><span class="fr-number">07</span><span><b>身份验证</b><small>证件、上传、人脸、个人与工作资料、审核结果</small></span><span class="fr-chevron" aria-hidden="true">+</span></summary><div class="fr-content"><dl class="fr-matrix">
+      <div><dt>入口与步骤</dt><dd>证件地区 → 验证方式 → 上传证件 → 人脸验证 → 确认个人信息 → 工作与行业资料 → 提交审核 → 结果与身份详情。</dd></div>
+      <div><dt>进行中与完成</dt><dd>上传逐项显示进度；审核中显示已提交项目，并允许离开后返回。只有通过结果显示已认证；详情中的身份信息遮罩。</dd></div>
+      <div><dt>空与失败</dt><dd>未开始给出所需资料与开始入口；补件定位到具体项目，保留已完成资料。提交失败不进入审核中；拒绝与技术错误分别说明下一步。</dd></div>
+      <div><dt>返回与禁用</dt><dd>返回上一步保留仍有效的选择；格式或必填校验在对应字段显示。补件回到上传，技术失败从失败环节重试，不强制重做已完成项目。</dd></div>
+      <div><dt>权限与未保存</dt><dd>可接受证件、地区、校验条件与审核结果沿用业务来源。离开未提交流程提醒未提交内容；敏感文件不持久缓存，不声称已永久保存。</dd></div>
+    </dl><p class="fr-source">业务来源 <code>AccountKycFlow.tsx</code>、<code>AccountAreaPage.tsx</code></p></div></details>
+    <details class="fr-flow"><summary><span class="fr-number">08</span><span><b>节点中心</b><small>奖励、邀请、用户筛选、用户详情与备注</small></span><span class="fr-chevron" aria-hidden="true">+</span></summary><div class="fr-content"><dl class="fr-matrix">
+      <div><dt>入口与步骤</dt><dd>节点总览 → 奖励记录或用户管理 → 按考试状态、用户、UID、备注筛选 → 用户详情 → 编辑联系资料与备注。邀请支持复制及二维码；提取进入钱包提现流程。</dd></div>
+      <div><dt>进行中与完成</dt><dd>奖励与用户数使用同一记录来源；复制成功在原操作处反馈。备注保存完成后更新详情与列表；奖励状态区分待入账、已入账、已提取。</dd></div>
+      <div><dt>空与失败</dt><dd>尚无邀请用户时显示邀请入口；筛选无结果提供清除筛选。未取得邀请链接不显示通用链接为本人链接；复制失败允许手动选择文字。</dd></div>
+      <div><dt>返回与禁用</dt><dd>关闭详情返回原用户行并保留筛选；备注保存失败保留草稿。没有可用链接时解释不能分享的原因，奖励提取条件由钱包和既有资格决定。</dd></div>
+      <div><dt>权限与未保存</dt><dd>以当前 NodeCenterPage 的考试激活记录计算奖励，不重新使用旧交易量佣金模型。账户间资料隔离；未保存备注关闭时确认放弃，已保存内容不重复确认。</dd></div>
+    </dl><p class="fr-source">业务来源 <code>NodeCenterPage.tsx</code>、<code>nodeRewards.ts</code>、<code>rewardRates.ts</code></p></div></details>
+    <details class="fr-flow"><summary><span class="fr-number">09</span><span><b>个人资料</b><small>昵称、UID、头像上传、裁切与保存</small></span><span class="fr-chevron" aria-hidden="true">+</span></summary><div class="fr-content"><dl class="fr-matrix">
+      <div><dt>入口与步骤</dt><dd>资料页 → 编辑昵称并保存；或更换头像 → 选择图片 → 调整裁切与缩放 → 保存。UID 可复制，身份与入会信息只读。</dd></div>
+      <div><dt>进行中与完成</dt><dd>读取图片与生成裁切分别显示忙碌反馈；保存完成同步侧栏与资料页。保留原头像直到新头像确认成功。</dd></div>
+      <div><dt>空与失败</dt><dd>无头像使用既有默认头像。格式、文件大小、最小尺寸、读取与裁切失败分别解释；昵称不合法在字段下提示，存储失败保留编辑状态。</dd></div>
+      <div><dt>返回与禁用</dt><dd>取消昵称恢复原值；裁切面板可更换图片或恢复默认。保存中禁止重复提交；文件条件沿用已有校验，不自行修改限制。</dd></div>
+      <div><dt>权限与未保存</dt><dd>仅编辑当前账户。昵称或头像有改动才出现放弃确认；裁切源图、缩放或位置变化均计为未保存。关闭后返回触发按钮。</dd></div>
+    </dl><p class="fr-source">业务来源 <code>AccountProfilePage.tsx</code>、<code>auth/authMock.ts</code> 的资料校验</p></div></details>
+    <details class="fr-flow"><summary><span class="fr-number">10</span><span><b>账户安全</b><small>信箱、密码、双重验证、装置与安全活动</small></span><span class="fr-chevron" aria-hidden="true">+</span></summary><div class="fr-content"><dl class="fr-matrix">
+      <div><dt>入口与步骤</dt><dd>信箱：验证旧信箱 → 新信箱与验证码 → 完成。密码：当前密码、新密码、确认 → 验证 → 完成。2FA：说明 → 扫码 → 验证 → 保存恢复码 → 完成；停用另行验证。装置：选择其他装置 → 确认登出。</dd></div>
+      <div><dt>进行中与完成</dt><dd>发送、校验与保存都有具体动作名。成功更新安全方法和装置列表；2FA 只有完成恢复码确认后才显示已启用。</dd></div>
+      <div><dt>空与失败</dt><dd>没有其他装置明确说明；没有安全活动显示空记录。验证码格式、密码条件、两次密码不一致、同一新旧信箱分别定位到相关字段。</dd></div>
+      <div><dt>返回与禁用</dt><dd>验证码重发沿用既有冷却状态；密码规则按原清单逐项展示。批量登出只作用于其他装置；停用双重验证说明影响并保持取消可达。</dd></div>
+      <div><dt>权限与未保存</dt><dd>密码和验证码退出流程即清空；不显示在 URL 或记录中。未保存的普通输入可确认放弃；恢复码确认不得跳过。重新进入敏感流程按现有规则重新验证。</dd></div>
+    </dl><p class="fr-source">业务来源 <code>AccountSecurityPage.tsx</code></p></div></details>
+    <details class="fr-flow"><summary><span class="fr-number">11</span><span><b>通知与偏好</b><small>语言、全站主题与通知开关</small></span><span class="fr-chevron" aria-hidden="true">+</span></summary><div class="fr-content"><dl class="fr-matrix">
+      <div><dt>入口与步骤</dt><dd>通知与偏好 → 选择语言、浅色或深色主题、调整通知开关。选项在原行完成，不要求跳转新页面。</dd></div>
+      <div><dt>进行中与完成</dt><dd>主题立即同步全站；开关明确显示开或关。仅取得保存成功结果时反馈已保存，不能把按钮变色等同于账户保存成功。</dd></div>
+      <div><dt>空与失败</dt><dd>偏好尚未取得时保留标签与占位；没有选项时说明原因。写入失败恢复原状态，并在该行提供重试。</dd></div>
+      <div><dt>返回与禁用</dt><dd>语言列表 Esc 收起并回到按钮，选择后保持当前位置。某开关暂不可改时解释原因；保存期间只锁定受影响的项。</dd></div>
+      <div><dt>权限与未保存</dt><dd>即时生效项无需额外保存或放弃确认。主题沿用全站来源；语言及通知的已选、处理中、已保存分别建模，不自行新增语言或通知类别。</dd></div>
+    </dl><p class="fr-source">业务来源 <code>AccountPrefsPage.tsx</code>、<code>siteTheme.ts</code></p></div></details>
+    <details class="fr-flow"><summary><span class="fr-number">12</span><span><b>点数中心</b><small>购买、核对、付款、入账与策略扣点记录</small></span><span class="fr-chevron" aria-hidden="true">+</span></summary><div class="fr-content"><dl class="fr-matrix">
+      <div><dt>入口与步骤</dt><dd>点数余额 → 输入购买数量 → 核对数量与付款币别 → 付款 → 结果 → 点数记录；记录按购买或策略扣点筛选。</dd></div>
+      <div><dt>进行中与完成</dt><dd>付款中保留订单和数量；成功同时更新余额与该笔入账记录。结果提供查看记录与再次购买，不能刷新后重复入账。</dd></div>
+      <div><dt>空与失败</dt><dd>无交易记录与无筛选结果分开。取消或失败不增加余额；结果不确定时显示待确认并允许查订单，不能自动声称没有扣款。</dd></div>
+      <div><dt>返回与禁用</dt><dd>数量沿用大于零的整数校验；资料不完整返回选择。失败回核对保留数量与原订单关联，重试避免重复创建；提交时阻止重复点击。</dd></div>
+      <div><dt>权限与未保存</dt><dd>点数与加密钱包分开显示，购买需具备原有账户资格。补点后完成待扣，再手动恢复策略，不改为自动恢复。未付款数量可返回修改，付款结果以订单状态为准。</dd></div>
+    </dl><p class="fr-source">业务来源 <code>PointsCenterPage.tsx</code>、<code>pointsPreviewStore.ts</code></p></div></details>
+  </div>
+  <div class="fr-contract"><h3>所有流程共享的交付条件</h3><ul><li>返回保留有效筛选、上下文与滚动位置；失效的报价、验证码和授权不复用。</li><li>重试只处理失败环节；已提交项目通过原记录查询，不靠再次点击确认制造成功。</li><li>会改变结果的按钮使用具体动作名称；不可操作时提供可读原因与可行的下一步。</li><li>权限不足、登录过期与资料读取失败使用不同反馈；登录回来恢复目标页面。</li></ul></div>
+  <div class="sheet-foot"><span>状态清单作为页面设计与前端交付依据，业务条件继续复用现有逻辑</span><span>WORKFLOWS</span></div>
+</section>
+
+<section class="sheet rp-sheet" id="responsive-patterns">
+  <div class="sheet-top"><span>OPENX / BEHAVIOR</span><span>RESPONSIVE & OVERLAYS</span></div>
+  <div class="section-heading"><h2>复杂布局与交互规则</h2><p>统一浮层、长内容、键盘与触摸行为，让同一任务在桌面和手机上都能完整完成。</p></div>
+  <div class="rp-section"><div class="rp-label"><span>01</span><h3>选择合适的承载方式</h3></div><div class="rp-rules">
+    <div><b>页面</b><p>完整多步流程、身份验证、提现和 API 连接使用独立页面。URL 可以回到步骤或记录；每次切换把焦点放到步骤标题。</p></div>
+    <div><b>弹窗</b><p>单一决策或短任务，例如解除授权、修改昵称、确认登出。最大宽度 480px；说明、内容与操作一眼可辨，不在确认弹窗里塞完整长流程。</p></div>
+    <div><b>抽屉</b><p>需要保留列表上下文的用户详情、记录详情与筛选。桌面最大宽度 480px；多字段长期编辑或需要深链接的完整详情转页面。</p></div>
+    <div><b>轻量浮层</b><p>下拉选项和补充说明贴近触发对象；靠近视口边缘自动翻转。内容太长时内部滚动，不让整页横向滚动。</p></div>
+  </div></div>
+  <div class="rp-section"><div class="rp-label"><span>02</span><h3>遮罩、层级与焦点</h3></div><ol class="rp-layer-list"><li><b>0</b><span>页面内容</span><small>常规布局与卡片</small></li><li><b>10</b><span>固定导航</span><small>页头、侧栏与局部吸顶</small></li><li><b>20</b><span>下拉与弹出内容</span><small>相对所属页面的选择器</small></li><li><b>30 / 40</b><span>遮罩 / 对话框</span><small>底层不可操作，锁定页面滚动</small></li><li><b>50 / 60</b><span>Toast / Tooltip</span><small>只属于当前活动层，不跨层显示</small></li></ol><div class="rp-rules">
+    <div><b>一次只进行一个模态任务</b><p>弹窗内的选单和提示属于该弹窗；关闭最上层只影响最上层。放弃编辑确认替换当前内容，不叠加第三层对话框。</p></div>
+    <div><b>右上角统一使用 × 关闭</b><p>弹窗与抽屉右上角使用 20px × 图标，不放“关闭”文字；点击区 44 × 44px，aria-label 说明对象，例如“关闭用户详情”。悬停仅使用中性灰阶，键盘焦点为 2px 清晰描边；底部仍可保留取消。</p></div>
+    <div><b>关闭路径保持一致</b><p>只读浮层可点遮罩关闭；有未保存内容时走放弃确认。Esc 与右上角 × 规则相同，不能绕过草稿确认；完成关闭后返回原触发按钮。</p></div>
+    <div><b>焦点留在活动对话框</b><p>打开时聚焦标题或首个字段，Tab 在其中循环；风险确认优先聚焦取消。关闭回到触发按钮；该按钮已移除时回到相邻列表行。</p></div>
+    <div><b>遮罩负责隔离</b><p>以品牌 Ink 的 48% 透明度覆盖页面，不额外增加玻璃模糊。底层设为 inert；对话框具备标题关联和 modal 语义。</p></div>
+  </div><p class="rp-reference">键盘与焦点依据 <a href="https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/" target="_blank" rel="noreferrer">WAI-ARIA Dialog 模式</a>；层级数值与图标尺寸是 OpenX 的统一约定。</p></div>
+  <div class="rp-section"><div class="rp-label"><span>03</span><h3>长内容与手机键盘</h3></div><div class="rp-scroll-spec"><div class="rp-scroll-visual" aria-label="长弹窗结构示意"><div>固定标题 <span aria-hidden="true">×</span></div><div><span>内容区域独立滚动</span><i></i><i></i><i></i><i></i><i></i></div><div>取消 <b>主要操作</b></div></div><dl class="rp-definition"><div><dt>桌面</dt><dd>浮层距上下边缘至少 24px；最大高度为可视区减 48px。容器分 header / body / footer 三行，只有 body 滚动。</dd></div><div><dt>手机</dt><dd>≤767px 时抽屉成为全宽任务面板，完整表单使用可视区高度；短确认保留两侧 16px。顶部和底部加入 safe-area。</dd></div><div><dt>键盘弹起</dt><dd>表单随可视区域收缩；无法可靠吸底时让操作回到表单文流。字段与错误提示滚动到键盘上方，不能用固定 100vh 把按钮压到键盘下。</dd></div><div><dt>滚动边界</dt><dd>不让 header / footer 遮住首末字段；内层滚动结束不滚动背景。避免同一屏出现两个相邻的长列表滚动区。</dd></div></dl></div><p class="rp-reference">键盘视口处理参考 <a href="https://developer.mozilla.org/en-US/docs/Web/API/VisualViewport" target="_blank" rel="noreferrer">MDN VisualViewport</a>，窄屏不通过缩小整页字号适配。</p></div>
+  <div class="rp-section"><div class="rp-label"><span>04</span><h3>响应式内容优先级</h3></div><div class="rp-breakpoints"><div><b>≤767px</b><span>手机 / 4 栏</span><p>单列内容、16px 页边距。表单字段一列；主要操作保持 44px 触摸高度。详情与列表切换后保留返回上下文。</p></div><div><b>768–1199px</b><span>平板 / 8 栏</span><p>24px 页边距、收窄导航。筛选栏可以换行；文字与控件不压缩。次栏低于约定最小宽度时提前换行。</p></div><div><b>≥1200px</b><span>桌面 / 12 栏</span><p>32px 页边距。内容在剩余工作区居中，最大宽度使用页面类型 token；大屏不整体放大字体与图标。</p></div></div><div class="rp-rules">
+    <div><b>列表与表格</b><p>手机优先显示对象、金额、状态和主要操作；时间、编号、详情进入可展开行。需要横向比较的完整表格放在局部可滚动容器，并有可见滚动提示。</p></div>
+    <div><b>筛选与批量动作</b><p>搜索保留在列表上方；复杂筛选收进抽屉，入口显示已选数量。批量操作只在选中后出现，提供取消选择，不能遮挡记录末行。</p></div>
+    <div><b>文字与数字</b><p>标题自然换行且无末尾标点；金额与单位保持关联，极长数值降低一个字号级别后允许合理换行。地址、UID 可断行与复制，完整详情不省略。</p></div>
+    <div><b>触摸与放大</b><p>触摸设备不依赖 hover 显示按钮或关键提示；使用点击展开。200% 文本放大时控件自适应增高，不裁掉文字。布局最窄覆盖 320px。</p></div>
+  </div></div>
+  <div class="rp-section"><div class="rp-label"><span>05</span><h3>校验、反馈与未保存内容</h3></div><div class="rp-rules">
+    <div><b>校验时机</b><p>初始不显示错误；首次离开已填写字段时校验，提交时检查全部。错误出现后随有效修改更新；提交失败将焦点移到首个错误，关联错误说明。</p></div>
+    <div><b>普通 Toast</b><p>复制、保存等非关键反馈显示 5 秒，可手动关闭；悬停或键盘焦点停留时暂停计时，最多同时 3 条。同一事件合并，不重复刷屏。</p></div>
+    <div><b>错误持续可见</b><p>字段错误留在字段下，直到修正。页面错误提供重试；重要交易结果保留在页面或记录里。Toast 不作为失败、付款结果和权限原因的唯一入口。</p></div>
+    <div><b>可中断的修改</b><p>只有值发生变化才标记未保存。放弃确认提供继续编辑与放弃修改；保存失败保留草稿。即时生效的主题、筛选不再叠加保存确认。</p></div>
+    <div><b>动效与等待</b><p>加载保留原空间，操作按钮保持宽度。常规反馈沿用现有按钮时长，浮层 220ms / 8px；减少动态偏好下取消位移动画。结果改变用文字和图标同步表达。</p></div>
+    <div><b>禁止假成功</b><p>提交、处理中与成功是三个独立状态。只有得到对应结果才更新完成态；超时或断线保留对象标识供重试或查询，不自动清空内容。</p></div>
+  </div><p class="rp-reference">持续错误与非打断式通知参考 <a href="https://www.w3.org/WAI/ARIA/apg/patterns/alert/" target="_blank" rel="noreferrer">WAI-ARIA Alert 模式</a>；5 秒仅用于可在页面再次确认的普通反馈。</p></div>
+  <div class="sheet-foot"><span>使用共同断点、浮层层级和反馈 token，避免页面各自定义一套行为</span><span>INTERACTION RULES</span></div>
+</section>
