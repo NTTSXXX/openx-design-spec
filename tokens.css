@@ -187,6 +187,10 @@
   --ox-component-avatar-text-gap: 12px;
   --ox-component-avatar-group-overlap: 8px;
   --ox-component-avatar-hit-target: 44px;
+  --ox-component-icon-roles-auxiliary: 16px;
+  --ox-component-icon-roles-action: 20px;
+  --ox-component-icon-roles-navigation: 22px;
+  --ox-component-icon-roles-hit-target: 44px;
   --ox-motion-feedback: 160ms;
   --ox-motion-overlay: 220ms;
   --ox-motion-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
