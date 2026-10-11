@@ -14,8 +14,8 @@ const schema = require('./prompt-adapter-schema.json');
 
 const ROOT = path.resolve(__dirname, '..');
 const PORT = Number(process.env.PROMPT_ADAPTER_PORT || 6128);
-const MAX_IMAGE_BYTES = 8 * 1024 * 1024;
-const MAX_BODY_BYTES = 12 * 1024 * 1024;
+const MAX_IMAGE_BYTES = 25 * 1024 * 1024;
+const MAX_BODY_BYTES = 40 * 1024 * 1024;
 const TIMEOUT_MS = 8 * 60 * 1000;
 const RESULT_TTL_MS = 20 * 60 * 1000;
 const MAX_QUEUED = 2;
@@ -92,10 +92,10 @@ function imageInput(value) {
   if (!value || typeof value !== 'object' || Array.isArray(value) || typeof value.dataUrl !== 'string') fail(400, 'INVALID_IMAGE', '请上传PNG、JPEG或WebP参考图');
   const match = /^data:(image\/png|image\/jpeg|image\/webp);base64,([A-Za-z0-9+/]*={0,2})$/.exec(value.dataUrl);
   if (!match) fail(400, 'INVALID_IMAGE', '参考图格式不支持或编码无效');
-  if (match[2].length > Math.ceil(MAX_IMAGE_BYTES / 3) * 4 + 4) fail(413, 'IMAGE_TOO_LARGE', '参考图不能超过8MB');
+  if (match[2].length > Math.ceil(MAX_IMAGE_BYTES / 3) * 4 + 4) fail(413, 'IMAGE_TOO_LARGE', '参考图不能超过25MB');
   const buffer = Buffer.from(match[2], 'base64');
   if (!buffer.length || buffer.toString('base64').replace(/=+$/, '') !== match[2].replace(/=+$/, '')) fail(400, 'INVALID_IMAGE', '参考图编码无效');
-  if (buffer.length > MAX_IMAGE_BYTES) fail(413, 'IMAGE_TOO_LARGE', '参考图不能超过8MB');
+  if (buffer.length > MAX_IMAGE_BYTES) fail(413, 'IMAGE_TOO_LARGE', '参考图不能超过25MB');
   const mime = match[1];
   const valid = mime === 'image/png' ? buffer.length > 24 && buffer.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10])) && buffer.toString('ascii', 12, 16) === 'IHDR'
     : mime === 'image/jpeg' ? buffer.length > 4 && buffer[0] === 255 && buffer[1] === 216 && buffer[2] === 255
