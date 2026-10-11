@@ -1,0 +1,77 @@
+html[data-workspace-embed] body{margin:0;background:#f5f5f7;min-width:0}
+html[data-workspace-embed=templates] :is(.doc-nav,.sidebar-toggle,.sidebar-overlay){display:none!important}
+html[data-workspace-embed=templates] main{margin:0!important;padding:0!important;width:100%!important;max-width:none!important}
+html[data-workspace-embed=templates] main>section:not(#social-media){display:none!important}
+html[data-workspace-embed=templates] #social-media>:is(.sheet-top,.sm-intro,.sm-jump){display:none!important}
+html[data-workspace-embed=rules] .doc-nav .spec-mode-switch,html[data-workspace-embed=rules] .doc-nav [data-spec-group=generation],html[data-workspace-embed=rules] .doc-nav .wordmark{display:none!important}
+html[data-workspace-embed=rules] .doc-nav [data-spec-group=rules]{display:block!important}
+html[data-workspace-embed=templates] #social-media{padding:20px!important;margin:0!important;border:0!important;width:100%!important;max-width:none!important}
+html[data-workspace-embed=templates] #social-media>.page-head,
+html[data-workspace-embed=templates] #social-media>.section-heading,
+html[data-workspace-embed=templates] #social-media>.sm-workflow-tabs,
+html[data-workspace-embed=templates] #social-media>.sm-workflow-intro,
+html[data-workspace-embed=templates] #social-media>h2,
+html[data-workspace-embed=templates] #social-media>.lead,
+html[data-workspace-embed=templates] #sm-layout-rules,
+html[data-workspace-embed=templates] .sm-layout-rules{display:none!important}
+html[data-workspace-embed=templates] #sm-samples .sm-workbench{grid-template-columns:minmax(0,1fr) 360px}
+html[data-workspace-embed=templates] #sm-samples .sm-stage{max-height:none;min-height:0}
+html[data-workspace-embed=templates] #sm-samples .sm-inspector-body{max-height:none}
+html[data-workspace-embed=rules] main>.sheet{max-width:1160px!important;width:100%!important;border:0!important}
+.sm-text-style-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 12px;margin-top:16px}.sm-text-style-grid label{display:flex;flex-direction:column;gap:6px;font-size:12px}.sm-text-style-grid input,.sm-text-style-grid select{min-height:42px;width:100%;box-sizing:border-box}.sm-text-style-grid input[type=color]{padding:6px;cursor:pointer}
+@media(max-width:900px){html[data-workspace-embed=templates] #sm-samples .sm-workbench{grid-template-columns:minmax(0,1fr)}html[data-workspace-embed=templates] #sm-samples .sm-stage{min-height:0}html[data-workspace-embed=templates] #sm-samples .sm-inspector-body{max-height:none}}
+/* Focus changes the original border only, without a second outline. */
+:where(button,a,input,select,textarea,summary):focus-visible,.force-focus{outline:none!important;outline-offset:0;box-shadow:none!important;border-color:var(--ox-control-focus,var(--ox-border-hover))!important}
+:is([role=tab],[role=option],[role=radio],.sm-inspector-tabs button,.sm-layout-tabs button)[aria-selected=true],button[aria-pressed=true]:not(.site-orange),.doc-nav nav a[aria-current=location]{background:var(--ox-hover,#F4F4F6)!important;border-color:var(--ox-border-strong,#CFCFD6)!important;box-shadow:none!important;color:var(--ox-text,#131316)!important}
+html[data-workspace-embed=rules] body{padding-left:0!important;padding-right:224px!important}html[data-workspace-embed=rules] .doc-nav{left:auto!important;right:0!important;border-left:1px solid #E4E4E9!important;border-right:0!important}
+@media(max-width:1000px){html[data-workspace-embed=rules] body{padding-right:0!important}}
+/* Design rules read as an open reference, without nested disclosure controls. */
+body.spec-mode-rules .rule-static-section{display:block;margin-top:28px;border:0!important;box-shadow:none;background:transparent}
+.rule-static-heading{display:block;margin:0 0 14px;font-size:17px;font-weight:600;line-height:1.5;color:var(--ox-text,#131316);cursor:default}
+.rule-static-heading::before,.rule-static-heading::after{display:none!important;content:none!important}
+body.spec-mode-rules .rule-static-section>:is(p,pre,div,table,span,a){margin-top:12px}
+body.spec-mode-rules #ip-robot .ip-quick-links{border:0;margin-bottom:32px;gap:8px 28px}
+body.spec-mode-rules #ip-robot :is(.sm-direction-heading,.sm-prompt-panel,.sm-notes>div,.sm-reference,.sm-ip-gallery,.sm-direction-gallery){border:0!important}
+body.spec-mode-rules #ip-robot .sm-prompt-panel{padding:0;background:transparent}
+body.spec-mode-rules #ip-robot .sm-notes{display:grid;gap:16px;margin:16px 0 28px}
+body.spec-mode-rules #ip-robot .sm-notes>div{padding:20px;border-radius:8px;background:#F7F7F7}
+body.spec-mode-rules #ip-robot .sm-notes h4{font-size:15px;line-height:1.5;margin-bottom:8px}
+body.spec-mode-rules #ip-robot .sm-notes p{line-height:1.8}
+body.spec-mode-rules #ip-robot .rule-static-section{margin-top:32px}
+body.spec-mode-rules #ip-robot .sm-ip-gallery{gap:16px;margin-top:20px}
+body.spec-mode-rules #ip-robot .sm-ip-gallery figure{border:0;background:#F7F7F7;border-radius:8px}
+body.spec-mode-rules #ip-robot .rule-static-heading{font-size:20px;margin-bottom:18px}
+body.spec-mode-rules #ip-robot .sm-direction-gallery .rule-static-heading{font-size:15px}
+body.spec-mode-rules #ip-robot .sm-direction-gallery .rule-static-section{margin-top:16px}
+body.spec-mode-rules #ip-robot .sm-prompt-panel pre{max-height:none}
+
+/* The reference itself must be readable at the published interface scale.
+   Artwork, sample images, canvas pixels and SVG diagrams keep source sizes. */
+body.spec-mode-rules{font-size:16px;line-height:1.65}
+body.spec-mode-rules .sheet :is(p,li,td,dd):not([data-ox-typography=artwork],[data-ox-typography=artwork] *){font-size:16px!important;line-height:1.65}
+body.spec-mode-rules .sheet :is(small,summary,code,th,.rule-note,.spec-label,.sheet-top,.sheet-foot,.edition,.subheading>span,.label,.unit-heading>span,.component-feedback,.tu-example-meta,.ac-meta,.ac-caption,.lg-note,.ip-quick-links a){font-size:14px!important;line-height:22px}
+body.spec-mode-rules .sheet :is(button,input,select,textarea){font-size:15px;line-height:24px}
+body.spec-mode-rules .sheet :is(.section-heading h2,.type-title,.tu-example>h3){font-size:32px;line-height:40px}
+body.spec-mode-rules .sheet :is(.subheading h2,.subheading h3,.unit-heading h3,.two-notes h3,.type-section,.tu-example h4){font-size:24px;line-height:32px}
+body.spec-mode-rules .sheet :is(.rule-static-heading,.tu-note-grid h4,.card-body h4){font-size:20px;line-height:28px}
+body.spec-mode-rules .sheet :is(.type-body,.tu-example>p,.tu-example-detail,.tu-steps){font-size:16px;line-height:26px}
+body.spec-mode-rules .sheet :is(.field>span,.tu-example label,.layout-controls,.layout-controls button,.status,.state-caption b){font-size:14px;line-height:22px}
+body.spec-mode-rules .sheet :is(.swatch-title small,.swatch-value span,.neutral-swatch span,.neutral-swatch b,.palette-rules b,.palette-rules p,.preview-head,.preview-footer,.preview-card p,.space-step,.diagram-title,.layout-facts span){font-size:14px;line-height:22px}
+body.spec-mode-rules .doc-nav :is(.wordmark span,.sidebar-group-label,.version,.sidebar-child){font-size:14px;line-height:22px}
+body.spec-mode-rules .doc-nav :is(nav a,.spec-mode-switch button){font-size:15px;line-height:24px}
+body.spec-mode-rules .ox-select-menu{font-size:15px;line-height:24px}
+body.spec-mode-rules .ox-select-group{font-size:14px;line-height:22px}
+@media(max-width:767px){body.spec-mode-rules .sheet :is(input,select,textarea){font-size:16px}body.spec-mode-rules .sheet :is(.section-heading h2,.type-title,.tu-example>h3){font-size:24px;line-height:32px}}
+/* Reference tables and reading surfaces follow the workspace theme as well.
+   Palette swatches and explicit light/dark comparison artwork keep source colors. */
+body.spec-mode-rules .rules-table{color:var(--ws-ink,var(--ox-text,#131316))}
+body.spec-mode-rules .rules-table :is(th,td){color:var(--ws-muted,var(--ox-muted,#6E6E79))!important;border-color:var(--ws-line,var(--ox-border,#E4E4E9))!important}
+body.spec-mode-rules .rules-table th{background:var(--ws-soft,var(--ox-hover,#F7F7F7))!important;color:var(--ws-ink,var(--ox-text,#131316))!important}
+body.spec-mode-rules .rules-table td:first-child{color:var(--ws-ink,var(--ox-text,#131316))!important}
+body.spec-mode-rules :is(.spec-label,.type-metric small,.unit-heading>span,.tu-example-meta,.principle-list span,.source-grid p,.layout-facts span){color:var(--ws-muted,var(--ox-muted,#6E6E79))!important}
+body.spec-mode-rules :is(.tu-example,.tu-note-grid article,.state-card,.aligned-cards article){background:var(--ws-surface,var(--ox-surface,#FFFFFF));color:var(--ws-ink,var(--ox-text,#131316));border-color:var(--ws-line,var(--ox-border,#E4E4E9))}
+body.spec-mode-rules :is(.alignment-example,.layout-diagram){background:var(--ws-soft,var(--ox-hover,#F7F7F7));border-color:var(--ws-line,var(--ox-border,#E4E4E9))}
+body.spec-mode-rules .type-specimens{gap:20px 32px}
+body.spec-mode-rules .type-specimens>div{border:0;min-height:0;padding:12px 0}
+/* The root already reserves navigation space with scroll-padding. */
+body.spec-mode-rules .sheet{scroll-margin-top:0!important}

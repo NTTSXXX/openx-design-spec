@@ -1,0 +1,474 @@
+{
+  "version": 1,
+  "policy": {
+    "priority": [
+      "title",
+      "support",
+      "question",
+      "eyebrow"
+    ],
+    "language": "与当前任务和原文保持同一种简体或繁体",
+    "title": "先表达一个清楚主题或利益点，默认一行，不加结尾标点",
+    "support": "补充标题缺少的对象、条件或具体信息，不重复标题，不写空泛口号",
+    "question": "仅互动模板生成一个可回答的具体问题，最多两行，不编造奖励或引导承诺",
+    "fixed": "风险提示、互动品牌标签与 Slogan 原文保留，不交给模型改写",
+    "counting": "recommendedChars 为中文为主的创作目标；hardMaxChars 计 Unicode 字符，含标点空格。最终必须按当前字体和像素区域测量，不以字数代替排版校验",
+    "overflow": "超出实际区域时保留候选并提示缩短；不截断、不缩小字号、不扩大文字区",
+    "preserve": "只提交文字content；Logo、底图、字体、颜色与用户手动定位保留。既有自动跟随排版和互动卡随完整文字自然换行"
+  },
+  "templates": [
+    {
+      "id": "figma-recap",
+      "title": "X / Instagram · 竖版图文与互动栏",
+      "width": 1080,
+      "height": 1350,
+      "textArea": {
+        "x": 64,
+        "y": 176,
+        "w": 952,
+        "h": 350
+      },
+      "fields": [
+        {
+          "name": "主题标题",
+          "role": "title",
+          "editable": true,
+          "size": 120,
+          "weight": 900,
+          "family": "title",
+          "maxWidth": 840,
+          "lineHeight": 144,
+          "sourceMaxLines": 1,
+          "maxLines": 1,
+          "geometryMaxLines": 1,
+          "recommendedChars": [
+            4,
+            7
+          ],
+          "hardMaxChars": 14,
+          "example": "每次虧錢的復盤"
+        },
+        {
+          "name": "辅助说明",
+          "role": "support",
+          "editable": true,
+          "size": 32,
+          "weight": 600,
+          "family": "body",
+          "maxWidth": 952,
+          "lineHeight": 51.2,
+          "sourceMaxLines": 1,
+          "maxLines": 1,
+          "geometryMaxLines": 1,
+          "recommendedChars": [
+            12,
+            26
+          ],
+          "hardMaxChars": 40,
+          "example": "翻譯成考試就是：卷子太難，老師針對我，這次不一樣。"
+        },
+        {
+          "name": "风险小字",
+          "role": "fixed",
+          "editable": false,
+          "size": 13,
+          "weight": 400,
+          "family": "body",
+          "maxWidth": 376,
+          "lineHeight": 15.6,
+          "sourceMaxLines": 1,
+          "maxLines": 1,
+          "geometryMaxLines": 1,
+          "example": "不構成任何投資建議，交易有風險"
+        },
+        {
+          "name": "互动标签",
+          "role": "fixed",
+          "editable": false,
+          "size": 13,
+          "weight": 700,
+          "family": "body",
+          "maxWidth": 90,
+          "lineHeight": 15.6,
+          "sourceMaxLines": 1,
+          "maxLines": 1,
+          "geometryMaxLines": 1,
+          "example": "OpenX ONE"
+        },
+        {
+          "name": "互动问题",
+          "role": "question",
+          "editable": true,
+          "size": 28,
+          "weight": 700,
+          "family": "body",
+          "maxWidth": 904,
+          "lineHeight": 33.6,
+          "sourceMaxLines": 1,
+          "maxLines": 2,
+          "geometryMaxLines": 1,
+          "recommendedChars": [
+            12,
+            26
+          ],
+          "hardMaxChars": 60,
+          "example": "你復盤的時候，最常給自己判哪一種?"
+        },
+        {
+          "name": "Slogan",
+          "role": "fixed",
+          "editable": false,
+          "size": 18,
+          "weight": 400,
+          "family": "body",
+          "maxWidth": 390,
+          "lineHeight": 21.599999999999998,
+          "sourceMaxLines": 1,
+          "maxLines": 1,
+          "geometryMaxLines": 1,
+          "example": "Open Your Trading · Build Your Path"
+        }
+      ]
+    },
+    {
+      "id": "interview-wide",
+      "title": "YouTube · 横版人物封面",
+      "width": 1920,
+      "height": 1080,
+      "textArea": {
+        "x": 115,
+        "y": 310,
+        "w": 800,
+        "h": 535
+      },
+      "fields": [
+        {
+          "name": "栏目小字",
+          "role": "eyebrow",
+          "editable": true,
+          "size": 40,
+          "weight": 700,
+          "family": "body",
+          "maxWidth": 780,
+          "lineHeight": 52,
+          "sourceMaxLines": 1,
+          "maxLines": 1,
+          "geometryMaxLines": 1,
+          "recommendedChars": [
+            4,
+            12
+          ],
+          "hardMaxChars": 24,
+          "example": "创作者访谈 · Web3 的日常"
+        },
+        {
+          "name": "主题标题",
+          "role": "title",
+          "editable": true,
+          "size": 164,
+          "weight": 900,
+          "family": "title",
+          "maxWidth": 800,
+          "lineHeight": 178,
+          "sourceMaxLines": 2,
+          "maxLines": 1,
+          "geometryMaxLines": 1,
+          "recommendedChars": [
+            2,
+            4
+          ],
+          "hardMaxChars": 10,
+          "example": "创作分享"
+        },
+        {
+          "name": "副标题",
+          "role": "support",
+          "editable": true,
+          "size": 42,
+          "weight": 600,
+          "family": "body",
+          "maxWidth": 850,
+          "lineHeight": 56,
+          "sourceMaxLines": 2,
+          "maxLines": 1,
+          "geometryMaxLines": 1,
+          "recommendedChars": [
+            10,
+            18
+          ],
+          "hardMaxChars": 30,
+          "example": "从创作经历聊起，分享真实的创作者日常"
+        },
+        {
+          "name": "Slogan",
+          "role": "fixed",
+          "editable": false,
+          "size": 28,
+          "weight": 400,
+          "family": "body",
+          "maxWidth": 980,
+          "lineHeight": 36,
+          "sourceMaxLines": 1,
+          "maxLines": 1,
+          "geometryMaxLines": 1,
+          "example": "Open Your Trading · Build Your Path"
+        }
+      ]
+    },
+    {
+      "id": "interview-vertical",
+      "title": "Instagram Reels · 竖版人物封面",
+      "width": 1080,
+      "height": 1920,
+      "textArea": {
+        "x": 76,
+        "y": 1520,
+        "w": 788,
+        "h": 324
+      },
+      "fields": [
+        {
+          "name": "栏目小字",
+          "role": "eyebrow",
+          "editable": true,
+          "size": 38,
+          "weight": 700,
+          "family": "body",
+          "maxWidth": 710,
+          "lineHeight": 46,
+          "sourceMaxLines": 1,
+          "maxLines": 1,
+          "geometryMaxLines": 1,
+          "recommendedChars": [
+            4,
+            10
+          ],
+          "hardMaxChars": 20,
+          "example": "创作者访谈"
+        },
+        {
+          "name": "主题标题",
+          "role": "title",
+          "editable": true,
+          "size": 110,
+          "weight": 900,
+          "family": "title",
+          "maxWidth": 788,
+          "lineHeight": 116,
+          "sourceMaxLines": 2,
+          "maxLines": 1,
+          "geometryMaxLines": 1,
+          "recommendedChars": [
+            4,
+            7
+          ],
+          "hardMaxChars": 16,
+          "example": "Web3 的日常"
+        },
+        {
+          "name": "辅助说明",
+          "role": "support",
+          "editable": true,
+          "size": 40,
+          "weight": 600,
+          "family": "body",
+          "maxWidth": 788,
+          "lineHeight": 54,
+          "sourceMaxLines": 2,
+          "maxLines": 1,
+          "geometryMaxLines": 1,
+          "recommendedChars": [
+            10,
+            17
+          ],
+          "hardMaxChars": 28,
+          "example": "从创作经历聊起，分享真实的创作者日常"
+        },
+        {
+          "name": "Slogan",
+          "role": "fixed",
+          "editable": false,
+          "size": 24,
+          "weight": 400,
+          "family": "body",
+          "maxWidth": 788,
+          "lineHeight": 32,
+          "sourceMaxLines": 1,
+          "maxLines": 1,
+          "geometryMaxLines": 1,
+          "example": "Open Your Trading · Build Your Path"
+        }
+      ]
+    },
+    {
+      "id": "tutorial",
+      "title": "X · 横版图标教程",
+      "width": 1920,
+      "height": 1080,
+      "textArea": {
+        "x": 120,
+        "y": 310,
+        "w": 730,
+        "h": 470
+      },
+      "fields": [
+        {
+          "name": "栏目小字",
+          "role": "eyebrow",
+          "editable": true,
+          "size": 32,
+          "weight": 700,
+          "family": "body",
+          "maxWidth": 730,
+          "lineHeight": 42,
+          "sourceMaxLines": 1,
+          "maxLines": 1,
+          "geometryMaxLines": 1,
+          "recommendedChars": [
+            4,
+            10
+          ],
+          "hardMaxChars": 20,
+          "example": "交易知识"
+        },
+        {
+          "name": "主题标题",
+          "role": "title",
+          "editable": true,
+          "size": 112,
+          "weight": 900,
+          "family": "title",
+          "maxWidth": 730,
+          "lineHeight": 122,
+          "sourceMaxLines": 2,
+          "maxLines": 1,
+          "geometryMaxLines": 1,
+          "recommendedChars": [
+            3,
+            6
+          ],
+          "hardMaxChars": 14,
+          "example": "资金费率"
+        },
+        {
+          "name": "辅助说明",
+          "role": "support",
+          "editable": true,
+          "size": 40,
+          "weight": 600,
+          "family": "body",
+          "maxWidth": 730,
+          "lineHeight": 56,
+          "sourceMaxLines": 2,
+          "maxLines": 1,
+          "geometryMaxLines": 1,
+          "recommendedChars": [
+            10,
+            17
+          ],
+          "hardMaxChars": 28,
+          "example": "从基础概念开始，学会查看与判断"
+        },
+        {
+          "name": "Slogan",
+          "role": "fixed",
+          "editable": false,
+          "size": 26,
+          "weight": 400,
+          "family": "body",
+          "maxWidth": 1020,
+          "lineHeight": 36,
+          "sourceMaxLines": 1,
+          "maxLines": 1,
+          "geometryMaxLines": 1,
+          "example": "Open Your Trading · Build Your Path"
+        }
+      ]
+    },
+    {
+      "id": "square",
+      "title": "Instagram · 方形公告",
+      "width": 1080,
+      "height": 1080,
+      "textArea": {
+        "x": 76,
+        "y": 760,
+        "w": 928,
+        "h": 244
+      },
+      "fields": [
+        {
+          "name": "栏目小字",
+          "role": "eyebrow",
+          "editable": true,
+          "size": 26,
+          "weight": 700,
+          "family": "body",
+          "maxWidth": 928,
+          "lineHeight": 34,
+          "sourceMaxLines": 1,
+          "maxLines": 1,
+          "geometryMaxLines": 1,
+          "recommendedChars": [
+            4,
+            12
+          ],
+          "hardMaxChars": 24,
+          "example": "账户与社群安全"
+        },
+        {
+          "name": "主题标题",
+          "role": "title",
+          "editable": true,
+          "size": 112,
+          "weight": 900,
+          "family": "title",
+          "maxWidth": 928,
+          "lineHeight": 124,
+          "sourceMaxLines": 2,
+          "maxLines": 1,
+          "geometryMaxLines": 1,
+          "recommendedChars": [
+            4,
+            8
+          ],
+          "hardMaxChars": 18,
+          "example": "请你确认官方渠道"
+        },
+        {
+          "name": "辅助说明",
+          "role": "support",
+          "editable": true,
+          "size": 26,
+          "weight": 600,
+          "family": "body",
+          "maxWidth": 928,
+          "lineHeight": 34,
+          "sourceMaxLines": 2,
+          "maxLines": 1,
+          "geometryMaxLines": 1,
+          "recommendedChars": [
+            12,
+            28
+          ],
+          "hardMaxChars": 40,
+          "example": "遇到可疑链接，先核对再操作"
+        },
+        {
+          "name": "Slogan",
+          "role": "fixed",
+          "editable": false,
+          "size": 26,
+          "weight": 600,
+          "family": "body",
+          "maxWidth": 586,
+          "lineHeight": 34,
+          "sourceMaxLines": 1,
+          "maxLines": 1,
+          "geometryMaxLines": 1,
+          "example": "Open Your Trading · Build Your Path"
+        }
+      ]
+    }
+  ]
+}

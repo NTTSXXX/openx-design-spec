@@ -1,0 +1,286 @@
+{
+  "fps": 30,
+  "totalFrames": 1558,
+  "lead": 1,
+  "cutoff": "2026-10-01 13:25 Asia/Shanghai",
+  "updated": "2026-09-29",
+  "profile": "主理人",
+  "blocks": [
+    {
+      "id": "hook",
+      "text": "Coinbase 和 Deribit 預定今天整合。對交易者來說，變的是什麼？",
+      "spoken_text": "Coinbase 和 Deribit 预定今天整合。对交易者来说，变的是什么？",
+      "duration": 4.9399999999999995,
+      "generation_seconds": 8.311999999976251,
+      "peak": 0.498046875,
+      "title": "平台整合，改變在哪？",
+      "index": 0,
+      "start": 1,
+      "from": 30,
+      "frames": 148,
+      "claim_id": "C1"
+    },
+    {
+      "id": "scope",
+      "text": "先看範圍：這次是衍生品平台整合，Coinbase 用戶的現貨交易不受影響。",
+      "spoken_text": "先看范围：这次是衍生品平台整合，Coinbase 用户的现货交易不受影响。",
+      "duration": 7.26,
+      "generation_seconds": 23.14100000000326,
+      "peak": 0.53125,
+      "title": "先分清楚影響範圍",
+      "index": 1,
+      "start": 5.9399999999999995,
+      "from": 178,
+      "frames": 218,
+      "claim_id": "C2"
+    },
+    {
+      "id": "retail",
+      "text": "如果你在網站或 App 交易永續合約，入口不變，遷移會自動進行。",
+      "spoken_text": "如果你在网站或 App 交易永续合约，入口不变，迁移会自动进行。",
+      "duration": 5.9799999999999995,
+      "generation_seconds": 9.828000000037719,
+      "peak": 0.4609375,
+      "title": "交易入口維持原樣",
+      "index": 2,
+      "start": 13.2,
+      "from": 396,
+      "frames": 179,
+      "claim_id": "C3"
+    },
+    {
+      "id": "backend",
+      "text": "後台的交易基礎設施，則將整合到 Deribit。部位會按標記價格結算，再以相同價格重建。",
+      "spoken_text": "后台的交易基础设施，则将整合到 Deribit。部位会按标记价格结算，再以相同价格重建。",
+      "duration": 8.06,
+      "generation_seconds": 12.655999999959022,
+      "peak": 0.62109375,
+      "title": "後台如何遷移部位",
+      "index": 3,
+      "start": 19.18,
+      "from": 575,
+      "frames": 242,
+      "claim_id": "C4"
+    },
+    {
+      "id": "records",
+      "text": "因此，你可能看到交易紀錄增加，或平均入場價重設，別把顯示變化當成新交易。",
+      "spoken_text": "因此，你可能看到交易纪录增加，或平均入场价重设，别把显示变化当成新交易。",
+      "duration": 7.74,
+      "generation_seconds": 12.422000000020489,
+      "peak": 0.48828125,
+      "title": "看懂帳戶顯示變化",
+      "index": 4,
+      "start": 27.240000000000002,
+      "from": 817,
+      "frames": 232,
+      "claim_id": "C5"
+    },
+    {
+      "id": "institution",
+      "text": "國際交易所的機構用戶，需要確認帳戶存取，並更新 API 端點。",
+      "spoken_text": "国际交易所的机构用户，需要确认账户存取，并更新 API 端点。",
+      "duration": 5.819999999999999,
+      "generation_seconds": 8.952999999979511,
+      "peak": 0.5,
+      "title": "機構用戶要做什麼？",
+      "index": 5,
+      "start": 34.980000000000004,
+      "from": 1049,
+      "frames": 175,
+      "claim_id": "C6"
+    },
+    {
+      "id": "close",
+      "text": "公告更新於九月二十九日，預定十月一日遷移，仍受準備情況及監管批准影響。是否完成，要看後續公告。",
+      "spoken_text": "公告更新于九月二十九日，预定十月一日迁移，仍受准备情况及监管批准影响。是否完成，要看后续公告。",
+      "duration": 9.92,
+      "generation_seconds": 15.797000000020489,
+      "peak": 0.53515625,
+      "title": "預定，尚非完成確認",
+      "index": 6,
+      "start": 40.800000000000004,
+      "from": 1224,
+      "frames": 298,
+      "claim_id": "C7"
+    }
+  ],
+  "captions": [
+    {
+      "text": "Coinbase 和 Deribit 預定今天整合",
+      "startMs": 1000,
+      "endMs": 3660,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "對交易者來說",
+      "startMs": 3580,
+      "endMs": 4800,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "變的是什麼",
+      "startMs": 4720,
+      "endMs": 5480,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "先看範圍",
+      "startMs": 5940,
+      "endMs": 6920,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "這次是衍生品平台整合",
+      "startMs": 6840,
+      "endMs": 9340,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "Coinbase 用戶的現貨交易不受影響",
+      "startMs": 9690,
+      "endMs": 12560,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "如果你在網站或 App 交易永續合約",
+      "startMs": 13200,
+      "endMs": 16080,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "入口不變",
+      "startMs": 16000,
+      "endMs": 17240,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "遷移會自動進行",
+      "startMs": 17440,
+      "endMs": 18700,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "後台的交易基礎設施",
+      "startMs": 19180,
+      "endMs": 21080,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "則將整合到 Deribit",
+      "startMs": 21000,
+      "endMs": 22660,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "部位會按標記價格結算",
+      "startMs": 22800,
+      "endMs": 24800,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "再以相同價格重建",
+      "startMs": 24720,
+      "endMs": 26560,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "因此",
+      "startMs": 27240,
+      "endMs": 28080,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "你可能看到交易紀錄增加",
+      "startMs": 28220,
+      "endMs": 29920,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "或平均入場價重設",
+      "startMs": 30040,
+      "endMs": 31880,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "別把顯示變化當成新交易",
+      "startMs": 32140,
+      "endMs": 34200,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "國際交易所的機構用戶",
+      "startMs": 34980,
+      "endMs": 37020,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "需要確認帳戶存取",
+      "startMs": 36940,
+      "endMs": 38780,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "並更新 API 端點",
+      "startMs": 38700,
+      "endMs": 40368,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "公告更新於九月二十九日",
+      "startMs": 40800,
+      "endMs": 43120,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "預定十月一日遷移",
+      "startMs": 43040,
+      "endMs": 44820,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "仍受準備情況及監管批准影響",
+      "startMs": 44970,
+      "endMs": 47780,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "是否完成",
+      "startMs": 47700,
+      "endMs": 48520,
+      "timestampMs": null,
+      "confidence": null
+    },
+    {
+      "text": "要看後續公告",
+      "startMs": 48440,
+      "endMs": 49840,
+      "timestampMs": null,
+      "confidence": null
+    }
+  ],
+  "alignment": "local ASR character alignment"
+}

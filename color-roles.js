@@ -1,7 +1,7 @@
 (()=>{
 const T=window.OPENX_TOKENS;
 const swatch=value=>`<span class="color-value"><i style="--chip:${value}" aria-hidden="true"></i>${value}</span>`;
-const rows=[['强调色','seriesPrimary','主操作底色、关键步骤、主要图表系列'],['辅助文字','muted','日期、单位、描述与次级信息'],['辅助背景','canvas','页面底层与非内容区域'],['辅助分隔','border','同一对象内的分隔和卡片边界'],['中性选中','selected','选中项目的底色，配合文字或图标'],['辅助数据','seriesComparison','对比曲线；配合虚实线与系列名称']];
+const rows=[['强调色','seriesPrimary','主操作底色、关键步骤、主要图表系列'],['写作与 AI','auxWriting','写作结构示意、AI 操作图标；不表示已采用'],['图片与影片','auxMedia','媒体制作入口、画面与成片图标'],['选题与资料','auxResearch','研究入口、选题图标；不表示来源已核对'],['辅助文字','muted','日期、单位、描述与次级信息'],['辅助背景','canvas','页面底层与非内容区域'],['辅助分隔','border','同一对象内的分隔和卡片边界'],['中性选中','selected','选中项目的底色，配合文字或图标'],['辅助数据','seriesComparison','对比曲线；配合虚实线与系列名称']];
 const body=document.getElementById('cr-roles-table');if(!body)return;
 body.innerHTML=rows.map(([label,key,note])=>`<tr><td>${label}</td><td>${swatch(T.light[key])}</td><td>${swatch(T.dark[key])}</td><td>${note}</td></tr>`).join('');
 const stateRows=[['成功','success','操作成功或连接正常'],['错误','danger','失败、无效或需要修正'],['注意','warning','有条件、待处理或需要确认'],['说明','info','补充说明和信息反馈']];

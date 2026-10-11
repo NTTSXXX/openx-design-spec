@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./accountPrefs-B1DhyDaz.js","./useAccountSession-BAJ06rVV.js","./authMock-DOTEk-Aq.js","./useAccountSession-BkUL-sns.css","./account-sub-CgM1tCLJ.css"])))=>i.map(i=>d[i]);
+import"./spec-runtime-BQym0e60.js";import{s as o,_ as e}from"./authMock-DOTEk-Aq.js";o();await e(()=>import("./accountPrefs-B1DhyDaz.js"),__vite__mapDeps([0,1,2,3,4]),import.meta.url);

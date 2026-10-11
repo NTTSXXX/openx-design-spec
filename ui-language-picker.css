@@ -1,0 +1,6 @@
+.openx-language-picker{position:relative;flex:none;font:15px/1.4 var(--ui-font,sans-serif)}
+.openx-language-trigger{min-height:44px;padding:0 14px;background:var(--ws-surface,var(--surface,#fff));color:var(--ws-ink,var(--ink,#131316));border:1px solid var(--ws-border,var(--line,#cfcfd6));border-radius:8px;font:inherit;cursor:pointer}
+.openx-language-menu{position:absolute;right:0;top:calc(100% + 6px);z-index:1000;min-width:144px;padding:4px;background:var(--ws-surface,var(--surface,#fff));color:var(--ws-ink,var(--ink,#131316));border:1px solid var(--ws-border,var(--line,#cfcfd6));border-radius:8px;box-shadow:0 6px 16px #00000012}
+.openx-language-menu[hidden]{display:none}.openx-language-menu button{display:block;width:100%;min-height:44px;padding:8px 12px;text-align:left;color:inherit;background:transparent;border:0;border-radius:4px;font:inherit;cursor:pointer}
+.openx-language-menu button:hover,.openx-language-menu button:focus-visible,.openx-language-menu [aria-selected=true]{background:var(--ws-soft,var(--soft,#f4f4f6));outline:none}
+.openx-language-trigger:hover,.openx-language-trigger:focus-visible{border-color:var(--text-muted,#8b8b95);outline:none}

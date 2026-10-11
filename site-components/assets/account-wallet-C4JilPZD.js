@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["./accountWallet-B6Vfowqg.js","./useAccountSession-BAJ06rVV.js","./authMock-DOTEk-Aq.js","./useAccountSession-BkUL-sns.css","./pointsPreviewStore-C0f5I8H7.js","./accountWallet-5fgjDCvT.css"])))=>i.map(i=>d[i]);
+import"./spec-runtime-BQym0e60.js";import{s as o,_ as e}from"./authMock-DOTEk-Aq.js";o();await e(()=>import("./accountWallet-B6Vfowqg.js"),__vite__mapDeps([0,1,2,3,4,5]),import.meta.url);

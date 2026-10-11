@@ -1,0 +1,22 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["analysis", "changes", "prompt", "layout"],
+  "properties": {
+    "analysis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["subject", "composition", "materials", "lighting", "effects"],
+      "properties": {
+        "subject": {"type": "string", "minLength": 8, "maxLength": 2500},
+        "composition": {"type": "string", "minLength": 8, "maxLength": 2500},
+        "materials": {"type": "string", "minLength": 8, "maxLength": 2500},
+        "lighting": {"type": "string", "minLength": 8, "maxLength": 2500},
+        "effects": {"type": "string", "minLength": 8, "maxLength": 2500}
+      }
+    },
+    "changes": {"type": "string", "minLength": 8, "maxLength": 5000},
+    "prompt": {"type": "string", "minLength": 80, "maxLength": 14000},
+    "layout": {"type": "string", "minLength": 30, "maxLength": 20000, "description": "有确定模板时仅补充本次主题文案或明确占位及调整建议，不重定尺寸与坐标；未提供模板时完整整理后期排版规则。"}
+  }
+}

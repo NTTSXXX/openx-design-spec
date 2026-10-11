@@ -1,0 +1,31 @@
+html[data-workspace-embed]{--ws-page:#f5f5f7;--ws-surface:#fff;--ws-soft:#f7f7f7;--ws-ink:#131316;--ws-muted:#6e6e79;--ws-line:#e4e4e9;--ws-border:#cfcfd6;--ws-selected:#ededf0}
+html[data-workspace-embed][data-theme=dark]{--ws-page:#101113;--ws-surface:#191a1d;--ws-soft:#222327;--ws-ink:#f7f7f7;--ws-muted:#a7a7b0;--ws-line:#34343b;--ws-border:#46464e;--ws-selected:#2a2b30}
+html[data-workspace-embed] body{background:var(--ws-page)!important;color:var(--ws-ink)!important}
+html[data-workspace-embed] :is(.sheet,.doc-nav,.sm-inspector,.sm-inspector-body,.sm-workbench-head){background:var(--ws-surface)!important;color:var(--ws-ink)!important}
+html[data-workspace-embed] :is(.sm-stage,.sm-template-card,.sm-notes>div,.sm-ip-gallery figure,.sm-direction-gallery figure){background:var(--ws-soft)!important}
+html[data-workspace-embed] :is(input:not([type=color]),textarea,select){color:var(--ws-ink)!important;background:var(--ws-surface)!important;border-color:var(--ws-border)!important;accent-color:var(--ws-muted)}
+html[data-workspace-embed] :is(p,.lead,.sm-caption,.sm-status,.sm-copy-help,small,figcaption,.sheet-top,.sheet-foot,.rule-note){color:var(--ws-muted)}
+html[data-workspace-embed] :is(h1,h2,h3,h4,h5,label,.rule-static-heading,.sm-inspector-tabs button){color:var(--ws-ink)}
+html[data-workspace-embed] :is(.sm-editor-grid,.sm-inspector,.sm-inspector-tabs,.sm-notes>div,.sheet-top,.sheet-foot,.doc-nav,.table-wrap,td,th){border-color:var(--ws-line)!important}
+html[data-workspace-embed] :is(.site-white,.site-black,.sm-button,.sm-text-style-grid button){background:var(--ws-soft)!important;color:var(--ws-ink)!important;border-color:var(--ws-border)!important}
+html[data-workspace-embed] :is(.site-orange,.sm-button.primary){background:#ff8200!important;color:#0b0b0b!important;border-color:transparent!important}
+html[data-workspace-embed] :is(.doc-nav nav a,.sm-jump a,.sm-ip-links a){color:var(--ws-muted)}
+html[data-workspace-embed] :is(.doc-nav nav a[aria-current=location],button[aria-selected=true],button[aria-pressed=true]:not(.site-orange)){background:var(--ws-selected)!important;color:var(--ws-ink)!important;border-color:var(--ws-border)!important}
+html[data-workspace-embed] :is(#component-theme,#mf-theme,#cp-theme,#cl-theme,#ac-theme,#bc-theme,#dp-theme,#theme-toggle,.theme-toggle,.theme-switch,#template-theme),html[data-workspace-embed] .template-options label:has(#template-theme){display:none!important}
+html[data-workspace-embed] :is(.product-preview,.theme-comparison,.swatch,.neutral-swatch,.sm-stage canvas,.lg-stage){color-scheme:normal}
+/* Fixed palette samples own their foreground/background pair in both workspace themes. */
+html[data-workspace-embed] #palette .swatch-title small{color:var(--ink)}
+html[data-workspace-embed] *{scrollbar-width:thin;scrollbar-color:var(--ws-border) transparent}
+html[data-workspace-embed=templates] body{padding:0!important}
+html[data-workspace-embed] :is(summary,.sm-copy-editor>strong,.sm-copy-title,.sm-copy-editor summary,.sm-inspector label){color:var(--ws-ink)!important}
+html[data-workspace-embed] :is(.sm-copy-editor>p,.sm-background-controls p,.sm-copy-status){color:var(--ws-muted)!important}
+html[data-workspace-embed] input[type=range]{accent-color:var(--ws-muted)!important}
+/* One border at the original position and width; no outer focus outline. */
+:root{--ox-control-focus:#B1B1BC}
+:root[data-theme=dark]{--ox-control-focus:#5C5C66}
+:root :is(button,a,input,select,textarea,summary,[tabindex]):is(:focus-visible,.force-focus),:root :is(input,select,textarea):focus,:root .force-focus{outline:none!important;outline-offset:0!important;box-shadow:none!important}
+:root :is(input,select,textarea,button):focus-visible,:root :is(input,select,textarea):focus,:root .force-focus{border-color:var(--ox-control-focus)!important}
+:root :is(a:not(.ui-btn):not(.site-orange):not(.site-black):not(.site-white),summary):focus-visible{text-decoration:underline;text-underline-offset:3px}
+:root :is(.icon-btn,.sm-icon-btn,.spec-mode-switch button):focus-visible{background:var(--ox-selected)}
+:root :is(.site-orange,.ui-btn.primary,.sm-button.primary):focus-visible{border-color:transparent!important}
+:root :is(.sm-color-control,.select-menu,.calendar-control):focus-within{outline:none!important;box-shadow:none!important;border-color:var(--ox-control-focus)!important}

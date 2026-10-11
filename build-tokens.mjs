@@ -27,7 +27,7 @@ for(const [key,value] of Object.entries(T.motion)) rows.push(declaration(`motion
 for(const [key,value] of Object.entries(T.layers)) rows.push(declaration(`layer-${kebab(key)}`,value));
 for(const [key,value] of Object.entries(T.elevation)) rows.push(declaration(`elevation-${kebab(key)}`,value));
 for(const [key,value] of Object.entries(T.overlay||{})) rows.push(declaration(`overlay-${kebab(key)}`,typeof value==='number'?`${value}px`:value));
-rows.push(declaration('font',"'OpenX Spec Latin', 'Noto Sans SC', 'OpenX Spec TC', sans-serif"));
+rows.push(declaration('font',T.type.font));
 const aliases={
  'content-workspace':'layout-workspace-max','content-marketing':'layout-marketing-max','content-settings':'layout-settings-max',sidebar:'layout-sidebar',
  'control-height':'component-button-height','radius-marketingButton':'radius-marketing-button'

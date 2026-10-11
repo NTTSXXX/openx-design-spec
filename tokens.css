@@ -35,6 +35,10 @@
   --ox-radius-label: 4px;
   --ox-radius-button: 10px;
   --ox-radius-marketing-button: 9999px;
+  --ox-layout-document-max: 900px;
+  --ox-layout-short-document-max: 680px;
+  --ox-layout-assistant-width: 320px;
+  --ox-layout-assistant-dock-min: 1101px;
   --ox-layout-workspace-max: 1280px;
   --ox-layout-marketing-max: 1280px;
   --ox-layout-settings-max: 840px;
@@ -57,14 +61,14 @@
   --ox-layout-detail-max: 1040px;
   --ox-layout-task-max: 1040px;
   --ox-layout-single-card-max: 520px;
-  --ox-type-dashboard-title-size: 28px;
-  --ox-type-dashboard-title-line-height: 36px;
+  --ox-type-dashboard-title-size: 32px;
+  --ox-type-dashboard-title-line-height: 40px;
   --ox-type-dashboard-title-weight: 600;
   --ox-type-mobile-title-size: 24px;
   --ox-type-mobile-title-line-height: 32px;
   --ox-type-mobile-title-weight: 600;
-  --ox-type-section-size: 18px;
-  --ox-type-section-line-height: 28px;
+  --ox-type-section-size: 24px;
+  --ox-type-section-line-height: 32px;
   --ox-type-section-weight: 600;
   --ox-type-metric-size: 40px;
   --ox-type-metric-line-height: 48px;
@@ -72,17 +76,20 @@
   --ox-type-mobile-metric-size: 32px;
   --ox-type-mobile-metric-line-height: 40px;
   --ox-type-mobile-metric-weight: 600;
-  --ox-type-body-size: 14px;
-  --ox-type-body-line-height: 22px;
+  --ox-type-body-size: 16px;
+  --ox-type-body-line-height: 26px;
   --ox-type-body-weight: 400;
-  --ox-type-input-size: 16px;
+  --ox-type-input-size: 15px;
   --ox-type-input-line-height: 24px;
   --ox-type-input-weight: 400;
-  --ox-type-label-size: 13px;
-  --ox-type-label-line-height: 20px;
+  --ox-type-mobile-input-size: 16px;
+  --ox-type-mobile-input-line-height: 24px;
+  --ox-type-mobile-input-weight: 400;
+  --ox-type-label-size: 14px;
+  --ox-type-label-line-height: 22px;
   --ox-type-label-weight: 600;
-  --ox-type-caption-size: 12px;
-  --ox-type-caption-line-height: 18px;
+  --ox-type-caption-size: 14px;
+  --ox-type-caption-line-height: 22px;
   --ox-type-caption-weight: 400;
   --ox-type-marketing-hero-size: 56px;
   --ox-type-marketing-hero-line-height: 64px;
@@ -96,8 +103,8 @@
   --ox-type-marketing-section-mobile-size: 28px;
   --ox-type-marketing-section-mobile-line-height: 36px;
   --ox-type-marketing-section-mobile-weight: 600;
-  --ox-type-button-size: 14px;
-  --ox-type-button-line-height: 20px;
+  --ox-type-button-size: 15px;
+  --ox-type-button-line-height: 22px;
   --ox-type-button-weight: 600;
   --ox-type-marketing-button-size: 15px;
   --ox-type-marketing-button-line-height: 22px;
@@ -105,11 +112,11 @@
   --ox-type-marketing-button-mobile-size: 16px;
   --ox-type-marketing-button-mobile-line-height: 22px;
   --ox-type-marketing-button-mobile-weight: 600;
-  --ox-type-card-size: 16px;
-  --ox-type-card-line-height: 24px;
+  --ox-type-card-size: 20px;
+  --ox-type-card-line-height: 28px;
   --ox-type-card-weight: 600;
-  --ox-type-compact-card-size: 14px;
-  --ox-type-compact-card-line-height: 22px;
+  --ox-type-compact-card-size: 16px;
+  --ox-type-compact-card-line-height: 24px;
   --ox-type-compact-card-weight: 600;
   --ox-type-dialog-size: 20px;
   --ox-type-dialog-line-height: 28px;
@@ -137,7 +144,7 @@
   --ox-component-table-action-row: 64px;
   --ox-component-icon: 20px;
   --ox-component-icon-small: 16px;
-  --ox-component-focus-width: 2px;
+  --ox-component-focus-width: 1px;
   --ox-component-focus-offset: 2px;
   --ox-component-dialog-max: 480px;
   --ox-component-drawer-max: 480px;
@@ -170,7 +177,7 @@
   --ox-component-workspace-button-compact-height: 40px;
   --ox-component-workspace-button-radius: 10px;
   --ox-component-workspace-button-padding-x: 16px;
-  --ox-component-workspace-button-font-size: 14px;
+  --ox-component-workspace-button-font-size: 15px;
   --ox-component-workspace-button-feedback-ms: 180ms;
   --ox-component-workspace-button-hover-y: -1px;
   --ox-component-workspace-button-pressed-scale: 0.98;
@@ -215,7 +222,7 @@
   --ox-overlay-viewport-inset-mobile: 16px;
   --ox-overlay-close-icon: 20px;
   --ox-overlay-close-target: 44px;
-  --ox-font: 'OpenX Spec Latin', 'Noto Sans SC', 'OpenX Spec TC', sans-serif;
+  --ox-font: Open Sans, Noto Sans SC, sans-serif;
   --ox-content-workspace: var(--ox-layout-workspace-max);
   --ox-content-marketing: var(--ox-layout-marketing-max);
   --ox-content-settings: var(--ox-layout-settings-max);
@@ -239,7 +246,7 @@
   --ox-body: #34343B;
   --ox-muted: #5C5C66;
   --ox-disabled: #9B9BA6;
-  --ox-focus: #6E6E79;
+  --ox-focus: #B1B1BC;
   --ox-success: #193B2D;
   --ox-danger: #641723;
   --ox-warning: #4F3422;
@@ -258,6 +265,12 @@
   --ox-series-comparison: #6E6E79;
   --ox-border-hover: #9B9BA6;
   --ox-danger-border: #EAA6A8;
+  --ox-aux-writing: #6550B8;
+  --ox-aux-writing-soft: #F1EDFC;
+  --ox-aux-media: #08757D;
+  --ox-aux-media-soft: #E7F4F3;
+  --ox-aux-research: #346BB5;
+  --ox-aux-research-soft: #EDF3FC;
 }
 [data-theme="dark"]{
   --ox-canvas: #0B0B0B;
@@ -272,7 +285,7 @@
   --ox-body: #CFCFD6;
   --ox-muted: #9B9BA6;
   --ox-disabled: #6E6E79;
-  --ox-focus: #777782;
+  --ox-focus: #5C5C66;
   --ox-success: #3DD68C;
   --ox-danger: #FF9592;
   --ox-warning: #FFCA16;
@@ -291,5 +304,11 @@
   --ox-series-comparison: #9B9BA6;
   --ox-border-hover: #5C5C66;
   --ox-danger-border: #774D4E;
+  --ox-aux-writing: #B1A0F5;
+  --ox-aux-writing-soft: #2B253B;
+  --ox-aux-media: #77CBD1;
+  --ox-aux-media-soft: #182F31;
+  --ox-aux-research: #8AB7EE;
+  --ox-aux-research-soft: #1D2B40;
 }
 @media(prefers-reduced-motion:reduce){:root{--ox-motion-feedback:0ms;--ox-motion-overlay:0ms;--ox-component-marketing-button-arrow-ms:0ms;--ox-component-marketing-button-pressed-ms:0ms;--ox-component-marketing-button-color-ms:0ms;--ox-component-workspace-button-feedback-ms:0ms}}

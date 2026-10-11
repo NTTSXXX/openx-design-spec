@@ -1,0 +1,1218 @@
+{
+  "version": "1.3",
+  "date": "2026-10-07",
+  "method": "Built-in imagegen base images; official SVG and editable typography",
+  "sloganSource": "openx-website/src/GuidePage.tsx",
+  "samples": [
+    {
+      "id": "figma-risk",
+      "retired": true,
+      "title": "X / Instagram · 竖版图文",
+      "width": 1080,
+      "height": 1350,
+      "asset": "assets/social/figma-risk-clean-card-base.png",
+      "final": "assets/social/figma-risk-final.png",
+      "ratio": "4:5",
+      "kind": "finished-reference",
+      "logo": {
+        "x": 64,
+        "y": 64,
+        "w": 197,
+        "h": 48
+      },
+      "logoPath": "assets/social/figma-1-imgFrame.svg",
+      "safe": {
+        "x": 64,
+        "y": 64,
+        "w": 952,
+        "h": 1222
+      },
+      "textArea": {
+        "x": 64,
+        "y": 176,
+        "w": 952,
+        "h": 350
+      },
+      "texts": [
+        {
+          "name": "主题标题",
+          "x": 64,
+          "y": 176,
+          "size": 90.566,
+          "maxWidth": 792,
+          "lines": [
+            "勝率90%"
+          ],
+          "color": "#FFFFFF",
+          "weight": 900,
+          "lineHeight": 108.6792,
+          "family": "title",
+          "maxLines": 1,
+          "highlights": [
+            "90%"
+          ]
+        },
+        {
+          "name": "问题标题",
+          "x": 64,
+          "y": 301,
+          "size": 84,
+          "maxWidth": 952,
+          "lines": [
+            "為什麼總盈利還是負數？"
+          ],
+          "color": "#FFFFFF",
+          "weight": 900,
+          "lineHeight": 100.8,
+          "family": "title"
+        },
+        {
+          "name": "辅助说明",
+          "x": 64,
+          "y": 466,
+          "size": 32,
+          "maxWidth": 952,
+          "lines": [
+            "9 筆小賺沒問題，1 筆大虧可能就讓你回到起點。"
+          ],
+          "color": "#FFFFFF",
+          "weight": 600,
+          "lineHeight": 51.2,
+          "maxLines": 1
+        },
+        {
+          "name": "风险小字",
+          "x": 640,
+          "y": 79,
+          "size": 13,
+          "maxWidth": 376,
+          "lines": [
+            "不構成任何投資建議，交易有風險"
+          ],
+          "color": "#FFFFFF",
+          "weight": 400,
+          "lineHeight": 15.6,
+          "align": "right"
+        },
+        {
+          "name": "互动标签",
+          "x": 104,
+          "y": 1125,
+          "size": 13,
+          "maxWidth": 90,
+          "lines": [
+            "OpenX ONE"
+          ],
+          "color": "#010101",
+          "weight": 700,
+          "lineHeight": 15.6
+        },
+        {
+          "name": "互动问题",
+          "x": 88,
+          "y": 1164,
+          "size": 28,
+          "maxWidth": 564,
+          "lines": [
+            "你最大的一筆虧損，抵得上你多少次小賺？"
+          ],
+          "color": "#FFFFFF",
+          "weight": 700,
+          "lineHeight": 33.6
+        },
+        {
+          "name": "Slogan",
+          "x": 64,
+          "y": 1295,
+          "size": 18,
+          "maxWidth": 390,
+          "lines": [
+            "Open Your Trading · Build Your Path"
+          ],
+          "color": "#FFFFFF",
+          "weight": 400,
+          "lineHeight": 21.599999999999998
+        }
+      ],
+      "description": "左高右低的金属天平；左盘堆叠小配重，右盘为一只大砝码，小机器人悬浮在右侧观察；天平占中下部约42%–94%；右侧机器人较小。顶部0%–40%留给知识标题，左下信息卡约57%宽，页脚独立。",
+      "style": "Figma 原稿的黑橙3D写实知识海报",
+      "reference": "https://www.figma.com/design/xK6JL3kt5MvcyVF0Mf3bqk/Graphic-Design?node-id=2767-210",
+      "verdict": "知识海报按最新Figma稿；公告沿用下方文案的已定模板。",
+      "placement": "以成品参考为准；1080×1350，左右64px；上方知识标题，底部互动文案与小号slogan。；互动卡由编辑器独立绘制并自适应句长，底图不包含空卡与胶囊。",
+      "prompt": "主体动作：左高右低的天平，左盘小配重、右盘单个黑色大砝码；小型球形机器人在右侧观察，翼臂与物件留间隙。\n构图：4:5，天平横向6%–94%、纵向42%–94%；机器人右中，下端按原稿自然出画，保持主视觉尺度。\n颜色材质：黑灰白、重点橙#FF8200；光滑镀银、哑光烤漆与透明玻璃，无拉丝。\n背景光照：近黑低对比弧纹、左上柔光；静态只真实光照，地面若可见则光滑无纹理。\n留白：顶部40%；下方预留互动文案空间，底图不生成玻璃卡、橙色胶囊、边框或标签，互动卡由编辑器作为独立图层排版；底部细灰页脚线。\n限制：保留原档结构及胸标；不生成文案、独立Logo或slogan。每次只从原始照片或官方角色原档重生；成品仅分析动作、构图与材质，不作像素输入，禁止递归参考生成结果。",
+      "run": "2026-10-07 · 内置imagegen参考成品编辑生成完整底图；当前无字底图1122×1402。成品参考模式显示用户提供原稿。",
+      "process": [
+        "输入：用户提供的完整成品。使用imagegen去除发布文案与独立Logo并保留视觉效果，生成完整无字底图。",
+        "后期：只叠加文字与正式Logo；不重组物件、不增加遮罩、不调整主视觉透明度。"
+      ],
+      "referenceAsset": "assets/social/figma-risk-approved.png",
+      "usedPrompt": "以提供的最终成品为唯一视觉基准，制作同尺寸比例4:5的完整无字底图。不是重新创作，不重排图层，不改变任何物体的大小、位置、角度、透视、材质、透明度、亮暗、反射或遮挡关系。\n只清除：左上角独立品牌字标；右上角小文字；上方大标题；标题下简介；下方互动卡中的标签文字和问题文字；最底部slogan文字。对清除区域按原背景或卡面自然补全，不形成色块。保留所有分隔线、完整互动卡及其毛玻璃透明/模糊/渐变效果、橙色无字胶囊和底部横线。\n严格保留：黑灰安静背景与非常淡的曲面纹理、原片的遮罩与渐变、底部物体逐渐融入暗底的效果、玻璃的真实透明度、银色拉丝金属、橙色材质。机器人保留原球形白壳、黑色椭圆面罩、双白色眼、天线、手臂及胸前原标记；不要扩大或移动它，不重新画另一个角色。\n不能增强背景纹理对比度，不能新增光带、发光特效、独立几何纹样或道具。不生成任何新的标题、简介、页脚或品牌字标。\n天平、盘中球状配件及砝码完全按成品保留；配件上的+1和砝码上的−20属于原物体表面，保持原状。下方互动卡保持成品中的局部左侧宽度612/1080，不能变成全宽或增高。\n",
+      "visualAnalysis": {
+        "subject": "左高右低的金属天平；左盘堆叠小配重，右盘为一只大砝码，小机器人悬浮在右侧观察",
+        "composition": "天平占中下部约42%–94%；右侧机器人较小。顶部0%–40%留给知识标题，左下信息卡约57%宽，页脚独立",
+        "materials": "拉丝银灰金属横梁、透明玻璃托盘、橙色连接件；黑色砝码与白色机器人形成明暗对比",
+        "lighting": "左上柔光，窄金属高光和真实玻璃折射；近黑背景带极低对比弧形褶纹，底部自然融入暗部",
+        "effects": "保留倾斜关系、透明度、下方短信息卡的细框与局部半透明模糊，不把所有物件缩成完整小摆件"
+      },
+      "guideRegions": [
+        {
+          "name": "品牌行",
+          "x": 64,
+          "y": 64,
+          "w": 952,
+          "h": 64
+        },
+        {
+          "name": "知识标题",
+          "x": 64,
+          "y": 176,
+          "w": 952,
+          "h": 238
+        },
+        {
+          "name": "简介",
+          "x": 64,
+          "y": 466,
+          "w": 952,
+          "h": 54
+        },
+        {
+          "name": "互动卡",
+          "x": 64,
+          "y": 1094,
+          "w": 612,
+          "h": 128
+        },
+        {
+          "name": "页脚",
+          "x": 64,
+          "y": 1278,
+          "w": 952,
+          "h": 50
+        }
+      ],
+      "adaptiveCta": true
+    },
+    {
+      "id": "figma-recap",
+      "title": "X / Instagram · 竖版图文与互动栏",
+      "width": 1080,
+      "height": 1350,
+      "asset": "assets/social/figma-recap-clean-card-base.png",
+      "final": "assets/social/figma-recap-final.png",
+      "ratio": "4:5",
+      "kind": "finished-reference",
+      "logo": {
+        "x": 64,
+        "y": 64,
+        "w": 197,
+        "h": 48
+      },
+      "logoPath": "assets/social/figma-0-imgFrame.svg",
+      "safe": {
+        "x": 64,
+        "y": 64,
+        "w": 952,
+        "h": 1222
+      },
+      "textArea": {
+        "x": 64,
+        "y": 176,
+        "w": 952,
+        "h": 350
+      },
+      "texts": [
+        {
+          "name": "主题标题",
+          "x": 64,
+          "y": 178,
+          "size": 120,
+          "maxWidth": 840,
+          "lines": [
+            "每次虧錢的復盤"
+          ],
+          "color": "#FFFFFF",
+          "weight": 900,
+          "lineHeight": 144,
+          "family": "title",
+          "maxLines": 1,
+          "highlights": [
+            "復盤"
+          ]
+        },
+        {
+          "name": "辅助说明",
+          "x": 64,
+          "y": 386,
+          "size": 32,
+          "maxWidth": 952,
+          "lines": [
+            "翻譯成考試就是：卷子太難，老師針對我，這次不一樣。"
+          ],
+          "color": "#FFFFFF",
+          "weight": 600,
+          "lineHeight": 51.2,
+          "maxLines": 1
+        },
+        {
+          "name": "风险小字",
+          "x": 640,
+          "y": 79,
+          "size": 13,
+          "maxWidth": 376,
+          "lines": [
+            "不構成任何投資建議，交易有風險"
+          ],
+          "color": "#FFFFFF",
+          "weight": 400,
+          "lineHeight": 15.6,
+          "align": "right"
+        },
+        {
+          "name": "互动标签",
+          "x": 104,
+          "y": 1125,
+          "size": 13,
+          "maxWidth": 90,
+          "lines": [
+            "OpenX ONE"
+          ],
+          "color": "#010101",
+          "weight": 700,
+          "lineHeight": 15.6
+        },
+        {
+          "name": "互动问题",
+          "x": 88,
+          "y": 1164,
+          "size": 28,
+          "maxWidth": 904,
+          "lines": [
+            "你復盤的時候，最常給自己判哪一種?"
+          ],
+          "color": "#FFFFFF",
+          "weight": 700,
+          "lineHeight": 33.6
+        },
+        {
+          "name": "Slogan",
+          "x": 64,
+          "y": 1295,
+          "size": 18,
+          "maxWidth": 390,
+          "lines": [
+            "Open Your Trading · Build Your Path"
+          ],
+          "color": "#FFFFFF",
+          "weight": 400,
+          "lineHeight": 21.599999999999998
+        }
+      ],
+      "description": "倾斜夹板与米白纸张，右中为骰子图案的透明琥珀橙印章，机器人悬浮在左中；夹板占下半部并自然延伸出画；印章位于右中约61%–90%，机器人在左中。上方0%–33%为标题区，下方信息卡近全宽。",
+      "style": "Figma 原稿的黑橙3D写实知识海报",
+      "reference": "https://www.figma.com/design/xK6JL3kt5MvcyVF0Mf3bqk/Graphic-Design?node-id=2767-250",
+      "verdict": "知识海报按最新Figma稿；公告沿用下方文案的已定模板。",
+      "placement": "以成品参考为准；1080×1350，左右64px；上方知识标题，底部互动文案与小号slogan。；互动卡由编辑器独立绘制并自适应句长，底图不包含空卡与胶囊。",
+      "prompt": "主体动作：倾斜黑边夹板与米白纸张，纸上仅浅灰图表；右中透明琥珀橙骰子印章，机器人左中悬浮观察，翼臂与物件留间隙。\n构图：4:5，夹板横向8%–94%、纵向54%–94%；章右中、机器人左中，下端自然出画。\n颜色材质：黑灰白与橙#FF8200；光滑镀银、黑玻璃、纸纤维与透明琥珀玻璃，真实折射，无拉丝。\n背景光照：近黑弧纹、左上柔光与宽幅模糊暖色明暗；静态不加拖影，地面若可见则光滑无纹理。\n留白：顶部33%；下方预留互动文案空间，底图不生成玻璃卡、橙色胶囊、边框或标签，互动卡由编辑器作为独立图层排版；底部细灰页脚线。\n限制：保留原档结构与胸标，不生成出版文字。每次只从原始照片或官方角色原档重生；成品仅分析动作、构图与材质，不作像素输入，禁止递归参考生成结果。",
+      "run": "2026-10-07 · 内置imagegen参考成品编辑生成完整底图；当前无字底图1122×1402。成品参考模式显示用户提供原稿。",
+      "process": [
+        "输入：用户提供的完整成品。使用imagegen去除发布文案与独立Logo并保留视觉效果，生成完整无字底图。",
+        "后期：只叠加文字与正式Logo；不重组物件、不增加遮罩、不调整主视觉透明度。"
+      ],
+      "referenceAsset": "assets/social/figma-recap-approved.png",
+      "usedPrompt": "以提供的最终成品为唯一视觉基准，制作同尺寸比例4:5的完整无字底图。不是重新创作，不重排图层，不改变任何物体的大小、位置、角度、透视、材质、透明度、亮暗、反射或遮挡关系。\n只清除：左上角独立品牌字标；右上角小文字；上方大标题；标题下简介；下方互动卡中的标签文字和问题文字；最底部slogan文字。对清除区域按原背景或卡面自然补全，不形成色块。保留所有分隔线、完整互动卡及其毛玻璃透明/模糊/渐变效果、橙色无字胶囊和底部横线。\n严格保留：黑灰安静背景与非常淡的曲面纹理、原片的遮罩与渐变、底部物体逐渐融入暗底的效果、玻璃的真实透明度、银色拉丝金属、橙色材质。机器人保留原球形白壳、黑色椭圆面罩、双白色眼、天线、手臂及胸前原标记；不要扩大或移动它，不重新画另一个角色。\n不能增强背景纹理对比度，不能新增光带、发光特效、独立几何纹样或道具。不生成任何新的标题、简介、页脚或品牌字标。\n保留纸张和橙色透明印章，纸上的灰色图形和橙色印记是物件纹理，保持原状。背景那条原有暖色明暗过渡保持柔和而模糊，不能锐化成灯管。下方互动卡保持成品中的952/1080宽度与128/1350高度、同样的毛玻璃效果。\n",
+      "visualAnalysis": {
+        "subject": "倾斜夹板与米白纸张，右中为骰子图案的透明琥珀橙印章，机器人悬浮在左中",
+        "composition": "夹板占下半部并自然延伸出画；印章位于右中约61%–90%，机器人在左中。上方0%–33%为标题区，下方信息卡近全宽",
+        "materials": "纸张纤维、浅灰图表线、黑色薄边夹板；印章有透明玻璃厚度、折射和金属底座",
+        "lighting": "近黑背景有柔和弧形褶纹与宽幅模糊暖色过渡；白壳、纸张和玻璃分别保留自然高光",
+        "effects": "保留纸张透视、章的投影、玻璃折射和下方半透明卡片的局部背景模糊，不改成纯黑平面"
+      },
+      "guideRegions": [
+        {
+          "name": "品牌行",
+          "x": 64,
+          "y": 64,
+          "w": 952,
+          "h": 64
+        },
+        {
+          "name": "知识标题",
+          "x": 64,
+          "y": 176,
+          "w": 952,
+          "h": 162
+        },
+        {
+          "name": "简介",
+          "x": 64,
+          "y": 386,
+          "w": 952,
+          "h": 56
+        },
+        {
+          "name": "互动卡",
+          "x": 64,
+          "y": 1094,
+          "w": 952,
+          "h": 128
+        },
+        {
+          "name": "页脚",
+          "x": 64,
+          "y": 1278,
+          "w": 952,
+          "h": 50
+        }
+      ],
+      "adaptiveCta": true,
+      "footerRule": {
+        "x": 390,
+        "y": 1301,
+        "w": 626
+      },
+      "previewAsset": "assets/social/previews/figma-recap-796d3d0c7025.webp"
+    },
+    {
+      "id": "tweet",
+      "retired": true,
+      "title": "X · 横版图文",
+      "width": 1920,
+      "height": 1080,
+      "asset": "assets/social/ip-icon-cards-base.png",
+      "final": "assets/social/tweet-final.png",
+      "ratio": "16:9",
+      "kind": "illustration",
+      "logo": {
+        "x": 120,
+        "y": 86,
+        "w": 300
+      },
+      "texts": [
+        {
+          "name": "栏目小字",
+          "x": 120,
+          "y": 330,
+          "size": 32,
+          "lines": [
+            "知识拆解"
+          ],
+          "maxWidth": 720,
+          "color": "#CFCFD6",
+          "weight": 700,
+          "lineHeight": 42,
+          "rule": "栏目是主题的前置信息"
+        },
+        {
+          "name": "主题标题",
+          "x": 120,
+          "y": 402,
+          "size": 112,
+          "lines": [
+            "资金费率"
+          ],
+          "maxWidth": 730,
+          "color": "#FF8200",
+          "weight": 900,
+          "lineHeight": 122,
+          "rule": "两行按语义断行，末尾不加标点",
+          "family": "title",
+          "maxLines": 2,
+          "followEyebrow": true,
+          "gap": 40
+        },
+        {
+          "name": "辅助说明",
+          "x": 120,
+          "y": 554,
+          "size": 40,
+          "lines": [
+            "了解计算方式，看懂结算时间"
+          ],
+          "maxWidth": 730,
+          "color": "#FFFFFF",
+          "weight": 400,
+          "lineHeight": 56,
+          "rule": "完整表达，不压到主视觉",
+          "maxLines": 2,
+          "followTitle": true,
+          "gap": 40,
+          "content": "了解计算方式，核对结算时间"
+        },
+        {
+          "name": "Slogan",
+          "x": 120,
+          "y": 978,
+          "size": 26,
+          "lines": [
+            "Open Your Trading · Build Your Path"
+          ],
+          "maxWidth": 1020,
+          "color": "#CFCFD6",
+          "weight": 400,
+          "lineHeight": 36,
+          "rule": "与标题共左边界，单行"
+        }
+      ],
+      "safe": {
+        "x": 120,
+        "y": 64,
+        "w": 1680,
+        "h": 952
+      },
+      "description": "球形白色机器人示意两张相关icon卡片：百分比与时钟；机器人在右侧，两个小卡片在其左上和左下错落放置；左侧6%–47%为固定文案区，左下为小号slogan。",
+      "style": "3D写实渲染：球形白壳与两张石墨灰icon卡片",
+      "reference": "Figma Graphic-Design · 2767:250 / 2767:210；IP官方多视角原档",
+      "verdict": "两件物体直接对应计算与结算时间。左侧安静排字，右侧轮廓可辨；表达知识主题，不呈现真实资金数据。",
+      "placement": "左侧固定文字区；机器人和最多两张小卡片在右侧，左下小号slogan",
+      "prompt": "主体动作：白色球形机器人悬浮示意两张小卡片，一张百分比、一张时钟；机身倾斜约10°，翼臂有限展开、关节自然，不接触或承重。\n构图：16:9，主视觉横向52%–94%、纵向15%–83%；机器人为主，卡片前后错位、大小有差，不遮面、不围成一圈。\n颜色材质：黑白灰与重点橙#FF8200；白色哑光烤漆、光滑镀银、黑玻璃，无拉丝。\n背景光照：深灰宽柔光，光滑无纹理地面、自然阴影；此示意画面只真实光照，不加拖影。\n留白：左侧6%–47%、左上品牌位及左下页脚保持安静，主体占够版面。\n限制：保持原档结构与胸标，不加第三张卡片、肢体或出版文字。每次只从原始照片或官方角色原档重生；成品仅分析动作、构图与材质，不作像素输入，禁止递归参考生成结果。",
+      "run": "参考角色原档生成完整两卡片底图，并保留胸前原有标志",
+      "process": [
+        "依据用户否决的书本案例重新生成。主体改为角色与专业计算器；留白只服务左侧文案、顶部品牌区与页脚。",
+        "图片预览完整展示，所有正式文字与Logo后期独立处理。"
+      ],
+      "budget": "2件主题物体 + Logo + 1组主题信息 + slogan = 5组",
+      "textArea": {
+        "x": 120,
+        "y": 310,
+        "w": 730,
+        "h": 470
+      },
+      "visualAnalysis": {
+        "subject": "球形白色机器人示意两张相关icon卡片：百分比与时钟",
+        "composition": "机器人在右侧，两个小卡片在其左上和左下错落放置；左侧6%–47%为固定文案区，左下为小号slogan",
+        "materials": "缎面白壳、黑玻璃面罩、橙色关节；卡片为石墨灰圆角立体块，白色浮雕图标与少量橙色重点",
+        "lighting": "左上柔光箱与弱补光，暗灰背景和自然地面阴影；眼睛清晰，反射不遮挡面罩",
+        "effects": "卡片最多两张；机器人胸前标记完整保留，手臂连接自然，整体底图一次生成"
+      },
+      "usedPrompt": "Use case: stylized-concept.\nInput image 1 is the canonical character reference: preserve its single round white satin shell, black oval glass visor, two matching softly luminous white oval eyes, short tapered flipper arms connected by orange circular hinges, thin orange antenna with a small white sphere, and existing chest surface marking. Input image 2 is only a composition reference for robot with small icon cards; do not copy its light streaks, three-card count, brand lettering or extra decorative effects.\nCreate a complete 16:9 high quality physically rendered tutorial poster BASE with no publishing text. Graphite-black quiet studio background with a subtle wide soft gradient and minimal real ground shadow. Robot fills about 35% of image height, at x73% y48%, whole silhouette including antenna and both arms visible. Gentle 10-degree tilt toward the cards. One arm clearly introduces the lower-left card, connected through the original hinge; other arm relaxed naturally. Keep the exact canonical body proportions and eye spacing, no stretched head or separate neck, no fingers, no extra limbs.\nEXACTLY TWO small rounded square charcoal icon cards near the robot, secondary in scale: one simple raised white percent (%) icon with a tiny orange accent at x58% y35%; one raised clock icon with white dial and orange hand at x59% y65%. Each card at most 11% of full image width, shallow premium beveled edges, slight different natural perspective, never covering the robot's face. These two icons visibly relate to calculation rate and settlement time. No written labels or numbers. Cards are modest accents, not a ring, no connected lines, no orbit, no extraneous props or calculator.\nReserve left x6–47% entirely for future title/copy, top-left for an official logo, bottom-left for a small slogan. Keep this region dark, quiet and readable. Main cluster entirely in x52–94%, y15–83% with balanced scale and useful negative space.\nPalette: satin white, graphite charcoal, controlled orange #FF8200 key parts, narrow brushed silver rim only. Same physical material/lighting language as reference: broad top-left softbox, clear visor reflections that do not hide eyes, soft neutral fill, natural contact shading. No neon, no orange light ribbons, particles, lens flare, halo, starbursts, background patterns or excessive bloom. No new text, logo, slogan, watermark. All publishing typography and official standalone logo are added afterward.\n"
+    },
+    {
+      "id": "notice",
+      "retired": true,
+      "title": "Instagram · 竖版公告",
+      "width": 1080,
+      "height": 1350,
+      "asset": "assets/social/notice-large-subject-base.png",
+      "final": "assets/social/notice-final.png",
+      "ratio": "4:5",
+      "kind": "illustration",
+      "logo": {
+        "x": 76,
+        "y": 60,
+        "w": 230
+      },
+      "texts": [
+        {
+          "name": "栏目小字",
+          "x": 76,
+          "y": 1018,
+          "size": 32,
+          "lines": [
+            "账户与社群安全"
+          ],
+          "maxWidth": 928,
+          "color": "#CFCFD6",
+          "weight": 700,
+          "lineHeight": 40,
+          "rule": ""
+        },
+        {
+          "name": "主题标题",
+          "x": 76,
+          "y": 1090,
+          "size": 112,
+          "lines": [
+            "请你确认官方渠道"
+          ],
+          "maxWidth": 928,
+          "color": "#FF8200",
+          "weight": 900,
+          "lineHeight": 126,
+          "rule": "",
+          "family": "title",
+          "maxLines": 2,
+          "followEyebrow": true,
+          "gap": 40
+        },
+        {
+          "name": "辅助说明",
+          "x": 76,
+          "y": 1242,
+          "size": 32,
+          "lines": [
+            "遇到可疑链接，先核对再操作"
+          ],
+          "maxWidth": 928,
+          "color": "#FFFFFF",
+          "weight": 600,
+          "lineHeight": 40,
+          "rule": "",
+          "maxLines": 2,
+          "followTitle": true,
+          "gap": 40
+        },
+        {
+          "name": "Slogan",
+          "x": 418,
+          "y": 87,
+          "size": 26,
+          "lines": [
+            "Open Your Trading · Build Your Path"
+          ],
+          "maxWidth": 586,
+          "color": "#CFCFD6",
+          "weight": 600,
+          "lineHeight": 34,
+          "rule": "文本框右边界X1004；右对齐，距离画布右侧76px；与Logo同行视觉居中",
+          "align": "right"
+        }
+      ],
+      "safe": {
+        "x": 76,
+        "y": 60,
+        "w": 928,
+        "h": 1226
+      },
+      "description": "橙色实体三角警示牌，白色立体感叹号，银色窄边与石墨灰底座；主视觉占中间大部分版面；上方Logo和小号slogan同行，标题与简介整组放下方。",
+      "style": "实体警示牌；橙色烤漆金属与银色窄包边；3D写实产品渲染",
+      "reference": "Owner公告参考：主体清楚与材质层级；最终采用公司统一的上方品牌行、中间主视觉、下方文字规则。",
+      "verdict": "物件比例较此前明显增大；标题112px，8个中文字占约896px，接近928px文字区宽度。简介末行到画布底边约94px，不留下大块无用途黑底。",
+      "placement": "顶部左Logo、右slogan；主体移到上中部；下方紧凑排列栏目、粗标题和简介。",
+      "prompt": "主体动作：一块实体三角警示牌，橙色面、白色立体感叹号，与支架和石墨灰底座组成一件完整物件。\n构图：4:5，主视觉居中放在纵向18%–71%，占宽约58%；轮廓完整、比例充分，底座自然落在地面，不缩成小摆件。\n颜色材质：黑白灰与重点橙#FF8200；橙白哑光烤漆、光滑镀银窄边，无拉丝或颗粒。\n背景光照：近黑到深灰宽幅渐变，左上柔光、中性补光；地面光滑无纹理，只有真实柔和接触阴影和克制反射，静物不加拖影。\n留白：顶部5%–14%品牌行、下方75%–93%标题简介，边距统一，不制造多余空底。\n限制：整体生成，无额外摆件、光带或粒子，不生成出版文字。每次只从原始照片或官方角色原档重生；成品仅分析动作、构图与材质，不作像素输入，禁止递归参考生成结果。",
+      "run": "公告物件重新定位为上中部，再按下置坐标排版。",
+      "process": [
+        "底图已生成并检查，后期叠加正式资产与可编辑文字；当前Prompt已改成纯视觉写法。"
+      ],
+      "budget": "1件主题主体 + Logo + 1组主题信息 + slogan = 4组",
+      "textArea": {
+        "x": 76,
+        "y": 1018,
+        "w": 928,
+        "h": 256
+      },
+      "visualAnalysis": {
+        "subject": "橙色实体三角警示牌，白色立体感叹号，银色窄边与石墨灰底座",
+        "composition": "主视觉占中间大部分版面；上方Logo和小号slogan同行，标题与简介整组放下方",
+        "materials": "橙色烤漆、白色立体符号、拉丝银色边缘与深灰底座",
+        "lighting": "近黑到深灰的轻微渐变，左上柔光与自然阴影，地面反射克制",
+        "effects": "警示牌完整，不缩成小物件；留白只用于品牌与下方文案"
+      }
+    },
+    {
+      "id": "interview-wide",
+      "title": "YouTube · 横版人物封面",
+      "width": 1920,
+      "height": 1080,
+      "asset": "assets/social/interview-wide-warm-blend-base.png",
+      "final": "assets/social/interview-wide-final.png",
+      "ratio": "16:9",
+      "kind": "photo-wide",
+      "logo": {
+        "x": 115,
+        "y": 90,
+        "w": 300
+      },
+      "texts": [
+        {
+          "name": "栏目小字",
+          "x": 115,
+          "y": 365,
+          "size": 40,
+          "lines": [
+            "创作者访谈 · Web3 的日常"
+          ],
+          "maxWidth": 780,
+          "color": "#FFFFFF",
+          "weight": 700,
+          "lineHeight": 52,
+          "rule": "前置橙色竖条只标栏目"
+        },
+        {
+          "name": "主题标题",
+          "x": 115,
+          "y": 445,
+          "size": 164,
+          "lines": [
+            "创作分享"
+          ],
+          "maxWidth": 800,
+          "color": "#FF8200",
+          "weight": 900,
+          "lineHeight": 178,
+          "rule": "",
+          "family": "title",
+          "maxLines": 2,
+          "followEyebrow": true,
+          "gap": 40
+        },
+        {
+          "name": "副标题",
+          "x": 115,
+          "y": 649,
+          "size": 42,
+          "lines": [
+            "从创作经历聊起，分享真实的创作者日常"
+          ],
+          "maxWidth": 850,
+          "color": "#FFFFFF",
+          "weight": 600,
+          "lineHeight": 56,
+          "rule": "第二层标题，不添加虚构人名",
+          "maxLines": 2,
+          "followTitle": true,
+          "gap": 40
+        },
+        {
+          "name": "Slogan",
+          "x": 115,
+          "y": 976,
+          "size": 28,
+          "lines": [
+            "Open Your Trading · Build Your Path"
+          ],
+          "maxWidth": 980,
+          "color": "#CFCFD6",
+          "weight": 400,
+          "lineHeight": 36,
+          "rule": ""
+        }
+      ],
+      "safe": {
+        "x": 115,
+        "y": 70,
+        "w": 1690,
+        "h": 940
+      },
+      "description": "暖木色室内的受访者，坐在桌边，面部保持自然日光；左文右人物，人物位于右半部；左侧文字区融入室内阴影，过渡横跨约20%–53%，没有竖向色板接缝。",
+      "style": "自然纪实摄影，暖木色环境日光",
+      "reference": "Owner最新横版1000X人物采访图：左文右实拍、橙色大主题、底部slogan；仅参考构图与层级，不继承配色、品牌或人物身份。",
+      "verdict": "左侧深色渐变在横向52%处结束，面部在其右侧完全保留底图曝光；橙色大主题与真实Black字重形成层级，不使用斜分隔线。",
+      "placement": "左侧暖木色承接文字，右侧清晰实拍人物；栏目与话题一行，不压暗面部。",
+      "prompt": "主体动作：原始照片中的受访者坐在暖木色室内；保留身份、自然表情、手部姿态与衣物。\n构图：16:9，人物位于右侧54%–94%，脸、手与发丝完整；主体占够版面，不缩成人形小摆件。\n颜色材质：真实肤色、织物与室内暖木、米色、灰褐，不磨皮、不改成3D人物。\n背景光照：保留自然日光；左侧降对比，在横向20%–53%宽范围平缓衔接，保留柔焦木纹、窗和桌沿，不出现竖缝或棕色色板，脸部与头发不压暗。\n留白：左侧6%–47%供后期文字，左上品牌位和左下页脚安静。\n限制：完整底图一次生成，不增人物、摆件或出版文字，不渐黑。每次只从原始照片或官方角色原档重生；成品仅分析动作、构图与材质，不作像素输入，禁止递归参考生成结果。",
+      "run": "整张底图重新生成自然暖色过渡；后期只排文字和正式Logo，不叠加色板",
+      "process": [
+        "底图已生成并检查，后期叠加正式资产与可编辑文字；当前Prompt已改成纯视觉写法。"
+      ],
+      "budget": "1件主题主体 + Logo + 1组主题信息 + slogan = 4组",
+      "textArea": {
+        "x": 115,
+        "y": 310,
+        "w": 800,
+        "h": 535
+      },
+      "faceZone": {
+        "x": 1040,
+        "y": 60,
+        "w": 650,
+        "h": 590
+      },
+      "visualAnalysis": {
+        "subject": "暖木色室内的受访者，坐在桌边，面部保持自然日光",
+        "composition": "左文右人物，人物位于右半部；左侧文字区融入室内阴影，过渡横跨约20%–53%，没有竖向色板接缝",
+        "materials": "真实皮肤、头发、织物与木纹，保留自然细节，不做3D或磨皮",
+        "lighting": "温暖环境日光；左侧由房间真实明暗自然衰减，右侧脸部和发丝保持原曝光",
+        "effects": "文字背景整体生成，保留木纹、窗和桌沿的层次；后期不再叠加不透明渐变"
+      },
+      "usedPrompt": "Use case: identity-preserve\nEdit target: the supplied clean 16:9 photograph. Refine ONLY the empty left background to make a polished editorial interview cover background. Keep the same woman, face, skin tone, expression, hair, clothing, body, position, framing and sunlight exactly unchanged. Her face must stay bright and clear.\nThe left 0–45% will carry small white copy and a large orange headline added separately. Make this area naturally low-contrast and dark enough, using muted warm walnut, taupe and brown from the existing room. Retain real wood grain, soft room shadows and very subtle defocused texture, not a flat solid-color rectangle.\nGradually and organically dissolve this subdued left background into the existing sunlit room over a BROAD horizontal span from 20% to 53%. The transition should be extraordinarily smooth with a shallow easing at both ends. Follow the existing wall, window and tabletop lighting. No visible vertical seam, stripe, edge, steep gradient, dark curtain, flat overlay panel or black fade. Do not lay any tint or shade over the woman, her hair or face; her full right-side photograph remains the original exposure. The left may have subtle depth and variations but no bright hotspots beneath the future copy.\nSame 16:9 aspect ratio and composition, premium editorial photograph. No typography, logo, slogan, symbols, watermark, added props or added people. Deliver one complete seamlessly integrated photographic base; all graphic text will be added later.\n",
+      "previewAsset": "assets/social/previews/interview-wide-faede38ffe5c.webp"
+    },
+    {
+      "id": "interview-vertical",
+      "title": "Instagram Reels · 竖版人物封面",
+      "width": 1080,
+      "height": 1920,
+      "asset": "assets/social/interview-vertical-close-base.png",
+      "final": "assets/social/interview-vertical-final.png",
+      "ratio": "9:16",
+      "kind": "photo-vertical",
+      "logo": {
+        "x": 76,
+        "y": 96,
+        "w": 300
+      },
+      "texts": [
+        {
+          "name": "栏目小字",
+          "x": 108,
+          "y": 1520,
+          "size": 38,
+          "lines": [
+            "创作者访谈"
+          ],
+          "maxWidth": 710,
+          "color": "#FFFFFF",
+          "weight": 700,
+          "lineHeight": 46,
+          "rule": ""
+        },
+        {
+          "name": "主题标题",
+          "x": 76,
+          "y": 1598,
+          "size": 110,
+          "lines": [
+            "Web3 的日常"
+          ],
+          "maxWidth": 788,
+          "color": "#FFFFFF",
+          "weight": 900,
+          "lineHeight": 116,
+          "rule": "不进入右侧平台按钮区",
+          "family": "title",
+          "maxLines": 2,
+          "followEyebrow": true,
+          "gap": 40
+        },
+        {
+          "name": "辅助说明",
+          "x": 76,
+          "y": 1748,
+          "size": 40,
+          "lineHeight": 54,
+          "weight": 600,
+          "lines": [
+            "从创作经历聊起，分享真实的创作者日常"
+          ],
+          "maxWidth": 788,
+          "maxLines": 2,
+          "followTitle": true,
+          "gap": 40,
+          "color": "#FFFFFF"
+        },
+        {
+          "name": "Slogan",
+          "x": 76,
+          "y": 1820,
+          "size": 24,
+          "lines": [
+            "Open Your Trading · Build Your Path"
+          ],
+          "maxWidth": 788,
+          "color": "#CFCFD6",
+          "weight": 400,
+          "lineHeight": 32,
+          "rule": "置于平台底部遮挡区上方"
+        }
+      ],
+      "safe": {
+        "x": 76,
+        "y": 76,
+        "w": 928,
+        "h": 1768
+      },
+      "description": "同一受访者手托下巴坐在桌边，人物比原样张更大；人物从上方延伸到约76%–79%，面部在上半部；下方仅保留紧凑文字组，避免无意义大块空底。",
+      "style": "自然纪实摄影；放大人物，暖木色前景自然衔接",
+      "reference": "Owner竖版CHAINISLE人物封面：人物 + 底部标题；横版生成图：保留同一人物。",
+      "verdict": "Logo不加黑底板；主标题使用真实Black900。简介按788px最长区域自动换行，能一行放下就保持一行；slogan24px置于左下。",
+      "placement": "左上完整Logo；下方栏目、一行主标题、能放一行就不拆的简介；小字号slogan放左下，与主题组分开。",
+      "prompt": "主体动作：原始照片中的同一受访者在暖木室内托下巴；保留身份、表情、衣物、发丝与手部姿态。\n构图：9:16，人物放大20%–25%，头发约从纵向13%开始，肩臂与桌边延伸到76%–79%；不裁脸、手或头发。\n颜色材质：真实肤色、织物、米色与胡桃木，保持自然纹理，不磨皮或改成3D人物。\n背景光照：保留日光和面部曝光；约72%起自然融入中暗暖木桌前景，不铺色板、不留横缝、不渐黑。\n留白：左上小型品牌位，下方79%–96%紧凑文字区，不额外延长空底。\n限制：整体生成，不新增人物、道具或出版文字。每次只从原始照片或官方角色原档重生；成品仅分析动作、构图与材质，不作像素输入，禁止递归参考生成结果。",
+      "run": "保持人物身份和姿态，重生成更近的9:16构图；整张底图已包含前景自然阴影，后期只放文字和Logo",
+      "process": [
+        "底图已生成并检查，后期叠加正式资产与可编辑文字；当前Prompt已改成纯视觉写法。"
+      ],
+      "budget": "1件主题主体 + Logo + 1组主题信息 + slogan = 4组",
+      "logoPath": "assets/logo/OpenX-ONE-Horizontal-OnLight.svg",
+      "textArea": {
+        "x": 76,
+        "y": 1520,
+        "w": 788,
+        "h": 324
+      },
+      "visualAnalysis": {
+        "subject": "同一受访者手托下巴坐在桌边，人物比原样张更大",
+        "composition": "人物从上方延伸到约76%–79%，面部在上半部；下方仅保留紧凑文字组，避免无意义大块空底",
+        "materials": "自然皮肤、织物与暖木桌面；文字区仍有柔焦桌面纹理",
+        "lighting": "脸部清晰且保留日光；下方与室内同色系自然衔接，不渐黑、不铺平棕色面板",
+        "effects": "人物身份、姿态、面部和手部保持一致；背景与文字区一次生成，后期只放字和Logo"
+      },
+      "usedPrompt": "Use case: identity-preserve.\nEdit the supplied9:16 clean portrait photograph into a tighter complete portrait-cover base. Preserve this exact woman's identity, facialfeatures, expression, hand-under-chin pose, hairstyle, shirt, warm window daylight and natural skin texture.\nEnlarge the woman approximately20–25% and reframe naturally so she fills substantially more of the canvas: hair begins around y13%, face clear around y18–43%, shoulders/forearms and tableinteraction continue down to y76–79%. The right shoulder may naturally approach the right edge. Do not stretch the body or cut the face, hand, elbow or hair. Keep lefttop x6–35%, y5–13% available for a small official logo added later.\nThe bottom y79–96% is a compact copy area, not an empty brown panel. Preserve a real subtly defocused walnut tabletop with gentle wood texture and natural soft shadows; blend it organically into the subject photograph. It should be lowcontrast and moderatelydark in the room's warm taupe/walnut palette so white text stayslegible, but no blackfade, noopaque flatcolor overlay, no visible horizontal seam or large additional empty extension.\nKeep the whole canvas9:16. Face and hair remain sharp at originalexposure. No added objects, no secondperson, no lettering, no logo, no slogan, no border or watermark. Deliver one complete photographic base with seamless lighting; only typography and official standalone logo will be added afterward.\n",
+      "previewAsset": "assets/social/previews/interview-vertical-4172232b16a2.webp"
+    },
+    {
+      "id": "tutorial",
+      "title": "X · 横版图标教程",
+      "width": 1920,
+      "height": 1080,
+      "asset": "assets/social/ip-icon-cards-base.png",
+      "final": "assets/social/tutorial-final.png",
+      "ratio": "16:9",
+      "kind": "illustration",
+      "logo": {
+        "x": 120,
+        "y": 86,
+        "w": 300
+      },
+      "texts": [
+        {
+          "name": "栏目小字",
+          "x": 120,
+          "y": 330,
+          "size": 32,
+          "lines": [
+            "交易知识"
+          ],
+          "maxWidth": 730,
+          "color": "#CFCFD6",
+          "weight": 700,
+          "lineHeight": 42,
+          "rule": ""
+        },
+        {
+          "name": "主题标题",
+          "x": 120,
+          "y": 402,
+          "size": 112,
+          "lines": [
+            "资金费率"
+          ],
+          "maxWidth": 730,
+          "color": "#FFFFFF",
+          "weight": 900,
+          "lineHeight": 122,
+          "rule": "",
+          "family": "title",
+          "maxLines": 2,
+          "followEyebrow": true,
+          "gap": 40
+        },
+        {
+          "name": "辅助说明",
+          "x": 120,
+          "y": 554,
+          "size": 40,
+          "weight": 600,
+          "color": "#FFFFFF",
+          "lineHeight": 56,
+          "maxWidth": 730,
+          "maxLines": 2,
+          "followTitle": true,
+          "gap": 40,
+          "lines": [
+            "从基础概念开始，学会查看与判断"
+          ],
+          "content": "了解计算方式，核对结算时间"
+        },
+        {
+          "name": "Slogan",
+          "x": 120,
+          "y": 978,
+          "size": 26,
+          "lines": [
+            "Open Your Trading · Build Your Path"
+          ],
+          "maxWidth": 1020,
+          "color": "#CFCFD6",
+          "weight": 400,
+          "lineHeight": 36,
+          "rule": ""
+        }
+      ],
+      "safe": {
+        "x": 120,
+        "y": 64,
+        "w": 1680,
+        "h": 952
+      },
+      "description": "球形白色机器人与百分比、时钟两张icon卡片，表达计算与结算时间；主体组集中在右侧52%–94%，卡片明显小于机器人；左侧留出标题、简介和品牌区域。",
+      "style": "3D写实渲染：球形白壳与两张石墨灰icon卡片",
+      "reference": "Figma Graphic-Design · 2767:250 / 2767:210；IP官方多视角原档",
+      "verdict": "两件物体直接对应计算与结算时间。左侧安静排字，右侧轮廓可辨；表达知识主题，不呈现真实资金数据。",
+      "placement": "左侧固定文字区；机器人和最多两张小卡片在右侧，左下小号slogan",
+      "prompt": "主体动作：白色球形机器人悬浮示意两张小卡片，一张百分比、一张时钟；机身倾斜约10°，翼臂有限展开、关节自然，不接触或承重。\n构图：16:9，主视觉横向52%–94%、纵向15%–83%；机器人为主，卡片前后错位、大小有差，不遮面、不围成一圈。\n颜色材质：黑白灰与重点橙#FF8200；白色哑光烤漆、光滑镀银、黑玻璃，无拉丝。\n背景光照：深灰宽柔光，光滑无纹理地面、自然阴影；此示意画面只真实光照，不加拖影。\n留白：左侧6%–47%、左上品牌位及左下页脚保持安静，主体占够版面。\n限制：保持原档结构与胸标，不加第三张卡片、肢体或出版文字。每次只从原始照片或官方角色原档重生；成品仅分析动作、构图与材质，不作像素输入，禁止递归参考生成结果。",
+      "run": "参考角色原档生成完整两卡片底图，并保留胸前原有标志",
+      "process": [
+        "依据用户否决的书本案例重新生成。主体改为角色与专业计算器；留白只服务左侧文案、顶部品牌区与页脚。",
+        "图片预览完整展示，所有正式文字与Logo后期独立处理。"
+      ],
+      "budget": "2件主题物体 + Logo + 1组主题信息 + slogan = 5组",
+      "textArea": {
+        "x": 120,
+        "y": 310,
+        "w": 730,
+        "h": 470
+      },
+      "visualAnalysis": {
+        "subject": "球形白色机器人与百分比、时钟两张icon卡片，表达计算与结算时间",
+        "composition": "主体组集中在右侧52%–94%，卡片明显小于机器人；左侧留出标题、简介和品牌区域",
+        "materials": "白色烤漆、石墨灰圆角卡片、窄银色包边，橙色仅用于关节与图标细节",
+        "lighting": "柔光照明、真实厚度和接缝、克制玻璃反射；背景安静，地面只有柔和阴影",
+        "effects": "同一角色比例、胸前原标记与关节结构；一侧示意卡片，另一侧自然垂落"
+      },
+      "usedPrompt": "Use case: stylized-concept.\nInput image 1 is the canonical character reference: preserve its single round white satin shell, black oval glass visor, two matching softly luminous white oval eyes, short tapered flipper arms connected by orange circular hinges, thin orange antenna with a small white sphere, and existing chest surface marking. Input image 2 is only a composition reference for robot with small icon cards; do not copy its light streaks, three-card count, brand lettering or extra decorative effects.\nCreate a complete 16:9 high quality physically rendered tutorial poster BASE with no publishing text. Graphite-black quiet studio background with a subtle wide soft gradient and minimal real ground shadow. Robot fills about 35% of image height, at x73% y48%, whole silhouette including antenna and both arms visible. Gentle 10-degree tilt toward the cards. One arm clearly introduces the lower-left card, connected through the original hinge; other arm relaxed naturally. Keep the exact canonical body proportions and eye spacing, no stretched head or separate neck, no fingers, no extra limbs.\nEXACTLY TWO small rounded square charcoal icon cards near the robot, secondary in scale: one simple raised white percent (%) icon with a tiny orange accent at x58% y35%; one raised clock icon with white dial and orange hand at x59% y65%. Each card at most 11% of full image width, shallow premium beveled edges, slight different natural perspective, never covering the robot's face. These two icons visibly relate to calculation rate and settlement time. No written labels or numbers. Cards are modest accents, not a ring, no connected lines, no orbit, no extraneous props or calculator.\nReserve left x6–47% entirely for future title/copy, top-left for an official logo, bottom-left for a small slogan. Keep this region dark, quiet and readable. Main cluster entirely in x52–94%, y15–83% with balanced scale and useful negative space.\nPalette: satin white, graphite charcoal, controlled orange #FF8200 key parts, narrow brushed silver rim only. Same physical material/lighting language as reference: broad top-left softbox, clear visor reflections that do not hide eyes, soft neutral fill, natural contact shading. No neon, no orange light ribbons, particles, lens flare, halo, starbursts, background patterns or excessive bloom. No new text, logo, slogan, watermark. All publishing typography and official standalone logo are added afterward.\n",
+      "previewAsset": "assets/social/previews/tutorial-1961279fba87.webp"
+    },
+    {
+      "id": "square",
+      "title": "Instagram · 方形公告",
+      "width": 1080,
+      "height": 1080,
+      "asset": "assets/social/square-middle-subject-base.png",
+      "final": "assets/social/square-final.png",
+      "ratio": "1:1",
+      "kind": "illustration",
+      "logo": {
+        "x": 76,
+        "y": 54,
+        "w": 200
+      },
+      "texts": [
+        {
+          "name": "栏目小字",
+          "x": 76,
+          "y": 760,
+          "size": 26,
+          "lines": [
+            "账户与社群安全"
+          ],
+          "maxWidth": 928,
+          "color": "#CFCFD6",
+          "weight": 700,
+          "lineHeight": 34,
+          "rule": ""
+        },
+        {
+          "name": "主题标题",
+          "x": 76,
+          "y": 826,
+          "size": 112,
+          "lines": [
+            "请你确认官方渠道"
+          ],
+          "maxWidth": 928,
+          "color": "#FF8200",
+          "weight": 900,
+          "lineHeight": 124,
+          "rule": "",
+          "family": "title",
+          "maxLines": 2,
+          "followEyebrow": true,
+          "gap": 40
+        },
+        {
+          "name": "辅助说明",
+          "x": 76,
+          "y": 978,
+          "size": 26,
+          "lines": [
+            "遇到可疑链接，先核对再操作"
+          ],
+          "maxWidth": 928,
+          "color": "#FFFFFF",
+          "weight": 600,
+          "lineHeight": 34,
+          "rule": "",
+          "maxLines": 2,
+          "followTitle": true,
+          "gap": 40
+        },
+        {
+          "name": "Slogan",
+          "x": 418,
+          "y": 76,
+          "size": 26,
+          "lines": [
+            "Open Your Trading · Build Your Path"
+          ],
+          "maxWidth": 586,
+          "color": "#CFCFD6",
+          "weight": 600,
+          "lineHeight": 34,
+          "rule": "文本框右边界X1004；右对齐，距离画布右侧76px；与Logo同行视觉居中",
+          "align": "right"
+        }
+      ],
+      "safe": {
+        "x": 76,
+        "y": 50,
+        "w": 928,
+        "h": 980
+      },
+      "description": "一块橙色警示牌作为方图中央主视觉；固定上方品牌行、中间主视觉、下方栏目标题简介；左右76px，标题长度接近整行但不超界。",
+      "style": "实体警示牌；橙色烤漆金属与银色窄包边；3D写实产品渲染",
+      "reference": "Owner公告参考：主体清楚与材质层级；最终采用公司统一的上方品牌行、中间主视觉、下方文字规则。",
+      "verdict": "底图重新构图为中间主视觉、下方文案。固定底部文字区宽928px，标题112px，简介能一行放下则不换行。",
+      "placement": "上方Logo与slogan同行；中间一件完整警示牌；下方栏目、单行粗标题、完整一句简介，共用左右76px边距。",
+      "prompt": "主体动作：一块实体三角警示牌，橙色面、白色立体感叹号，与支架和石墨灰底座组成一件完整物件。\n构图：1:1，主视觉居中放在纵向20%–69%，占宽约55%；轮廓完整、比例充分，底座自然落在地面，不缩成小摆件。\n颜色材质：黑白灰与重点橙#FF8200；橙白哑光烤漆、光滑镀银窄边，无拉丝或颗粒。\n背景光照：近黑到深灰宽幅渐变，左上柔光、中性补光；地面光滑无纹理，只有真实柔和接触阴影和克制反射，静物不加拖影。\n留白：顶部5%–15%品牌行、下方71%–93%标题简介，边距统一，不制造多余空底。\n限制：整体生成，无额外摆件、光带或粒子，不生成出版文字。每次只从原始照片或官方角色原档重生；成品仅分析动作、构图与材质，不作像素输入，禁止递归参考生成结果。",
+      "run": "从公告底图重新构图为1:1，再改为自然光下的实体金属材质；文字按方图重新排。",
+      "process": [
+        "底图已生成并检查，后期叠加正式资产与可编辑文字；当前Prompt已改成纯视觉写法。"
+      ],
+      "budget": "1件主题主体 + Logo + 1组主题信息 + slogan = 4组",
+      "textArea": {
+        "x": 76,
+        "y": 760,
+        "w": 928,
+        "h": 244
+      },
+      "visualAnalysis": {
+        "subject": "一块橙色警示牌作为方图中央主视觉",
+        "composition": "固定上方品牌行、中间主视觉、下方栏目标题简介；左右76px，标题长度接近整行但不超界",
+        "materials": "橙色烤漆、白色立体感叹号、银色金属窄边、石墨灰底座",
+        "lighting": "轻微暗灰渐变，自然阴影；主体有体积，背景不加装饰",
+        "effects": "主体充分占版面；栏目、标题、简介之间使用同一40px间距"
+      },
+      "previewAsset": "assets/social/previews/square-133b28223c02.webp"
+    },
+    {
+      "id": "notice-centered",
+      "retired": true,
+      "title": "Instagram · 竖版居中公告",
+      "width": 1080,
+      "height": 1350,
+      "asset": "assets/social/notice-large-subject-base.png",
+      "final": "assets/social/notice-centered-final.png",
+      "ratio": "4:5",
+      "kind": "illustration",
+      "logo": {
+        "x": 76,
+        "y": 60,
+        "w": 230
+      },
+      "texts": [
+        {
+          "name": "栏目小字",
+          "x": 76,
+          "y": 1018,
+          "size": 32,
+          "lines": [
+            "账户与社群安全"
+          ],
+          "maxWidth": 928,
+          "color": "#CFCFD6",
+          "weight": 700,
+          "lineHeight": 40,
+          "rule": "",
+          "align": "center"
+        },
+        {
+          "name": "主题标题",
+          "x": 76,
+          "y": 1090,
+          "size": 112,
+          "lines": [
+            "请你确认官方渠道"
+          ],
+          "maxWidth": 928,
+          "color": "#FF8200",
+          "weight": 900,
+          "lineHeight": 126,
+          "rule": "",
+          "family": "title",
+          "maxLines": 2,
+          "align": "center",
+          "followEyebrow": true,
+          "gap": 40
+        },
+        {
+          "name": "辅助说明",
+          "x": 76,
+          "y": 1242,
+          "size": 32,
+          "lines": [
+            "遇到可疑链接，先核对再操作"
+          ],
+          "maxWidth": 928,
+          "color": "#FFFFFF",
+          "weight": 600,
+          "lineHeight": 40,
+          "rule": "",
+          "maxLines": 2,
+          "followTitle": true,
+          "gap": 40,
+          "align": "center"
+        },
+        {
+          "name": "Slogan",
+          "x": 418,
+          "y": 87,
+          "size": 26,
+          "lines": [
+            "Open Your Trading · Build Your Path"
+          ],
+          "maxWidth": 586,
+          "color": "#CFCFD6",
+          "weight": 600,
+          "lineHeight": 34,
+          "rule": "文本框右边界X1004；右对齐，距离画布右侧76px；与Logo同行视觉居中",
+          "align": "right"
+        }
+      ],
+      "safe": {
+        "x": 76,
+        "y": 60,
+        "w": 928,
+        "h": 1226
+      },
+      "description": "橙色实体三角警示牌与立体感叹号；警示牌放中间，下方栏目、标题和简介作为一组居中；上方Logo和slogan同行。",
+      "style": "实体警示牌；橙色烤漆金属与银色窄包边；3D写实产品渲染",
+      "reference": "Owner公告参考：主体清楚与材质层级；最终采用公司统一的上方品牌行、中间主视觉、下方文字规则。",
+      "verdict": "物件比例较此前明显增大；标题112px，8个中文字占约896px，接近928px文字区宽度。简介末行到画布底边约94px，不留下大块无用途黑底。",
+      "placement": "上方品牌行；中间放大警示牌；下方栏目→单行粗标题→完整一句简介，全部沿X540居中。",
+      "prompt": "主体动作：一块实体三角警示牌，橙色面、白色立体感叹号，与支架和石墨灰底座组成一件完整物件。\n构图：4:5，主视觉居中放在纵向18%–71%，占宽约58%；轮廓完整、比例充分，底座自然落在地面，不缩成小摆件。\n颜色材质：黑白灰与重点橙#FF8200；橙白哑光烤漆、光滑镀银窄边，无拉丝或颗粒。\n背景光照：近黑到深灰宽幅渐变，左上柔光、中性补光；地面光滑无纹理，只有真实柔和接触阴影和克制反射，静物不加拖影。\n留白：顶部5%–14%品牌行、下方75%–93%居中文案，边距统一，不制造多余空底。\n限制：整体生成，无额外摆件、光带或粒子，不生成出版文字。每次只从原始照片或官方角色原档重生；成品仅分析动作、构图与材质，不作像素输入，禁止递归参考生成结果。",
+      "run": "公告物件重新定位为上中部，再按下置坐标排版。",
+      "process": [
+        "底图已生成并检查，后期叠加正式资产与可编辑文字；当前Prompt已改成纯视觉写法。"
+      ],
+      "budget": "1件主题主体 + Logo + 1组主题信息 + slogan = 4组",
+      "textArea": {
+        "x": 76,
+        "y": 1018,
+        "w": 928,
+        "h": 256
+      },
+      "visualAnalysis": {
+        "subject": "橙色实体三角警示牌与立体感叹号",
+        "composition": "警示牌放中间，下方栏目、标题和简介作为一组居中；上方Logo和slogan同行",
+        "materials": "橙色烤漆、银色拉丝窄边、白色立体符号、石墨灰底座",
+        "lighting": "安静暗灰棚拍背景，柔光照明，接地阴影与克制反射",
+        "effects": "与左对齐公告共用底图和边距；只改变下方文字对齐，不新增上方标题"
+      }
+    }
+  ],
+  "referenceQualityRule": "每次只从原始照片或官方角色原档重生；成品仅分析动作、构图与材质，不作像素输入，禁止递归参考生成结果。",
+  "alternatives": [
+    {
+      "id": "ip-coin",
+      "title": "比特币 · 前后景张力",
+      "asset": "assets/social/ip-coin-action-base.png",
+      "prompt": "主体动作：一枚光滑银色比特币在前景倾斜，橙色币种符号；球形白色机器人在后方右上悬浮，机身倾斜约15°，翼状手臂自然展开，不接触或承重币体。\n构图：16:9，币体在横向43%–72%、纵向42%–92%；机器人在右上69%–95%、12%–63%，前大后小，形成斜向张力，主体完整。\n颜色材质：黑白灰与重点橙#FF8200；光滑银色、白壳、黑玻璃，不使用拉丝和脏纹理。\n背景光照：左上柔光，深灰背景，光滑无纹理地面，柔和阴影和克制反射。\n留白：左侧约38%供后期标题和Logo，不制造空洞底部。\n限制：附最初官方角色原档，保留结构及胸前原有标志；不增加肢体，不生成文案、独立Logo或slogan。每次从原档重生，不递归参考生成结果。",
+      "originalReference": "assets/ip-bot/front.png",
+      "usedGeneratedReference": false,
+      "referenceRole": "官方原始角色外观；新场景一次生成",
+      "sourceFile": "exec-0aba3042-9726-499e-923a-fe4eeacec421.png"
+    },
+    {
+      "id": "eth-flight",
+      "title": "以太坊 · 斜向飞行",
+      "asset": "assets/social/ip-ethereum-flight-base.png",
+      "prompt": "主体动作：一个银色与深灰玻璃的双锥菱形数字资产主体；球形白色机器人在其后上方斜向飞行，机身倾斜约15°，翼臂通过原有关节有限展开，与主体保持间隙。\n构图：16:9，菱形主体在右下55%–76%、47%–90%；机器人在右上72%–94%、13%–59%，前后景尺度有差异，轮廓完整。\n颜色材质：黑白灰与少量橙#FF8200；光滑银色、白壳、黑玻璃，无拉丝、划痕和颗粒。\n背景光照：近黑背景、左上宽柔光；一道克制橙色拖影沿飞行方向后延，远景轻微模糊，机器人与胸标清晰，地面光滑无纹理。\n留白：左侧约40%用于后期文字。\n限制：角色外观只参考最初官方原档，保留眼睛、天线、翼臂与胸前标志；不增加卡片、粒子和文案，每次从原档重生。",
+      "originalReference": "assets/ip-bot/front.png",
+      "usedGeneratedReference": false,
+      "referenceRole": "官方原始角色外观；新场景一次生成",
+      "sourceFile": "exec-28532c96-6f47-40eb-b4b6-abae67e9546f.png"
+    },
+    {
+      "id": "cards-flight",
+      "title": "行情知识 · 两卡伴飞",
+      "asset": "assets/social/ip-market-flight-base.png",
+      "prompt": "主体动作：球形白色机器人朝镜头斜向飞行，机身倾斜约12°，原有翼臂自然错位展开；只搭配两张小号石墨灰icon卡片，一张三根橙白K线，一张橙白比特币符号，不遮面、不围成一圈。\n构图：16:9，机器人在右侧65%–93%、20%–78%；两卡在中右上52%–65%、19%–41%和中右下50%–63%、53%–74%，近大远小。\n颜色材质：黑白灰与重点橙#FF8200；光滑白壳、黑玻璃、光滑卡片倒角，无拉丝和颗粒。\n背景光照：深灰柔光；一道弧形拖影从身后延伸，背景轻微速度模糊，角色和胸前标志清晰，地面光滑无纹理。\n留白：左侧约38%给后期文字。\n限制：只附最初官方角色原档，保留结构和标志，不生成标题、slogan或独立Logo，不加第三张卡片，禁止递归参考生成结果。",
+      "originalReference": "assets/ip-bot/front.png",
+      "usedGeneratedReference": false,
+      "referenceRole": "官方原始角色外观；新场景一次生成",
+      "sourceFile": "exec-38e5a548-7ee5-46c7-b3fe-1c50ea18d396.png"
+    }
+  ],
+  "materialRule": "材质统一：新生成的产品海报使用光滑镀银、哑光烤漆与黑玻璃，不使用拉丝金属、滚花、磨砂颗粒或斑驳纹理。地面必须为光滑、无纹理的深灰或近黑平面，只保留柔和接触阴影与克制反射；纸张、人物和室内原有材质按实际参考保留。",
+  "actionRule": "机器人可观察、示意或斜向飞行；肩部保持短小自然连接，翼臂按动作有限展开，与道具留间隙，不夹持、搭压或承重，不增肢体。动态用前后景尺度差、斜向排列、10–15°机身倾斜、悬浮高度与视线体现，不站成一排。静态只真实光照；飞行可用一道随运动方向的短橙色拖影与轻微背景速度模糊，角色、眼睛和胸标清晰，不加粒子或多道光带。",
+  "motionReferences": [
+    {
+      "asset": "assets/social/reference-flight-approved.png",
+      "role": "只分析斜向构图、机身姿态和拖影"
+    },
+    {
+      "asset": "assets/social/reference-smooth-material.png",
+      "role": "只分析光滑材质；不继承静态构图"
+    }
+  ]
+}

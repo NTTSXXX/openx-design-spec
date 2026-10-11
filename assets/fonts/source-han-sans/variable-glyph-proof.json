@@ -1,0 +1,855 @@
+{
+  "weights": [
+    400,
+    600,
+    900
+  ],
+  "regions": {
+    "sc": {
+      "family": "OpenX Han UI SC",
+      "characters": 23,
+      "comparisons": 69,
+      "matchedOriginalOutlinesAndAdvances": true,
+      "allResourceHashesMatched": 208,
+      "samples": [
+        {
+          "character": "作",
+          "weight": 400,
+          "advance": 1000.0,
+          "outlineSha256": "7157d6b37e6127215895f169a0e9e0a4e1937e859811842ba464fafb7023fb9e"
+        },
+        {
+          "character": "出",
+          "weight": 400,
+          "advance": 1000.0,
+          "outlineSha256": "89403a1097e89480cf602ddc6b90efd4c66ca43147576e3c5f501b470fa13588"
+        },
+        {
+          "character": "图",
+          "weight": 400,
+          "advance": 1000.0,
+          "outlineSha256": "b467cfc7e074c4136e8680b1f581bd26b79fa56dba0b631266234ecb7f65a35b"
+        },
+        {
+          "character": "工",
+          "weight": 400,
+          "advance": 1000.0,
+          "outlineSha256": "8adaffd1d0b0fc61e4c58b1cc3ef13eabbe6af075c1aa83ac380611f95685447"
+        },
+        {
+          "character": "户",
+          "weight": 400,
+          "advance": 1000.0,
+          "outlineSha256": "886ae784f3f398d51d91035f912e140d70ec031125f420cc430f5efab0c4cebf"
+        },
+        {
+          "character": "计",
+          "weight": 400,
+          "advance": 1000.0,
+          "outlineSha256": "9b1f41ecec3ac7d201fb42f35c4c57d32aea8f0c261c681cbe01666e3aecd9dd"
+        },
+        {
+          "character": "设",
+          "weight": 400,
+          "advance": 1000.0,
+          "outlineSha256": "4e4108f4e005c06eee794418c12f69be8c702a43c69e25bf9eb0376c40e9c225"
+        },
+        {
+          "character": "账",
+          "weight": 400,
+          "advance": 1000.0,
+          "outlineSha256": "66afc6a9a71c5f0cd08752d7e4ce008f6c122fee48172665bd96e65b21cc1823"
+        },
+        {
+          "character": "输",
+          "weight": 400,
+          "advance": 1000.0,
+          "outlineSha256": "1d518e5d4c5d1b0b8c82ca76435719fed2b8a65ed17fdd50d3cbe2a1e16177e4"
+        },
+        {
+          "character": "永",
+          "weight": 400,
+          "advance": 1000.0,
+          "outlineSha256": "4c1b0349bb9e4d060bf1f61ed6d18ad82bf117106b931074d14760f557ff3932"
+        },
+        {
+          "character": "书",
+          "weight": 400,
+          "advance": 1000.0,
+          "outlineSha256": "db6bd43727df8d85583d52cf217ab6887447605eb6093a250285f88b095591dd"
+        },
+        {
+          "character": " ",
+          "weight": 400,
+          "advance": 223.51009337037473,
+          "outlineSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "character": "1",
+          "weight": 400,
+          "advance": 555.3209129547753,
+          "outlineSha256": "7c8f6316b01c8ad24da769ab2a1de6c18928b388c4214442f2e8840fdfa0bf66"
+        },
+        {
+          "character": "2",
+          "weight": 400,
+          "advance": 555.3209129547753,
+          "outlineSha256": "0e8196741bf7729ed9e08a4bb08e9cf852f369e22982fd68b78a7f204e82a812"
+        },
+        {
+          "character": "3",
+          "weight": 400,
+          "advance": 555.3209129547753,
+          "outlineSha256": "b13c220b355a71eb4df8dea0922c112e00c5d42b2e726f20eed1bae0f4c390e8"
+        },
+        {
+          "character": "O",
+          "weight": 400,
+          "advance": 742.080746962998,
+          "outlineSha256": "9ae36bf7e076b2e4b906e62f81b8dbdda2190a1e7752b960d71b88c933e5252d"
+        },
+        {
+          "character": "X",
+          "weight": 400,
+          "advance": 572.8214316790794,
+          "outlineSha256": "fd2c7e79fe604f6f4c5a595dd20afc1710d27c766d8c34a9fc52b574baebb269"
+        },
+        {
+          "character": "e",
+          "weight": 400,
+          "advance": 553.9107158395396,
+          "outlineSha256": "61000cf2c6331458d969e69f9d581b0aef5a9c45011f89e838f58e73b9f618bc"
+        },
+        {
+          "character": "n",
+          "weight": 400,
+          "advance": 610.4208092099144,
+          "outlineSha256": "375e307fbf9377640c6ae8efe627b1d9fcef864b137e1787003008cb1e740f19"
+        },
+        {
+          "character": "p",
+          "weight": 400,
+          "advance": 619.5706535926232,
+          "outlineSha256": "511178366b93b12a7e1c3e9e583ce26aa38500042539b537921f0c5549d42617"
+        },
+        {
+          "character": "。",
+          "weight": 400,
+          "advance": 1000.0,
+          "outlineSha256": "9f1fc999a10e1fc385cbb24ea16fd6dfd81bf4d667ec55ed980aa5f5fc8ecaf2"
+        },
+        {
+          "character": "，",
+          "weight": 400,
+          "advance": 1000.0,
+          "outlineSha256": "e998f3d0275812049921bf6b3761f0c5cd7546125d568cad1b5f9725270dabd3"
+        },
+        {
+          "character": "国",
+          "weight": 400,
+          "advance": 1000.0,
+          "outlineSha256": "e84f70e6b6e82d63e586fa31f01b3a85f97f7fb95312cc21d79a86dc7d0d4475"
+        },
+        {
+          "character": "作",
+          "weight": 600,
+          "advance": 1000.0,
+          "outlineSha256": "8f3d22a91c8cd453429834a252997f25f884b9c6c5c05a48fc25774874e8f318"
+        },
+        {
+          "character": "出",
+          "weight": 600,
+          "advance": 1000.0,
+          "outlineSha256": "54f0f67bd9f2ba399bb2107e13a8f716aa279006706002e89d0dc9c55d7cce75"
+        },
+        {
+          "character": "图",
+          "weight": 600,
+          "advance": 1000.0,
+          "outlineSha256": "d94361d26bc00e2524f8e35e7c621d7ffca7bbc8490d669cfc25926d9249bbfc"
+        },
+        {
+          "character": "工",
+          "weight": 600,
+          "advance": 1000.0,
+          "outlineSha256": "953978435cdb78d1b84613c3fe464d82cd45ef27fa7f64892f20cb9caae84f1d"
+        },
+        {
+          "character": "户",
+          "weight": 600,
+          "advance": 1000.0,
+          "outlineSha256": "8b742fa3337c3e81004ae163342cf838c8c08da7b06693ac24e72a0d348af46e"
+        },
+        {
+          "character": "计",
+          "weight": 600,
+          "advance": 1000.0,
+          "outlineSha256": "bc99fd6e7bd9934dfd796474abe897bb2381439c5224ddc122d68deca272f65b"
+        },
+        {
+          "character": "设",
+          "weight": 600,
+          "advance": 1000.0,
+          "outlineSha256": "4f105da4e484da5cfcbc98c1f07fae3e3dfb47396a1e94a37085a6d29139b6bb"
+        },
+        {
+          "character": "账",
+          "weight": 600,
+          "advance": 1000.0,
+          "outlineSha256": "961d16089f9ec46c735afce3fae0df0ab68339b1d3717e4ce959ad5ffb0dad6b"
+        },
+        {
+          "character": "输",
+          "weight": 600,
+          "advance": 1000.0,
+          "outlineSha256": "5594783802974b9ef84fff8830af32508f7501f5fa997fb97828fb321ba0030a"
+        },
+        {
+          "character": "永",
+          "weight": 600,
+          "advance": 1000.0,
+          "outlineSha256": "81f6db9c609a12dc653fd59358d8706d4a00cf528a5f124d7bb45f8409f50912"
+        },
+        {
+          "character": "书",
+          "weight": 600,
+          "advance": 1000.0,
+          "outlineSha256": "0380d43ddf993dd9cebe018b4a5c6911919030ce9f7bb79d933ed0b5116c1255"
+        },
+        {
+          "character": " ",
+          "weight": 600,
+          "advance": 226.02998486796042,
+          "outlineSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "character": "1",
+          "weight": 600,
+          "advance": 579.9598520422797,
+          "outlineSha256": "7d93d0dbc6b5dcfba14d876d59255964818eda753039fa329aa416179e218039"
+        },
+        {
+          "character": "2",
+          "weight": 600,
+          "advance": 579.9598520422797,
+          "outlineSha256": "4fdaff2d4f7b968965e6c104b05ac1e8f785feaf9fd480bc649f789b48457130"
+        },
+        {
+          "character": "3",
+          "weight": 600,
+          "advance": 579.9598520422797,
+          "outlineSha256": "b1a87cf8684f4f5284f0d733de01c4220cc9589d88d2c9f4cd1ec2a88536e5b1"
+        },
+        {
+          "character": "O",
+          "weight": 600,
+          "advance": 762.2398789436834,
+          "outlineSha256": "de55d2977d0102553fcdb8596bf86f91d980b32c4a6cd757a164605948cd66e3"
+        },
+        {
+          "character": "X",
+          "weight": 600,
+          "advance": 611.4597679753932,
+          "outlineSha256": "2429bd1394a0770164f1919b3e0ce505034cfcd169bef74f98eee8291e587345"
+        },
+        {
+          "character": "e",
+          "weight": 600,
+          "advance": 573.2298839876967,
+          "outlineSha256": "a4bfae0d0e25b309e3a56e3f2308bd6eb309c903550e325ee3a50185cfe876e3"
+        },
+        {
+          "character": "n",
+          "weight": 600,
+          "advance": 632.259868855657,
+          "outlineSha256": "9b4497c8b629a2374bf2e0df1c717e4e7d9902fa5661301ae703630fd2781a9e"
+        },
+        {
+          "character": "p",
+          "weight": 600,
+          "advance": 637.209894075723,
+          "outlineSha256": "bff4eec4855175f29ef2cfb5343ad921a587ddebbbb6e1dd247a945c023397be"
+        },
+        {
+          "character": "。",
+          "weight": 600,
+          "advance": 1000.0,
+          "outlineSha256": "64f61c0b631d69cbe5eba656971a4ef8b9d74f40fccb75bb3f8ff566431c7f49"
+        },
+        {
+          "character": "，",
+          "weight": 600,
+          "advance": 1000.0,
+          "outlineSha256": "ad3babd843f78dacd0694a48fcb295dafff13e8fd0d0f069fb05062cae896a29"
+        },
+        {
+          "character": "国",
+          "weight": 600,
+          "advance": 1000.0,
+          "outlineSha256": "e68beee245f4be65dc86b2d9c6b2fca5cd249f4cb8b8639f8cdf1a00a2e3e7fe"
+        },
+        {
+          "character": "作",
+          "weight": 900,
+          "advance": 1000.0,
+          "outlineSha256": "957851999d367f68b9750a855eed6858bae22be60351048c33ee93558259d1d8"
+        },
+        {
+          "character": "出",
+          "weight": 900,
+          "advance": 1000.0,
+          "outlineSha256": "d240c9360bde4dc37c0a42af25beb70f952be2a90c4fe0b0e01e79ba751c7afe"
+        },
+        {
+          "character": "图",
+          "weight": 900,
+          "advance": 1000.0,
+          "outlineSha256": "467f3d0783b770f9b51a6d310aba9cd49158b44c23710a4dbe7ad1248f3a9730"
+        },
+        {
+          "character": "工",
+          "weight": 900,
+          "advance": 1000.0,
+          "outlineSha256": "30021391012c911ab970a9062fdfbee355c9f2c699def5dcb22fa5c146a3fc08"
+        },
+        {
+          "character": "户",
+          "weight": 900,
+          "advance": 1000.0,
+          "outlineSha256": "b3ebd481d2cae05c63794640d025e38222252cf397dbfecddfe74bbf3c00ae26"
+        },
+        {
+          "character": "计",
+          "weight": 900,
+          "advance": 1000.0,
+          "outlineSha256": "cff3d5b81378064ef3c8f7cc5c0563f56d3c3b1ae9e072ac05ac7b1f20596571"
+        },
+        {
+          "character": "设",
+          "weight": 900,
+          "advance": 1000.0,
+          "outlineSha256": "6121977b6709f070a3f821c6fb6ac13e13a13200fa14ec8b3a55eea6161514d6"
+        },
+        {
+          "character": "账",
+          "weight": 900,
+          "advance": 1000.0,
+          "outlineSha256": "d990e31ed4466911b5f7e9c511821bad6d9183362813dd2b8a6efcbc9163e95c"
+        },
+        {
+          "character": "输",
+          "weight": 900,
+          "advance": 1000.0,
+          "outlineSha256": "8783ea5a534935d8e6ea75f53408e2aacce628cd286b7b40045de67bde9e0296"
+        },
+        {
+          "character": "永",
+          "weight": 900,
+          "advance": 1000.0,
+          "outlineSha256": "569538d86d0a6d7fcf67508b7e8cacf9efdff5e26c84fa6a1f98d4ebb60dcfd7"
+        },
+        {
+          "character": "书",
+          "weight": 900,
+          "advance": 1000.0,
+          "outlineSha256": "61506c3f64b2dd699fae70305ea8a2a496812809415ef30c0db9dd13628fb589"
+        },
+        {
+          "character": " ",
+          "weight": 900,
+          "advance": 229.0,
+          "outlineSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "character": "1",
+          "weight": 900,
+          "advance": 609.0,
+          "outlineSha256": "bab529a78615c7a71f2dd461d6fe895bc4debbe841d33e22fece9867e44bdcb3"
+        },
+        {
+          "character": "2",
+          "weight": 900,
+          "advance": 609.0,
+          "outlineSha256": "7e794cfc0f6aff08ecc8572516908db78b3acce1ee8b2d239d2042576d0feb0f"
+        },
+        {
+          "character": "3",
+          "weight": 900,
+          "advance": 609.0,
+          "outlineSha256": "52035ba20ab38ef4a860af81a97171c57b13f807da5ea1dbd40706b19e410dfd"
+        },
+        {
+          "character": "O",
+          "weight": 900,
+          "advance": 786.0,
+          "outlineSha256": "cdbe8b12c0214202c031d550370e3ef5a75648b025299a8083d1f0b7959e1944"
+        },
+        {
+          "character": "X",
+          "weight": 900,
+          "advance": 657.0,
+          "outlineSha256": "84f69d5c42e8a263f5a1d46384be86365d3e743a300d8334cdcd3bcf389a8019"
+        },
+        {
+          "character": "e",
+          "weight": 900,
+          "advance": 596.0,
+          "outlineSha256": "eed2f9b273147117c64c88981206b7d1d74a07c08b856793f4bc7b2e20e7d30a"
+        },
+        {
+          "character": "n",
+          "weight": 900,
+          "advance": 658.0,
+          "outlineSha256": "ce9e2f47cbcaf44d6fe0e18c8e4a8c5697e98e815f76395aec57197cfcc5b6b0"
+        },
+        {
+          "character": "p",
+          "weight": 900,
+          "advance": 658.0,
+          "outlineSha256": "cb34f1a7a360d34a56c5659f907a779a89d6ed04cce959ea6a688cc4e810a7e2"
+        },
+        {
+          "character": "。",
+          "weight": 900,
+          "advance": 1000.0,
+          "outlineSha256": "d6302da044dbb04741402814b3fd6ef8c443233f03e89b7950af8543c723412b"
+        },
+        {
+          "character": "，",
+          "weight": 900,
+          "advance": 1000.0,
+          "outlineSha256": "ed81009d4976ea1bfa0f0d7af4a551e06df922d1753391c6b43e713207882687"
+        },
+        {
+          "character": "国",
+          "weight": 900,
+          "advance": 1000.0,
+          "outlineSha256": "e59fca2f1bfff343877f6d54c7d5e028a29b15cccd509d979e5177f44443da04"
+        }
+      ]
+    },
+    "tc": {
+      "family": "OpenX Han UI TC",
+      "characters": 23,
+      "comparisons": 69,
+      "matchedOriginalOutlinesAndAdvances": true,
+      "allResourceHashesMatched": 309,
+      "samples": [
+        {
+          "character": "作",
+          "weight": 400,
+          "advance": 1000.0,
+          "outlineSha256": "7157d6b37e6127215895f169a0e9e0a4e1937e859811842ba464fafb7023fb9e"
+        },
+        {
+          "character": "出",
+          "weight": 400,
+          "advance": 1000.0,
+          "outlineSha256": "89403a1097e89480cf602ddc6b90efd4c66ca43147576e3c5f501b470fa13588"
+        },
+        {
+          "character": "工",
+          "weight": 400,
+          "advance": 1000.0,
+          "outlineSha256": "8adaffd1d0b0fc61e4c58b1cc3ef13eabbe6af075c1aa83ac380611f95685447"
+        },
+        {
+          "character": "帳",
+          "weight": 400,
+          "advance": 1000.0,
+          "outlineSha256": "693ab14cd43cd4f3201d92bfd8f190a5e59672f2170f224e2e7adc6576197c54"
+        },
+        {
+          "character": "戶",
+          "weight": 400,
+          "advance": 1000.0,
+          "outlineSha256": "9c77049224fa9abfebf713f6a328b86172bb89cb34bf988bf323db04a3bab46c"
+        },
+        {
+          "character": "永",
+          "weight": 400,
+          "advance": 1000.0,
+          "outlineSha256": "4c1b0349bb9e4d060bf1f61ed6d18ad82bf117106b931074d14760f557ff3932"
+        },
+        {
+          "character": "輸",
+          "weight": 400,
+          "advance": 1000.0,
+          "outlineSha256": "4b94788b83a01745a3ada207b386aa798043da083e701648a2b6c4802af206e2"
+        },
+        {
+          "character": "設",
+          "weight": 400,
+          "advance": 1000.0,
+          "outlineSha256": "6dcdd241e7daf0d456b8dcde839e354ab6f2c2252fcab35d847a91802fcb9b63"
+        },
+        {
+          "character": " ",
+          "weight": 400,
+          "advance": 223.51009337037473,
+          "outlineSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "character": "1",
+          "weight": 400,
+          "advance": 555.3209129547753,
+          "outlineSha256": "7c8f6316b01c8ad24da769ab2a1de6c18928b388c4214442f2e8840fdfa0bf66"
+        },
+        {
+          "character": "2",
+          "weight": 400,
+          "advance": 555.3209129547753,
+          "outlineSha256": "0e8196741bf7729ed9e08a4bb08e9cf852f369e22982fd68b78a7f204e82a812"
+        },
+        {
+          "character": "3",
+          "weight": 400,
+          "advance": 555.3209129547753,
+          "outlineSha256": "b13c220b355a71eb4df8dea0922c112e00c5d42b2e726f20eed1bae0f4c390e8"
+        },
+        {
+          "character": "O",
+          "weight": 400,
+          "advance": 742.080746962998,
+          "outlineSha256": "9ae36bf7e076b2e4b906e62f81b8dbdda2190a1e7752b960d71b88c933e5252d"
+        },
+        {
+          "character": "X",
+          "weight": 400,
+          "advance": 572.8214316790794,
+          "outlineSha256": "fd2c7e79fe604f6f4c5a595dd20afc1710d27c766d8c34a9fc52b574baebb269"
+        },
+        {
+          "character": "e",
+          "weight": 400,
+          "advance": 553.9107158395396,
+          "outlineSha256": "61000cf2c6331458d969e69f9d581b0aef5a9c45011f89e838f58e73b9f618bc"
+        },
+        {
+          "character": "n",
+          "weight": 400,
+          "advance": 610.4208092099144,
+          "outlineSha256": "375e307fbf9377640c6ae8efe627b1d9fcef864b137e1787003008cb1e740f19"
+        },
+        {
+          "character": "p",
+          "weight": 400,
+          "advance": 619.5706535926232,
+          "outlineSha256": "511178366b93b12a7e1c3e9e583ce26aa38500042539b537921f0c5549d42617"
+        },
+        {
+          "character": "。",
+          "weight": 400,
+          "advance": 1000.0,
+          "outlineSha256": "32342624d7784016445ab29b03e54a3e644a6afa73778b3429c278428a66c0e0"
+        },
+        {
+          "character": "，",
+          "weight": 400,
+          "advance": 1000.0,
+          "outlineSha256": "bc5f95751635a5993615e87f3cd4b9fe73ea05dab01a1536ebf6756fefdefe49"
+        },
+        {
+          "character": "國",
+          "weight": 400,
+          "advance": 1000.0,
+          "outlineSha256": "7c9172d7be735c1fc2d73a668127b6cde94a510daf07baa18f613e5e4c21a86a"
+        },
+        {
+          "character": "圖",
+          "weight": 400,
+          "advance": 1000.0,
+          "outlineSha256": "63a3caeca4b923290c29b2279754ef156ae370efc4e71cac319a357074c8624d"
+        },
+        {
+          "character": "書",
+          "weight": 400,
+          "advance": 1000.0,
+          "outlineSha256": "dd539d089dd3ca6bf9f77e3f996685e13f8dc8dd7d870a064ce64c5f6cd74f69"
+        },
+        {
+          "character": "計",
+          "weight": 400,
+          "advance": 1000.0,
+          "outlineSha256": "76b4db3d0d738e8eec53e86cb4d301fd7259b5761d044a1e31af7326c0fee9e6"
+        },
+        {
+          "character": "作",
+          "weight": 600,
+          "advance": 1000.0,
+          "outlineSha256": "8f3d22a91c8cd453429834a252997f25f884b9c6c5c05a48fc25774874e8f318"
+        },
+        {
+          "character": "出",
+          "weight": 600,
+          "advance": 1000.0,
+          "outlineSha256": "54f0f67bd9f2ba399bb2107e13a8f716aa279006706002e89d0dc9c55d7cce75"
+        },
+        {
+          "character": "工",
+          "weight": 600,
+          "advance": 1000.0,
+          "outlineSha256": "953978435cdb78d1b84613c3fe464d82cd45ef27fa7f64892f20cb9caae84f1d"
+        },
+        {
+          "character": "帳",
+          "weight": 600,
+          "advance": 1000.0,
+          "outlineSha256": "790be545c77744c7f7ff70e150d70bdbf9850935468ca604793cda5c0fac7bf1"
+        },
+        {
+          "character": "戶",
+          "weight": 600,
+          "advance": 1000.0,
+          "outlineSha256": "a6811a6ee55fcdd766c2d7b96172dbbe0b9e55ec9589ab11f5531a2eed5cd1ff"
+        },
+        {
+          "character": "永",
+          "weight": 600,
+          "advance": 1000.0,
+          "outlineSha256": "81f6db9c609a12dc653fd59358d8706d4a00cf528a5f124d7bb45f8409f50912"
+        },
+        {
+          "character": "輸",
+          "weight": 600,
+          "advance": 1000.0,
+          "outlineSha256": "c70d85b48311c1b6ebb43e66f2d78010b3920d2150060eb5080c5afdfe479497"
+        },
+        {
+          "character": "設",
+          "weight": 600,
+          "advance": 1000.0,
+          "outlineSha256": "72f784cedcf22f61e53f4256a3f9f23e4be1151fdefafabf056a14155fea63d9"
+        },
+        {
+          "character": " ",
+          "weight": 600,
+          "advance": 226.02998486796042,
+          "outlineSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "character": "1",
+          "weight": 600,
+          "advance": 579.9598520422797,
+          "outlineSha256": "7d93d0dbc6b5dcfba14d876d59255964818eda753039fa329aa416179e218039"
+        },
+        {
+          "character": "2",
+          "weight": 600,
+          "advance": 579.9598520422797,
+          "outlineSha256": "4fdaff2d4f7b968965e6c104b05ac1e8f785feaf9fd480bc649f789b48457130"
+        },
+        {
+          "character": "3",
+          "weight": 600,
+          "advance": 579.9598520422797,
+          "outlineSha256": "b1a87cf8684f4f5284f0d733de01c4220cc9589d88d2c9f4cd1ec2a88536e5b1"
+        },
+        {
+          "character": "O",
+          "weight": 600,
+          "advance": 762.2398789436834,
+          "outlineSha256": "de55d2977d0102553fcdb8596bf86f91d980b32c4a6cd757a164605948cd66e3"
+        },
+        {
+          "character": "X",
+          "weight": 600,
+          "advance": 611.4597679753932,
+          "outlineSha256": "2429bd1394a0770164f1919b3e0ce505034cfcd169bef74f98eee8291e587345"
+        },
+        {
+          "character": "e",
+          "weight": 600,
+          "advance": 573.2298839876967,
+          "outlineSha256": "a4bfae0d0e25b309e3a56e3f2308bd6eb309c903550e325ee3a50185cfe876e3"
+        },
+        {
+          "character": "n",
+          "weight": 600,
+          "advance": 632.259868855657,
+          "outlineSha256": "9b4497c8b629a2374bf2e0df1c717e4e7d9902fa5661301ae703630fd2781a9e"
+        },
+        {
+          "character": "p",
+          "weight": 600,
+          "advance": 637.209894075723,
+          "outlineSha256": "bff4eec4855175f29ef2cfb5343ad921a587ddebbbb6e1dd247a945c023397be"
+        },
+        {
+          "character": "。",
+          "weight": 600,
+          "advance": 1000.0,
+          "outlineSha256": "05f6c3236c7694bb44e7f49243ab6968203d1f57594cff1e797db18d7d109092"
+        },
+        {
+          "character": "，",
+          "weight": 600,
+          "advance": 1000.0,
+          "outlineSha256": "3c009d584cf0b6b071fb816529b40cc57ac9ac6632130579536412e6ffde582e"
+        },
+        {
+          "character": "國",
+          "weight": 600,
+          "advance": 1000.0,
+          "outlineSha256": "afe7c4c1e54c16568e643d06c4b0a8c80db263c5f0a2356b0ddcee42a3ada790"
+        },
+        {
+          "character": "圖",
+          "weight": 600,
+          "advance": 1000.0,
+          "outlineSha256": "ab2000a5d38493c288af274d91c778653542a3ca7257279580041d45ff032a40"
+        },
+        {
+          "character": "書",
+          "weight": 600,
+          "advance": 1000.0,
+          "outlineSha256": "c3dc29b967d57947c703ecf3946fdec0bc742dcc21df8f55e79fed818ba1c9b1"
+        },
+        {
+          "character": "計",
+          "weight": 600,
+          "advance": 1000.0,
+          "outlineSha256": "16bf462c4d9a6cefe7777083b1433036c3f5ca937d7e61a95e70657485bd5dfa"
+        },
+        {
+          "character": "作",
+          "weight": 900,
+          "advance": 1000.0,
+          "outlineSha256": "957851999d367f68b9750a855eed6858bae22be60351048c33ee93558259d1d8"
+        },
+        {
+          "character": "出",
+          "weight": 900,
+          "advance": 1000.0,
+          "outlineSha256": "d240c9360bde4dc37c0a42af25beb70f952be2a90c4fe0b0e01e79ba751c7afe"
+        },
+        {
+          "character": "工",
+          "weight": 900,
+          "advance": 1000.0,
+          "outlineSha256": "30021391012c911ab970a9062fdfbee355c9f2c699def5dcb22fa5c146a3fc08"
+        },
+        {
+          "character": "帳",
+          "weight": 900,
+          "advance": 1000.0,
+          "outlineSha256": "36ad88b2510d2714a3ff4e11b019165e178a3ef08e5063048772195b451627d7"
+        },
+        {
+          "character": "戶",
+          "weight": 900,
+          "advance": 1000.0,
+          "outlineSha256": "d7d8d72d5929e6b352561004912b79fe0fbeeeaff58a8c10a4875d0156d2a016"
+        },
+        {
+          "character": "永",
+          "weight": 900,
+          "advance": 1000.0,
+          "outlineSha256": "569538d86d0a6d7fcf67508b7e8cacf9efdff5e26c84fa6a1f98d4ebb60dcfd7"
+        },
+        {
+          "character": "輸",
+          "weight": 900,
+          "advance": 1000.0,
+          "outlineSha256": "3523582d963b74e49d73e728959be179c9438ab80649943df982e2396588b60e"
+        },
+        {
+          "character": "設",
+          "weight": 900,
+          "advance": 1000.0,
+          "outlineSha256": "c5a46498925516f5d5495af5a0b26e6c8ce309e73da13edb0ebbaa5e4a73dcbd"
+        },
+        {
+          "character": " ",
+          "weight": 900,
+          "advance": 229.0,
+          "outlineSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+        },
+        {
+          "character": "1",
+          "weight": 900,
+          "advance": 609.0,
+          "outlineSha256": "bab529a78615c7a71f2dd461d6fe895bc4debbe841d33e22fece9867e44bdcb3"
+        },
+        {
+          "character": "2",
+          "weight": 900,
+          "advance": 609.0,
+          "outlineSha256": "7e794cfc0f6aff08ecc8572516908db78b3acce1ee8b2d239d2042576d0feb0f"
+        },
+        {
+          "character": "3",
+          "weight": 900,
+          "advance": 609.0,
+          "outlineSha256": "52035ba20ab38ef4a860af81a97171c57b13f807da5ea1dbd40706b19e410dfd"
+        },
+        {
+          "character": "O",
+          "weight": 900,
+          "advance": 786.0,
+          "outlineSha256": "cdbe8b12c0214202c031d550370e3ef5a75648b025299a8083d1f0b7959e1944"
+        },
+        {
+          "character": "X",
+          "weight": 900,
+          "advance": 657.0,
+          "outlineSha256": "84f69d5c42e8a263f5a1d46384be86365d3e743a300d8334cdcd3bcf389a8019"
+        },
+        {
+          "character": "e",
+          "weight": 900,
+          "advance": 596.0,
+          "outlineSha256": "eed2f9b273147117c64c88981206b7d1d74a07c08b856793f4bc7b2e20e7d30a"
+        },
+        {
+          "character": "n",
+          "weight": 900,
+          "advance": 658.0,
+          "outlineSha256": "ce9e2f47cbcaf44d6fe0e18c8e4a8c5697e98e815f76395aec57197cfcc5b6b0"
+        },
+        {
+          "character": "p",
+          "weight": 900,
+          "advance": 658.0,
+          "outlineSha256": "cb34f1a7a360d34a56c5659f907a779a89d6ed04cce959ea6a688cc4e810a7e2"
+        },
+        {
+          "character": "。",
+          "weight": 900,
+          "advance": 1000.0,
+          "outlineSha256": "d306740150cbb57e63f8602c1c7049bee4c7af0168798fd94a5929c17085c09e"
+        },
+        {
+          "character": "，",
+          "weight": 900,
+          "advance": 1000.0,
+          "outlineSha256": "52f469e27a3ff907b758febe4aebcdf8d8679dc696ce3ffbb5124fb8259d3d62"
+        },
+        {
+          "character": "國",
+          "weight": 900,
+          "advance": 1000.0,
+          "outlineSha256": "f1683feb21af676f4e97c9001da84d210a783f9e08e0022064866ee29cae7604"
+        },
+        {
+          "character": "圖",
+          "weight": 900,
+          "advance": 1000.0,
+          "outlineSha256": "20cd0d6203d485c5a312d7822895e9b26600ff6b8c33fe556837507fc0198b81"
+        },
+        {
+          "character": "書",
+          "weight": 900,
+          "advance": 1000.0,
+          "outlineSha256": "4f10669038eef785bc870d235172eff96a6e3a3a75d113d035abb02ef23fd345"
+        },
+        {
+          "character": "計",
+          "weight": 900,
+          "advance": 1000.0,
+          "outlineSha256": "eaef1ec4072ed0508eac918eea0450f3ae232f21d45ec7c467d485cb58491a30"
+        }
+      ]
+    }
+  }
+}

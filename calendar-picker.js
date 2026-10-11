@@ -24,7 +24,8 @@
   const addMonths = (d,n) => date(d.getFullYear(),d.getMonth()+n);
   const format = value => value ? value.replaceAll('-','.') : localize('選擇日期');
   const monthLabel = d => `${d.getFullYear()} 年 ${d.getMonth()+1} 月`;
-  const owned = target => target instanceof Element && !!target.closest('.ox-calendar,.ox-calendar-trigger');
+  // Observe native inputs and their parents, not either control's generated UI.
+  const owned = target => (target instanceof Element ? target : target?.parentElement)?.closest('.ox-calendar,.ox-calendar-trigger,.ox-select-trigger,.ox-select-menu');
   function label(input){if(input.getAttribute('aria-label'))return input.getAttribute('aria-label');const original=input.labels?.[0];if(original){const copy=original.cloneNode(true);copy.querySelectorAll('input,button,small,.ox-calendar').forEach(n=>n.remove());return copy.textContent.trim()||'選擇日期';}return input.title||'選擇日期';}
   function bounds(input){return [parse(input.min)?input.min:'0001-01-01',parse(input.max)?input.max:'9999-12-31'];}
   function enabled(r,value,index=r.target){const input=r.inputs[index];if(!input||unavailable(input)||!parse(value))return false;const [min,max]=bounds(input);return value>=min&&value<=max;}
