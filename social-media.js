@@ -741,6 +741,28 @@
     syncLogoControls();
     renderEditorOverlay();
   }
+  function validationIssue(){
+    const field=root.querySelector('[data-sm-text-index][aria-invalid=true]')||invalidColor();
+    if(!field)return null;
+    const index=field.dataset.smTextIndex??field.closest('[data-sm-layer]')?.dataset.smLayer;
+    const inspector=field.closest('[id^="sm-inspector-"]')?.id.replace('sm-inspector-','')||'text';
+    const message=field.hasAttribute('data-sm-text-index')?$(field.id+'-error')?.textContent:'请输入 3 或 6 位 HEX 颜色，如 #FF8200';
+    return {field,index,inspector,message};
+  }
+  function validationError(fallback){
+    const issue=validationIssue(),message=issue?.message||fallback;
+    const convert=text=>window.OpenXUILocale?.convert(text,document.documentElement.lang)||text;
+    // Object names are authored content. Only the validation reason is UI.
+    const name=issue?.index!==undefined?current?.texts[Number(issue.index)]?.name:null,prefix=name?name+'：':'';
+    return Error(prefix&&message.startsWith(prefix)?prefix+convert(message.slice(prefix.length)):convert(message));
+  }
+  function revealValidationError(){
+    const issue=validationIssue();if(!issue)return false;
+    if(issue.index!==undefined){$('sm-text-layer').value=String(issue.index);selectTextLayer();}
+    selectInspector(issue.inspector);window.OpenXTemplateFloatingTools?.open(issue.inspector);
+    requestAnimationFrame(()=>{if(!issue.field.isConnected)return;issue.field.focus({preventScroll:true});issue.field.scrollIntoView({block:'nearest',inline:'nearest'});});
+    return true;
+  }
   function editCopy(){
     const work=applyCopyEdit();pendingCopyEdit=work;
     const release=()=>{if(pendingCopyEdit===work)pendingCopyEdit=null;};work.then(release,release);return work;
@@ -1151,11 +1173,12 @@
     setTemplateNames(names){templateNames={};for(const sample of availableTemplates()){const name=names?.[sample.id];if(typeof name==='string'&&name.trim()&&Array.from(name).length<=60)templateNames[sample.id]=name;}refreshTemplateNames();},
     async initialize(ratio){if(this.valid())return;const preferred=ratio&&(availableTemplates().find(sample=>sample.ratio===ratio&&sample.kind!=='finished-reference')||availableTemplates().find(sample=>sample.ratio===ratio));await select(preferred?.id||workspaceParams.get('sample')||availableTemplates()[0].id,{inherit:false});if(!this.valid())throw Error('模板未能载入，请重新加载编辑器');},
     valid:()=>copyValid&&!invalidColor()&&!pendingLogoEdit&&!pendingBackgroundEdit&&!!current&&$('sm-stage').getAttribute('aria-busy')!=='true',
-    exportImage(){if(!this.valid())throw Error('请先修正排版后再导出');const output=document.createElement('canvas');draw(output,current,'final',false);return {dataUrl:output.toDataURL('image/png'),name:exportFilename(current),width:current.width,height:current.height};},
+    revealValidationError,
+    exportImage(){if(!this.valid()){revealValidationError();throw validationError('请先修正排版后再导出');}const output=document.createElement('canvas');draw(output,current,'final',false);return {dataUrl:output.toDataURL('image/png'),name:exportFilename(current),width:current.width,height:current.height};},
     async snapshot(){
       while(backgroundResizeGesture)await new Promise(resolve=>{const done=()=>{if(!backgroundResizeGesture){document.removeEventListener('social-editor:geometry',done);resolve();}};document.addEventListener('social-editor:geometry',done);});
       while(pendingCopyEdit||pendingLogoEdit||pendingBackgroundEdit){if(pendingCopyEdit)await pendingCopyEdit;if(pendingLogoEdit)await pendingLogoEdit;if(pendingBackgroundEdit)await pendingBackgroundEdit;}
-      if(!this.valid())throw Error('请先修正文字排版再保存工程');
+      if(!this.valid())throw validationError('请先修正文字排版再保存工程');
       const selected=revision,baseRevision=backgroundRevision,s=JSON.parse(JSON.stringify(current)),bg=backgroundDrafts.get(s.id),url=bg?.url||s.asset;
       let base=null;if(!bg?.hidden){const source=await fetch(url);if(!source.ok)throw Error('读取工程底图失败');base=await dataUrl(await source.blob());}
       if(selected!==revision||baseRevision!==backgroundRevision)throw Error('版式或底图已更新，请重试保存');

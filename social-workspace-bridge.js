@@ -32,7 +32,7 @@
       const actions=document.querySelector('.sm-workbench-head-actions')||$('sm-download').parentElement;
       const save=document.createElement('button');save.type='button';save.className='site-btn site-black';save.id='sm-save-to-task';save.textContent='采用这张图';save.onclick=()=>{if(exporting||readOnly)return;exporting=true;save.disabled=true;notify('openx-template-adopt-request');};actions.prepend(save);const back=document.createElement('button');back.type='button';back.className='site-btn site-white';back.textContent='返回画布';back.onclick=()=>notify('openx-template-return');actions.prepend(back);
       $('sm-save-project').disabled=false;
-      $('sm-save-project').onclick=async()=>{try{window.OpenXSocialStore.download(await window.OpenXSocialEditor.snapshot());projectStatus('');}catch(error){projectStatus(error.message,true);}};
+      $('sm-save-project').onclick=async()=>{try{window.OpenXSocialStore.download(await window.OpenXSocialEditor.snapshot());projectStatus('');}catch(error){window.OpenXSocialEditor.revealValidationError?.();projectStatus(error.message,true);}};
       $('sm-open-project').onclick=()=>$('sm-project-file').click();$('sm-project-file').onchange=async event=>{try{const file=event.target.files[0];if(file){await window.OpenXSocialEditor.restore(await window.OpenXSocialStore.readFile(file));projectStatus('');}}catch(error){projectStatus(error.message,true);}finally{event.target.value='';}};
       document.addEventListener('social-editor:change',()=>{if(restoring||readOnly)return;sequence++;notify('openx-template-dirty',{sequence});clearTimeout(timer);timer=setTimeout(async()=>{try{await saveDraft();}catch(error){projectStatus(error.message,true,'service');notify('openx-template-error',{message:error.message});}},700);});
       const selection=()=>notify('openx-template-selection',{label:$('sm-selection-label')?.textContent||'当前模板'});
@@ -57,7 +57,7 @@
       }}
       return;
     }
-    if(data.type==='openx-template-flush'){clearTimeout(timer);try{const captured=await saveDraft(data.requestId);notify('openx-template-flushed',{requestId:data.requestId,sequence:captured});}catch(error){notify('openx-template-flushed',{requestId:data.requestId,error:error.message});}return;}
+    if(data.type==='openx-template-flush'){clearTimeout(timer);try{const captured=await saveDraft(data.requestId);notify('openx-template-flushed',{requestId:data.requestId,sequence:captured});}catch(error){window.OpenXSocialEditor.revealValidationError?.();notify('openx-template-flushed',{requestId:data.requestId,error:error.message});}return;}
     if(data.type==='openx-template-saved'){const source=sentBackgrounds.get(data.sequence);if(source&&data.background?.url&&data.background?.sha256){references.set(source,data.background);while(references.size>4)references.delete(references.keys().next().value);}return;}
     if(data.type==='openx-template-export-complete'){exporting=false;const save=$('sm-save-to-task');if(save)save.disabled=readOnly;return;}
     if(data.type==='openx-template-status'){clearServiceStatus();projectStatus(data.feedbackOwner==='parent'?'':data.message,!!data.error,'service');return;}
