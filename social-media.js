@@ -427,7 +427,14 @@
       if(sample.retired===true){const option=new Option('当前画布 · '+sample.title+' · '+sample.ratio,sample.id);option.disabled=true;option.dataset.smCurrentOnly='true';picker.prepend(option);}
       picker.value=sample.id;
     }
-    if($('sm-template-current')){const title=$('sm-template-current');title.textContent=(sample.retired===true?'当前画布 · ':'')+templateTitle(sample)+' · '+sample.ratio;title.parentElement.title=title.textContent;}
+    if($('sm-template-current')){
+      const title=$('sm-template-current'),name=document.createElement('span'),ratio=document.createElement('span');
+      name.className='sm-template-current-name';
+      if(sample.retired===true){const prefix=document.createElement('span');prefix.textContent='当前画布 · ';name.append(prefix);}
+      const authoredName=document.createElement('span');authoredName.dataset.openxLanguageContent='';authoredName.textContent=templateTitle(sample);name.append(authoredName);
+      ratio.className='sm-template-current-ratio';ratio.textContent=' · '+sample.ratio;
+      title.replaceChildren(name,ratio);title.parentElement.title=title.textContent;
+    }
   }
   function initTemplateCards(){
     const picker=$('sm-sample-picker'),label=picker?.closest('label');if(!picker||!label)return;

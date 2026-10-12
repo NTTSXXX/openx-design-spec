@@ -11,6 +11,9 @@ html[data-workspace-embed=templates] #sm-samples[data-floating-tools=ready] .sm-
 html[data-workspace-embed=templates] #sm-samples[data-floating-tools=ready] .sm-preview-toolbar .sm-edit-tools{gap:4px;flex:0 1 auto}
 html[data-workspace-embed=templates] #sm-samples[data-floating-tools=ready] .sm-preview-toolbar .sm-viewport-tools{gap:0;flex:0 1 auto;margin-left:auto}
 html[data-workspace-embed=templates] #sm-samples[data-floating-tools=ready] .sm-preview-toolbar .sm-viewport-tools button{min-width:44px;padding-inline:6px}
+/* The mobile menu reparents 100%, so it needs its own shared control style. */
+#sm-samples[data-floating-tools=ready] .sm-engineering-menu #sm-view-original{box-sizing:border-box;min-width:44px;min-height:44px;padding:8px 12px;border:1px solid var(--ws-border,var(--ox-border,#CFCFD6));border-radius:8px;background:var(--ws-surface,var(--ox-surface,#fff));color:var(--ws-ink,var(--ox-text,#131316));font:400 15px/22px var(--ox-font);cursor:pointer}
+#sm-samples[data-floating-tools=ready] .sm-engineering-menu #sm-view-original:is(:hover,:focus-visible){background:var(--ws-soft,var(--ox-hover,#F4F4F6))}
 /* Mobile-only glyphs must stay bounded and hidden in every desktop bundle. */
 #sm-samples[data-floating-tools=ready] :is(.sm-mobile-fit-icon,.sm-mobile-back-icon){display:none;flex:none;width:20px;height:20px}
 html[data-workspace-embed=templates] #sm-samples[data-floating-tools=ready] .sm-align-menu>summary{padding-inline:6px}
@@ -95,6 +98,9 @@ html[data-workspace-embed=templates] #sm-samples[data-floating-tools=ready] .sm-
 html[data-workspace-embed=templates] #sm-samples[data-floating-tools=ready] .sm-template-library{position:static;min-width:0;flex-basis:auto}
 html[data-workspace-embed=templates] #sm-samples[data-floating-tools=ready] .sm-template-library>summary{min-width:0;white-space:nowrap}
 html[data-workspace-embed=templates] #sm-samples[data-floating-tools=ready] .sm-template-library>summary strong{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+html[data-workspace-embed=templates] #sm-samples[data-floating-tools=ready] .sm-template-library>summary #sm-template-current{display:flex;min-width:0}
+#sm-template-current .sm-template-current-name{min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#sm-template-current .sm-template-current-ratio{flex:none;white-space:nowrap}
 html[data-workspace-embed=templates] #sm-samples[data-floating-tools=ready] .sm-template-library .sm-template-cards{left:0;right:0;top:calc(100% + 8px);width:var(--sm-gallery-width,100%);max-width:calc(100vw - 32px)}
 
 html[data-workspace-embed=templates] #sm-samples[data-floating-tools=ready] .sm-toolbar>.sm-mode-control select{font-size:14px}
