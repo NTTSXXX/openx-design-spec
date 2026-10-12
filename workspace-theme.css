@@ -20,6 +20,25 @@ html[data-workspace-embed=templates] body{padding:0!important}
 html[data-workspace-embed] :is(summary,.sm-copy-editor>strong,.sm-copy-title,.sm-copy-editor summary,.sm-inspector label){color:var(--ws-ink)!important}
 html[data-workspace-embed] :is(.sm-copy-editor>p,.sm-background-controls p,.sm-copy-status){color:var(--ws-muted)!important}
 html[data-workspace-embed] input[type=range]{accent-color:var(--ws-muted)!important}
+
+/* Reference-page chrome uses semantic colors. Fixed artwork stages retain their pairs. */
+html[data-workspace-embed=rules] :is(#social-media,#ip-robot,.sm-library){--sm-muted:var(--ws-muted);--sm-line:var(--ws-line)}
+html[data-workspace-embed=rules] #avatar-content-rules{--ac-text:var(--ws-ink);--ac-muted:var(--ws-muted);--ac-rule:var(--ws-line)}
+html[data-workspace-embed=rules] :is(.lg-asset-card code,.lg-example code,.lg-asset-note,.lg-note,.lg-source,.lg-size-table td,.lg-size-table thead th,.section-heading p,.edition,.version,.palette-rules p,.subheading>span,.sm-case-analysis dt,.sm-more-link,.ip-quick-links a,.cp-rules p,.mf-scale p){color:var(--ws-muted)}
+html[data-workspace-embed=rules] :is(.lg-asset-card strong,.lg-size-table tbody th,.lg-source summary,.lg-downloads a,.lg-library-source a,.sm-reference b,.sm-case-analysis dd){color:var(--ws-ink)}
+html[data-workspace-embed=rules] :is(.lg-asset-actions a,.lg-asset-actions button,.sm-types button){background:var(--ws-soft);color:var(--ws-ink);border-color:var(--ws-border)}
+html[data-workspace-embed=rules] :is(.lg-asset-actions a,.lg-asset-actions button,.sm-types button):hover{background:var(--ws-selected);color:var(--ws-ink)}
+html[data-workspace-embed=rules] :is(.lg-asset-library,.lg-library-source,.lg-rules-layout,.lg-principles,.lg-source,.sm-prompt-panel,.sm-copy-editor,.sm-template,.sm-library-empty,.mf-scale){border-color:var(--ws-line)}
+html[data-workspace-embed=rules] :is(.sm-template,.sm-library-empty,.ac-rules code,.ac-editorial-rules code){background:var(--ws-soft);color:var(--ws-ink)}
+html[data-workspace-embed=rules] :is(.sm-prompt-panel pre,.sm-template,.sm-case-analysis dd){color:var(--ws-ink)}
+html[data-workspace-embed=rules] :is(.sm-status[data-error=true],#sm-edit-status[data-error=true],.sm-field-error,.bc-error,.bc-feedback.is-error){color:var(--ox-danger)}
+html[data-workspace-embed] input::placeholder,html[data-workspace-embed] textarea::placeholder{color:var(--ws-muted);opacity:1}
+/* Paired theme demos resolve the inherited overrides against their own tokens. */
+html[data-workspace-embed=rules] .theme-comparison [data-theme]{--ws-surface:var(--ox-surface);--ws-soft:var(--ox-hover);--ws-ink:var(--ox-text);--ws-muted:var(--ox-muted);--ws-line:var(--ox-border);--ws-border:var(--ox-border-strong);--ws-selected:var(--ox-selected)}
+html[data-workspace-embed=rules] .lg-clearance-sample{--ws-ink:#131316;--ws-muted:#5c5c66;color:#131316}
+html[data-workspace-embed=rules] .lg-stage-light{--ws-ink:#131316;--ws-muted:#34343b}
+html[data-workspace-embed=rules] .lg-stage-dark{--ws-ink:#f7f7f7;--ws-muted:#cfcfd6}
+html[data-workspace-embed=rules] .lg-stage-orange{--ws-ink:#131316;--ws-muted:#34343b}
 /* One border at the original position and width; no outer focus outline. */
 :root{--ox-control-focus:#B1B1BC}
 :root[data-theme=dark]{--ox-control-focus:#5C5C66}

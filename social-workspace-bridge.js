@@ -8,7 +8,7 @@
   const $=id=>document.getElementById(id);
   const status=(message,error=false)=>{const element=$('sm-status');element.textContent=message;element.hidden=!message;element.dataset.error=String(error);element.dataset.feedbackSource='bridge';};
   const clearServiceStatus=()=>{if($('sm-status').dataset.feedbackSource==='bridge')status('');};
-  const projectStatus=(message,error=false,source='project')=>{const element=$('sm-project-status');if(source==='service'&&element.dataset.feedbackSource==='project'&&element.textContent)return;element.textContent=message;element.dataset.error=String(error);element.dataset.feedbackSource=source;};
+  const projectStatus=(message,error=false,source='project')=>{if(source==='service'&&!error)message='';const element=$('sm-project-status');if(source==='service'&&element.dataset.feedbackSource==='project'&&element.textContent)return;element.textContent=message;element.dataset.error=String(error);element.dataset.feedbackSource=source;};
   const notify=(type,payload={})=>{if(window.parent!==window)window.parent.postMessage({type,taskId,...payload},location.origin);};
   const references=new Map(),sentBackgrounds=new Map();
   const bounded=(promise,ms,message)=>{let timeout;return Promise.race([promise,new Promise((_,reject)=>{timeout=setTimeout(()=>reject(Error(message)),ms);})]).finally(()=>clearTimeout(timeout));};
@@ -34,7 +34,8 @@
       $('sm-save-project').disabled=false;
       $('sm-save-project').onclick=async()=>{try{window.OpenXSocialStore.download(await window.OpenXSocialEditor.snapshot());projectStatus('');}catch(error){window.OpenXSocialEditor.revealValidationError?.();projectStatus(error.message,true);}};
       $('sm-open-project').onclick=()=>$('sm-project-file').click();$('sm-project-file').onchange=async event=>{try{const file=event.target.files[0];if(file){await window.OpenXSocialEditor.restore(await window.OpenXSocialStore.readFile(file));projectStatus('');}}catch(error){projectStatus(error.message,true);}finally{event.target.value='';}};
-      document.addEventListener('social-editor:change',()=>{if(restoring||readOnly)return;sequence++;notify('openx-template-dirty',{sequence});clearTimeout(timer);timer=setTimeout(async()=>{try{await saveDraft();}catch(error){projectStatus(error.message,true,'service');notify('openx-template-error',{message:error.message});}},700);});
+      document.addEventListener('social-editor:change',()=>{if(restoring||readOnly)return;sequence++;notify('openx-template-dirty',{sequence});});
+      for(const type of ['input','keydown','pointerdown','pointerup','wheel'])document.addEventListener(type,()=>notify('openx-template-activity'),{capture:true,passive:true});
       const selection=()=>notify('openx-template-selection',{label:$('sm-selection-label')?.textContent||'当前模板',templateName:window.OpenXSocialEditor.copyContext?.()?.title||''});
       if($('sm-selection-label'))new MutationObserver(selection).observe($('sm-selection-label'),{childList:true,subtree:true,characterData:true});
       selection();
