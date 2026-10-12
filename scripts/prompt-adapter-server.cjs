@@ -43,17 +43,26 @@ function findCli() {
   } catch {}
   return process.platform === 'win32' ? 'codex.exe' : 'codex';
 }
-const CLI = findCli();
+let checkedCli = '', checkedAt = 0, authCheck = null;
 function cliEnvironment() {
   const env = { ...process.env };
   for (const key of ['OPENAI_API_KEY', 'CODEX_API_KEY', 'LOVART_ACCESS_KEY', 'LOVART_SECRET_KEY', 'CODEX_THREAD_ID', 'CODEX_SESSION_ID', 'CODEX_APP_TOOLS_PIPE_PATH', 'CODEX_INTERNAL_ORIGINATOR_OVERRIDE']) delete env[key];
   return env;
 }
-execFile(CLI, ['login', 'status'], { windowsHide: true, timeout: 10000, maxBuffer: 32768, env: cliEnvironment() }, (error, stdout, stderr) => {
-  auth.checking = false;
-  auth.available = !error && /logged in/i.test(stdout + stderr);
-  auth.message = auth.available ? '本机已登录，支持实际看图与Prompt改写' : error?.code === 'ENOENT' ? '本机未找到Codex CLI' : '本机Codex尚未登录或登录检查失败';
-});
+function refreshAuth() {
+  if(authCheck)return authCheck;
+  const cli = findCli();
+  if(cli === checkedCli && Date.now() - checkedAt < 60000)return Promise.resolve();
+  auth.checking = true;
+  authCheck = new Promise(resolve => execFile(cli, ['login', 'status'], { windowsHide: true, timeout: 10000, maxBuffer: 32768, env: cliEnvironment() }, (error, stdout, stderr) => {
+    checkedCli = cli; checkedAt = Date.now(); auth.checking = false;
+    auth.available = !error && /logged in/i.test(stdout + stderr);
+    auth.message = auth.available ? '本机已登录，支持实际看图与Prompt改写' : error?.code === 'ENOENT' ? '本机未找到Codex CLI' : '本机Codex尚未登录或登录检查失败';
+    resolve();
+  })).finally(() => {authCheck = null;});
+  return authCheck;
+}
+void refreshAuth();
 
 function json(res, status, value) {
   const body = JSON.stringify(value);
@@ -171,7 +180,7 @@ async function runJob(job) {
     const prompt = buildPrompt(job.payload);
     await new Promise((resolve, reject) => {
       let stderr = '', lines = '', total = 0, failure;
-      const child = spawn(CLI, args, { cwd: directory, env: cliEnvironment(), windowsHide: true, shell: false, stdio: ['pipe', 'pipe', 'pipe'] });
+      const child = spawn(findCli(), args, { cwd: directory, env: cliEnvironment(), windowsHide: true, shell: false, stdio: ['pipe', 'pipe', 'pipe'] });
       job.child = child;
       child.on('error', error => reject(new Error(error.code === 'ENOENT' ? '本机未找到Codex CLI' : cleanError(error.message))));
       child.stderr.on('data', chunk => { stderr = (stderr + chunk.toString('utf8')).slice(-16000); });
@@ -241,8 +250,9 @@ function addJob(payload) {
 }
 async function api(req, res, url) {
   checkLocalRequest(req, ['POST', 'DELETE'].includes(req.method));
-  if (url.pathname === '/api/prompt-adapter/status' && req.method === 'GET') return json(res, 200, { ...auth, engine: 'codex-cli', supportsImage: true, maxImageBytes: MAX_IMAGE_BYTES, timeoutMs: TIMEOUT_MS, concurrency: 1, queueLimit: MAX_QUEUED, activeJobs: running ? 1 : 0, queuedJobs: queue.length });
+  if (url.pathname === '/api/prompt-adapter/status' && req.method === 'GET') {await refreshAuth();return json(res, 200, { ...auth, engine: 'codex-cli', supportsImage: true, maxImageBytes: MAX_IMAGE_BYTES, timeoutMs: TIMEOUT_MS, concurrency: 1, queueLimit: MAX_QUEUED, activeJobs: running ? 1 : 0, queuedJobs: queue.length });}
   if (url.pathname === '/api/prompt-adapter' && req.method === 'POST') {
+    await refreshAuth();
     if (auth.checking) fail(503, 'SERVICE_CHECKING', '本机视觉服务正在启动，请稍后再试');
     if (!auth.available) fail(503, 'SERVICE_UNAVAILABLE', auth.message);
     const job = addJob(normalizeInput(await readBody(req)));
