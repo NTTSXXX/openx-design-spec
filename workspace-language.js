@@ -12,9 +12,11 @@
   let language = 'zh-Hans', scheduled = false, started = false;
   const normalize = value => value === 'en' ? 'en' : value === 'zh-Hant' ? 'zh-Hant' : value === 'zh-Hans' ? 'zh-Hans' : null;
   const uiScopes = [
-    '.template-studio-header', '.studio-canvas-help', '#sm-status', '#sm-project-status', '#sm-samples .sm-workbench-head', '#sm-samples .sm-panel-header', '#sm-samples .sm-toolbar',
+    '.template-studio-header', '.studio-canvas-help', '#sm-title', '#sm-tab-layout', '#sm-floating-panel-title', '#sm-status', '#sm-project-status', '#sm-samples .sm-workbench-head', '#sm-samples .sm-panel-header', '#sm-samples .sm-toolbar',
     '#sm-samples .sm-preview-toolbar', '#sm-samples .sm-viewport-tools',
     '#sm-samples .sm-floating-dock', '#sm-samples .sm-case-panel',
+    '.sm-floating-dock', '.sm-floating-panel', '.sm-standalone-help',
+    '.studio-background-resize', '#sm-selection-label',
     '#sm-samples > .sm-status', '#sm-samples .sm-technical',
     '.sm-template-copy-dialog', '.sm-template-background-dialog', '.sm-template-name-dialog',
     '.ox-select-menu', '.ox-calendar', '.ox-calendar-trigger', '.toast', '[data-openx-language-ui]'
@@ -40,6 +42,8 @@
   }
 
   function textScope(element) {
+    // Canvas text nodes contain only the browser-support fallback, never artwork.
+    if(element?.id==='sm-canvas'&&element.tagName==='CANVAS')return true;
     if (!element || element.closest(authored)) return false;
     if (authoredSelect(element)) return false;
     if (element.closest(uiScopes)) return true;
@@ -48,7 +52,7 @@
   function attributeScope(element) {
     if (!element || element.closest('[data-openx-language-content],[data-language-content],[translate="no"],pre,code,script,style,svg')) return false;
     // Input placeholders and control labels are UI; their .value is never read or written here.
-    return !!element.closest(uiScopes) || (mode !== 'templates' && !!element.closest('.doc-nav,.sample-toolbar,' + ruleSheets)) || element.id === 'sm-canvas' || element.tagName === 'IFRAME';
+    return !!element.closest(uiScopes) || (mode !== 'templates' && !!element.closest('.doc-nav,.sample-toolbar,' + ruleSheets)) || ['social-media','sm-samples','sm-stage','sm-canvas'].includes(element.id) || element.tagName === 'IFRAME';
   }
   function convert(text) {
     if (!window.OpenXUILocale || (language !== 'en' && !/[\u3400-\u9fff]/.test(text))) return text;
@@ -218,7 +222,7 @@
     if (event.origin === location.origin && event.source === window.parent && event.data?.type === 'openx-ui-language') apply(event.data.language);
   });
   window.addEventListener('storage', event => { if (event.key === storageKey) apply(event.newValue); });
-  window.OpenXWorkspaceLanguage = {apply, refresh: discoverScopes, get language() { return language; }};
+  window.OpenXWorkspaceLanguage = {apply, refresh(scope) { discoverScopes();if(scope?.isConnected)queue(scope); }, get language() { return language; }};
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, {once: true});
   else start();
 })();

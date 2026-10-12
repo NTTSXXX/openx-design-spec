@@ -12,6 +12,8 @@
     (document.querySelector('[data-template-copy-tool]')||document.querySelector('.sm-preview-toolbar')).append(entry);
     document.addEventListener('template-floating-tools:ready',()=>{const mount=document.querySelector('[data-template-copy-tool]');if(mount)mount.append(entry);});
     const query=s=>dialog.querySelector(s),instructions=query('textarea'),generate=query('.sm-copy-generate'),recover=query('.sm-copy-recover'),feedback=query('.sm-copy-feedback'),candidate=query('.sm-copy-candidate'),fields=query('.sm-copy-candidate-fields'),validation=query('.sm-copy-validation'),adopt=query('.sm-copy-adopt');
+    const body=query('.sm-copy-dialog-body'),requirements=document.createElement('details'),requirementsSummary=document.createElement('summary'),requirementsBody=document.createElement('div');
+    requirements.className='sm-copy-requirements';requirements.open=true;requirementsSummary.innerHTML='<strong>生成要求</strong><span>调整要求或重新生成</span>';requirementsSummary.hidden=true;requirementsBody.className='sm-copy-requirements-body';requirements.append(requirementsSummary,requirementsBody);body.prepend(requirements);for(const node of [query('.sm-copy-instructions'),query('.sm-copy-generate-row'),query('.sm-copy-cost')])requirementsBody.append(node);
     let result=null,signature=null,rules=null,rulesFlight=null,flight=null,checking=true,unknown=false,validationToken=0,trigger=entry,adopting=false,recoverable=false;
     const sameTexts=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
     function message(text,error=false){feedback.textContent=text;feedback.hidden=!text;feedback.dataset.error=String(error);}
@@ -28,6 +30,8 @@
       query('.sm-copy-cost').textContent=result?'重新生成会再次计入当前模型用量':'生成并自然润色，计入当前模型用量';
       if(!ready||adopting)adopt.disabled=true;
       for(const input of fields.querySelectorAll('textarea'))input.disabled=!!flight||adopting;
+      dialog.setAttribute('aria-busy',String(!!flight||checking||adopting));
+      requirementsSummary.hidden=!result;dialog.dataset.hasCandidate=String(!!result);
     }
     function proposal(){return result?{templateId:result.proposal.templateId,texts:[...fields.querySelectorAll('textarea')].map(field=>({name:field.dataset.name,content:field.value}))}:null;}
     async function checkCandidate(){
@@ -39,7 +43,7 @@
     }
     async function showResult(value,expectedSignature){
       await loadRules();result=value;const context=editor.copyContext();recoverable=!expectedSignature;signature=expectedSignature||(context?.templateId===value.proposal.templateId&&sameTexts(context.texts,value.sourceTexts)?context.signature:null);if(signature)recoverable=false;
-      candidate.hidden=false;fields.replaceChildren();query('.sm-copy-polish').textContent=value.humanizer?.status==='complete'?'自然润色已完成':'自然润色未完成 · 初稿';
+      candidate.hidden=false;fields.replaceChildren();query('.sm-copy-polish').textContent=value.humanizer?.status==='complete'?'自然润色已完成':'自然润色未完成 · 初稿';body.prepend(candidate);body.append(requirements);requirements.open=false;
       const rule=rules.templates.find(item=>item.id===value.proposal.templateId);
       const priority={title:0,support:1,question:2,eyebrow:3};
       for(const text of [...value.proposal.texts].sort((a,b)=>(priority[rule?.fields.find(field=>field.name===a.name)?.role]??4)-(priority[rule?.fields.find(field=>field.name===b.name)?.role]??4))){
@@ -48,8 +52,8 @@
       }
       message((value.warnings||[]).join('；'));await checkCandidate();controls();
     }
-    function open(){window.OpenXTemplateFloatingTools?.close();trigger=document.activeElement instanceof HTMLElement?document.activeElement:entry;if(!dialog.open)dialog.showModal();controls();}
-    function close(){if(adopting)return;dialog.close();trigger?.focus({preventScroll:true});}
+    function open(){if(!dialog.open){trigger=document.activeElement instanceof HTMLElement?document.activeElement:entry;window.OpenXTemplateFloatingTools?.close();if(!result)requirements.open=true;dialog.showModal();}controls();}
+    function close(){if(adopting)return;dialog.close();if(trigger?.closest('.sm-floating-dock'))window.OpenXTemplateFloatingTools?.reveal();const target=trigger?.getClientRects().length?trigger:document.getElementById('sm-canvas');target?.focus({preventScroll:true});}
     async function run(){
       open();if(flight||checking||unknown||adopting)return;
       const context=editor.copyContext();if(!context||!editor.valid()){message('请先完成当前排版修改',true);return;}
@@ -59,20 +63,23 @@
     }
     async function read(){
       open();if(checking||flight)return;checking=true;controls();
-      try{const state=await request('/api/tasks/'+encodeURIComponent(taskId)+'/template-copy');unknown=state.status==='running';if(state.result)await showResult(state.result);else message(state.status==='running'?'仍在生成，稍后再查看进度':state.status==='failed'?(state.error||'生成未完成，原稿已保留'):'暂无已生成候选',state.status==='failed');}
+      try{const state=await request('/api/tasks/'+encodeURIComponent(taskId)+'/template-copy');unknown=state.status==='running';if(state.result){await showResult(state.result);if(state.status==='failed')message(state.error||'生成未完成，原稿已保留',true);else if(unknown)message('仍在生成，稍后再查看进度');}else message(state.status==='running'?'仍在生成，稍后再查看进度':state.status==='failed'?(state.error||'生成未完成，原稿已保留'):'暂无已生成候选',state.status==='failed');}
       catch(error){message(error.message,true);}finally{checking=false;controls();if(result)checkCandidate();}
     }
-    entry.onclick=()=>{if(result||flight||unknown)open();else run();};generate.onclick=run;recover.onclick=read;
+    // Opening an editor is read-only. A paid request starts only from the
+    // explicit Generate button, after requirements and usage are visible.
+    entry.onclick=open;generate.onclick=run;recover.onclick=read;
     query('.sm-copy-close').onclick=close;query('.sm-copy-cancel').onclick=close;dialog.addEventListener('cancel',event=>{event.preventDefault();close();});
     adopt.onclick=async()=>{if(adopt.disabled||adopting)return;adopting=true;controls();try{await editor.applyCopyProposal(proposal(),signature);result=null;candidate.hidden=true;message('已采用文案，可在排版工具栏撤销');adopting=false;close();}catch(error){validateMessage(error.message);}finally{adopting=false;controls();}};
     document.addEventListener('social-editor:change',()=>{controls();if(result)checkCandidate();});
+    document.addEventListener('social-editor:name-change',controls);
     document.getElementById('sm-sample-picker')?.addEventListener('change',()=>{signature=null;controls();if(result)checkCandidate();});
     // The floating toolbar may move this exact entry node without replacing its handlers.
     window.OpenXTemplateCopy={open,generate:run,recover:read,entry};controls();
     const readiness=new MutationObserver(()=>{controls();if(result)checkCandidate();});readiness.observe(document.getElementById('sm-stage'),{attributes:true,attributeFilter:['aria-busy']});
     // A reload first reads the stored paid result; opening the tool must not
     // silently submit and bill a second request after an interrupted session.
-    request('/api/tasks/'+encodeURIComponent(taskId)+'/template-copy').then(async state=>{unknown=state.status==='running';if(state.result)await showResult(state.result);else if(unknown)message('仍在生成，请稍后查看进度');}).catch(error=>{unknown=true;message(error.message,true);}).finally(()=>{checking=false;controls();if(result)checkCandidate();});
+    request('/api/tasks/'+encodeURIComponent(taskId)+'/template-copy').then(async state=>{unknown=state.status==='running';if(state.result){await showResult(state.result);if(state.status==='failed')message(state.error||'生成未完成，原稿已保留',true);}else if(unknown)message('仍在生成，请稍后查看进度');}).catch(error=>{unknown=true;message(error.message,true);}).finally(()=>{checking=false;controls();if(result)checkCandidate();});
   }
   if(document.getElementById('social-media')?.dataset.smReady==='true')init();else document.addEventListener('social-media:ready',init,{once:true});
 })();

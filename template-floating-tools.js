@@ -18,14 +18,28 @@
     if (controls && actions) {
       controls.append(actions);
       if (header) header.hidden = true;
+      const menu = more?.querySelector('.sm-engineering-actions');
+      const mobileSettings = document.createElement('div');
+      mobileSettings.className = 'sm-mobile-editor-settings';
+      const settings = [controls.querySelector('.sm-mode-control'),module.querySelector('.sm-align-menu'),module.querySelector('.sm-snap-switch'),module.querySelector('.sm-guide-switch'),document.getElementById('sm-view-original')].filter(Boolean).map(node => {
+        const marker=document.createComment('template control home');node.before(marker);return {node,marker};
+      });
+      if(menu)menu.append(mobileSettings);
+      const fit=document.getElementById('sm-view-fit');
+      if(fit){fit.setAttribute('aria-label','适应窗口');fit.innerHTML='<svg class="lucide sm-mobile-fit-icon" width="20" height="20" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"/></svg><span class="sm-mobile-fit-label">适应窗口</span>';}
       const fitActions = () => {
-        const menu = more?.querySelector('.sm-engineering-actions');
         if (!menu || !download) return;
         const menuWidth = controls.clientWidth + 'px';
         if (controls.style.getPropertyValue('--sm-gallery-width') !== menuWidth) controls.style.setProperty('--sm-gallery-width', menuWidth);
         const compact = controls.clientWidth < 820;
         if (compact && download.parentElement !== menu) menu.prepend(download);
         else if (!compact && download.parentElement !== actions) actions.insertBefore(download, more);
+        const phone=innerWidth<=700;
+        // Preview is a secondary view setting on every screen. Phone-only
+        // alignment aids return to their original desktop toolbar positions.
+        for(const {node,marker} of settings){const inMenu=phone||node.classList.contains('sm-mode-control');if(inMenu&&node.parentElement!==mobileSettings)mobileSettings.append(node);else if(!inMenu&&node.parentElement===mobileSettings)marker.after(node);}
+        mobileSettings.hidden=false;
+        controls.dataset.mobileTools=String(phone);
       };
       new ResizeObserver(fitActions).observe(controls); fitActions();
     }
@@ -164,6 +178,7 @@
     function show(name, trigger) {
       opened = name; returnFocus = trigger || buttons.find(button => button.dataset.smInspector === name);
       title.textContent = names[name] + '属性'; if (name === 'info') title.textContent = '排版说明';
+      window.OpenXWorkspaceLanguage?.refresh(title);
       dock.hidden = false; panel.hidden = false; updateExpanded(); position();
     }
     for (const button of buttons) {
@@ -218,7 +233,7 @@
     });
     // Selection changes while dragging/editing synchronize the open view without reopening it.
     new MutationObserver(() => {
-      if (opened && active()) { opened = active().dataset.smInspector; title.textContent = opened === 'info' ? '排版说明' : names[opened] + '属性'; updateExpanded(); }
+      if (opened && active()) { opened = active().dataset.smInspector; title.textContent = opened === 'info' ? '排版说明' : names[opened] + '属性'; window.OpenXWorkspaceLanguage?.refresh(title); updateExpanded(); }
     }).observe(tabs, {subtree: true, attributes: true, attributeFilter: ['aria-selected']});
     document.addEventListener('social-editor:selected', () => hide(false,true));
     const schedulePosition = () => { if (dock.hidden || gesture || pendingFrame) return; pendingFrame = requestAnimationFrame(() => { pendingFrame = 0; if (canvas.dataset.selectedObject === 'none') hide(false,true); else position(); }); };
@@ -334,7 +349,7 @@
     }
     compactTextFields(); new MutationObserver(compactTextFields).observe(document.getElementById('sm-copy-fields'),{childList:true});
     new MutationObserver(refreshIcons).observe(toolbar,{childList:true,subtree:true});
-    window.OpenXTemplateFloatingTools = {close: () => hide(false,true), open: name => { const button = buttons.find(item => item.dataset.smInspector === name); if (button) { if (opened === name) hide(); button.click(); } }};
+    window.OpenXTemplateFloatingTools = {close: () => hide(false,true), reveal: () => { if(canvas.dataset.selectedObject !== 'none'){dock.hidden=false;position();} }, open: name => { const button = buttons.find(item => item.dataset.smInspector === name); if (button) { if (opened === name) hide(); button.click(); } }};
     document.dispatchEvent(new Event('template-floating-tools:ready'));
   }
   document.addEventListener('social-media:ready', install, {once: true});

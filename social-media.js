@@ -31,7 +31,7 @@
       item.querySelector('.sm-template-retry').setAttribute('aria-label','重新加载'+title+'的预览');
       for(const id of ['sm-sample-picker','sm-adapt-target']){const option=$(id)?.querySelector('option[value="'+sample.id+'"]');if(option)option.textContent=title+' · '+sample.ratio;}
     }
-    if(current){syncTemplatePicker(current);$('sm-sample-title').textContent=templateTitle(current);}
+    if(current){syncTemplatePicker(current);$('sm-sample-title').textContent=templateTitle(current);$('sm-canvas').setAttribute('aria-label',`${templateTitle(current)}，${current.width}×${current.height}，${$('sm-mode').value==='base'?'无字底图':'含官方Logo、主题与slogan的完整排版'}${$('sm-guides').checked?'，含版位辅助线':''}`);document.dispatchEvent(new Event('social-editor:name-change'));}
   }
   const copyDrafts = new Map();
   const backgroundDrafts = new Map();
@@ -270,7 +270,7 @@
     let url;
     try{
       if(!['image/png','image/jpeg','image/webp'].includes(file.type))throw Error('请选择 PNG、JPEG 或 WebP 图片');
-      if(file.size>20*1024*1024)throw Error('底图需小于20MB，请缩小文件后重试');
+      if(file.size>25*1024*1024)throw Error('底图不能超过25 MiB，请缩小文件后重试');
       $('sm-base-status').textContent='正在读取底图…';$('sm-base-status').dataset.error='false';$('sm-base-status').dataset.pending='true';$('sm-base-status').dataset.pendingRevision=String(token);
       url=URL.createObjectURL(file);backgroundObjectURLs.add(url);backgroundLoadingURLs.add(url);const img=new Image();img.src=url;await img.decode();
       if(token!==backgroundRevision||selection!==revision){URL.revokeObjectURL(url);return;}
@@ -875,7 +875,7 @@
     $('sm-current-process').textContent = sample.process.map((p, i) => `实际执行 ${i + 1}\n${p}`).join('\n\n');
     $('sm-run-history').textContent = sample.run;
     $('sm-base-download').href = backgroundDrafts.get(sample.id)?.url || sample.asset; const isReference=$('sm-mode').value==='reference'&&sample.referenceAsset; $('sm-full-view').href=(isReference?sample.referenceAsset:sample.final)+'?v=20261008-22'; $('sm-full-view').textContent=isReference?'查看原尺寸参考稿':$('sm-mode').value==='base'?'查看当前底图':'查看当前成稿';
-    canvas.setAttribute('aria-label', `${sample.title}，${sample.width}×${sample.height}，${$('sm-mode').value === 'base' ? '无字底图' : '含官方Logo、主题与slogan的完整排版'}${$('sm-guides').checked ? '，含版位辅助线' : ''}`);
+    canvas.setAttribute('aria-label', `${templateTitle(sample)}，${sample.width}×${sample.height}，${$('sm-mode').value === 'base' ? '无字底图' : '含官方Logo、主题与slogan的完整排版'}${$('sm-guides').checked ? '，含版位辅助线' : ''}`);
     fillTable(sample);
   }
   let templateSelectionRequest=0;
@@ -1169,6 +1169,7 @@
         return copyContext();
       })();pendingCopyEdit=work;try{return await work;}finally{if(pendingCopyEdit===work)pendingCopyEdit=null;}
     },
+    async chooseTemplate(id){if(!availableTemplates().some(item=>item.id===id))throw Error('模板已不可用，请重新选择');await select(id,{inherit:false});},
     templates:()=>availableTemplates().map(sample=>({id:sample.id,title:templateTitle(sample),defaultTitle:sample.title,ratio:sample.ratio,width:sample.width,height:sample.height})),
     setTemplateNames(names){templateNames={};for(const sample of availableTemplates()){const name=names?.[sample.id];if(typeof name==='string'&&name.trim()&&Array.from(name).length<=60)templateNames[sample.id]=name;}refreshTemplateNames();},
     async initialize(ratio){if(this.valid())return;const preferred=ratio&&(availableTemplates().find(sample=>sample.ratio===ratio&&sample.kind!=='finished-reference')||availableTemplates().find(sample=>sample.ratio===ratio));await select(preferred?.id||workspaceParams.get('sample')||availableTemplates()[0].id,{inherit:false});if(!this.valid())throw Error('模板未能载入，请重新加载编辑器');},

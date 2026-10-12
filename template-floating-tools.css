@@ -11,6 +11,8 @@ html[data-workspace-embed=templates] #sm-samples[data-floating-tools=ready] .sm-
 html[data-workspace-embed=templates] #sm-samples[data-floating-tools=ready] .sm-preview-toolbar .sm-edit-tools{gap:4px;flex:0 1 auto}
 html[data-workspace-embed=templates] #sm-samples[data-floating-tools=ready] .sm-preview-toolbar .sm-viewport-tools{gap:0;flex:0 1 auto;margin-left:auto}
 html[data-workspace-embed=templates] #sm-samples[data-floating-tools=ready] .sm-preview-toolbar .sm-viewport-tools button{min-width:44px;padding-inline:6px}
+/* Mobile-only glyphs must stay bounded and hidden in every desktop bundle. */
+#sm-samples[data-floating-tools=ready] :is(.sm-mobile-fit-icon,.sm-mobile-back-icon){display:none;flex:none;width:20px;height:20px}
 html[data-workspace-embed=templates] #sm-samples[data-floating-tools=ready] .sm-align-menu>summary{padding-inline:6px}
 html[data-workspace-embed=templates] #sm-samples[data-floating-tools=ready] .sm-workbench{grid-template-columns:minmax(0,1fr);grid-template-areas:"toolbar" "preview";column-gap:0}
 #sm-samples[data-floating-tools=ready] .sm-floating-dock{position:fixed;z-index:46;min-width:0;animation:sm-floating-enter 140ms ease-out}
